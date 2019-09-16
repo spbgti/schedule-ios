@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04FEC6142321C84E00EA5D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6132321C84E00EA5D25 /* AppDelegate.swift */; };
+		04FEC6162321C84E00EA5D25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6152321C84E00EA5D25 /* ViewController.swift */; };
+		04FEC6192321C84E00EA5D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC6172321C84E00EA5D25 /* Main.storyboard */; };
+		04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Assets.xcassets */; };
+		04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */; };
+		04FEC62C2323F1F600EA5D25 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FEC62B2323F1F600EA5D25 /* NotificationCenter.framework */; };
+		04FEC62F2323F1F600EA5D25 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC62E2323F1F600EA5D25 /* TodayViewController.swift */; };
+		04FEC6322323F1F600EA5D25 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC6302323F1F600EA5D25 /* MainInterface.storyboard */; };
+		04FEC6362323F1F600EA5D25 /* Schedule Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* APIManager.swift */; };
+		04FEC63D232C2AD100EA5D25 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* APIManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04FEC6342323F1F600EA5D25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04FEC6082321C84E00EA5D25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04FEC6282323F1F500EA5D25;
+			remoteInfo = "Schedule Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04FEC63A2323F1F600EA5D25 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04FEC6362323F1F600EA5D25 /* Schedule Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04FEC6102321C84E00EA5D25 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FEC6132321C84E00EA5D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04FEC6152321C84E00EA5D25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04FEC6182321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04FEC61A2321C84E00EA5D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04FEC61D2321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04FEC61F2321C84E00EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Schedule Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FEC62B2323F1F600EA5D25 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		04FEC62E2323F1F600EA5D25 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		04FEC6312323F1F600EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		04FEC6332323F1F600EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FEC63B232C2AD100EA5D25 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04FEC60D2321C84E00EA5D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FEC6262323F1F500EA5D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FEC62C2323F1F600EA5D25 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04FEC6072321C84E00EA5D25 = {
+			isa = PBXGroup;
+			children = (
+				04FEC6122321C84E00EA5D25 /* schedule */,
+				04FEC62D2323F1F600EA5D25 /* Schedule Widget */,
+				04FEC62A2323F1F600EA5D25 /* Frameworks */,
+				04FEC6112321C84E00EA5D25 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04FEC6112321C84E00EA5D25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04FEC6102321C84E00EA5D25 /* schedule.app */,
+				04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04FEC6122321C84E00EA5D25 /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
+				04FEC6152321C84E00EA5D25 /* ViewController.swift */,
+				04FEC6172321C84E00EA5D25 /* Main.storyboard */,
+				04FEC61A2321C84E00EA5D25 /* Assets.xcassets */,
+				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
+				04FEC61F2321C84E00EA5D25 /* Info.plist */,
+				04FEC63B232C2AD100EA5D25 /* APIManager.swift */,
+			);
+			path = schedule;
+			sourceTree = "<group>";
+		};
+		04FEC62A2323F1F600EA5D25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04FEC62B2323F1F600EA5D25 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04FEC62D2323F1F600EA5D25 /* Schedule Widget */ = {
+			isa = PBXGroup;
+			children = (
+				04FEC62E2323F1F600EA5D25 /* TodayViewController.swift */,
+				04FEC6302323F1F600EA5D25 /* MainInterface.storyboard */,
+				04FEC6332323F1F600EA5D25 /* Info.plist */,
+			);
+			path = "Schedule Widget";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04FEC60F2321C84E00EA5D25 /* schedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FEC6222321C84E00EA5D25 /* Build configuration list for PBXNativeTarget "schedule" */;
+			buildPhases = (
+				04FEC60C2321C84E00EA5D25 /* Sources */,
+				04FEC60D2321C84E00EA5D25 /* Frameworks */,
+				04FEC60E2321C84E00EA5D25 /* Resources */,
+				04FEC63A2323F1F600EA5D25 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04FEC6352323F1F600EA5D25 /* PBXTargetDependency */,
+			);
+			name = schedule;
+			productName = schedule;
+			productReference = 04FEC6102321C84E00EA5D25 /* schedule.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04FEC6282323F1F500EA5D25 /* Schedule Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FEC6372323F1F600EA5D25 /* Build configuration list for PBXNativeTarget "Schedule Widget" */;
+			buildPhases = (
+				04FEC6252323F1F500EA5D25 /* Sources */,
+				04FEC6262323F1F500EA5D25 /* Frameworks */,
+				04FEC6272323F1F500EA5D25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Schedule Widget";
+			productName = "Schedule Widget";
+			productReference = 04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04FEC6082321C84E00EA5D25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = mac;
+				TargetAttributes = {
+					04FEC60F2321C84E00EA5D25 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					04FEC6282323F1F500EA5D25 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 04FEC60B2321C84E00EA5D25 /* Build configuration list for PBXProject "Schedule" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04FEC6072321C84E00EA5D25;
+			productRefGroup = 04FEC6112321C84E00EA5D25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04FEC60F2321C84E00EA5D25 /* schedule */,
+				04FEC6282323F1F500EA5D25 /* Schedule Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04FEC60E2321C84E00EA5D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
+				04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */,
+				04FEC6192321C84E00EA5D25 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FEC6272323F1F500EA5D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FEC6322323F1F600EA5D25 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04FEC60C2321C84E00EA5D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */,
+				04FEC6162321C84E00EA5D25 /* ViewController.swift in Sources */,
+				04FEC6142321C84E00EA5D25 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FEC6252323F1F500EA5D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FEC63D232C2AD100EA5D25 /* APIManager.swift in Sources */,
+				04FEC62F2323F1F600EA5D25 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04FEC6352323F1F600EA5D25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04FEC6282323F1F500EA5D25 /* Schedule Widget */;
+			targetProxy = 04FEC6342323F1F600EA5D25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04FEC6172321C84E00EA5D25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04FEC6182321C84E00EA5D25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04FEC61D2321C84E00EA5D25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04FEC6302323F1F600EA5D25 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04FEC6312323F1F600EA5D25 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04FEC6202321C84E00EA5D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04FEC6212321C84E00EA5D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04FEC6232321C84E00EA5D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BA672Z9B27;
+				INFOPLIST_FILE = schedule/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04FEC6242321C84E00EA5D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BA672Z9B27;
+				INFOPLIST_FILE = schedule/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04FEC6382323F1F600EA5D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BA672Z9B27;
+				INFOPLIST_FILE = "Schedule Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mac.schedule.Schedule-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04FEC6392323F1F600EA5D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BA672Z9B27;
+				INFOPLIST_FILE = "Schedule Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mac.schedule.Schedule-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04FEC60B2321C84E00EA5D25 /* Build configuration list for PBXProject "Schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FEC6202321C84E00EA5D25 /* Debug */,
+				04FEC6212321C84E00EA5D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04FEC6222321C84E00EA5D25 /* Build configuration list for PBXNativeTarget "schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FEC6232321C84E00EA5D25 /* Debug */,
+				04FEC6242321C84E00EA5D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04FEC6372323F1F600EA5D25 /* Build configuration list for PBXNativeTarget "Schedule Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FEC6382323F1F600EA5D25 /* Debug */,
+				04FEC6392323F1F600EA5D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04FEC6082321C84E00EA5D25 /* Project object */;
+}
