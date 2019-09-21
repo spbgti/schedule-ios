@@ -46,8 +46,19 @@ class APIManager {
     task.resume()
   }
   
-  public func getExercises() {
-    // TODO: Write function
+  public func getExercises(completion: @escaping(String) -> Void) {
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
+    let url = URL(string: "\(pathToAPI)exercises?schedule=147")!
+    
+    let task = session.dataTask(with: url) { (data, response, error) in
+      if error != nil {
+        completion(error!.localizedDescription)
+      } else {
+        completion(String(decoding: data!, as: UTF8.self))
+      }
+    }
+    task.resume()
   }
   
 }
