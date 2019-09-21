@@ -6,13 +6,17 @@ class APIManager {
 
   private let pathToAPI = "https://spbgti-tools-schedule-staging.herokuapp.com/api/"
   
-  // MARK: - Public Properties
+  // MARK: - Static Fields
   
   static var shared = APIManager()
   
+  // MARK: - Initialization
+  
+  private init() {}
+  
   // MARK: - Public Methods
   
-  public func getGroup(completion: @escaping (String) -> Void) {
+  public func getGroups(completion: @escaping (String) -> Void) {
     let config = URLSessionConfiguration.default
     let session = URLSession(configuration: config)
     let url = URL(string: "\(pathToAPI)groups/87")!
@@ -21,19 +25,29 @@ class APIManager {
         if error != nil {
           completion(error!.localizedDescription)
         } else {
-          completion(self.convertJSON(jsonData: String(decoding: data!, as: UTF8.self)))
+          completion(String(decoding: data!, as: UTF8.self))
         }
     }
     task.resume()
   }
   
-  // MARK: - Private Methods
-  
-  private func convertJSON(jsonData str: String) -> String {
-    let data = Data(str.utf8)
-    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+  public func getSchedules(completion: @escaping(String) -> Void) {
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
+    let url = URL(string: "\(pathToAPI)schedules?year=2019&semester=1&group_number=446")!
     
-    return json?["number"] as! String
+    let task = session.dataTask(with: url) { (data, response, error) in
+      if error != nil {
+        completion(error!.localizedDescription)
+      } else {
+        completion(String(decoding: data!, as: UTF8.self))
+      }
+    }
+    task.resume()
+  }
+  
+  public func getExercises() {
+    // TODO: Write function
   }
   
 }
