@@ -1,37 +1,42 @@
 import Foundation
 
+enum APIError: Error {
+  case noDataAvailable
+}
+
 class APIManager {
   
   // MARK: - Private Constants
 
   private let pathToAPI = "https://spbgti-tools-schedule-staging.herokuapp.com/api/"
   
-  // MARK: - Static Fields
+  // MARK: - Static Properties 
   
   static var shared = APIManager()
   
-  // MARK: - Initialization
+  // MARK: - Private Initialization
   
   private init() {}
   
   // MARK: - Public Methods
   
-  public func getGroups(completion: @escaping (String) -> Void) {
-    let config = URLSessionConfiguration.default
-    let session = URLSession(configuration: config)
+  func getGroups(completion: @escaping (Result<Groups, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)groups/87")!
-    
-    let task = session.dataTask(with: url) { (data, response, error) in
-        if error != nil {
-          completion(error!.localizedDescription)
-        } else {
-          completion(String(decoding: data!, as: UTF8.self))
-        }
+    let dataTask = URLSession.shared.dataTask(with: url) { data, _, _ in
+      
+      do {
+        let groupResponse = try JSONDecoder().decode(Groups.self, from: data!)
+        completion(.success(groupResponse))
+      } catch {
+        completion(.failure(.noDataAvailable))
+      }
     }
-    task.resume()
+    dataTask.resume()
   }
   
-  public func getSchedules(completion: @escaping(String) -> Void) {
+  // TODO: Return Data like the function "getGroup"
+  
+  func getSchedules(completion: @escaping(String) -> Void) {
     let config = URLSessionConfiguration.default
     let session = URLSession(configuration: config)
     let url = URL(string: "\(pathToAPI)schedules?year=2019&semester=1&group_number=446")!
@@ -46,7 +51,7 @@ class APIManager {
     task.resume()
   }
   
-  public func getExercises(completion: @escaping(String) -> Void) {
+  func getExercises(completion: @escaping(String) -> Void) {
     let config = URLSessionConfiguration.default
     let session = URLSession(configuration: config)
     let url = URL(string: "\(pathToAPI)exercises?schedule=147")!
