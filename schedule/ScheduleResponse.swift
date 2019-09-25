@@ -1,20 +1,20 @@
 import Foundation
 
-struct Groups: Codable {
+struct Group: Codable {
   var group_id: Int
   var number: String
 }
 
 struct Exercise: Codable {
   var exercise_id: Int
-  var schedule_id: String
-  var room_id: String
-  var teachers: String
+  var schedule_id: Int
+  var room_id: Int
+  var teachers: [String]
   var name: String
-  var typr: String
+  var type: String
   var pair: String
   var day: String
-  var parity: String
+  var parity: String?
 }
 
 struct Schedule: Codable {
@@ -22,5 +22,5 @@ struct Schedule: Codable {
   var group_id: Int
   var year: String
   var semester: String
-  var exercises: Exercise
+  var exercises: [Exercise]
 }
