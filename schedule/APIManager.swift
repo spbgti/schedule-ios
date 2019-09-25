@@ -1,5 +1,6 @@
 import Foundation
 
+// TODO: FIX THIS CODE
 enum APIError: Error {
   case noDataAvailable
 }
@@ -22,48 +23,41 @@ class APIManager {
   
   func getGroups(completion: @escaping (Result<Groups, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)groups/87")!
-    let dataTask = URLSession.shared.dataTask(with: url) { data, _, _ in
-      
+    
+    URLSession.shared.dataTask(with: url) { data, _, _ in
       do {
         let groupResponse = try JSONDecoder().decode(Groups.self, from: data!)
         completion(.success(groupResponse))
       } catch {
         completion(.failure(.noDataAvailable))
       }
-    }
-    dataTask.resume()
+    }.resume()
   }
   
-  // TODO: Return Data like the function "getGroup"
-  
-  func getSchedules(completion: @escaping(String) -> Void) {
-    let config = URLSessionConfiguration.default
-    let session = URLSession(configuration: config)
+  func getSchedules(completion: @escaping(Result<Schedule, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)schedules?year=2019&semester=1&group_number=446")!
     
-    let task = session.dataTask(with: url) { (data, response, error) in
-      if error != nil {
-        completion(error!.localizedDescription)
-      } else {
-        completion(String(decoding: data!, as: UTF8.self))
+    URLSession.shared.dataTask(with: url) { (data, _, _) in
+      do {
+        let scheduleResponse = try JSONDecoder().decode(Schedule.self, from: data!)
+        completion(.success(scheduleResponse))
+      } catch {
+        completion(.failure(.noDataAvailable))
       }
-    }
-    task.resume()
+    }.resume()
   }
   
-  func getExercises(completion: @escaping(String) -> Void) {
-    let config = URLSessionConfiguration.default
-    let session = URLSession(configuration: config)
+  func getExercises(completion: @escaping(Result<Exercise, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)exercises?schedule=147")!
     
-    let task = session.dataTask(with: url) { (data, response, error) in
-      if error != nil {
-        completion(error!.localizedDescription)
-      } else {
-        completion(String(decoding: data!, as: UTF8.self))
+    URLSession.shared.dataTask(with: url) { (data, _, _) in
+      do {
+        let exerciseResponse = try JSONDecoder().decode(Exercise.self, from: data!)
+        completion(.success(exerciseResponse))
+      } catch {
+        completion(.failure(.noDataAvailable))
       }
-    }
-    task.resume()
+    }.resume()
   }
   
 }
