@@ -1,6 +1,5 @@
 import Foundation
 
-// TODO: FIX THIS CODE
 enum APIError: Error {
   case noDataAvailable
 }
@@ -21,7 +20,7 @@ class APIManager {
   
   // MARK: - Public Methods
   
-  func getGroup(completion: @escaping (Result<Group, APIError>) -> Void) {
+  func getGroupById(completion: @escaping (Result<Group, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)groups/87")!
     
     URLSession.shared.dataTask(with: url) { data, _, _ in
@@ -34,7 +33,7 @@ class APIManager {
     }.resume()
   }
   
-  func getSchedule(completion: @escaping(Result<Schedule, APIError>) -> Void) {
+  func getScheduleById(completion: @escaping(Result<Schedule, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)schedules/147")!
     
     URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -47,7 +46,7 @@ class APIManager {
     }.resume()
   }
   
-  func getExercise(completion: @escaping(Result<Exercise, APIError>) -> Void) {
+  func getExerciseById(completion: @escaping(Result<Exercise, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)exercises/2656")!
     
     URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -58,6 +57,45 @@ class APIManager {
         completion(.failure(.noDataAvailable))
       }
     }.resume()
+  }
+  
+  func getGroups(completion: @escaping (Result<Groups, APIError>) -> Void) {
+    let url = URL(string: "\(pathToAPI)groups?number=446")!
+    
+    URLSession.shared.dataTask(with: url) { data, _, _ in
+      do {
+        let groupResponse = try JSONDecoder().decode(Groups.self, from: data!)
+        completion(.success(groupResponse))
+      } catch {
+        completion(.failure(.noDataAvailable))
+      }
+    }.resume()
+  }
+  
+  func getSchedules(completion: @escaping(Result<Schedules, APIError>) -> Void) {
+    let url = URL(string: "\(pathToAPI)schedules?year=2019&group_number=446")!
+  
+    URLSession.shared.dataTask(with: url) { (data, _, _) in
+      do {
+      let scheduleResponse = try JSONDecoder().decode(Schedules.self, from: data!)
+        completion(.success(scheduleResponse))
+      } catch {
+        completion(.failure(.noDataAvailable))
+      }
+    }.resume()
+  }
+  
+  func getExercises(completion: @escaping(Result<Exercises, APIError>) -> Void) {
+    let url = URL(string: "\(pathToAPI)exercises?group_id=87&date=2019-09-22")!
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _) in
+      do {
+        let exerciseResponse = try JSONDecoder().decode(Exercises.self, from: data!)
+        completion(.success(exerciseResponse))
+      } catch {
+        completion(.failure(.noDataAvailable))
+      }
+      }.resume()
   }
   
 }
