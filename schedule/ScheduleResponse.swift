@@ -12,17 +12,9 @@ struct Exercise: Codable {
   var parity: String?
 }
 
-struct Exercises: Codable {
-  var listOfExercises: [Exercise]
-}
-
 struct Group: Codable {
   var group_id: Int
   var number: String
-}
-
-struct Groups: Codable {
-  var listOfGroups: [Group]
 }
 
 struct Schedule: Codable {
@@ -31,8 +23,4 @@ struct Schedule: Codable {
   var year: String
   var semester: String
   var exercises: [Exercise] 
-}
-
-struct Schedules: Codable {
-  var listOfSchedules : [Schedule]
 }

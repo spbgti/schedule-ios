@@ -2,30 +2,32 @@ import Foundation
 
 enum APIError: Error {
   case noDataAvailable
+  case canNotProccessData
 }
 
 class APIManager {
   
   // MARK: - Private Constants
-
   private let pathToAPI = "https://spbgti-tools-schedule-staging.herokuapp.com/api/"
   
-  // MARK: - Static Properties 
-  
+  // MARK: - Static Properties
   static var shared = APIManager()
   
   // MARK: - Private Initialization
-  
   private init() {}
   
   // MARK: - Public Methods
-  
   func getGroupById(completion: @escaping (Result<Group, APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)groups/87")!
     
     URLSession.shared.dataTask(with: url) { data, _, _ in
+      guard let jsonData = data else {
+        completion(.failure(.noDataAvailable))
+        return
+      }
+      
       do {
-        let groupResponse = try JSONDecoder().decode(Group.self, from: data!)
+        let groupResponse = try JSONDecoder().decode(Group.self, from: jsonData)
         completion(.success(groupResponse))
       } catch {
         completion(.failure(.noDataAvailable))
@@ -37,11 +39,16 @@ class APIManager {
     let url = URL(string: "\(pathToAPI)schedules/147")!
     
     URLSession.shared.dataTask(with: url) { (data, _, _) in
+      guard let jsonData = data else {
+        completion(.failure(.noDataAvailable))
+        return
+      }
+      
       do {
-        let scheduleResponse = try JSONDecoder().decode(Schedule.self, from: data!)
+        let scheduleResponse = try JSONDecoder().decode(Schedule.self, from: jsonData)
         completion(.success(scheduleResponse))
       } catch {
-        completion(.failure(.noDataAvailable))
+        completion(.failure(.canNotProccessData))
       }
     }.resume()
   }
@@ -50,8 +57,13 @@ class APIManager {
     let url = URL(string: "\(pathToAPI)exercises/2656")!
     
     URLSession.shared.dataTask(with: url) { (data, _, _) in
+      guard let jsonData = data else {
+        completion(.failure(.noDataAvailable))
+        return
+      }
+      
       do {
-        let exerciseResponse = try JSONDecoder().decode(Exercise.self, from: data!)
+        let exerciseResponse = try JSONDecoder().decode(Exercise.self, from: jsonData)
         completion(.success(exerciseResponse))
       } catch {
         completion(.failure(.noDataAvailable))
@@ -59,25 +71,35 @@ class APIManager {
     }.resume()
   }
   
-  func getGroups(completion: @escaping (Result<Groups, APIError>) -> Void) {
+  func getGroups(completion: @escaping (Result<[Group], APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)groups?number=446")!
     
     URLSession.shared.dataTask(with: url) { data, _, _ in
+      guard let jsonData = data else {
+        completion(.failure(.noDataAvailable))
+        return
+      }
+      
       do {
-        let groupResponse = try JSONDecoder().decode(Groups.self, from: data!)
+        let groupResponse = try JSONDecoder().decode([Group].self, from: jsonData)
         completion(.success(groupResponse))
       } catch {
-        completion(.failure(.noDataAvailable))
+        completion(.failure(.canNotProccessData))
       }
     }.resume()
   }
   
-  func getSchedules(completion: @escaping(Result<Schedules, APIError>) -> Void) {
+  func getSchedules(completion: @escaping(Result<[Schedule], APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)schedules?year=2019&group_number=446")!
   
     URLSession.shared.dataTask(with: url) { (data, _, _) in
+      guard let jsonData = data else {
+        completion(.failure(.noDataAvailable))
+        return
+      }
+      
       do {
-      let scheduleResponse = try JSONDecoder().decode(Schedules.self, from: data!)
+        let scheduleResponse = try JSONDecoder().decode([Schedule].self, from: jsonData)
         completion(.success(scheduleResponse))
       } catch {
         completion(.failure(.noDataAvailable))
@@ -85,12 +107,17 @@ class APIManager {
     }.resume()
   }
   
-  func getExercises(completion: @escaping(Result<Exercises, APIError>) -> Void) {
+  func getExercises(completion: @escaping(Result<[Exercise], APIError>) -> Void) {
     let url = URL(string: "\(pathToAPI)exercises?group_id=87&date=2019-09-22")!
     
     URLSession.shared.dataTask(with: url) { (data, _, _) in
+      guard let jsonData = data else {
+        completion(.failure(.noDataAvailable))
+        return
+      }
+      
       do {
-        let exerciseResponse = try JSONDecoder().decode(Exercises.self, from: data!)
+        let exerciseResponse = try JSONDecoder().decode([Exercise].self, from: jsonData)
         completion(.success(exerciseResponse))
       } catch {
         completion(.failure(.noDataAvailable))
