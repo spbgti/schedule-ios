@@ -3,6 +3,8 @@ import UIKit
 class ViewController: UIViewController {
   
   // MARK: - IBOutlets
+  @IBOutlet weak var groupTextField: UITextField!
+  @IBOutlet weak var dateTextField: UITextField!
   @IBOutlet weak var tableView: UITableView!
   
   // MARK: Public var and let
@@ -18,26 +20,38 @@ class ViewController: UIViewController {
   // MARK: - Life Cicle
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  // MARK: - IBActions
+  @IBAction func getResponse(_ sender: UIButton) {
+    var groupId = String()
+    let date: String = dateTextField.text!
     
-    DispatchQueue.main.async {
-      // reload data in tableView
-      //self.tableView.reloadData()
-      
-      // call method getGroups
-      APIManager.shared.getExercises { [weak self] completion in
-        switch completion {
-        case .failure(let error):
-          if error == .noDataAvailable {
-            print("noDataAvailable")
-          } else {
-            print("canNotProccessData")
-          }
-        case .success(let result):
-          self?.array = result
+    APIManager.shared.getGroups(groupName: groupTextField.text!) { completion in
+      switch completion {
+      case .failure(let error):
+        if error == .noDataAvailable {
+          print("noDataAvailable")
+        } else {
+          print("canNotProccessData")
         }
+      case .success(let result):
+        groupId = String(result[0].group_id)
       }
     }
     
+    APIManager.shared.getExercises(groupId: groupId, date: date) { completion in
+      switch completion {
+      case .failure(let error):
+        if error == .noDataAvailable {
+          print("noDataAvailable")
+        } else {
+          print("canNotProccessData")
+        }
+      case .success(let result):
+        self.array = result
+      }
+    }
   }
   
 }

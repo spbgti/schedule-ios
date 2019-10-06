@@ -1,5 +1,6 @@
 import Foundation
 
+// MARK: - Enum of errors
 enum APIError: Error {
   case noDataAvailable
   case canNotProccessData
@@ -71,8 +72,8 @@ class APIManager {
     }.resume()
   }
   
-  func getGroups(completion: @escaping (Result<[Group], APIError>) -> Void) {
-    let url = URL(string: "\(pathToAPI)groups?number=446")!
+  func getGroups(groupName: String, completion: @escaping (Result<[Group], APIError>) -> Void) {
+    let url = URL(string: "\(pathToAPI)groups?number=\(groupName)")!
     
     URLSession.shared.dataTask(with: url) { data, _, _ in
       guard let jsonData = data else {
@@ -107,8 +108,8 @@ class APIManager {
     }.resume()
   }
   
-  func getExercises(completion: @escaping(Result<[Exercise], APIError>) -> Void) {
-    let url = URL(string: "\(pathToAPI)exercises?group_id=87&date=2019-09-22")!
+  func getExercises(groupId: String, date: String, completion: @escaping(Result<[Exercise], APIError>) -> Void) {
+    let url = URL(string: "\(pathToAPI)exercises?group_id=\(groupId)&date=\(date)")!
     
     URLSession.shared.dataTask(with: url) { (data, _, _) in
       guard let jsonData = data else {
