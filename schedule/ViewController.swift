@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - ViewController
 class ViewController: UIViewController {
   
   // MARK: - IBOutlets
@@ -7,7 +8,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var dateTextField: UITextField!
   @IBOutlet weak var tableView: UITableView!
   
-  // MARK: Public var and let
+  // MARK: - Public var and let
   let indetifier = "Cell"
   var array = [Exercise]() {
     didSet {
@@ -20,36 +21,17 @@ class ViewController: UIViewController {
   // MARK: - Life Cicle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
   }
   
   // MARK: - IBActions
   @IBAction func getResponse(_ sender: UIButton) {
-    var groupId = String()
-    let date: String = dateTextField.text!
     
-    APIManager.shared.getGroups(groupName: groupTextField.text!) { completion in
-      switch completion {
-      case .failure(let error):
-        if error == .noDataAvailable {
-          print("noDataAvailable")
-        } else {
-          print("canNotProccessData")
+    ScheduleRequest.shared.getGroups(groupName: self.groupTextField.text!) { completion in
+      DispatchQueue.main.async {
+        ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: self.dateTextField.text!) { completionHandler in
+          self.array = completionHandler
         }
-      case .success(let result):
-        groupId = String(result[0].group_id)
-      }
-    }
-    
-    APIManager.shared.getExercises(groupId: groupId, date: date) { completion in
-      switch completion {
-      case .failure(let error):
-        if error == .noDataAvailable {
-          print("noDataAvailable")
-        } else {
-          print("canNotProccessData")
-        }
-      case .success(let result):
-        self.array = result
       }
     }
   }
@@ -58,10 +40,12 @@ class ViewController: UIViewController {
 
 // MARK: - UITableViewDataSource and UITableViewDelegate
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+  // MARK: - Count of sections
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return array.count
   }
   
+  // MARK: - Setting of cell
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: indetifier, for: indexPath)
     

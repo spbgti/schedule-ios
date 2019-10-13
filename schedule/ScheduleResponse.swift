@@ -1,9 +1,9 @@
 import Foundation
 
 struct Exercise: Codable {
-  var exercise_id: Int
-  var schedule_id: Int
-  var room_id: Int
+  var exerciseId: Int
+  var scheduleId: Int
+  var roomId: Int
   var teachers: [String]
   var name: String
   var type: String
@@ -13,13 +13,13 @@ struct Exercise: Codable {
 }
 
 struct Group: Codable {
-  var group_id: Int
+  var groupId: Int
   var number: String
 }
 
 struct Schedule: Codable {
-  var schedule_id: Int
-  var group_id: Int
+  var scheduleId: Int
+  var groupId: Int
   var year: String
   var semester: String
   var exercises: [Exercise] 

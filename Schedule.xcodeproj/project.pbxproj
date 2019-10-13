@@ -7,28 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D56BD42348E5670097E0DC /* ScheduleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* ScheduleRequest.swift */; };
 		04FEC6142321C84E00EA5D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6132321C84E00EA5D25 /* AppDelegate.swift */; };
 		04FEC6162321C84E00EA5D25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6152321C84E00EA5D25 /* ViewController.swift */; };
 		04FEC6192321C84E00EA5D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC6172321C84E00EA5D25 /* Main.storyboard */; };
 		04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Assets.xcassets */; };
 		04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */; };
-		04FEC62C2323F1F600EA5D25 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FEC62B2323F1F600EA5D25 /* NotificationCenter.framework */; };
-		04FEC62F2323F1F600EA5D25 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC62E2323F1F600EA5D25 /* TodayViewController.swift */; };
-		04FEC6322323F1F600EA5D25 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC6302323F1F600EA5D25 /* MainInterface.storyboard */; };
-		04FEC6362323F1F600EA5D25 /* Schedule Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* APIManager.swift */; };
-		04FEC63D232C2AD100EA5D25 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* APIManager.swift */; };
+		04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		04FEC6342323F1F600EA5D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04FEC6082321C84E00EA5D25 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04FEC6282323F1F500EA5D25;
-			remoteInfo = "Schedule Widget";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		04FEC63A2323F1F600EA5D25 /* Embed App Extensions */ = {
@@ -37,7 +24,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				04FEC6362323F1F600EA5D25 /* Schedule Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04D56BD32348E5670097E0DC /* ScheduleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRequest.swift; sourceTree = "<group>"; };
 		04FEC6102321C84E00EA5D25 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FEC6132321C84E00EA5D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04FEC6152321C84E00EA5D25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,12 +39,8 @@
 		04FEC61A2321C84E00EA5D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04FEC61D2321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04FEC61F2321C84E00EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Schedule Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		04FEC62B2323F1F600EA5D25 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		04FEC62E2323F1F600EA5D25 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		04FEC6312323F1F600EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		04FEC6332323F1F600EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04FEC63B232C2AD100EA5D25 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,14 +51,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04FEC6262323F1F500EA5D25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04FEC62C2323F1F600EA5D25 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,8 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				04FEC6122321C84E00EA5D25 /* schedule */,
-				04FEC62D2323F1F600EA5D25 /* Schedule Widget */,
-				04FEC62A2323F1F600EA5D25 /* Frameworks */,
 				04FEC6112321C84E00EA5D25 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				04FEC6102321C84E00EA5D25 /* schedule.app */,
-				04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,31 +75,15 @@
 			children = (
 				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
 				04FEC6152321C84E00EA5D25 /* ViewController.swift */,
-				04FEC6172321C84E00EA5D25 /* Main.storyboard */,
-				04FEC61A2321C84E00EA5D25 /* Assets.xcassets */,
-				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
-				04FEC61F2321C84E00EA5D25 /* Info.plist */,
 				04FEC63B232C2AD100EA5D25 /* APIManager.swift */,
+				04D56BD32348E5670097E0DC /* ScheduleRequest.swift */,
+				04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */,
+				04FEC6172321C84E00EA5D25 /* Main.storyboard */,
+				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
+				04FEC61A2321C84E00EA5D25 /* Assets.xcassets */,
+				04FEC61F2321C84E00EA5D25 /* Info.plist */,
 			);
 			path = schedule;
-			sourceTree = "<group>";
-		};
-		04FEC62A2323F1F600EA5D25 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				04FEC62B2323F1F600EA5D25 /* NotificationCenter.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		04FEC62D2323F1F600EA5D25 /* Schedule Widget */ = {
-			isa = PBXGroup;
-			children = (
-				04FEC62E2323F1F600EA5D25 /* TodayViewController.swift */,
-				04FEC6302323F1F600EA5D25 /* MainInterface.storyboard */,
-				04FEC6332323F1F600EA5D25 /* Info.plist */,
-			);
-			path = "Schedule Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,29 +101,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				04FEC6352323F1F600EA5D25 /* PBXTargetDependency */,
 			);
 			name = schedule;
 			productName = schedule;
 			productReference = 04FEC6102321C84E00EA5D25 /* schedule.app */;
 			productType = "com.apple.product-type.application";
-		};
-		04FEC6282323F1F500EA5D25 /* Schedule Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04FEC6372323F1F600EA5D25 /* Build configuration list for PBXNativeTarget "Schedule Widget" */;
-			buildPhases = (
-				04FEC6252323F1F500EA5D25 /* Sources */,
-				04FEC6262323F1F500EA5D25 /* Frameworks */,
-				04FEC6272323F1F500EA5D25 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Schedule Widget";
-			productName = "Schedule Widget";
-			productReference = 04FEC6292323F1F500EA5D25 /* Schedule Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -180,9 +118,6 @@
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
 					04FEC60F2321C84E00EA5D25 = {
-						CreatedOnToolsVersion = 10.3;
-					};
-					04FEC6282323F1F500EA5D25 = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
@@ -201,7 +136,6 @@
 			projectRoot = "";
 			targets = (
 				04FEC60F2321C84E00EA5D25 /* schedule */,
-				04FEC6282323F1F500EA5D25 /* Schedule Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -217,14 +151,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04FEC6272323F1F500EA5D25 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04FEC6322323F1F600EA5D25 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -232,30 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D56BD42348E5670097E0DC /* ScheduleRequest.swift in Sources */,
 				04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */,
 				04FEC6162321C84E00EA5D25 /* ViewController.swift in Sources */,
+				04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */,
 				04FEC6142321C84E00EA5D25 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04FEC6252323F1F500EA5D25 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04FEC63D232C2AD100EA5D25 /* APIManager.swift in Sources */,
-				04FEC62F2323F1F600EA5D25 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		04FEC6352323F1F600EA5D25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04FEC6282323F1F500EA5D25 /* Schedule Widget */;
-			targetProxy = 04FEC6342323F1F600EA5D25 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04FEC6172321C84E00EA5D25 /* Main.storyboard */ = {
@@ -272,14 +183,6 @@
 				04FEC61D2321C84E00EA5D25 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		04FEC6302323F1F600EA5D25 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04FEC6312323F1F600EA5D25 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -343,6 +246,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -397,6 +301,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -439,44 +344,6 @@
 			};
 			name = Release;
 		};
-		04FEC6382323F1F600EA5D25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BA672Z9B27;
-				INFOPLIST_FILE = "Schedule Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mac.schedule.Schedule-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		04FEC6392323F1F600EA5D25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BA672Z9B27;
-				INFOPLIST_FILE = "Schedule Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mac.schedule.Schedule-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -494,15 +361,6 @@
 			buildConfigurations = (
 				04FEC6232321C84E00EA5D25 /* Debug */,
 				04FEC6242321C84E00EA5D25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		04FEC6372323F1F600EA5D25 /* Build configuration list for PBXNativeTarget "Schedule Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04FEC6382323F1F600EA5D25 /* Debug */,
-				04FEC6392323F1F600EA5D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
