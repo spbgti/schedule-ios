@@ -57,10 +57,11 @@
 		04FEC6072321C84E00EA5D25 = {
 			isa = PBXGroup;
 			children = (
-				04FEC6122321C84E00EA5D25 /* schedule */,
+				04FEC6122321C84E00EA5D25 /* Schedule */,
 				04FEC6112321C84E00EA5D25 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		04FEC6112321C84E00EA5D25 /* Products */ = {
 			isa = PBXGroup;
@@ -70,7 +71,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04FEC6122321C84E00EA5D25 /* schedule */ = {
+		04FEC6122321C84E00EA5D25 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
@@ -83,7 +84,7 @@
 				04FEC61A2321C84E00EA5D25 /* Assets.xcassets */,
 				04FEC61F2321C84E00EA5D25 /* Info.plist */,
 			);
-			path = schedule;
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
