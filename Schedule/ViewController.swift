@@ -4,11 +4,12 @@ import UIKit
 class ViewController: UIViewController {
   
   // MARK: - IBOutlets
-  @IBOutlet weak var groupTextField: UITextField!
-  @IBOutlet weak var dateTextField: UITextField!
+  
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var selectedControl: UISegmentedControl!
   
   // MARK: - Public var and let
+  
   let indetifier = "Cell"
   var array = [Exercise]() {
     didSet {
@@ -19,20 +20,40 @@ class ViewController: UIViewController {
   }
   
   // MARK: - Life Cicle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
   }
   
   // MARK: - IBActions
-  @IBAction func getResponse(_ sender: UIButton) {
-    
-    ScheduleRequest.shared.getGroups(groupName: self.groupTextField.text!) { completion in
-      DispatchQueue.main.async {
-        ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: self.dateTextField.text!) { completionHandler in
-          self.array = completionHandler
+  
+  @IBAction func indexChange(_ sender: Any) {
+    switch selectedControl.selectedSegmentIndex {
+    case 0:
+      ScheduleRequest.shared.getGroups(groupName: "446") { completion in
+        DispatchQueue.main.async {
+          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
+            self.array = completionHandler
+          }
         }
       }
+    case 1:
+      ScheduleRequest.shared.getGroups(groupName: "446") { completion in
+        DispatchQueue.main.async {
+          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-23") { completionHandler in
+            self.array = completionHandler
+          }
+        }
+      }
+    case 2:
+      ScheduleRequest.shared.getSchedules(year: "2019", groupNumber: "446") { completion in
+        DispatchQueue.main.async {
+          self.array = completion[0].exercises
+        }
+      }
+    default:
+      break
     }
   }
   
