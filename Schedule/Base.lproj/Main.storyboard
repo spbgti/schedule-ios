@@ -11,37 +11,56 @@
         <!--View Controller-->
         <scene sceneID="tur-Of-yUW">
             <objects>
-                <viewController id="ytH-sO-6WK" customClass="ViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="ytH-sO-6WK" customClass="ViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tsc-nR-PNi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-FP-wCt">
+                                <rect key="frame" x="16" y="40" width="340" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Today"/>
+                                    <segment title="Tommorow"/>
+                                    <segment title="Full"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="indexChange:" destination="ytH-sO-6WK" eventType="valueChanged" id="WPE-Tu-KZo"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="joW-iO-0Sb">
-                                <rect key="frame" x="16" y="119" width="340" height="528"/>
+                                <rect key="frame" x="16" y="105" width="340" height="542"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="aHe-K6-7tu" rowHeight="76" style="IBUITableViewCellStyleDefault" id="Tjn-Ks-aTk">
-                                        <rect key="frame" x="0.0" y="28" width="340" height="76"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="59" id="Tjn-Ks-aTk" customClass="CustomTableViewCell" customModule="schedule">
+                                        <rect key="frame" x="0.0" y="28" width="340" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tjn-Ks-aTk" id="diu-ve-3qh">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aHe-K6-7tu">
-                                                    <rect key="frame" x="15" y="0.0" width="310" height="76"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Exercise">
-                                                            <attributes>
-                                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Regular"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-Ef-euO">
+                                                    <rect key="frame" x="15" y="0.0" width="52" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6R-Al-8ew">
+                                                    <rect key="frame" x="93" y="0.0" width="232" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="exerciseLabel" destination="j6R-Al-8ew" id="iXK-cx-E8d"/>
+                                            <outlet property="timeLabel" destination="cfL-Ef-euO" id="Nrv-r1-0bk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -49,30 +68,24 @@
                                     <outlet property="delegate" destination="ytH-sO-6WK" id="F9N-Wt-G6g"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-FP-wCt">
-                                <rect key="frame" x="56" y="40" width="263" height="32"/>
+                            <activityIndicatorView hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="center" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="zki-o9-tHm">
+                                <rect key="frame" x="-1.1724739241171847" y="295.12572523127801" width="375.00000000000028" height="76.999999999999986"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Today"/>
-                                    <segment title="Tommorow"/>
-                                    <segment title="Full"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChange:" destination="ytH-sO-6WK" eventType="valueChanged" id="WPE-Tu-KZo"/>
-                                </connections>
-                            </segmentedControl>
+                                <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uOh-Na-aCq"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zki-o9-tHm" id="Td6-dQ-xU3"/>
                         <outlet property="selectedControl" destination="V7q-FP-wCt" id="W6C-fC-x3q"/>
                         <outlet property="tableView" destination="joW-iO-0Sb" id="LDt-BF-baF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbG-QD-sxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328.80000000000001" y="144.3778110944528"/>
+            <point key="canvasLocation" x="284" y="161"/>
         </scene>
     </scenes>
 </document>
