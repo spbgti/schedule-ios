@@ -28,9 +28,12 @@ class ViewController: UIViewController {
   @IBAction func indexChange(_ sender: Any) {
     activityIndicator.startAnimating()
     
+    let userDefaults = UserDefaults.standard
+    let groupName = userDefaults.string(forKey: "groupNameKey")
+    
     switch selectedControl.selectedSegmentIndex {
     case 0:
-      ScheduleRequest.shared.getGroups(groupName: "446") { completion in
+      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
             self.activityIndicator.stopAnimating()
@@ -39,7 +42,7 @@ class ViewController: UIViewController {
         }
       }
     case 1:
-      ScheduleRequest.shared.getGroups(groupName: "446") { completion in
+      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-23") { completionHandler in
             self.activityIndicator.stopAnimating()
@@ -48,7 +51,7 @@ class ViewController: UIViewController {
         }
       }
     case 2:
-      ScheduleRequest.shared.getSchedules(year: "2019", groupNumber: "446") { completion in
+      ScheduleRequest.shared.getSchedules(year: "2019", groupNumber: groupName!) { completion in
         DispatchQueue.main.async {
           self.activityIndicator.stopAnimating()
           self.array = completion[0].exercises

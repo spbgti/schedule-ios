@@ -8,10 +8,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="Ca6-E4-18Z">
+            <objects>
+                <viewController storyboardIdentifier="LaunchController" id="cyW-iW-oLR" customClass="LaunchViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sIG-Wp-E6F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's your first launch! Please, enter your group number:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uov-dH-5gb">
+                                <rect key="frame" x="16" y="68" width="343" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="82t-A0-fB4">
+                                <rect key="frame" x="86" y="262" width="203" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV1-nW-5br">
+                                <rect key="frame" x="86" y="318" width="203" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Save data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveGroupName:" destination="cyW-iW-oLR" eventType="touchUpInside" id="Rcy-tf-Qg3"/>
+                                    <segue destination="ytH-sO-6WK" kind="show" id="2s3-B3-fhK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ifb-cO-YPT"/>
+                    </view>
+                    <connections>
+                        <outlet property="groupNameLabel" destination="82t-A0-fB4" id="PKU-YI-SFQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1sU-KI-MaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-758" y="-615"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tur-Of-yUW">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="ytH-sO-6WK" customClass="ViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="ytH-sO-6WK" customClass="ViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tsc-nR-PNi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +123,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uOh-Na-aCq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hcs-72-dwL"/>
                     <connections>
                         <outlet property="activityIndicator" destination="zki-o9-tHm" id="Td6-dQ-xU3"/>
                         <outlet property="selectedControl" destination="V7q-FP-wCt" id="W6C-fC-x3q"/>

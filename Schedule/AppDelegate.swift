@@ -12,11 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let userDefault = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+      
+      let launchedBefore = userDefault.bool(forKey: "isLaunchedBefore")
+      let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+      
+      if !launchedBefore {
+        let launchController = storyboard.instantiateViewController(withIdentifier: "LaunchController")
+        self.window?.rootViewController = launchController
+      } else {
+        let mainController = storyboard.instantiateViewController(withIdentifier: "MainController")
+        self.window?.rootViewController = mainController
+      }
+      
+      self.window?.makeKeyAndVisible()
+      
+      return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -40,7 +53,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+  
 }
-
