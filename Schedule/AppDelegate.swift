@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let launchController = storyboard.instantiateViewController(withIdentifier: "LaunchController")
         self.window?.rootViewController = launchController
       } else {
-        let mainController = storyboard.instantiateViewController(withIdentifier: "MainController")
+        let mainController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
         self.window?.rootViewController = mainController
       }
       
