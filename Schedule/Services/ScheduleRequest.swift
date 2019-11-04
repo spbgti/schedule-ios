@@ -8,6 +8,8 @@ class ScheduleRequest {
   
   private init() {}
   
+  // MARK: - Public methods
+  
   func getGroups(groupName: String, completionHandler: @escaping([Group]) -> Void) {
     let urlString = URL(string: "\(pathToAPI)groups?number=\(groupName)")!
     

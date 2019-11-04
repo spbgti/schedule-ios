@@ -10,6 +10,10 @@ struct Exercise: Codable {
   var pair: String
   var day: String
   var parity: String?
+  
+  subscript() -> String {
+    return day
+  }
 }
 
 struct Group: Codable {

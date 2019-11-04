@@ -3,7 +3,6 @@ import Foundation
 // MARK: - Enum of errors
 enum APIError: Error {
   case noDataAvailable
-  case canNotProccessData
 }
 
 // MARK: - Class APIManager
@@ -12,7 +11,7 @@ class APIManager {
   // MARK: - Static Properties
   static var shared = APIManager()
   
-  // MARK: - Private Initialization
+  // MARK: - Initialization
   private init() {}
   
   // MARK: - Public Method
@@ -23,6 +22,7 @@ class APIManager {
         completion(.failure(.noDataAvailable))
         return
       }
+      
       completion(.success(jsonData))
     }.resume()
   }
