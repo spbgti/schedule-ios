@@ -64,10 +64,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ytH-sO-6WK" kind="relationship" relationship="viewControllers" id="pql-8I-ILn"/>
-                        <segue destination="4es-qT-aH0" kind="relationship" relationship="viewControllers" id="B13-Ob-uwO"/>
+                        <segue destination="5sR-0C-cqG" kind="relationship" relationship="viewControllers" id="B13-Ob-uwO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylL-Yj-IMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -83,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="joW-iO-0Sb">
-                                <rect key="frame" x="16" y="107" width="340" height="540"/>
+                                <rect key="frame" x="16" y="107" width="340" height="511"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" name="CustomColor"/>
@@ -141,7 +142,6 @@
                                     <segment title="Tommorow"/>
                                     <segment title="Full"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="indexChange:" destination="ytH-sO-6WK" eventType="valueChanged" id="WPE-Tu-KZo"/>
                                 </connections>
@@ -166,15 +166,15 @@
         <scene sceneID="5sH-P1-FWD">
             <objects>
                 <tableViewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" interfaceStyle="light" id="4es-qT-aH0" customClass="UserSettingTableViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EqU-P0-w9X">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="EqU-P0-w9X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94857853650000001" green="0.95024508240000005" blue="0.96689516310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Data Setting" id="lvu-4b-G0t">
+                            <tableViewSection footerTitle="  " id="lvu-4b-G0t">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="2wG-YW-p2w">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2wG-YW-p2w" id="tRu-0i-DWK">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
@@ -201,30 +201,29 @@
                             <outlet property="delegate" destination="4es-qT-aH0" id="vIp-2B-B7S"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Setting" image="gear" catalog="system" id="3lt-dU-cTn"/>
                     <navigationItem key="navigationItem" title="Setting" id="k7g-jA-B2B"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEK-p4-xeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="549"/>
+            <point key="canvasLocation" x="1940" y="548.27586206896558"/>
         </scene>
         <!--Data Setting-->
         <scene sceneID="ohw-Li-RSG">
             <objects>
                 <tableViewController modalPresentationStyle="overFullScreen" interfaceStyle="light" id="bcC-qe-HXH" customClass="DataSettingTableViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dZZ-DE-FVr">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dZZ-DE-FVr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94857853650000001" green="0.95024508240000005" blue="0.96689516310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Section-1" id="zxB-dF-ATr">
+                            <tableViewSection footerTitle="Enter your group number to see exercises on mian app, widget and apple watch" id="zxB-dF-ATr">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="k0A-Aq-wfU">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="k0A-Aq-wfU">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k0A-Aq-wfU" id="yAJ-XQ-3sO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rK-Pr-NfS">
@@ -238,7 +237,7 @@
                                                     <rect key="frame" x="153" y="5" width="206" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -251,9 +250,7 @@
                             <outlet property="delegate" destination="bcC-qe-HXH" id="GEq-gE-ZU4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Data Setting" id="pWy-co-2Sb">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="u8k-PN-0Bo"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Data Setting" id="pWy-co-2Sb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="groupNumberTextField" destination="OjH-4N-zD4" id="RtP-hK-gct"/>
@@ -261,7 +258,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unZ-00-dPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="547.37631184407803"/>
+            <point key="canvasLocation" x="2943.1999999999998" y="547.37631184407803"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="Irk-um-1OI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5sR-0C-cqG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="gear" catalog="system" id="3lt-dU-cTn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ttc-ez-s7b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4es-qT-aH0" kind="relationship" relationship="rootViewController" id="m6G-fA-HIc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Seg-H8-16U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="548.27586206896558"/>
         </scene>
     </scenes>
     <resources>

@@ -10,51 +10,75 @@ import UIKit
 
 // MARK: - UITableViewDataSource and UITableViewDelegate
 
-extension ViewController: UITableViewDataSource {
-  
-  enum TableSection: Int {
-    case action = 0, comedy, drama, indie, total
-  }
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
   
   // Section setting
-//  private func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> UIView? {
-//    let label = UILabel()
-//    label.text = "Week day"
-//    label.backgroundColor = UIColor.lightGray
-//
-//    return label
-//  }
+  enum TableSection: Int {
+    case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let label = UILabel()
+    label.backgroundColor = UIColor.lightGray
+    
+    if let tableSection = TableSection(rawValue: section) {
+      switch tableSection {
+      case .monday:
+        label.text = "Monday"
+      case .tuesday:
+        label.text = "Tuesday"
+      case .wednesday:
+        label.text = "Wednesday"
+      case .thursday:
+        label.text = "Thursday"
+      case .friday:
+        label.text = "Friday"
+      case .saturday:
+        label.text = "Saturday"
+      case .sunday:
+        label.text = "Sunday"
+      }
+    }
+    
+    return label
+  }
   
   // Count of sections
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return data.count
   }
   
   // Count of cells
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return array.count
+    if let tableSection = TableSection(rawValue: section), let weekData = data[tableSection] {
+      return weekData.count
+    }
+    
+    return 0
   }
   
   // Cell setting
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: CustomTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
     
-    let pair = array[indexPath.row].pair
-    
-    switch pair {
-    case "1":
-      cell.timeLabel?.text = "09:30 - 11:00"
-    case "2":
-      cell.timeLabel?.text = "11:30 - 13:00"
-    case "3":
-      cell.timeLabel?.text = "14:00 - 15:30"
-    case "4":
-      cell.timeLabel?.text = "16:00 - 17:30"
-    default:
-      break
+    if let tableSection = TableSection(rawValue: indexPath.section), let ex = data[tableSection]?[indexPath.row] {
+      let pair = ex.pair
+      
+      switch pair {
+      case "1":
+        cell.timeLabel?.text = "09:30 - 11:00"
+      case "2":
+        cell.timeLabel?.text = "11:30 - 13:00"
+      case "3":
+        cell.timeLabel?.text = "14:00 - 15:30"
+      case "4":
+        cell.timeLabel?.text = "16:00 - 17:30"
+      default:
+        break
+      }
+      
+      cell.exerciseLabel?.text = ex.name
     }
-    
-    cell.exerciseLabel?.text = array[indexPath.row].name
     
     return cell
   }

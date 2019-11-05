@@ -12,9 +12,11 @@ class ViewController: UIViewController {
   // MARK: - Public var and let
   
   let userDefaults = UserDefaults.standard
+  var data = [TableSection: [Exercise]]()
   var array = [Exercise]() {
     didSet {
       DispatchQueue.main.async {
+        self.sortData()
         self.tableView.reloadData()
       }
     }
@@ -39,11 +41,23 @@ class ViewController: UIViewController {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
             self.activityIndicator.stopAnimating()
             self.array = completionHandler
+            print(self.array[0].day)
+            print(self.data.count)
           }
         }
       }
     }
-    print(array.count)
+  }
+  
+  // sort data by day of the week
+  private func sortData() {
+    data[.monday] = array.filter({ $0.day == "1" })
+    data[.tuesday] = array.filter({ $0.day == "2" })
+    data[.wednesday] = array.filter({ $0.day == "3" })
+    data[.thursday] = array.filter({ $0.day == "4" })
+    data[.friday] = array.filter({ $0.day == "5" })
+    data[.saturday] = array.filter({ $0.day == "6" })
+    data[.sunday] = array.filter({ $0.day == "7" })
   }
   
   // MARK: - IBActions
