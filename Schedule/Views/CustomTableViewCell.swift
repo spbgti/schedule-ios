@@ -13,5 +13,6 @@ class CustomTableViewCell: UITableViewCell {
   // Mark: - IBOutlet
   @IBOutlet var timeLabel: UILabel!
   @IBOutlet var exerciseLabel: UILabel!
+  @IBOutlet weak var parityLabelText: UILabel!
   
 }

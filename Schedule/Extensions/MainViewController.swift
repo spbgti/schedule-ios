@@ -63,18 +63,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     if let tableSection = TableSection(rawValue: indexPath.section), let ex = data[tableSection]?[indexPath.row] {
       let pair = ex.pair
+      let parity = ex.parity
       
       switch pair {
       case "1":
-        cell.timeLabel?.text = "09:30 - 11:00"
+        cell.timeLabel?.text = "09:30\n11:00"
       case "2":
-        cell.timeLabel?.text = "11:30 - 13:00"
+        cell.timeLabel?.text = "11:30\n13:00"
       case "3":
-        cell.timeLabel?.text = "14:00 - 15:30"
+        cell.timeLabel?.text = "14:00\n15:30"
       case "4":
-        cell.timeLabel?.text = "16:00 - 17:30"
+        cell.timeLabel?.text = "16:00\n17:30"
       default:
         break
+      }
+      
+      switch parity {
+      case "1":
+        cell.parityLabelText?.text = "нечет."
+      case "2":
+        cell.parityLabelText?.text = "четн."
+      default:
+        cell.parityLabelText?.text = ""
       }
       
       cell.exerciseLabel?.text = ex.name
