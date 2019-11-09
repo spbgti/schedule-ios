@@ -59,11 +59,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   
   // Cell setting
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: CustomTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
     
-    if let tableSection = TableSection(rawValue: indexPath.section), let ex = data[tableSection]?[indexPath.row] {
-      let pair = ex.pair
-      let parity = ex.parity
+    let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+    
+    if let tableSection = TableSection(rawValue: indexPath.section), let exercise = data[tableSection]?[indexPath.row] {
+      let pair = exercise.pair
+      let parity = exercise.parity
       
       switch pair {
       case "1":
@@ -74,6 +75,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.timeLabel?.text = "14:00\n15:30"
       case "4":
         cell.timeLabel?.text = "16:00\n17:30"
+      case "5":
+        cell.timeLabel?.text = "17:45\n19:15"
       default:
         break
       }
@@ -87,7 +90,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.parityLabelText?.text = ""
       }
       
-      cell.exerciseLabel?.text = ex.name
+      cell.exerciseLabel?.text = exercise.name
     }
     
     return cell

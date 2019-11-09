@@ -24,6 +24,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Setiing tableView's delegate and dataSource
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
+    
     // Button "Show More/Less"
     self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
   }
@@ -48,7 +52,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     if activeDisplayMode == .compact {
         self.preferredContentSize = maxSize
     } else if activeDisplayMode == .expanded {
-        self.preferredContentSize = CGSize(width: maxSize.width, height: 300)
+        self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
     }
   }
     

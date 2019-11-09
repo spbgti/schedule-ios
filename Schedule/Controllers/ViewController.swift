@@ -41,8 +41,6 @@ class ViewController: UIViewController {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
             self.activityIndicator.stopAnimating()
             self.array = completionHandler
-            print(self.array[0].day)
-            print(self.data.count)
           }
         }
       }
