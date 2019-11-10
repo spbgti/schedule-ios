@@ -12,14 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let userDefault = UserDefaults.standard
+    let userDefault = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
-      let launchedBefore = userDefault.bool(forKey: "isLaunchedBefore")
+      let launchedBefore = userDefault?.bool(forKey: "isLaunchedBefore")
       let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
       
-      if !launchedBefore {
+      if !launchedBefore! {
         let launchController = storyboard.instantiateViewController(withIdentifier: "LaunchController")
         self.window?.rootViewController = launchController
       } else {

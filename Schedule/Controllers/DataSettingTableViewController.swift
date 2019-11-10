@@ -17,7 +17,7 @@ class DataSettingTableViewController: UITableViewController {
   
   // MARK: - Properties
   
-  let userDefaults = UserDefaults.standard
+  let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,7 +32,7 @@ class DataSettingTableViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
-    if let groupNumber = userDefaults.string(forKey: "groupNameKey") {
+    if let groupNumber = userDefaults?.string(forKey: "groupNameKey") {
       groupNumberTextField.text = groupNumber
     }
   }
@@ -41,7 +41,7 @@ class DataSettingTableViewController: UITableViewController {
     super.viewWillDisappear(true)
     
     if let groupNumber = groupNumberTextField.text {
-      userDefaults.set(groupNumber, forKey: "groupNameKey")
+      userDefaults?.set(groupNumber, forKey: "groupNameKey")
     }
   }
 

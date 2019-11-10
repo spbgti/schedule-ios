@@ -57,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04521C8423782A8100DCB195 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		0462639F235DA7DC00D1215A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		046263A5236184BB00D1215A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		046263A82362D37800D1215A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		04A1ED6F2368F5EA00FD8C3A /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				04521C8423782A8100DCB195 /* Widget.entitlements */,
 				04A1ED7D2368F9D600FD8C3A /* Views */,
 				04A1ED7C2368F9C100FD8C3A /* Controllers */,
 				04A1ED7E2368F9E700FD8C3A /* Extensions */,
@@ -403,6 +405,7 @@
 		04A1ED7A2368F5EA00FD8C3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -423,6 +426,7 @@
 		04A1ED7B2368F5EA00FD8C3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -563,6 +567,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = schedule/Info.plist;
@@ -583,6 +588,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = schedule/Info.plist;

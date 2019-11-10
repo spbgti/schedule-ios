@@ -13,6 +13,8 @@ class LaunchViewController: UIViewController {
   // MARK: - IBOutlet
   @IBOutlet weak var groupNameLabel: UITextField!
   
+  let userDefaults = UserDefaults(suiteName: "group.mac.schedule.sharingData")
+  
   // MARK: - Life circle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,12 +24,11 @@ class LaunchViewController: UIViewController {
   
   // MARK: - IBAction
   @IBAction func saveGroupName(_ sender: UIButton) {
-    let userDefaults = UserDefaults.standard
     let groupName = groupNameLabel.text!
     let isFirstLaunchApp = true
     
-    userDefaults.set(groupName, forKey: "groupNameKey")
-    userDefaults.set(isFirstLaunchApp, forKey: "isLaunchedBefore")
+    userDefaults?.set(groupName, forKey: "groupNameKey")
+    userDefaults?.set(isFirstLaunchApp, forKey: "isLaunchedBefore")
   }
   
 

@@ -11,7 +11,7 @@ class ViewController: UIViewController {
   
   // MARK: - Public var and let
   
-  let userDefaults = UserDefaults.standard
+  let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var data = [TableSection: [Exercise]]()
   var array = [Exercise]() {
     didSet {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     super.viewWillAppear(true)
     
     selectedControl.selectedSegmentIndex = 0
-    let groupName = self.userDefaults.string(forKey: "groupNameKey")
+    let groupName = self.userDefaults?.string(forKey: "groupNameKey")
     activityIndicator.startAnimating()
     
     if groupName == "446" {
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
   // MARK: - IBActions
   @IBAction func indexChange(_ sender: Any) {
     activityIndicator.startAnimating()
-    let groupName = self.userDefaults.string(forKey: "groupNameKey")
+    let groupName = self.userDefaults?.string(forKey: "groupNameKey")
     
     switch selectedControl.selectedSegmentIndex {
     case 0:
