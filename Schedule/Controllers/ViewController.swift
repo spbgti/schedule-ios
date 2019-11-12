@@ -4,13 +4,11 @@ import UIKit
 class ViewController: UIViewController {
   
   // MARK: - IBOutlets
-  
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var selectedControl: UISegmentedControl!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
-  // MARK: - Public var and let
-  
+  // MARK: - Properties
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var data = [TableSection: [Exercise]]()
   var array = [Exercise]() {
@@ -23,7 +21,6 @@ class ViewController: UIViewController {
   }
   
   // MARK: - Life Cicle
-  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -31,8 +28,9 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
-    selectedControl.selectedSegmentIndex = 0
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
+    
+    selectedControl.selectedSegmentIndex = 0
     activityIndicator.startAnimating()
     
     if groupName == "446" {
@@ -59,9 +57,10 @@ class ViewController: UIViewController {
   }
   
   // MARK: - IBActions
-  @IBAction func indexChange(_ sender: Any) {
-    activityIndicator.startAnimating()
+  @IBAction func selectSchedule(_ sender: Any) {
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
+    
+    activityIndicator.startAnimating()
     
     switch selectedControl.selectedSegmentIndex {
     case 0:

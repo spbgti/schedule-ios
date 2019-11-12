@@ -43,6 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		04521CB323784E4500DCB195 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04FEC63A2323F1F600EA5D25 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +273,7 @@
 				04FEC60D2321C84E00EA5D25 /* Frameworks */,
 				04FEC60E2321C84E00EA5D25 /* Resources */,
 				04FEC63A2323F1F600EA5D25 /* Embed App Extensions */,
+				04521CB323784E4500DCB195 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -280,7 +291,7 @@
 		04FEC6082321C84E00EA5D25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {

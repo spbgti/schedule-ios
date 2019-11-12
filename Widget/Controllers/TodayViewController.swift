@@ -12,6 +12,8 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var groupNumberLabelText: UILabel!
+  @IBOutlet weak var selectedControl: UISegmentedControl!
   
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var array = [Exercise]() {
@@ -34,14 +36,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   }
       
   func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-    
     let groupName = userDefaults?.string(forKey: "groupNameKey")
+    
+    // Displayed a group number
+    self.groupNumberLabelText.text = self.groupNumberLabelText.text! + groupName!
+    
+    // Selected index of selectedControl
+    self.selectedControl.selectedSegmentIndex = 0
       
-    ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
-      let groupId = String(completion[0].groupId)
-      DispatchQueue.main.async {
-        ScheduleRequest.shared.getExercises(groupId: groupId, date: "2019-09-23") { completionHandler in
-          self.array = completionHandler
+    if groupName == "446" {
+      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
+        let groupId = String(completion[0].groupId)
+        DispatchQueue.main.async {
+          ScheduleRequest.shared.getExercises(groupId: groupId, date: "2019-09-22") { completionHandler in
+            self.array = completionHandler
+          }
         }
       }
     }
@@ -54,7 +63,33 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     if activeDisplayMode == .compact {
         self.preferredContentSize = maxSize
     } else if activeDisplayMode == .expanded {
-        self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
+        self.preferredContentSize = CGSize(width: maxSize.width, height: 250)
+    }
+  }
+  
+  // MARK: - IBActions
+  @IBAction func selectSchedule(_ sender: Any) {
+    let groupName = self.userDefaults?.string(forKey: "groupNameKey")
+    
+    switch selectedControl.selectedSegmentIndex {
+    case 0:
+      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
+        DispatchQueue.main.async {
+          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
+            self.array = completionHandler
+          }
+        }
+      }
+    case 1:
+      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
+        DispatchQueue.main.async {
+          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-23") { completionHandler in
+            self.array = completionHandler
+          }
+        }
+      }
+    default:
+      break
     }
   }
     
