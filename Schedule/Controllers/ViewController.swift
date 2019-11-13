@@ -47,13 +47,28 @@ class ViewController: UIViewController {
   
   // sort data by day of the week
   private func sortData() {
-    data[.monday] = array.filter({ $0.day == "1" })
-    data[.tuesday] = array.filter({ $0.day == "2" })
-    data[.wednesday] = array.filter({ $0.day == "3" })
-    data[.thursday] = array.filter({ $0.day == "4" })
-    data[.friday] = array.filter({ $0.day == "5" })
-    data[.saturday] = array.filter({ $0.day == "6" })
-    data[.sunday] = array.filter({ $0.day == "7" })
+    self.data.removeAll()
+    
+    for exercise in array {
+      switch exercise.day {
+      case "1":
+        data[.monday] = array.filter({ $0.day == "1" })
+      case "2":
+        data[.tuesday] = array.filter({ $0.day == "2" })
+      case "3":
+        data[.wednesday] = array.filter({ $0.day == "3" })
+      case "4":
+        data[.thursday] = array.filter({ $0.day == "4" })
+      case "5":
+        data[.friday] = array.filter({ $0.day == "5" })
+      case "6":
+        data[.saturday] = array.filter({ $0.day == "6" })
+      case "7":
+        data[.sunday] = array.filter({ $0.day == "7" })
+      default:
+        break
+      }
+    }
   }
   
   // MARK: - IBActions

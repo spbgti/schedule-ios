@@ -19,9 +19,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
-    label.backgroundColor = UIColor.lightGray
+    label.backgroundColor = UIColor.white
+    label.font = UIFont.boldSystemFont(ofSize: 20.0)
     
-    if let tableSection = TableSection(rawValue: section) {
+    let keys = Array(data.keys)
+    
+    if let tableSection = keys[section] as? TableSection {
       switch tableSection {
       case .monday:
         label.text = "Monday"
@@ -50,10 +53,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   
   // Count of cells
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if let tableSection = TableSection(rawValue: section), let weekData = data[tableSection] {
-      return weekData.count
+    let keys = Array(data.keys)
+    
+    if let tableSection = keys[section] as? TableSection, let exerciseArray = data[tableSection] {
+      return exerciseArray.count
     }
     
+    // To Do: 1 cell with label "No exercise!"
     return 0
   }
   
@@ -61,8 +67,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+    let keys = Array(data.keys)
     
-    if let tableSection = TableSection(rawValue: indexPath.section), let exercise = data[tableSection]?[indexPath.row] {
+    if let tableSection = keys[indexPath.section] as? TableSection, let exercise = data[tableSection]?[indexPath.row] {
       let pair = exercise.pair
       let parity = exercise.parity
       
