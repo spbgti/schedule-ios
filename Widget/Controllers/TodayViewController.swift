@@ -14,6 +14,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var groupNumberLabelText: UILabel!
   @IBOutlet weak var selectedControl: UISegmentedControl!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var array = [Exercise]() {
@@ -43,6 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     // Selected index of selectedControl
     self.selectedControl.selectedSegmentIndex = 0
+    activityIndicator.startAnimating()
       
     if groupName == "446" {
       ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
@@ -50,6 +52,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: groupId, date: "2019-09-22") { completionHandler in
             self.array = completionHandler
+            self.activityIndicator.stopAnimating()
           }
         }
       }
@@ -71,11 +74,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBAction func selectSchedule(_ sender: Any) {
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
     
+    activityIndicator.startAnimating()
+    
     switch selectedControl.selectedSegmentIndex {
     case 0:
       ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
+            self.activityIndicator.stopAnimating()
             self.array = completionHandler
           }
         }
@@ -84,6 +90,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
       ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-23") { completionHandler in
+            self.activityIndicator.stopAnimating()
             self.array = completionHandler
           }
         }
