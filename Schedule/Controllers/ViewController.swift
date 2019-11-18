@@ -1,7 +1,7 @@
 import UIKit
 
 // MARK: - ViewController
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
   
   // MARK: - IBOutlets
   @IBOutlet weak var tableView: UITableView!
@@ -16,6 +16,8 @@ class ViewController: UIViewController {
       DispatchQueue.main.async {
         self.sortData()
         self.tableView.reloadData()
+        self.activityIndicator.stopAnimating()
+        self.tableView.isHidden = false
       }
     }
   }
@@ -37,7 +39,6 @@ class ViewController: UIViewController {
       ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
-            self.activityIndicator.stopAnimating()
             self.array = completionHandler
           }
         }
@@ -75,6 +76,7 @@ class ViewController: UIViewController {
   @IBAction func selectSchedule(_ sender: Any) {
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
     
+    tableView.isHidden = true
     activityIndicator.startAnimating()
     
     switch selectedControl.selectedSegmentIndex {
@@ -82,7 +84,6 @@ class ViewController: UIViewController {
       ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
-            self.activityIndicator.stopAnimating()
             self.array = completionHandler
           }
         }
@@ -91,7 +92,6 @@ class ViewController: UIViewController {
       ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
         DispatchQueue.main.async {
           ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-23") { completionHandler in
-            self.activityIndicator.stopAnimating()
             self.array = completionHandler
           }
         }
@@ -99,7 +99,6 @@ class ViewController: UIViewController {
     case 2:
       ScheduleRequest.shared.getSchedules(year: "2019", groupNumber: groupName!) { completion in
         DispatchQueue.main.async {
-          self.activityIndicator.stopAnimating()
           self.array = completion[0].exercises
         }
       }

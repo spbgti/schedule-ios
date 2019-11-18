@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - UITableViewDataSource and UITableViewDelegate
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
   
   // Section setting
   enum TableSection: Int {
