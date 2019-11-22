@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let userDefault = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
+    let notifications = Notifications()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+      notifications.notificationCenter.delegate = notifications
+      notifications.notificationRequest()
       
       let launchedBefore = userDefault?.bool(forKey: "isLaunchedBefore")
       let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4864" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -86,7 +86,8 @@
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="joW-iO-0Sb">
                                 <rect key="frame" x="16" y="107" width="340" height="511"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="CustomColor"/>
+                                <color key="backgroundColor" name="BackgroundCustomColor"/>
+                                <color key="tintColor" name="BackgroundCustomColor"/>
                                 <color key="separatorColor" name="BackgroundCustomColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -109,6 +110,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6R-Al-8ew">
                                                     <rect key="frame" x="115" y="0.0" width="219" height="59"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="BackgroundCustomColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -145,12 +147,14 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-FP-wCt">
                                 <rect key="frame" x="16" y="46" width="340" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="selectedControlBackgroundColor"/>
                                 <segments>
                                     <segment title="Today"/>
                                     <segment title="Tommorow"/>
                                     <segment title="Full"/>
                                 </segments>
+                                <color key="tintColor" name="selectedControlBackgroundColor"/>
+                                <color key="selectedSegmentTintColor" name="selectedControlSelectedTint"/>
                                 <connections>
                                     <action selector="selectSchedule:" destination="ytH-sO-6WK" eventType="valueChanged" id="WPE-Tu-KZo"/>
                                 </connections>
@@ -179,7 +183,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="EqU-P0-w9X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94857853650000001" green="0.95024508240000005" blue="0.96689516310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="SettingBackgroundColor"/>
+                        <color key="tintColor" name="SettingBackgroundColor"/>
                         <sections>
                             <tableViewSection footerTitle="  " id="lvu-4b-G0t">
                                 <cells>
@@ -245,11 +250,12 @@
         <!--Notifications-->
         <scene sceneID="BF9-IQ-DoB">
             <objects>
-                <tableViewController id="avg-vc-lb5" sceneMemberID="viewController">
+                <tableViewController id="avg-vc-lb5" customClass="NotificationSettingTableViewController" customModule="schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="p05-V6-MyF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94857853650000001" green="0.95024508240000005" blue="0.96689516310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="SettingBackgroundColor"/>
+                        <color key="tintColor" name="SettingBackgroundColor"/>
                         <sections>
                             <tableViewSection id="QqE-zu-7D0">
                                 <cells>
@@ -270,7 +276,38 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-Ex-Kwl">
                                                     <rect key="frame" x="310" y="7" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="allowNotification:" destination="avg-vc-lb5" eventType="valueChanged" id="WvF-FW-iM1"/>
+                                                    </connections>
                                                 </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Reminders" id="Ujm-72-7Be">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TK8-Vu-0Cx">
+                                        <rect key="frame" x="0.0" y="117.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TK8-Vu-0Cx" id="TAP-BB-Xln">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Evening reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlI-hz-iiZ">
+                                                    <rect key="frame" x="16" y="0.0" width="161" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-Rh-Eyz">
+                                                    <rect key="frame" x="185" y="5" width="174" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -283,10 +320,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notifications" id="D5w-7X-hCs"/>
+                    <connections>
+                        <outlet property="allowNotificationSwitch" destination="5Sq-Ex-Kwl" id="2vd-4D-GrE"/>
+                        <outlet property="eveningReminderTextField" destination="4Cm-Rh-Eyz" id="3e7-zw-miT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0j-9V-OmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="1282"/>
+            <point key="canvasLocation" x="2840.8000000000002" y="1281.4092953523239"/>
         </scene>
         <!--Data Setting-->
         <scene sceneID="ohw-Li-RSG">
@@ -295,7 +336,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dZZ-DE-FVr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94857853650000001" green="0.95024508240000005" blue="0.96689516310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="SettingBackgroundColor"/>
+                        <color key="tintColor" name="SettingBackgroundColor"/>
                         <sections>
                             <tableViewSection footerTitle="Enter your group number to see exercises on mian app, widget and apple watch" id="zxB-dF-ATr">
                                 <cells>
@@ -366,7 +408,13 @@
         <namedColor name="BackgroundCustomColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="CustomColor">
+        <namedColor name="SettingBackgroundColor">
+            <color red="0.94857853650000001" green="0.95024508240000005" blue="0.96689516310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selectedControlBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selectedControlSelectedTint">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

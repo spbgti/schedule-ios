@@ -11,17 +11,14 @@ import UIKit
 class DataSettingTableViewController: UITableViewController {
 
   // MARK: - IBOutlets
-  
   @IBOutlet weak var groupNumberTextField: UITextField!
   
   
   // MARK: - Properties
-  
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
     
       //self.clearsSelectionOnViewWillAppear = true
 

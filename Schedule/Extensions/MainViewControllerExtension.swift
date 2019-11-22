@@ -19,8 +19,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
-    label.backgroundColor = UIColor.white
-    label.font = UIFont.boldSystemFont(ofSize: 20.0)
+    label.font = UIFont.boldSystemFont(ofSize: 22.0)
     
     let keys = Array(data.keys)
     
