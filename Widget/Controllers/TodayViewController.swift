@@ -14,12 +14,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var groupNumberLabelText: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var errorLabelText: UILabel! {
+    didSet{
+      self.errorLabelText.isHidden = false
+    }
+  }
   
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var array = [Exercise]() {
     didSet {
       DispatchQueue.main.async {
         self.tableView.reloadData()
+        self.errorLabelText.isHidden = true
         self.activityIndicator.stopAnimating()
       }
     }
@@ -43,13 +49,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     self.groupNumberLabelText.text = self.groupNumberLabelText.text! + groupName!
     activityIndicator.startAnimating()
       
-    if groupName == "446" {
-      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
-        let groupId = String(completion[0].groupId)
-        DispatchQueue.main.async {
-          ScheduleRequest.shared.getExercises(groupId: groupId, date: "2019-09-22") { completionHandler in
-            self.array = completionHandler
-          }
+    DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "22-09-2019") { completionHandler in
+      DispatchQueue.main.async {
+        switch completionHandler {
+        case .success(let result):
+          self.array = result
+        case .failure(let error):
+          self.activityIndicator.stopAnimating()
+          self.errorLabelText.text = error
         }
       }
     }
@@ -85,15 +92,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
       break
     }
     
-    ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
+    DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: date) { completionHandler in
       DispatchQueue.main.async {
-        ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: date) { completionHandler in
-          self.array = completionHandler
+        switch completionHandler {
+        case .success(let result):
+          self.array = result
+        case .failure(let error):
+          self.activityIndicator.stopAnimating()
+          self.errorLabelText.text = error
         }
       }
     }
   }
   
 }
-
-

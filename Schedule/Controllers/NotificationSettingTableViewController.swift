@@ -25,11 +25,19 @@ class NotificationSettingTableViewController: UITableViewController {
     datePicker?.datePickerMode = .time
     eveningReminderTextField.inputView = datePicker
     
+    // Create a toolbar
+    let toolbar = UIToolbar()
+    toolbar.sizeToFit()
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeDatePicker))
+    let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    toolbar.setItems([flexSpace, doneButton], animated: true)
+    eveningReminderTextField.inputAccessoryView = toolbar
+  
     // Change value by Date Picker
     datePicker?.addTarget(self, action: #selector(dateChange), for: .valueChanged)
     
     // Tap Gesture
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureDone))
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeDatePicker))
     self.view.addGestureRecognizer(tapGesture)
   }
   
@@ -43,33 +51,41 @@ class NotificationSettingTableViewController: UITableViewController {
         } else {
           self.allowNotificationSwitch.isOn = false
         }
-        
       }
     }
+    
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(true)
     
-    if let time = eveningReminderTextField.text
+    let time = eveningReminderTextField.text!
+    if time != "None"
     {
       notifications.scheduleNotification(time: dateFormatter(string: time)) { completionHandler in
-        
+        // to do something
       }
     }
   }
   
   @IBAction func allowNotification(_ sender: UISwitch) {
     // TODO: - Allow and unallow local notification
+    
   }
   
   @objc func dateChange() {
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm"
-    eveningReminderTextField.text = formatter.string(from: datePicker!.date)
+    
+    if let time = datePicker?.date {
+      eveningReminderTextField.text = formatter.string(from: time)
+    } else {
+      eveningReminderTextField.text = "None"
+    }
+    
   }
   
-  @objc func tapGestureDone() {
+  @objc func closeDatePicker() {
     view.endEditing(true)
   }
   

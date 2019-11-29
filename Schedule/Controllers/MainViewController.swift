@@ -35,14 +35,62 @@ class MainViewController: UIViewController {
     selectedControl.selectedSegmentIndex = 0
     activityIndicator.startAnimating()
     
-    if groupName == "446" {
-      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
+    DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "2019-09-22") { completionHandler in
+      DispatchQueue.main.async {
+        switch completionHandler {
+        case .success(let result):
+          self.array = result
+        case .failure(let error):
+          self.activityIndicator.stopAnimating()
+          self.showErrorMessage(message: error)
+        }
+      }
+    }
+  }
+  
+  // MARK: - IBActions
+  @IBAction func selectSchedule(_ sender: Any) {
+    let groupName = self.userDefaults?.string(forKey: "groupNameKey")
+    
+    tableView.isHidden = true
+    activityIndicator.startAnimating()
+    
+    switch selectedControl.selectedSegmentIndex {
+    case 0:
+      DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "2019-09-22") { completionHandler in
         DispatchQueue.main.async {
-          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
-            self.array = completionHandler
+          switch completionHandler {
+          case .success(let result):
+            self.array = result
+          case .failure(let error):
+            self.showErrorMessage(message: error)
           }
         }
       }
+    case 1:
+      DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "2019-09-23") { completionHandler in
+        DispatchQueue.main.async {
+          switch completionHandler {
+          case .success(let result):
+            self.array = result
+          case .failure(let error):
+            self.showErrorMessage(message: error)
+          }
+        }
+      }
+    case 2:
+      DataManager.shared.getSchedules(year: "2019", groupNumber: groupName!) { completion in
+        DispatchQueue.main.async {
+          switch completion {
+          case .success(let result):
+            self.array = result[0].exercises
+          case .failure(let error):
+            self.showErrorMessage(message: error)
+          }
+        }
+      }
+    default:
+      break
     }
   }
   
@@ -72,39 +120,12 @@ class MainViewController: UIViewController {
     }
   }
   
-  // MARK: - IBActions
-  @IBAction func selectSchedule(_ sender: Any) {
-    let groupName = self.userDefaults?.string(forKey: "groupNameKey")
-    
-    tableView.isHidden = true
-    activityIndicator.startAnimating()
-    
-    switch selectedControl.selectedSegmentIndex {
-    case 0:
-      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
-        DispatchQueue.main.async {
-          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-22") { completionHandler in
-            self.array = completionHandler
-          }
-        }
-      }
-    case 1:
-      ScheduleRequest.shared.getGroups(groupName: groupName!) { completion in
-        DispatchQueue.main.async {
-          ScheduleRequest.shared.getExercises(groupId: String(completion[0].groupId), date: "2019-09-23") { completionHandler in
-            self.array = completionHandler
-          }
-        }
-      }
-    case 2:
-      ScheduleRequest.shared.getSchedules(year: "2019", groupNumber: groupName!) { completion in
-        DispatchQueue.main.async {
-          self.array = completion[0].exercises
-        }
-      }
-    default:
-      break
-    }
+  // UIAllertController
+  func showErrorMessage(message: String) {
+    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default)
+    alertController.addAction(okAction)
+    self.present(alertController, animated: true)
   }
   
 }
