@@ -24,8 +24,14 @@ class APIManager {
   
   // MARK: - 'GET' Request
   func getData<T: Decodable>(url: String, isCache: Bool, completion: @escaping(Result<T>) -> Void) {
+<<<<<<< HEAD
     guard let url = URL(string: "\(pathToAPI + url)") else { return completion(.failure("Invalid URL")) }
     
+=======
+    
+    guard let url = URL(string: "\(pathToAPI + url)") else { return completion(.failure("Invalid URL")) }
+    
+>>>>>>> 86a154830eb3dca457b081a86d4a8de5226b9ff6
     let cache = URLCache.shared
     let request = URLRequest(url: url)
     let jsonDecoder = JSONDecoder()
