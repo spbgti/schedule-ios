@@ -14,11 +14,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var groupNumberLabelText: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  @IBOutlet weak var errorLabelText: UILabel! {
-    didSet{
-      self.errorLabelText.isHidden = false
-    }
-  }
+  @IBOutlet weak var errorLabelText: UILabel!
   
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var array = [Exercise]() {
@@ -33,6 +29,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Hide error label befor return error
+    errorLabelText.isHidden = true
     
     // Setiing tableView's delegate and dataSource
     self.tableView.delegate = self
@@ -49,13 +48,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     self.groupNumberLabelText.text = self.groupNumberLabelText.text! + groupName!
     activityIndicator.startAnimating()
       
-    DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "22-09-2019") { completionHandler in
+    DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "2019-09-22") { completionHandler in
       DispatchQueue.main.async {
         switch completionHandler {
         case .success(let result):
           self.array = result
         case .failure(let error):
           self.activityIndicator.stopAnimating()
+          self.errorLabelText.isHidden = false
           self.errorLabelText.text = error
         }
       }
@@ -100,6 +100,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         case .failure(let error):
           self.activityIndicator.stopAnimating()
           self.errorLabelText.text = error
+          self.errorLabelText.isHidden = false
         }
       }
     }
