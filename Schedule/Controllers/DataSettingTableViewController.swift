@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataSettingTableViewController: UITableViewController {
+class DataSettingTableViewController: UITableViewController, UITextFieldDelegate {
 
   // MARK: - IBOutlets
   @IBOutlet weak var groupNumberTextField: UITextField!
@@ -18,6 +18,7 @@ class DataSettingTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    groupNumberTextField.delegate = self
     
     // Tap Gesture
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
@@ -42,7 +43,12 @@ class DataSettingTableViewController: UITableViewController {
   
   // MARK: - Helpers
   @objc func closeKeyboard() {
-    view.endEditing(true)
+    groupNumberTextField.resignFirstResponder()
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    groupNumberTextField.resignFirstResponder()
+    return true
   }
 
 }
