@@ -2,16 +2,13 @@ import Foundation
 
 class DataManager {
   
-  private let pathToAPI = "https://spbgti-tools-schedule-staging.herokuapp.com/api/"
-  
   static var shared = DataManager()
-  
   private init() {}
   
   func getGroups(groupName: String, completionHandler: @escaping(Result<[Group]>) -> Void) {
-    let urlString = "\(pathToAPI)groups?number=\(groupName)"
+    let urlRequest = "groups?number=\(groupName)"
     
-    APIManager.shared.urlSession(url: urlString) { (completion: Result<[Group]>) in
+    APIManager.shared.getData(url: urlRequest, isCache: false) { (completion: Result<[Group]>) in
       DispatchQueue.main.async {
         switch completion {
         case .success(let result):
@@ -28,9 +25,9 @@ class DataManager {
   }
   
   func getExercises(groupId: String, date: String, completionHandler: @escaping(Result<[Exercise]>) -> Void) {
-    let urlString = "\(pathToAPI)exercises?group_id=\(groupId)&date=\(date)"
+    let urlRequest = "exercises?group_id=\(groupId)&date=\(date)"
 
-    APIManager.shared.urlSession(url: urlString) { (completion: Result<[Exercise]>) in
+    APIManager.shared.getData(url: urlRequest, isCache: true) { (completion: Result<[Exercise]>) in
       DispatchQueue.main.async {
         switch completion {
         case .success(let result):
@@ -65,13 +62,13 @@ class DataManager {
   }
   
   func getSchedules(year: String, groupNumber: String, completionHandler: @escaping(Result<[Schedule]>) -> Void) {
-    let urlString = "\(pathToAPI)schedules?year=\(year)&group_number=\(groupNumber)"
+    let urlRequest = "schedules?year=\(year)&group_number=\(groupNumber)"
 
     getGroups(groupName: groupNumber) { groupCompletion in
       DispatchQueue.main.async{
         switch groupCompletion {
         case .success( _):
-          APIManager.shared.urlSession(url: urlString) { (scheduleCompletion: Result<[Schedule]>) in
+          APIManager.shared.getData(url: urlRequest, isCache: true) { (scheduleCompletion: Result<[Schedule]>) in
             switch scheduleCompletion {
             case .success(let result):
               completionHandler(.success(result))

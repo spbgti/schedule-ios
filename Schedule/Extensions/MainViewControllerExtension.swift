@@ -8,22 +8,27 @@
 
 import UIKit
 
-// MARK: - UITableViewDataSource and UITableViewDelegate
+// MARK: - Kind of section
+enum WeekDaySection: Int {
+  case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
+}
 
+// MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-  
-  // Section setting
-  enum TableSection: Int {
-    case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
+
+  // Count of sections
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return sortedExercises.count
   }
   
+  // Section settings
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
     label.font = UIFont.boldSystemFont(ofSize: 22.0)
     
-    let keys = Array(data.keys)
+    let keys = Array(sortedExercises.keys)
     
-    if let tableSection = keys[section] as? TableSection {
+    if let tableSection = keys[section] as? WeekDaySection {
       switch tableSection {
       case .monday:
         label.text = "Monday"
@@ -45,34 +50,29 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     return label
   }
   
-  // Count of sections
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return data.count
-  }
-  
   // Count of cells
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let keys = Array(data.keys)
+    let keys = Array(sortedExercises.keys)
     
-    if let tableSection = keys[section] as? TableSection, let exerciseArray = data[tableSection] {
+    if let tableSection = keys[section] as? WeekDaySection, let exerciseArray = sortedExercises[tableSection] {
       return exerciseArray.count
     }
     
-    // To Do: 1 cell with label "No exercise!"
     return 0
   }
   
-  // Cell setting
+  // Cell settings
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-    let keys = Array(data.keys)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+    let keys = Array(sortedExercises.keys)
     
-    if let tableSection = keys[indexPath.section] as? TableSection, let exercise = data[tableSection]?[indexPath.row] {
-      let pair = exercise.pair
-      let parity = exercise.parity
+    if let tableSection = keys[indexPath.section] as? WeekDaySection, let sortedExercises = sortedExercises[tableSection]?[indexPath.row] {
+      let exercisePair = sortedExercises.pair
+      let exerciseParity = sortedExercises.parity
+      let exerciseName = sortedExercises.name
       
-      switch pair {
+      switch exercisePair {
       case "1":
         cell.timeLabel?.text = "09:30\n11:00"
       case "2":
@@ -87,7 +87,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         break
       }
       
-      switch parity {
+      switch exerciseParity {
       case "1":
         cell.parityLabelText?.text = "нечет."
       case "2":
@@ -96,7 +96,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.parityLabelText?.text = ""
       }
       
-      cell.exerciseLabel?.text = exercise.name
+      cell.exerciseLabel?.text = exerciseName
     }
     
     return cell

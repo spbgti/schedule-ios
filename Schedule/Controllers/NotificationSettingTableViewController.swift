@@ -11,11 +11,12 @@ import UserNotifications
 
 class NotificationSettingTableViewController: UITableViewController {
   
-  @IBOutlet weak var allowNotificationSwitch: UISwitch!
   @IBOutlet weak var eveningReminderTextField: UITextField!
-  private var datePicker: UIDatePicker?
+  @IBOutlet weak var reminderSwitch: UISwitch!
   
-  let notifications = Notifications()
+  private var datePicker: UIDatePicker?
+  private let notifications = Notifications()
+  private let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,8 +29,8 @@ class NotificationSettingTableViewController: UITableViewController {
     // Create a toolbar
     let toolbar = UIToolbar()
     toolbar.sizeToFit()
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeDatePicker))
     let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeDatePicker))
     toolbar.setItems([flexSpace, doneButton], animated: true)
     eveningReminderTextField.inputAccessoryView = toolbar
   
@@ -44,35 +45,53 @@ class NotificationSettingTableViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
+    // Set up time value to textField
+    if let eveningReminderTime = userDefaults?.string(forKey: "eveningReminderTime") {
+      eveningReminderTextField.text = eveningReminderTime
+    } else {
+      eveningReminderTextField.text = "20:00"
+    }
+    
+    // Switch on/off reminder
+    if let reminderSwitch = userDefaults?.bool(forKey: "reminderSwitch") {
+      self.reminderSwitch.isOn = reminderSwitch
+    } else {
+      self.reminderSwitch.isOn = false
+    }
+    
+    // Go to setting to allow notification
     notifications.notificationCenter.getNotificationSettings { (setting) in
       DispatchQueue.main.async {
-        if setting.authorizationStatus == .authorized {
-          self.allowNotificationSwitch.isOn = true
-        } else {
-          self.allowNotificationSwitch.isOn = false
+        if setting.authorizationStatus != .authorized {
+          self.goToSetting()
         }
       }
     }
     
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(true)
+  @IBAction func switchReminder(_ sender: UISwitch) {
+    let eveningReminderTime = eveningReminderTextField.text!
     
-    let time = eveningReminderTextField.text!
-    if time != "None"
-    {
-      notifications.scheduleNotification(time: dateFormatter(string: time)) { completionHandler in
+    switch sender.isOn {
+    case true:
+      eveningReminderTextField.isUserInteractionEnabled = true
+      notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
         // to do something
       }
+      self.userDefaults?.set(eveningReminderTime, forKey: "eveningReminderTime")
+      self.userDefaults?.set(true, forKey: "reminderSwitch")
+      
+    case false:
+      eveningReminderTextField.isUserInteractionEnabled = false
+      notifications.removeNotifications(withIdentifiers: ["Identifier"])
+      self.userDefaults?.set(false, forKey: "reminderSwitch")
     }
   }
   
-  @IBAction func allowNotification(_ sender: UISwitch) {
-    // TODO: - Allow and unallow local notification
-    
-  }
-  
+  //
+  // MARK: - Helpers
+  //
   @objc func dateChange() {
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm"
@@ -82,10 +101,16 @@ class NotificationSettingTableViewController: UITableViewController {
     } else {
       eveningReminderTextField.text = "None"
     }
-    
   }
   
   @objc func closeDatePicker() {
+    let eveningReminderTime = eveningReminderTextField.text!
+    
+    notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
+      // to do something
+    }
+    self.userDefaults?.set(eveningReminderTime, forKey: "eveningReminderTime")
+    
     view.endEditing(true)
   }
   
@@ -94,6 +119,28 @@ class NotificationSettingTableViewController: UITableViewController {
     dateFormatter.dateFormat = "HH:mm"
     
     return dateFormatter.date(from: string)!
+  }
+  
+  func goToSetting() {
+    let alertController = UIAlertController (title: "Do you want go to the setting app to allow notification", message: "", preferredStyle: .alert)
+
+    let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+
+      guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+          return
+      }
+
+      if UIApplication.shared.canOpenURL(settingsURL) {
+        UIApplication.shared.open(settingsURL)
+      }
+    }
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+    
+    alertController.addAction(settingsAction)
+    alertController.addAction(cancelAction)
+
+    self.present(alertController, animated: true)
   }
   
 }
