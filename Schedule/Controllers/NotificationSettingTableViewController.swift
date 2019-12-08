@@ -24,6 +24,7 @@ class NotificationSettingTableViewController: UITableViewController {
     // Setting of Data Picker
     datePicker = UIDatePicker()
     datePicker?.datePickerMode = .time
+    datePicker?.minuteInterval = 5
     eveningReminderTextField.inputView = datePicker
     
     // Create a toolbar
@@ -49,7 +50,7 @@ class NotificationSettingTableViewController: UITableViewController {
     if let eveningReminderTime = userDefaults?.string(forKey: "eveningReminderTime") {
       eveningReminderTextField.text = eveningReminderTime
     } else {
-      eveningReminderTextField.text = "20:00"
+      eveningReminderTextField.text = "00:00"
     }
     
     // Switch on/off reminder
@@ -75,7 +76,6 @@ class NotificationSettingTableViewController: UITableViewController {
     
     switch sender.isOn {
     case true:
-      eveningReminderTextField.isUserInteractionEnabled = true
       notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
         // to do something
       }
@@ -83,7 +83,6 @@ class NotificationSettingTableViewController: UITableViewController {
       self.userDefaults?.set(true, forKey: "reminderSwitch")
       
     case false:
-      eveningReminderTextField.isUserInteractionEnabled = false
       notifications.removeNotifications(withIdentifiers: ["Identifier"])
       self.userDefaults?.set(false, forKey: "reminderSwitch")
     }
@@ -98,18 +97,18 @@ class NotificationSettingTableViewController: UITableViewController {
     
     if let time = datePicker?.date {
       eveningReminderTextField.text = formatter.string(from: time)
-    } else {
-      eveningReminderTextField.text = "None"
     }
   }
   
   @objc func closeDatePicker() {
     let eveningReminderTime = eveningReminderTextField.text!
     
-    notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
-      // to do something
-    }
     self.userDefaults?.set(eveningReminderTime, forKey: "eveningReminderTime")
+    if reminderSwitch.isOn {
+      notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
+        // to do something
+      }
+    }
     
     view.endEditing(true)
   }

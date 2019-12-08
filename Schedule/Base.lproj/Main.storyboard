@@ -257,7 +257,7 @@
                         <color key="backgroundColor" name="SettingBackgroundColor"/>
                         <color key="tintColor" name="SettingBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Evening reminder" footerTitle="Reminds you to see the schedule in the range 20:00 - 23:00" id="Ujm-72-7Be">
+                            <tableViewSection headerTitle="Reminder" footerTitle="Reminds you to see the schedule" id="Ujm-72-7Be">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TK8-Vu-0Cx">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
@@ -269,8 +269,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Cm-Rh-Eyz">
                                                     <rect key="frame" x="16" y="5" width="141" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXU-6l-WKE">
