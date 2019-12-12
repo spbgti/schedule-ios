@@ -76,7 +76,7 @@ class NotificationSettingTableViewController: UITableViewController {
     
     switch sender.isOn {
     case true:
-      notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
+      notifications.scheduleNotification(time: Date.dateFormatter(date: eveningReminderTime, dateFormat: "HH:mm")) { completionHandler in
         // to do something
       }
       self.userDefaults?.set(eveningReminderTime, forKey: "eveningReminderTime")
@@ -92,11 +92,8 @@ class NotificationSettingTableViewController: UITableViewController {
   // MARK: - Helpers
   //
   @objc func dateChange() {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "HH:mm"
-    
     if let time = datePicker?.date {
-      eveningReminderTextField.text = formatter.string(from: time)
+      eveningReminderTextField.text = Date.dateFormatter(date: time, dateFormat: "HH:mm")
     }
   }
   
@@ -105,19 +102,12 @@ class NotificationSettingTableViewController: UITableViewController {
     
     self.userDefaults?.set(eveningReminderTime, forKey: "eveningReminderTime")
     if reminderSwitch.isOn {
-      notifications.scheduleNotification(time: dateFormatter(string: eveningReminderTime)) { completionHandler in
+      notifications.scheduleNotification(time: Date.dateFormatter(date: eveningReminderTime, dateFormat: "HH:mm")) { completionHandler in
         // to do something
       }
     }
     
     view.endEditing(true)
-  }
-  
-  func dateFormatter(string: String) -> Date {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "HH:mm"
-    
-    return dateFormatter.date(from: string)!
   }
   
   func goToSetting() {
