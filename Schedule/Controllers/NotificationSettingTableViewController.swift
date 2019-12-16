@@ -14,29 +14,38 @@ class NotificationSettingTableViewController: UITableViewController {
   @IBOutlet weak var eveningReminderTextField: UITextField!
   @IBOutlet weak var reminderSwitch: UISwitch!
   
-  private var datePicker: UIDatePicker?
   private let notifications = Notifications()
   private let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
+  
+  // DatePicker view
+  lazy var datePicker: UIDatePicker = {
+    let datePicker = UIDatePicker()
+    datePicker.datePickerMode = .time
+    datePicker.minuteInterval = 5
+    
+    return datePicker
+  }()
+  
+  // ToolBar view
+  lazy var toolBar: UIToolbar = {
+    let toolBar = UIToolbar()
+    toolBar.sizeToFit()
+    let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeDatePicker))
+    toolBar.setItems([flexSpace, doneButton], animated: true)
+    
+    return toolBar
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Setting of Data Picker
-    datePicker = UIDatePicker()
-    datePicker?.datePickerMode = .time
-    datePicker?.minuteInterval = 5
+    // Add DatePicker and ToolBar
     eveningReminderTextField.inputView = datePicker
-    
-    // Create a toolbar
-    let toolbar = UIToolbar()
-    toolbar.sizeToFit()
-    let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeDatePicker))
-    toolbar.setItems([flexSpace, doneButton], animated: true)
-    eveningReminderTextField.inputAccessoryView = toolbar
+    eveningReminderTextField.inputAccessoryView = toolBar
   
     // Change value by Date Picker
-    datePicker?.addTarget(self, action: #selector(dateChange), for: .valueChanged)
+    datePicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
     
     // Tap Gesture
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeDatePicker))
@@ -92,9 +101,8 @@ class NotificationSettingTableViewController: UITableViewController {
   // MARK: - Helpers
   //
   @objc func dateChange() {
-    if let time = datePicker?.date {
-      eveningReminderTextField.text = Date.dateFormatter(date: time, dateFormat: "HH:mm")
-    }
+    let time = datePicker.date
+    eveningReminderTextField.text = Date.dateFormatter(date: time, dateFormat: "HH:mm")
   }
   
   @objc func closeDatePicker() {
