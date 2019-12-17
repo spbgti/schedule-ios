@@ -7,21 +7,35 @@ class MainViewController: UIViewController {
   @IBOutlet weak var selectedControl: UISegmentedControl!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
+  // MARK: - Views
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.tintColor = UIColor.systemBlue
+    
+    refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+    
+    return refreshControl
+  }()
+  
   // MARK: - Properties
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var sortedExercises = [WeekDaySection: [Exercise]]()
   var exercises = [Exercise]() {
     didSet {
       self.sortData()
-      self.tableView.reloadData()
-      self.activityIndicator.stopAnimating()
-      self.tableView.isHidden = false
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+        self.activityIndicator.stopAnimating()
+        self.tableView.isHidden = false
+      }
     }
   }
   
   // MARK: - Life Cicle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.tableView.addSubview(self.refreshControl)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +62,9 @@ class MainViewController: UIViewController {
   // MARK: - IBActions
   @IBAction func selectSchedule(_ sender: Any) {
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
+    let today = Date.today
+    let tomorrow = Date.tomorrow
+    let year = Date.year
     
     tableView.isHidden = true
     activityIndicator.startAnimating()
@@ -124,6 +141,16 @@ class MainViewController: UIViewController {
     
     alertController.addAction(okAction)
     self.present(alertController, animated: true)
+  }
+  
+  @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+    let cache = URLCache.shared
+    cache.removeAllCachedResponses()
+    
+    // TODO: - Remove cache for selectedControl.index, if no internet
+    DispatchQueue.main.async {
+      refreshControl.endRefreshing()
+    }
   }
   
 }
