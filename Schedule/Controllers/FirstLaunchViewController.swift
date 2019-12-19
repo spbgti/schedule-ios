@@ -8,14 +8,18 @@
 
 import UIKit
 
-class LaunchViewController: UIViewController {
+class FirstLaunchViewController: UIViewController {
   
   // MARK: - IBOutlet
+  
   @IBOutlet weak var groupNameLabel: UITextField!
+  
+  // MARK: - Properties
   
   let userDefaults = UserDefaults(suiteName: "group.mac.schedule.sharingData")
   
   // MARK: - IBAction
+  
   @IBAction func saveGroupName(_ sender: UIButton) {
     let groupName = groupNameLabel.text!
     let isFirstLaunchApp = true

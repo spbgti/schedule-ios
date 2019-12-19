@@ -14,7 +14,7 @@ enum WeekDaySection: Int {
 }
 
 // MARK: - UITableViewDataSource
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 
   // Count of sections
   func numberOfSections(in tableView: UITableView) -> Int {

@@ -11,13 +11,18 @@ import UserNotifications
 
 class NotificationSettingTableViewController: UITableViewController {
   
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var eveningReminderTextField: UITextField!
   @IBOutlet weak var reminderSwitch: UISwitch!
+  
+  // MARK: - Properties
   
   private let notifications = Notifications()
   private let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   
-  // DatePicker view
+  // MARK: - Views
+  
   lazy var datePicker: UIDatePicker = {
     let datePicker = UIDatePicker()
     datePicker.datePickerMode = .time
@@ -26,7 +31,6 @@ class NotificationSettingTableViewController: UITableViewController {
     return datePicker
   }()
   
-  // ToolBar view
   lazy var toolBar: UIToolbar = {
     let toolBar = UIToolbar()
     toolBar.sizeToFit()
@@ -36,6 +40,8 @@ class NotificationSettingTableViewController: UITableViewController {
     
     return toolBar
   }()
+  
+  // MARK: - Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -80,6 +86,8 @@ class NotificationSettingTableViewController: UITableViewController {
     
   }
   
+  // MARK: - IBActions
+  
   @IBAction func switchReminder(_ sender: UISwitch) {
     let eveningReminderTime = eveningReminderTextField.text!
     
@@ -97,9 +105,32 @@ class NotificationSettingTableViewController: UITableViewController {
     }
   }
   
-  //
-  // MARK: - Helpers
-  //
+  // MARK: - Functions
+  
+  func goToSetting() {
+     let alertController = UIAlertController (title: "Do you want go to the setting app to allow notification", message: "", preferredStyle: .alert)
+
+     let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+
+       guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+           return
+       }
+
+       if UIApplication.shared.canOpenURL(settingsURL) {
+         UIApplication.shared.open(settingsURL)
+       }
+     }
+     
+     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+     
+     alertController.addAction(settingsAction)
+     alertController.addAction(cancelAction)
+
+     self.present(alertController, animated: true)
+   }
+  
+  // MARK: - @objc functions
+  
   @objc func dateChange() {
     let time = datePicker.date
     eveningReminderTextField.text = Date.dateFormatter(date: time, dateFormat: "HH:mm")
@@ -116,28 +147,6 @@ class NotificationSettingTableViewController: UITableViewController {
     }
     
     view.endEditing(true)
-  }
-  
-  func goToSetting() {
-    let alertController = UIAlertController (title: "Do you want go to the setting app to allow notification", message: "", preferredStyle: .alert)
-
-    let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
-
-      guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
-          return
-      }
-
-      if UIApplication.shared.canOpenURL(settingsURL) {
-        UIApplication.shared.open(settingsURL)
-      }
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-    
-    alertController.addAction(settingsAction)
-    alertController.addAction(cancelAction)
-
-    self.present(alertController, animated: true)
   }
   
 }

@@ -1,13 +1,15 @@
 import UIKit
 
-class MainViewController: UIViewController {
+class ScheduleViewController: UIViewController {
   
   // MARK: - IBOutlets
+  
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var selectedControl: UISegmentedControl!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   // MARK: - Views
+  
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.tintColor = UIColor.systemBlue
@@ -18,6 +20,10 @@ class MainViewController: UIViewController {
   }()
   
   // MARK: - Properties
+  
+  let today = Date.today
+  let tomorrow = Date.tomorrow
+  let year = Date.year
   let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   var sortedExercises = [WeekDaySection: [Exercise]]()
   var exercises = [Exercise]() {
@@ -32,6 +38,7 @@ class MainViewController: UIViewController {
   }
   
   // MARK: - Life Cicle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -60,11 +67,9 @@ class MainViewController: UIViewController {
   }
   
   // MARK: - IBActions
+  
   @IBAction func selectSchedule(_ sender: Any) {
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
-    let today = Date.today
-    let tomorrow = Date.tomorrow
-    let year = Date.year
     
     tableView.isHidden = true
     activityIndicator.startAnimating()
@@ -109,6 +114,7 @@ class MainViewController: UIViewController {
   }
   
   // MARK: - Sort data by day of the week
+  
    private func sortData() {
      self.sortedExercises.removeAll()
      
@@ -135,6 +141,7 @@ class MainViewController: UIViewController {
    }
   
   // MARK: - UIAllertController
+  
   func showErrorMessage(message: String) {
     let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
     let okAction = UIAlertAction(title: "OK", style: .default)
@@ -142,6 +149,8 @@ class MainViewController: UIViewController {
     alertController.addAction(okAction)
     self.present(alertController, animated: true)
   }
+  
+  // MARK: - @objc functions
   
   @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
     let cache = URLCache.shared
