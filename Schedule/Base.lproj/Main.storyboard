@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sU-KI-MaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1311.2" y="44.527736131934034"/>
+            <point key="canvasLocation" x="-998" y="45"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TDY-TY-XOm">
@@ -95,7 +95,7 @@
                                 <color key="sectionIndexBackgroundColor" name="BackgroundCustomColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" name="BackgroundCustomColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="59" id="Tjn-Ks-aTk" customClass="CustomTableViewCell" customModule="schedule">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="59" id="Tjn-Ks-aTk" customClass="ScheduleTableViewCell" customModule="schedule" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="340" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tjn-Ks-aTk" id="diu-ve-3qh">
@@ -140,11 +140,6 @@
                                     <outlet property="delegate" destination="ytH-sO-6WK" id="F9N-Wt-G6g"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="center" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="zki-o9-tHm">
-                                <rect key="frame" x="-1.1724739241171847" y="295.12572523127801" width="375.00000000000028" height="76.999999999999986"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-FP-wCt">
                                 <rect key="frame" x="16" y="46" width="340" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -168,14 +163,13 @@
                     <tabBarItem key="tabBarItem" title="Schedule" image="list.dash" catalog="system" id="e07-Pn-4BN"/>
                     <navigationItem key="navigationItem" id="Hcs-72-dwL"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="zki-o9-tHm" id="Td6-dQ-xU3"/>
-                        <outlet property="selectedControl" destination="V7q-FP-wCt" id="W6C-fC-x3q"/>
+                        <outlet property="segmentedControl" destination="V7q-FP-wCt" id="W6C-fC-x3q"/>
                         <outlet property="tableView" destination="joW-iO-0Sb" id="LDt-BF-baF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbG-QD-sxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="45"/>
+            <point key="canvasLocation" x="721" y="45"/>
         </scene>
         <!--Setting-->
         <scene sceneID="5sH-P1-FWD">
@@ -246,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEK-p4-xeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="815"/>
+            <point key="canvasLocation" x="1506" y="815"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="BF9-IQ-DoB">
@@ -299,7 +293,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0j-9V-OmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2840.8000000000002" y="1266.1169415292354"/>
+            <point key="canvasLocation" x="2289" y="1261"/>
         </scene>
         <!--Data Setting-->
         <scene sceneID="ohw-Li-RSG">
@@ -352,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unZ-00-dPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="511"/>
+            <point key="canvasLocation" x="2290" y="498"/>
         </scene>
         <!--Setting-->
         <scene sceneID="Irk-um-1OI">
@@ -371,7 +365,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Seg-H8-16U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="815"/>
+            <point key="canvasLocation" x="774" y="815"/>
         </scene>
     </scenes>
     <resources>

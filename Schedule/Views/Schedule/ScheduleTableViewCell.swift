@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class ScheduleTableViewCell: UITableViewCell {
   
   // Mark: - IBOutlet
   @IBOutlet var timeLabel: UILabel!

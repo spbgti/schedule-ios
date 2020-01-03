@@ -1,23 +1,35 @@
 import UIKit
+import PureLayout
 
 class ScheduleViewController: UIViewController {
   
   // MARK: - IBOutlets
   
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var selectedControl: UISegmentedControl!
-  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
   
   // MARK: - Views
   
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.tintColor = UIColor.systemBlue
-    
     refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-    
     return refreshControl
   }()
+  
+  lazy var activityIndicator: UIActivityIndicatorView = {
+    let activityControl = UIActivityIndicatorView()
+    activityControl.hidesWhenStopped = true
+    activityControl.style = .large
+    activityControl.color = .blue
+    return activityControl
+  }()
+  
+  func addConstraints() {
+    // ActivityIndicatorView constraints
+    activityIndicator.autoAlignAxis(toSuperviewAxis: .vertical)
+    activityIndicator.autoAlignAxis(toSuperviewAxis: .horizontal)
+  }
   
   // MARK: - Properties
   
@@ -42,7 +54,10 @@ class ScheduleViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.tableView.addSubview(self.refreshControl)
+    self.tableView.addSubview(refreshControl)
+    self.view.addSubview(activityIndicator)
+    
+    addConstraints()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +65,7 @@ class ScheduleViewController: UIViewController {
     
     let groupName = self.userDefaults?.string(forKey: "groupNameKey")
     
-    selectedControl.selectedSegmentIndex = 0
+    segmentedControl.selectedSegmentIndex = 0
     activityIndicator.startAnimating()
     
     DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "2019-09-22") { completionHandler in
@@ -60,7 +75,7 @@ class ScheduleViewController: UIViewController {
           self.exercises = result
         case .failure(let error):
           self.activityIndicator.stopAnimating()
-          self.showErrorMessage(message: error)
+          Alert.showBasicAlert(on: self, message: error, with: "Unable to retrieve data")
         }
       }
     }
@@ -74,7 +89,7 @@ class ScheduleViewController: UIViewController {
     tableView.isHidden = true
     activityIndicator.startAnimating()
     
-    switch selectedControl.selectedSegmentIndex {
+    switch segmentedControl.selectedSegmentIndex {
     case 0:
       DataManager.shared.getExercisesByGroupName(groupName: groupName!, date: "2019-09-22") { completionHandler in
         DispatchQueue.main.async {
@@ -82,7 +97,7 @@ class ScheduleViewController: UIViewController {
           case .success(let result):
             self.exercises = result
           case .failure(let error):
-            self.showErrorMessage(message: error)
+            Alert.showBasicAlert(on: self, message: error, with: "Unable to retrieve data")
           }
         }
       }
@@ -93,7 +108,7 @@ class ScheduleViewController: UIViewController {
           case .success(let result):
             self.exercises = result
           case .failure(let error):
-            self.showErrorMessage(message: error)
+            Alert.showBasicAlert(on: self, message: error, with: "Unable to retrieve data")
           }
         }
       }
@@ -104,7 +119,7 @@ class ScheduleViewController: UIViewController {
           case .success(let result):
             self.exercises = result[0].exercises
           case .failure(let error):
-            self.showErrorMessage(message: error)
+            Alert.showBasicAlert(on: self, message: error, with: "Unable to retrieve data")
           }
         }
       }
@@ -139,16 +154,6 @@ class ScheduleViewController: UIViewController {
        }
      }
    }
-  
-  // MARK: - UIAllertController
-  
-  func showErrorMessage(message: String) {
-    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-    let okAction = UIAlertAction(title: "OK", style: .default)
-    
-    alertController.addAction(okAction)
-    self.present(alertController, animated: true)
-  }
   
   // MARK: - @objc functions
   
