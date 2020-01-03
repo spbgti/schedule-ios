@@ -29,6 +29,7 @@ enum NumberOfPair: Int, CaseIterable {
 }
 
 // MARK: - UITableViewDataSource
+
 extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 
   // Count of sections
@@ -45,7 +46,9 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     let label = UILabel()
     label.font = UIFont.boldSystemFont(ofSize: 22.0)
     
-    if !self.sortedExercises.isEmpty {
+    if self.sortedExercises.isEmpty {
+      Alert.showBasicAlert(on: self, message: "No data found", with: "Unable to retrieve data")
+    } else {
       let numberOfSection = numberOfSections(in: tableView)
       var tableSection: WeekDaySection
       
@@ -53,6 +56,8 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         let arrayOfWeekDaySectionCases = WeekDaySection.arrayOfCases
         tableSection = arrayOfWeekDaySectionCases[section]
       } else {
+        // FIXME: insert value from func 'getWeekday()', not from array
+        // TODO: check relevance data
         let sortedExerciseKeys =  Array(sortedExercises.keys)
         tableSection = sortedExerciseKeys[section]
       }
@@ -73,9 +78,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
       case .sunday:
         label.text = "Воскресенье"
       }
-    } else {
-      // In first time before request the data
-      print("Data not found")
     }
     
     return label
@@ -83,7 +85,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
   
   // Count of cells
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // Max count of exercise in day
     return NumberOfPair.allCases.count
   }
   
@@ -91,7 +92,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ScheduleTableViewCell
     let numberOfSection = numberOfSections(in: tableView)
-    //let keysOfEnum = Array(NumberOfPair.allCases)
     let cellRow = indexPath.row
     
     switch cellRow {
@@ -109,7 +109,11 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
       break
     }
     
-    if !sortedExercises.isEmpty {
+    if sortedExercises.isEmpty {
+      cell.exerciseLabel?.text = ""
+      cell.parityLabelText?.text = ""
+      Alert.showBasicAlert(on: self, message: "No data found", with: "Unable to retrieve data")
+    } else {
       var keys: [WeekDaySection]
       var weekDaySection: WeekDaySection
       var arrayOfExercises: [Exercise]
@@ -145,9 +149,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
           cell.parityLabelText?.text = ""
         }
       }
-    } else {
-      cell.exerciseLabel?.text = ""
-      cell.parityLabelText?.text = ""
     }
     
     return cell
