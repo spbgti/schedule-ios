@@ -10,16 +10,26 @@ import UIKit
 
 class DataSource {
   
-  // MARK: Dictionary like a data source of object
-  var storage = [WeekDaySection: [Exercise]]()
-  
   // MARK: Object is singleton
   static let shared = DataSource()
   private init() {}
   
+  // MARK: Dictionary like a data source of object
+  private var storage = [WeekDaySection: [Exercise]]()
+  
+  // MARK: Properties
+  
+  var count: Int {
+    return storage.count
+  }
+  
+  var keys: [WeekDaySection] {
+    return Array(storage.keys)
+  }
+  
   // MARK: Methods
   
-  func add(_ array: [Exercise]) {
+  func overwrite(_ array: [Exercise]) {
     removeAll()
     
     for item in array {
