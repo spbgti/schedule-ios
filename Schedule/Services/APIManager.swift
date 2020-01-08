@@ -1,11 +1,5 @@
 import Foundation
 
-// MARK: - Result of API response
-enum Result<T> {
-  case success(T)
-  case failure(String)
-}
-
 // MARK: - Class APIManager
 class APIManager {
   
