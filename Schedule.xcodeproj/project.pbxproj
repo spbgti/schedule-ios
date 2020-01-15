@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		044FEE642383F3B1005FA81E /* NotificationSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */; };
 		044FEE6823860721005FA81E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE6723860721005FA81E /* Notifications.swift */; };
+		045EF97123C596C300CC869F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97023C596C300CC869F /* DataSource.swift */; };
+		045EF97323C59E7E00CC869F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97223C59E7E00CC869F /* Enums.swift */; };
+		045EF97423C59E7E00CC869F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97223C59E7E00CC869F /* Enums.swift */; };
+		045EF97623C678AE00CC869F /* ReachabilityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97523C678AE00CC869F /* ReachabilityHandler.swift */; };
 		046263A0235DA7DC00D1215A /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462639F235DA7DC00D1215A /* FirstLaunchViewController.swift */; };
 		046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A5236184BB00D1215A /* SettingTableViewController.swift */; };
 		046263A92362D37800D1215A /* ScheduleViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* ScheduleViewControllerExtension.swift */; };
@@ -76,6 +80,9 @@
 		044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewController.swift; sourceTree = "<group>"; };
 		044FEE6723860721005FA81E /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		04521C8423782A8100DCB195 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		045EF97023C596C300CC869F /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		045EF97223C59E7E00CC869F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		045EF97523C678AE00CC869F /* ReachabilityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHandler.swift; sourceTree = "<group>"; };
 		0462639F235DA7DC00D1215A /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		046263A5236184BB00D1215A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		046263A82362D37800D1215A /* ScheduleViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -172,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */,
+				045EF97023C596C300CC869F /* DataSource.swift */,
+				045EF97223C59E7E00CC869F /* Enums.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 				04FEC63B232C2AD100EA5D25 /* APIManager.swift */,
 				04D56BD32348E5670097E0DC /* DataManager.swift */,
 				044FEE6723860721005FA81E /* Notifications.swift */,
+				045EF97523C678AE00CC869F /* ReachabilityHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -464,6 +474,7 @@
 				04A1ED832368FC7600FD8C3A /* ScheduleResponse.swift in Sources */,
 				04A1ED842368FD4800FD8C3A /* APIManager.swift in Sources */,
 				048FAB1B2370542A00E05D8F /* TableViewCell.swift in Sources */,
+				045EF97423C59E7E00CC869F /* Enums.swift in Sources */,
 				04A1ED712368F5EA00FD8C3A /* TodayViewController.swift in Sources */,
 				04A1ED822368FB6C00FD8C3A /* TodayTableViewController.swift in Sources */,
 			);
@@ -476,6 +487,8 @@
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
 				04D56BD42348E5670097E0DC /* DataManager.swift in Sources */,
 				04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */,
+				045EF97123C596C300CC869F /* DataSource.swift in Sources */,
+				045EF97623C678AE00CC869F /* ReachabilityHandler.swift in Sources */,
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
@@ -486,6 +499,7 @@
 				046263A0235DA7DC00D1215A /* FirstLaunchViewController.swift in Sources */,
 				046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
+				045EF97323C59E7E00CC869F /* Enums.swift in Sources */,
 				046263A92362D37800D1215A /* ScheduleViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

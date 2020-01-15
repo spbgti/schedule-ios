@@ -1,9 +1,9 @@
-# platform :ios, '13.0'
+# platform :ios, '13.3'
 
 target 'schedule' do
   use_frameworks!
-  pod "PureLayout"
-  pod "Reachability"
+  pod 'PureLayout'
+  pod 'ReachabilitySwift'
 end
 
 target 'Widget' do
