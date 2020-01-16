@@ -1,33 +1,42 @@
 import Foundation
 
-class DataManager {
+class DataProvider {
   
-  static var shared = DataManager()
+  // MARK: Singletone implementation
+  
+  static let shared = DataProvider()
   private init() {}
   
-  func getGroups(groupName: String, completionHandler: @escaping(Result<[Group]>) -> Void) {
-    let urlRequest = "groups?number=\(groupName)"
+  // MARK: Properties
+  
+  private let pathToAPI = "https://spbgti-tools-schedule-staging.herokuapp.com/api/"
+  
+  // MARK: Methods
+  
+  func getGroups(groupName: String) {
+    let urlRequest = "\(pathToAPI)groups?number=\(groupName)"
     
-    APIManager.shared.getData(url: urlRequest, isCache: false) { (completion: Result<[Group]>) in
+    APIManager.shared.getData(url: urlRequest) { (completion: Result<Data>) in
       DispatchQueue.main.async {
         switch completion {
         case .success(let result):
           if result.count != 0 {
-            completionHandler(.success(result))
+            let object = JSONDecoderManager.shared.decode(from: result, type: [Group])
+//            completionHandler(.success(object))
           } else {
-            completionHandler(.failure("Invalid group number. Check your setting"))
+//            completionHandler(.failure("Invalid group number. Check your setting"))
           }
         case .failure(let error):
-          completionHandler(.failure(error))
+          // Show message
         }
       }
     }
   }
   
   func getExercises(groupId: String, date: String, completionHandler: @escaping(Result<[Exercise]>) -> Void) {
-    let urlRequest = "exercises?group_id=\(groupId)&date=\(date)"
+    let urlRequest = "\(pathToAPI)exercises?group_id=\(groupId)&date=\(date)"
 
-    APIManager.shared.getData(url: urlRequest, isCache: true) { (completion: Result<[Exercise]>) in
+    APIManager.shared.getData(url: urlRequest) { (completion: Result<[Exercise]>) in
       DispatchQueue.main.async {
         switch completion {
         case .success(let result):
@@ -62,13 +71,13 @@ class DataManager {
   }
   
   func getSchedules(year: String, groupNumber: String, completionHandler: @escaping(Result<[Schedule]>) -> Void) {
-    let urlRequest = "schedules?year=\(year)&group_number=\(groupNumber)"
+    let urlRequest = "\(pathToAPI)schedules?year=\(year)&group_number=\(groupNumber)"
 
     getGroups(groupName: groupNumber) { groupCompletion in
       DispatchQueue.main.async{
         switch groupCompletion {
         case .success( _):
-          APIManager.shared.getData(url: urlRequest, isCache: true) { (scheduleCompletion: Result<[Schedule]>) in
+          APIManager.shared.getData(url: urlRequest) { (scheduleCompletion: Result<[Schedule]>) in
             switch scheduleCompletion {
             case .success(let result):
               completionHandler(.success(result))

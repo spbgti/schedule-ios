@@ -1,23 +1,19 @@
 //
-//  DataSource.swift
+//  DataS.swift
 //  schedule
 //
 //  Created by vladislav on 08.01.2020.
 //  Copyright © 2020 mac. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class DataSource {
-  
-  // MARK: Object is singleton
-  static let shared = DataSource()
-  private init() {}
-  
-  // MARK: Dictionary like a data source of object
-  private var storage = [WeekDaySection: [Exercise]]()
+
+class DataSourceM {
   
   // MARK: Properties
+  
+  private(set) var storage = [WeekDaySection: [Exercise]]()
   
   var count: Int {
     return storage.count
