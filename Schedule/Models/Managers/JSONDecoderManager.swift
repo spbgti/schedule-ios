@@ -17,7 +17,7 @@ class JSONDecoderManager {
   
   // MARK: Properties
   
-  let jsonDecoder = JSONDecoder()
+  private let jsonDecoder = JSONDecoder()
   
   // MARK: Methods
   
@@ -26,9 +26,9 @@ class JSONDecoderManager {
     
     do {
       let object = try jsonDecoder.decode(T.self, from: data)
-      return completion(.success(object))
+      completion(.success(object))
     } catch let error {
-      return completion(.failure(error.localizedDescription))
+      completion(.failure(error.localizedDescription))
     }
   }
   
