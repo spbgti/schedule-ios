@@ -1,10 +1,10 @@
 import Foundation
 
-class APIManager {
+class NetworkConnection {
   
   // MARK: Singletone Implementation
   
-  static var shared = APIManager()
+  static var shared = NetworkConnection()
   private init() {}
   
   // MARK: Methods

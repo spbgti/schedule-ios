@@ -10,11 +10,11 @@ import UIKit
 
 // MARK: - UITableViewDataSource
 
-extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
+extension DataProvider: UITableViewDelegate, UITableViewDataSource {
 
   // Count of sections
   func numberOfSections(in tableView: UITableView) -> Int {
-    if segmentedControl.selectedSegmentIndex == 2 {
+    if dataManager.storage.count > 5 {
       return WeekDaySection.allCases.count
     } else {
       return 1
@@ -26,8 +26,8 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     let label = UILabel()
     label.font = UIFont.boldSystemFont(ofSize: 22.0)
     
-    if self.sortedExercises.isEmpty {
-      Alert.showBasicAlert(on: self, message: "No data found", with: "Unable to retrieve data")
+    if dataManager.storage.isEmpty {
+      Alert.showBasicAlert(on: ScheduleViewController(), message: "No data found", with: "Unable to retrieve data")
     } else {
       let numberOfSection = numberOfSections(in: tableView)
       var tableSection: WeekDaySection
@@ -38,7 +38,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
       } else {
         // FIXME: insert value from func 'getWeekday()', not from array
         // TODO: check relevance data
-        let sortedExerciseKeys =  Array(sortedExercises.keys)
+        let sortedExerciseKeys =  Array(dataManager.storage.keys)
         tableSection = sortedExerciseKeys[section]
       }
       
@@ -70,42 +70,42 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
   
   // Cell settings
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ScheduleTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCellIdentifier", for: indexPath) as! ScheduleTableViewCell
     let numberOfSection = numberOfSections(in: tableView)
     let cellRow = indexPath.row
     
     switch cellRow {
     case 0:
-      cell.timeLabel?.text = "09:30\n11:00"
+      cell.timeLabel.text = "09:30\n11:00"
     case 1:
-      cell.timeLabel?.text = "11:30\n13:00"
+      cell.timeLabel.text = "11:30\n13:00"
     case 2:
-      cell.timeLabel?.text = "14:00\n15:30"
+      cell.timeLabel.text = "14:00\n15:30"
     case 3:
-      cell.timeLabel?.text = "16:00\n17:30"
+      cell.timeLabel.text = "16:00\n17:30"
     case 4:
-      cell.timeLabel?.text = "17:45\n19:15"
+      cell.timeLabel.text = "17:45\n19:15"
     default:
       break
     }
     
-    if sortedExercises.isEmpty {
-      cell.exerciseLabel?.text = ""
-      cell.parityLabelText?.text = ""
-      Alert.showBasicAlert(on: self, message: "No data found", with: "Unable to retrieve data")
+    if dataManager.storage.isEmpty {
+      cell.exerciseLabel.text = ""
+      cell.parityLabelText.text = ""
+      Alert.showBasicAlert(on: ScheduleViewController(), message: "No data found", with: "Unable to retrieve data")
     } else {
       var keys: [WeekDaySection]
       var weekDaySection: WeekDaySection
       var arrayOfExercises: [Exercise]
       
       if numberOfSection == 1 {
-        keys = Array(sortedExercises.keys)
+        keys = Array(dataManager.storage.keys)
         weekDaySection = keys[indexPath.section]
-        arrayOfExercises = sortedExercises[weekDaySection]!
+        arrayOfExercises = dataManager.storage[weekDaySection]!
         
       } else {
         weekDaySection = WeekDaySection.arrayOfCases[indexPath.section]
-        arrayOfExercises = sortedExercises[weekDaySection]!
+        arrayOfExercises = dataManager.storage[weekDaySection]!
       }
       
       for obj in arrayOfExercises {
@@ -114,19 +114,19 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         let exerciseParity = obj.parity
         
         if exercisePair == String(indexPath.row + 1) {
-          cell.exerciseLabel?.text = exerciseName
+          cell.exerciseLabel.text = exerciseName
           switch exerciseParity {
           case "1":
-            cell.parityLabelText?.text = "нечет."
+            cell.parityLabelText.text = "нечет."
           case "2":
-            cell.parityLabelText?.text = "четн."
+            cell.parityLabelText.text = "четн."
           default:
-            cell.parityLabelText?.text = ""
+            cell.parityLabelText.text = ""
           }
           break
         } else {
-          cell.exerciseLabel?.text = "-"
-          cell.parityLabelText?.text = ""
+          cell.exerciseLabel.text = "-"
+          cell.parityLabelText.text = ""
         }
       }
     }
