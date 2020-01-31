@@ -9,6 +9,7 @@
 import UIKit
 
 class RootViewController: UIViewController {
+  
   // MARK: Properties
   
   private var currentViewController: UIViewController
@@ -18,11 +19,13 @@ class RootViewController: UIViewController {
   
   init() {
     let launchedBefore = userDefault?.bool(forKey: "IS_LAUNCHED_BEFORE")
+    let welcomeViewController = WelcomeViewController()
+    let scheduleViewController = UINavigationController(rootViewController: ScheduleViewController())
     
     if !launchedBefore! {
-      self.currentViewController = WelcomeViewController()
+      self.currentViewController = welcomeViewController
     } else {
-      self.currentViewController = ScheduleViewController()
+      self.currentViewController = scheduleViewController
     }
     
     super.init(nibName: nil, bundle: nil)
