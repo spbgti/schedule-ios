@@ -13,25 +13,17 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let userDefault = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
-    let notifications = Notifications()
+    let notifications = NotificationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+      
+      // Notification setting
       notifications.notificationCenter.delegate = notifications
       notifications.notificationRequest()
       
-      let launchedBefore = userDefault?.bool(forKey: "isLaunchedBefore")
-      let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-      
-      if !launchedBefore! {
-        let launchController = storyboard.instantiateViewController(withIdentifier: "LaunchController")
-        self.window?.rootViewController = launchController
-      } else {
-        let mainController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
-        self.window?.rootViewController = mainController
-      }
-      
+      // RootViewController setting
+      self.window = UIWindow(frame: UIScreen.main.bounds)
+      self.window?.rootViewController = RootViewController()
       self.window?.makeKeyAndVisible()
       
       return true

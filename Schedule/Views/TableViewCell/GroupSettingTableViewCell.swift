@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class GroupSettingCell: UITableViewCell {
+class GroupSettingTableViewCell: UITableViewCell {
   
   // MARK: Properties
   
