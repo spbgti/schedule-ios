@@ -8,49 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		044FEE642383F3B1005FA81E /* NotificationSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */; };
-		044FEE6823860721005FA81E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE6723860721005FA81E /* Notifications.swift */; };
-		045EF97123C596C300CC869F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97023C596C300CC869F /* DataSource.swift */; };
+		044FEE6823860721005FA81E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE6723860721005FA81E /* NotificationManager.swift */; };
 		045EF97323C59E7E00CC869F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97223C59E7E00CC869F /* Enums.swift */; };
-		045EF97423C59E7E00CC869F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97223C59E7E00CC869F /* Enums.swift */; };
-		045EF97623C678AE00CC869F /* ReachabilityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97523C678AE00CC869F /* ReachabilityHandler.swift */; };
-		046263A0235DA7DC00D1215A /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462639F235DA7DC00D1215A /* FirstLaunchViewController.swift */; };
+		045EF98323D0F6D300CC869F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98223D0F6D300CC869F /* DataManager.swift */; };
+		045EF98523D0F72F00CC869F /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */; };
+		046263A0235DA7DC00D1215A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462639F235DA7DC00D1215A /* WelcomeViewController.swift */; };
 		046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A5236184BB00D1215A /* SettingTableViewController.swift */; };
-		046263A92362D37800D1215A /* ScheduleViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* ScheduleViewControllerExtension.swift */; };
+		046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* DataProviderExtension.swift */; };
 		046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263C923646E8600D1215A /* ScheduleTableViewCell.swift */; };
-		046263D2236819AA00D1215A /* DataSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263D1236819AA00D1215A /* DataSettingTableViewController.swift */; };
+		046263D2236819AA00D1215A /* GroupSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263D1236819AA00D1215A /* GroupSettingTableViewController.swift */; };
+		046D2D1823ED10E30055F510 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D2D1723ED10E30055F510 /* NotificationSettingTableViewCell.swift */; };
+		046D2D1C23EF3EF20055F510 /* Pods_schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51098C19B895DADE867078A2 /* Pods_schedule.framework */; };
+		046D2D1D23EF3EF20055F510 /* Pods_schedule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51098C19B895DADE867078A2 /* Pods_schedule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474F38623BF3F2600FD1BE4 /* Alert.swift */; };
-		048FAB18236F6A0A00E05D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Assets.xcassets */; };
-		048FAB1B2370542A00E05D8F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FAB1A2370542A00E05D8F /* TableViewCell.swift */; };
 		0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6132321C84E00EA5D25 /* AppDelegate.swift */; };
 		0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */; };
-		04A1ED6E2368F5EA00FD8C3A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A1ED6D2368F5EA00FD8C3A /* NotificationCenter.framework */; };
-		04A1ED712368F5EA00FD8C3A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1ED702368F5EA00FD8C3A /* TodayViewController.swift */; };
-		04A1ED742368F5EA00FD8C3A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A1ED722368F5EA00FD8C3A /* MainInterface.storyboard */; };
-		04A1ED782368F5EA00FD8C3A /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04A1ED6B2368F5EA00FD8C3A /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		04A1ED822368FB6C00FD8C3A /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1ED812368FB6C00FD8C3A /* TodayTableViewController.swift */; };
-		04A1ED832368FC7600FD8C3A /* ScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */; };
-		04A1ED842368FD4800FD8C3A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* APIManager.swift */; };
-		04A1ED852368FD4B00FD8C3A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* DataManager.swift */; };
 		04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA719623A22FA000BDDE6A /* DateExtension.swift */; };
-		04D56BD42348E5670097E0DC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* DataManager.swift */; };
-		04FEC6192321C84E00EA5D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC6172321C84E00EA5D25 /* Main.storyboard */; };
+		04AD0B5023E8B3F200C22739 /* GroupSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */; };
+		04AD0B5223E9870F00C22739 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0B5123E9870F00C22739 /* UserDefaultsManager.swift */; };
+		04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* DataProvider.swift */; };
+		04F6797423D7843E0059CD7E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6797323D7843E0059CD7E /* WelcomeView.swift */; };
+		04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799523D8E91C0059CD7E /* ScheduleView.swift */; };
+		04F6799923DF71370059CD7E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799823DF71370059CD7E /* APIManager.swift */; };
+		04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799A23E0D2B80059CD7E /* RootViewController.swift */; };
+		04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */; };
 		04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Assets.xcassets */; };
 		04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */; };
-		04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* APIManager.swift */; };
+		04FEC63C232C2AD100EA5D25 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */; };
 		04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */; };
-		1941C65CE83F20A08E8CDEFA /* Pods_schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51098C19B895DADE867078A2 /* Pods_schedule.framework */; };
-		948005C896D0351D3FC08CB1 /* Pods_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442B6B532191BCBBCCAEB26E /* Pods_Widget.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		04A1ED762368F5EA00FD8C3A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04FEC6082321C84E00EA5D25 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04A1ED6A2368F5EA00FD8C3A;
-			remoteInfo = Widget;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		04521CB323784E4500DCB195 /* Embed Watch Content */ = {
@@ -63,49 +49,49 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04FEC63A2323F1F600EA5D25 /* Embed App Extensions */ = {
+		046D2D1E23EF3EF20055F510 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolderSpec = 10;
 			files = (
-				04A1ED782368F5EA00FD8C3A /* Widget.appex in Embed App Extensions */,
+				046D2D1D23EF3EF20055F510 /* Pods_schedule.framework in Embed Frameworks */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewController.swift; sourceTree = "<group>"; };
-		044FEE6723860721005FA81E /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		04521C8423782A8100DCB195 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
-		045EF97023C596C300CC869F /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		044FEE6723860721005FA81E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		045EF97223C59E7E00CC869F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		045EF97523C678AE00CC869F /* ReachabilityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHandler.swift; sourceTree = "<group>"; };
-		0462639F235DA7DC00D1215A /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
+		045EF98223D0F6D300CC869F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
+		0462639F235DA7DC00D1215A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		046263A5236184BB00D1215A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		046263A82362D37800D1215A /* ScheduleViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerExtension.swift; sourceTree = "<group>"; };
+		046263A82362D37800D1215A /* DataProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderExtension.swift; sourceTree = "<group>"; };
 		046263C923646E8600D1215A /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
-		046263D1236819AA00D1215A /* DataSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSettingTableViewController.swift; sourceTree = "<group>"; };
+		046263D1236819AA00D1215A /* GroupSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingTableViewController.swift; sourceTree = "<group>"; };
+		046D2D1723ED10E30055F510 /* NotificationSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewCell.swift; sourceTree = "<group>"; };
 		0474F38623BF3F2600FD1BE4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		048FAB1A2370542A00E05D8F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		04A1ED6B2368F5EA00FD8C3A /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A1ED6D2368F5EA00FD8C3A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		04A1ED702368F5EA00FD8C3A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		04A1ED732368F5EA00FD8C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		04A1ED752368F5EA00FD8C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04A1ED812368FB6C00FD8C3A /* TodayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		04AA719623A22FA000BDDE6A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		04D56BD32348E5670097E0DC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingTableViewCell.swift; sourceTree = "<group>"; };
+		04AD0B5123E9870F00C22739 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		04D56BD32348E5670097E0DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		04F6797323D7843E0059CD7E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		04F6799523D8E91C0059CD7E /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		04F6799823DF71370059CD7E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04F6799A23E0D2B80059CD7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		04FEC6102321C84E00EA5D25 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FEC6132321C84E00EA5D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		04FEC6182321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04FEC61A2321C84E00EA5D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04FEC61D2321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04FEC61F2321C84E00EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04FEC63B232C2AD100EA5D25 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
 		16BCDE3727354D8C55945E30 /* Pods-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		2EDF9EB08AECB506056BD602 /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.release.xcconfig"; path = "Target Support Files/Pods-schedule/Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,41 +102,44 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		04A1ED682368F5EA00FD8C3A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04A1ED6E2368F5EA00FD8C3A /* NotificationCenter.framework in Frameworks */,
-				948005C896D0351D3FC08CB1 /* Pods_Widget.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		04FEC60D2321C84E00EA5D25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1941C65CE83F20A08E8CDEFA /* Pods_schedule.framework in Frameworks */,
+				046D2D1C23EF3EF20055F510 /* Pods_schedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0452929B23AB56BC004202F9 /* Schedule */ = {
+		0409BE2E23EAD2A300BD33B4 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				04F6797323D7843E0059CD7E /* WelcomeView.swift */,
+				04F6799523D8E91C0059CD7E /* ScheduleView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		0409BE2F23EAD2AE00BD33B4 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
+				04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */,
+				046D2D1723ED10E30055F510 /* NotificationSettingTableViewCell.swift */,
 			);
-			path = Schedule;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		046263A4236064DF00D1215A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04F6799A23E0D2B80059CD7E /* RootViewController.swift */,
+				0462639F235DA7DC00D1215A /* WelcomeViewController.swift */,
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
-				0462639F235DA7DC00D1215A /* FirstLaunchViewController.swift */,
 				046263A5236184BB00D1215A /* SettingTableViewController.swift */,
-				046263D1236819AA00D1215A /* DataSettingTableViewController.swift */,
+				046263D1236819AA00D1215A /* GroupSettingTableViewController.swift */,
 				044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */,
 			);
 			path = Controllers;
@@ -159,7 +148,8 @@
 		046263A72362D34900D1215A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				046263A82362D37800D1215A /* ScheduleViewControllerExtension.swift */,
+				04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */,
+				046263A82362D37800D1215A /* DataProviderExtension.swift */,
 				04AA719623A22FA000BDDE6A /* DateExtension.swift */,
 			);
 			path = Extensions;
@@ -178,29 +168,24 @@
 		046263AB2362D46300D1215A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */,
-				045EF97023C596C300CC869F /* DataSource.swift */,
-				045EF97223C59E7E00CC869F /* Enums.swift */,
+				04F6795123D618360059CD7E /* Containers */,
+				04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */,
+				045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */,
+				04F6799823DF71370059CD7E /* APIManager.swift */,
+				045EF98223D0F6D300CC869F /* DataManager.swift */,
+				04D56BD32348E5670097E0DC /* DataProvider.swift */,
+				044FEE6723860721005FA81E /* NotificationManager.swift */,
+				04AD0B5123E9870F00C22739 /* UserDefaultsManager.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		046263AC2362D4E800D1215A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				04FEC63B232C2AD100EA5D25 /* APIManager.swift */,
-				04D56BD32348E5670097E0DC /* DataManager.swift */,
-				044FEE6723860721005FA81E /* Notifications.swift */,
-				045EF97523C678AE00CC869F /* ReachabilityHandler.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		046263C823646E5200D1215A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0452929B23AB56BC004202F9 /* Schedule */,
-				0474F38623BF3F2600FD1BE4 /* Alert.swift */,
+				0409BE2E23EAD2A300BD33B4 /* Screen */,
+				0409BE2F23EAD2AE00BD33B4 /* TableViewCell */,
+				04AD0B4E23E8B34200C22739 /* Helpers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,48 +200,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		04A1ED6F2368F5EA00FD8C3A /* Widget */ = {
+		04AD0B4E23E8B34200C22739 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				04521C8423782A8100DCB195 /* Widget.entitlements */,
-				04A1ED7D2368F9D600FD8C3A /* Views */,
-				04A1ED7C2368F9C100FD8C3A /* Controllers */,
-				04A1ED7E2368F9E700FD8C3A /* Extensions */,
-				04A1ED722368F5EA00FD8C3A /* MainInterface.storyboard */,
-				04A1ED752368F5EA00FD8C3A /* Info.plist */,
+				0474F38623BF3F2600FD1BE4 /* Alert.swift */,
 			);
-			path = Widget;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		04A1ED7C2368F9C100FD8C3A /* Controllers */ = {
+		04F6795123D618360059CD7E /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				04A1ED702368F5EA00FD8C3A /* TodayViewController.swift */,
+				04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */,
+				045EF97223C59E7E00CC869F /* Enums.swift */,
 			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		04A1ED7D2368F9D600FD8C3A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				048FAB1A2370542A00E05D8F /* TableViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		04A1ED7E2368F9E700FD8C3A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				04A1ED812368FB6C00FD8C3A /* TodayTableViewController.swift */,
-			);
-			path = Extensions;
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		04FEC6072321C84E00EA5D25 = {
 			isa = PBXGroup;
 			children = (
 				04FEC6122321C84E00EA5D25 /* Schedule */,
-				04A1ED6F2368F5EA00FD8C3A /* Widget */,
 				04A1ED6C2368F5EA00FD8C3A /* Frameworks */,
 				04FEC6112321C84E00EA5D25 /* Products */,
 				236121AA76FD281BAEC8207F /* Pods */,
@@ -268,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				04FEC6102321C84E00EA5D25 /* schedule.app */,
-				04A1ED6B2368F5EA00FD8C3A /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,9 +243,7 @@
 				046263A4236064DF00D1215A /* Controllers */,
 				046263AB2362D46300D1215A /* Models */,
 				046263A72362D34900D1215A /* Extensions */,
-				046263AC2362D4E800D1215A /* Services */,
 				046263AA2362D3FC00D1215A /* Resources */,
-				04FEC6172321C84E00EA5D25 /* Main.storyboard */,
 				04FEC61F2321C84E00EA5D25 /* Info.plist */,
 			);
 			path = Schedule;
@@ -302,24 +263,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04A1ED6A2368F5EA00FD8C3A /* Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04A1ED792368F5EA00FD8C3A /* Build configuration list for PBXNativeTarget "Widget" */;
-			buildPhases = (
-				6705F872E6244BADB0F859C1 /* [CP] Check Pods Manifest.lock */,
-				04A1ED672368F5EA00FD8C3A /* Sources */,
-				04A1ED682368F5EA00FD8C3A /* Frameworks */,
-				04A1ED692368F5EA00FD8C3A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Widget;
-			productName = Widget;
-			productReference = 04A1ED6B2368F5EA00FD8C3A /* Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		04FEC60F2321C84E00EA5D25 /* schedule */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04FEC6222321C84E00EA5D25 /* Build configuration list for PBXNativeTarget "schedule" */;
@@ -328,14 +271,13 @@
 				04FEC60C2321C84E00EA5D25 /* Sources */,
 				04FEC60D2321C84E00EA5D25 /* Frameworks */,
 				04FEC60E2321C84E00EA5D25 /* Resources */,
-				04FEC63A2323F1F600EA5D25 /* Embed App Extensions */,
 				04521CB323784E4500DCB195 /* Embed Watch Content */,
 				85583BD7B81D0298F2DE7A96 /* [CP] Embed Pods Frameworks */,
+				046D2D1E23EF3EF20055F510 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				04A1ED772368F5EA00FD8C3A /* PBXTargetDependency */,
 			);
 			name = schedule;
 			productName = schedule;
@@ -352,9 +294,6 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
-					04A1ED6A2368F5EA00FD8C3A = {
-						CreatedOnToolsVersion = 11.1;
-					};
 					04FEC60F2321C84E00EA5D25 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -374,56 +313,23 @@
 			projectRoot = "";
 			targets = (
 				04FEC60F2321C84E00EA5D25 /* schedule */,
-				04A1ED6A2368F5EA00FD8C3A /* Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04A1ED692368F5EA00FD8C3A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				048FAB18236F6A0A00E05D8F /* Assets.xcassets in Resources */,
-				04A1ED742368F5EA00FD8C3A /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		04FEC60E2321C84E00EA5D25 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
 				04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */,
-				04FEC6192321C84E00EA5D25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6705F872E6244BADB0F859C1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Widget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		85583BD7B81D0298F2DE7A96 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,71 +372,41 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04A1ED672368F5EA00FD8C3A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04A1ED852368FD4B00FD8C3A /* DataManager.swift in Sources */,
-				04A1ED832368FC7600FD8C3A /* ScheduleResponse.swift in Sources */,
-				04A1ED842368FD4800FD8C3A /* APIManager.swift in Sources */,
-				048FAB1B2370542A00E05D8F /* TableViewCell.swift in Sources */,
-				045EF97423C59E7E00CC869F /* Enums.swift in Sources */,
-				04A1ED712368F5EA00FD8C3A /* TodayViewController.swift in Sources */,
-				04A1ED822368FB6C00FD8C3A /* TodayTableViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		04FEC60C2321C84E00EA5D25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
-				04D56BD42348E5670097E0DC /* DataManager.swift in Sources */,
-				04FEC63C232C2AD100EA5D25 /* APIManager.swift in Sources */,
-				045EF97123C596C300CC869F /* DataSource.swift in Sources */,
-				045EF97623C678AE00CC869F /* ReachabilityHandler.swift in Sources */,
+				04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */,
+				04FEC63C232C2AD100EA5D25 /* NetworkConnection.swift in Sources */,
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
+				04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */,
+				04F6799923DF71370059CD7E /* APIManager.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
+				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
 				0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */,
-				044FEE6823860721005FA81E /* Notifications.swift in Sources */,
+				04AD0B5223E9870F00C22739 /* UserDefaultsManager.swift in Sources */,
+				044FEE6823860721005FA81E /* NotificationManager.swift in Sources */,
 				044FEE642383F3B1005FA81E /* NotificationSettingTableViewController.swift in Sources */,
-				046263D2236819AA00D1215A /* DataSettingTableViewController.swift in Sources */,
-				046263A0235DA7DC00D1215A /* FirstLaunchViewController.swift in Sources */,
+				046263D2236819AA00D1215A /* GroupSettingTableViewController.swift in Sources */,
+				04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */,
+				046263A0235DA7DC00D1215A /* WelcomeViewController.swift in Sources */,
 				046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */,
+				045EF98523D0F72F00CC869F /* JSONDecoderManager.swift in Sources */,
+				04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
+				04AD0B5023E8B3F200C22739 /* GroupSettingTableViewCell.swift in Sources */,
+				046D2D1823ED10E30055F510 /* NotificationSettingTableViewCell.swift in Sources */,
 				045EF97323C59E7E00CC869F /* Enums.swift in Sources */,
-				046263A92362D37800D1215A /* ScheduleViewControllerExtension.swift in Sources */,
+				046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */,
+				04F6797423D7843E0059CD7E /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		04A1ED772368F5EA00FD8C3A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04A1ED6A2368F5EA00FD8C3A /* Widget */;
-			targetProxy = 04A1ED762368F5EA00FD8C3A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		04A1ED722368F5EA00FD8C3A /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04A1ED732368F5EA00FD8C3A /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		04FEC6172321C84E00EA5D25 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04FEC6182321C84E00EA5D25 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -542,50 +418,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		04A1ED7A2368F5EA00FD8C3A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16BCDE3727354D8C55945E30 /* Pods-Widget.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BA672Z9B27;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule.Widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		04A1ED7B2368F5EA00FD8C3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5932E732675F5119E3949A8F /* Pods-Widget.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BA672Z9B27;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule.Widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		04FEC6202321C84E00EA5D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -708,9 +540,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3084042CC2DEC64254577E45 /* Pods-schedule.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = schedule/Info.plist;
@@ -721,8 +553,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -730,9 +563,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2EDF9EB08AECB506056BD602 /* Pods-schedule.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = schedule/Info.plist;
@@ -743,23 +576,15 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04A1ED792368F5EA00FD8C3A /* Build configuration list for PBXNativeTarget "Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04A1ED7A2368F5EA00FD8C3A /* Debug */,
-				04A1ED7B2368F5EA00FD8C3A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		04FEC60B2321C84E00EA5D25 /* Build configuration list for PBXProject "Schedule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
