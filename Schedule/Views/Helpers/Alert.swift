@@ -10,9 +10,10 @@ import UIKit
 
 struct Alert {
   
-  static func showBasicAlert(on viewController: UIViewController, message: String, with title: String) {
-    let alertController = UIAlertController(title: title, message: message
-      , preferredStyle: .alert)
+  static func showMessageAlert(on viewController: UIViewController, message: String, title: String) {
+    let alertController = UIAlertController(title: title,
+                                            message: message,
+                                            preferredStyle: .alert)
     let action = UIAlertAction(title: "OK", style: .default)
     
     alertController.addAction(action)
