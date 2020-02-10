@@ -10,10 +10,6 @@ import UIKit
 
 class GroupSettingTableViewController: UITableViewController {
   
-  // MARK: Properties
-  
-  let userDefaults = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
-  
   // MARK: Life Cycle
   
   override func viewDidLoad() {
@@ -21,7 +17,7 @@ class GroupSettingTableViewController: UITableViewController {
     
     navigationItem.title = "Group"
     
-    tableView.register(GroupSettingCell.self, forCellReuseIdentifier: "groupSettingCell")
+    tableView.register(GroupSettingTableViewCell.self, forCellReuseIdentifier: "groupSettingCell")
   }
   
   // MARK: TableView Setting
@@ -30,50 +26,52 @@ class GroupSettingTableViewController: UITableViewController {
     return 1
   }
   
-  override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    let vw = UIView()
-    vw.backgroundColor = UIColor.lightGray
-
-    return vw
-  }
-  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return 2
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "groupSettingCell", for: indexPath) as! GroupSettingCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "groupSettingCell", for: indexPath) as! GroupSettingTableViewCell
     
-    cell.describeLabel?.text = "Your group number"
-    cell.groupTextField?.text = userDefaults?.string(forKey: "GROUP_NUMBER")
+    switch indexPath.row {
+    case 0:
+      if let groupNumber = UserDefaultsManager.shared.getObject(forKey: "GROUP_NUMBER") {
+        cell.groupNumberLabel?.text = "Your group number: \(groupNumber)"
+      } else {
+        cell.groupNumberLabel?.text = "Group not found"
+      }
+    case 1:
+      cell.changeGroupButton.setTitle("Change group number", for: .normal)
+      cell.changeGroupButton.addTarget(self, action: #selector(showSettingModalView), for: .touchUpInside)
+    default: break
+    }
     
     return cell
   }
   
-  // MARK: Methods
-  
-  @objc func saveGroupNumber() {
-    let cell = GroupSettingCell()
-    // TODO: take a value from textField
-    if let groupNumber = cell.describeLabel?.text {
-      APIManager.shared.getGroups(groupNumber: groupNumber) { completion in
+  // TODO: Create modal view and reload data in this controllerview
+  @objc func showSettingModalView() {
+    let alert = UIAlertController(title: "Alert", message: "Input group number", preferredStyle: .alert)
+    alert.addTextField { (textField) in
+      textField.text = "example: 446"
+    }
+    
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+      let textField = alert?.textFields![0]
+      APIManager.shared.getGroups(groupNumber: textField!.text!) { completion in
         DispatchQueue.main.async {
           switch completion{
           case .success(let result):
-            self.userDefaults?.set(result[0].groupId, forKey: "GROUP_ID")
-            self.userDefaults?.set(result[0].number, forKey: "GROUP_NUMBER")
-            self.userDefaults?.set(true, forKey: "IS_LAUNCHED_BEFORE")
-            AppDelegate.shared.rootViewController.switchToScheduleScreen()
+            UserDefaultsManager.shared.setObject(result[0].groupId, forKey: "GROUP_ID")
+            UserDefaultsManager.shared.setObject(result[0].number, forKey: "GROUP_NUMBER")
           case .failure(let error):
-            Alert.showBasicAlert(on: self, message: "\(error)", with: "Group not found")
+            Alert.showMessageAlert(on: self, message: "\(error)", title: "Group not found")
           }
         }
       }
-    } else {
-      DispatchQueue.main.async {
-        Alert.showBasicAlert(on: self, message: "Error", with: "Text field is empty. Enter your group number")
-      }
-    }
+    }))
+    
+    self.present(alert, animated: true, completion: nil)
   }
   
 }
