@@ -52,7 +52,9 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
       guard error == nil else { return }
       
       if granted {
-        UIApplication.shared.registerForRemoteNotifications()
+        DispatchQueue.main.async {
+          UIApplication.shared.registerForRemoteNotifications()
+        }
       }
     }
   }
