@@ -13,16 +13,15 @@ class RootViewController: UIViewController {
   // MARK: Properties
   
   private var currentViewController: UIViewController
-  let userDefault = UserDefaults.init(suiteName: "group.mac.schedule.sharingData")
   
   // MARK: Initializer
   
   init() {
-    let launchedBefore = userDefault?.bool(forKey: "IS_LAUNCHED_BEFORE")
+    let launchedBefore = UserDefaultsManager.shared.getObject(forKey: "IS_LAUNCHED_BEFORE") as? Bool
     let welcomeViewController = WelcomeViewController()
     let scheduleViewController = UINavigationController(rootViewController: ScheduleViewController())
     
-    if !launchedBefore! {
+    if launchedBefore == nil {
       self.currentViewController = welcomeViewController
     } else {
       self.currentViewController = scheduleViewController
@@ -46,7 +45,7 @@ class RootViewController: UIViewController {
      currentViewController.didMove(toParent: self)
   }
   
-  // MARK: Navigation Methods
+  // MARK: Methods
   
   func switchToScheduleScreen() {
     let newViewController = UINavigationController(rootViewController: ScheduleViewController())

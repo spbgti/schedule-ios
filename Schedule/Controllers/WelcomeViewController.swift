@@ -10,10 +10,6 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
   
-  // MARK: Properties
-  
-  let userDefaults = UserDefaults(suiteName: "group.mac.schedule.sharingData")
-  
   // MARK: Life cycle
   
   override func loadView() {
@@ -41,18 +37,18 @@ class WelcomeViewController: UIViewController {
         DispatchQueue.main.async {
           switch completion{
           case .success(let result):
-            self.userDefaults?.set(result[0].groupId, forKey: "GROUP_ID")
-            self.userDefaults?.set(result[0].number, forKey: "GROUP_NUMBER")
-            self.userDefaults?.set(true, forKey: "IS_LAUNCHED_BEFORE")
+            UserDefaultsManager.shared.setObject(result[0].groupId, forKey: "GROUP_ID")
+            UserDefaultsManager.shared.setObject(result[0].number, forKey: "GROUP_NUMBER")
+            UserDefaultsManager.shared.setObject(true, forKey: "IS_LAUNCHED_BEFORE")
             AppDelegate.shared.rootViewController.switchToScheduleScreen()
           case .failure(let error):
-            Alert.showBasicAlert(on: self, message: "\(error)", with: "Group not found")
+            Alert.showMessageAlert(on: self, message: "\(error)", title: "Group not found")
           }
         }
       }
     } else {
       DispatchQueue.main.async {
-        Alert.showBasicAlert(on: self, message: "Error", with: "Text field is empty. Enter your group number")
+        Alert.showMessageAlert(on: self, message: "Error", title: "Text field is empty. Enter your group number")
       }
     }
   }
