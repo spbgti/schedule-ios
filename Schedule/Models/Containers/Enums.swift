@@ -13,6 +13,8 @@ enum Result<T> {
   case failure(String)
 }
 
+// MARK: Schedule TableView
+
 enum WeekDaySection: Int, CaseIterable {
   case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
   
@@ -29,4 +31,21 @@ enum WeekDaySection: Int, CaseIterable {
 
 enum NumberOfPair: Int, CaseIterable {
   case first = 0, second, third, fourth, fifth
+}
+
+// MARK: Setting TableView
+
+enum SettingSection: Int, CaseIterable {
+  case group = 0
+  case notification
+  
+  static var arrayOfCases: [SettingSection] {
+    var arrayOfCases = Array<SettingSection>()
+    
+    for value in SettingSection.allCases {
+      arrayOfCases.append(value)
+    }
+    
+    return arrayOfCases
+  }
 }
