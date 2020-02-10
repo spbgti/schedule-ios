@@ -21,14 +21,14 @@ class JSONDecoderManager {
   
   // MARK: Methods
   
-  func decode<T: Decodable>(from data: Data, completion: @escaping(Result<T>) -> Void) {
+  func decode<T: Decodable>(from data: Data, type: T.Type) -> Result<T> {
     jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     
     do {
       let object = try jsonDecoder.decode(T.self, from: data)
-      completion(.success(object))
+      return .success(object)
     } catch let error {
-      completion(.failure(error.localizedDescription))
+      return .failure(error.localizedDescription)
     }
   }
   
