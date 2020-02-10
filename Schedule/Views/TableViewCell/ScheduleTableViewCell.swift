@@ -34,6 +34,7 @@ class ScheduleTableViewCell: UITableViewCell {
     return label
   }()
   
+  // FIXME: Fix Constraint
   override func updateConstraints() {
     let timeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 0)
     timeLabel.autoPinEdgesToSuperviewEdges(with: timeInsets, excludingEdge: .right)

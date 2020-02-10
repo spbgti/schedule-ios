@@ -28,6 +28,7 @@ class GroupSettingTableViewCell: UITableViewCell {
     return button
   }()
   
+  // FIXME: Fix Constraint
   override func updateConstraints() {
     let groupNumberLabelInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     groupNumberLabel?.autoPinEdgesToSuperviewEdges(with: groupNumberLabelInsets)

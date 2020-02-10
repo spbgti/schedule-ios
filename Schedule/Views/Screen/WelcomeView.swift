@@ -47,12 +47,7 @@ class WelcomeView: UIView {
     return button
   }()
   
-  private func addSubviews() {
-    addSubview(welcomeLabel)
-    addSubview(groupNumberTextField)
-    addSubview(saveButton)
-  }
-  
+  // FIXME: Fix Constraint
   override func updateConstraints() {
     welcomeLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 32.0)
     welcomeLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 32.0)
@@ -72,7 +67,9 @@ class WelcomeView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    addSubviews()
+    addSubview(welcomeLabel)
+    addSubview(groupNumberTextField)
+    addSubview(saveButton)
   }
   
   required init?(coder: NSCoder) {
