@@ -12,6 +12,7 @@
 		045EF97323C59E7E00CC869F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97223C59E7E00CC869F /* Enums.swift */; };
 		045EF98323D0F6D300CC869F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98223D0F6D300CC869F /* DataManager.swift */; };
 		045EF98523D0F72F00CC869F /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */; };
+		0460B4E423F33133003F4F9C /* ReminderOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460B4E323F33133003F4F9C /* ReminderOptionsViewController.swift */; };
 		046263A0235DA7DC00D1215A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462639F235DA7DC00D1215A /* WelcomeViewController.swift */; };
 		046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A5236184BB00D1215A /* SettingTableViewController.swift */; };
 		046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* DataProviderExtension.swift */; };
@@ -68,6 +69,7 @@
 		045EF97223C59E7E00CC869F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		045EF98223D0F6D300CC869F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
+		0460B4E323F33133003F4F9C /* ReminderOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderOptionsViewController.swift; sourceTree = "<group>"; };
 		0462639F235DA7DC00D1215A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		046263A5236184BB00D1215A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		046263A82362D37800D1215A /* DataProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderExtension.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				046263A5236184BB00D1215A /* SettingTableViewController.swift */,
 				046263D1236819AA00D1215A /* GroupSettingTableViewController.swift */,
 				044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */,
+				0460B4E323F33133003F4F9C /* ReminderOptionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				045EF98523D0F72F00CC869F /* JSONDecoderManager.swift in Sources */,
 				04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
+				0460B4E423F33133003F4F9C /* ReminderOptionsViewController.swift in Sources */,
 				04AD0B5023E8B3F200C22739 /* GroupSettingTableViewCell.swift in Sources */,
 				046D2D1823ED10E30055F510 /* NotificationSettingTableViewCell.swift in Sources */,
 				045EF97323C59E7E00CC869F /* Enums.swift in Sources */,

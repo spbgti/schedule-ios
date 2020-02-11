@@ -57,6 +57,10 @@ class NotificationSettingTableViewController: UITableViewController {
     return cell
   }
   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    showModalView(ReminderOptionsViewController())
+  }
+  
   // MARK: Methods
   
   func showModalView(_ viewController: UIViewController) {
