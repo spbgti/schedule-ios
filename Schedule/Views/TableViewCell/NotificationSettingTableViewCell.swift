@@ -13,50 +13,38 @@ class NotificationSettingTableViewCell: UITableViewCell {
   
   // MARK: Properties
   
-  lazy var nameLabel: UILabel! = {
-    let label = UILabel()
-    label.autoSetDimensions(to: CGSize(width: 128, height: 16))
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont(name: "Apple SD Gothic Neo", size: 16.0)
-    label.textColor = .black
-    
-    return label
-  }()
-  
   lazy var timeLabel: UILabel! = {
     let label = UILabel()
-    label.autoSetDimensions(to: CGSize(width: 256, height: 64))
+    label.autoSetDimensions(to: CGSize(width: 256.0, height: 20))
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont(name: "Apple SD Gothic Neo", size: 56.0)
-    label.textColor = .black
-    
+    label.font = UIFont(name: "Apple SD Gothic Neo", size: 20.0)
+    label.textColor = .gray
     return label
   }()
   
-  lazy var switchControl: UISwitch! = {
-    let switchControl = UISwitch()
-    
-    return switchControl
+  lazy var conditionLabel: UILabel! = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.font = UIFont(name: "Apple SD Gothic Neo", size: 18.0)
+    label.textColor = .gray
+    return label
   }()
   
-  // FIXME: Fix Constraint
+  // MARK: Override methods
+  
   override func updateConstraints() {
-    let timeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
-    timeLabel.autoPinEdgesToSuperviewEdges(with: timeInsets, excludingEdge: .bottom)
+    let timeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 0)
+    timeLabel.autoPinEdgesToSuperviewEdges(with: timeInsets, excludingEdge: .right)
     
-    let nameInsets = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16)
-    nameLabel.autoPinEdgesToSuperviewEdges(with: nameInsets, excludingEdge: .top)
-    nameLabel.autoPinEdge(.top, to: .bottom, of: timeLabel, withOffset: 8.0)
-    
-    
+    let conditionInsets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 40)
+    conditionLabel.autoPinEdgesToSuperviewEdges(with: conditionInsets, excludingEdge: .left)
     super.updateConstraints()
   }
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    contentView.addSubview(timeLabel)
-    contentView.addSubview(nameLabel)
-    contentView.addSubview(switchControl)
+    self.addSubview(timeLabel)
+    self.addSubview(conditionLabel)
   }
   
   required init?(coder: NSCoder) {
