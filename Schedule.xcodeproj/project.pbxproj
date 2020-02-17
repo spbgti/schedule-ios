@@ -13,6 +13,8 @@
 		045EF98323D0F6D300CC869F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98223D0F6D300CC869F /* DataManager.swift */; };
 		045EF98523D0F72F00CC869F /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */; };
 		0460B4E423F33133003F4F9C /* ReminderOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460B4E323F33133003F4F9C /* ReminderOptionsViewController.swift */; };
+		0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460B4E523F824B3003F4F9C /* PickerTableViewCell.swift */; };
+		0460B4E823F82E1C003F4F9C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460B4E723F82E1C003F4F9C /* SwitchTableViewCell.swift */; };
 		046263A0235DA7DC00D1215A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462639F235DA7DC00D1215A /* WelcomeViewController.swift */; };
 		046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A5236184BB00D1215A /* SettingTableViewController.swift */; };
 		046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* DataProviderExtension.swift */; };
@@ -70,6 +72,8 @@
 		045EF98223D0F6D300CC869F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
 		0460B4E323F33133003F4F9C /* ReminderOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderOptionsViewController.swift; sourceTree = "<group>"; };
+		0460B4E523F824B3003F4F9C /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
+		0460B4E723F82E1C003F4F9C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		0462639F235DA7DC00D1215A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		046263A5236184BB00D1215A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		046263A82362D37800D1215A /* DataProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderExtension.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
 				04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */,
 				046D2D1723ED10E30055F510 /* NotificationSettingTableViewCell.swift */,
+				0460B4E523F824B3003F4F9C /* PickerTableViewCell.swift */,
+				0460B4E723F82E1C003F4F9C /* SwitchTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -385,8 +391,10 @@
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
 				04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */,
 				04F6799923DF71370059CD7E /* APIManager.swift in Sources */,
+				0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
+				0460B4E823F82E1C003F4F9C /* SwitchTableViewCell.swift in Sources */,
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
 				0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */,
 				04AD0B5223E9870F00C22739 /* UserDefaultsManager.swift in Sources */,
