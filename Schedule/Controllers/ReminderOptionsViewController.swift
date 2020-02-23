@@ -38,7 +38,7 @@ class ReminderOptionsViewController: UITableViewController {
     pickerCell.pickerView.dataSource = self
     
     tableView = UITableView.init(frame: .zero, style: .grouped)
-    tableView.estimatedRowHeight = 80
+    tableView.estimatedRowHeight = 64
     tableView.rowHeight = UITableView.automaticDimension
     
     DispatchQueue.main.async {

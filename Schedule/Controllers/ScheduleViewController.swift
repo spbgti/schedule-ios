@@ -18,6 +18,11 @@ class ScheduleViewController: UIViewController {
     
     self.view().tableView.dataSource = DataProvider.shared
     self.view().tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: "scheduleCellIdentifier")
+    self.view().tableView.rowHeight =  128.0
+    
+    DispatchQueue.main.async {
+      self.view().tableView.reloadData()
+    }
     
     view().segmentedControl.addTarget(self, action: #selector(changeIndex), for: .valueChanged)
   }
