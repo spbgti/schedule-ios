@@ -1,4 +1,4 @@
-# platform :ios, '13.3'
+platform :ios, '13.0'
 
 target 'schedule' do
   use_frameworks!

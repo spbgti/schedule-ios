@@ -35,10 +35,12 @@
 		04F6799923DF71370059CD7E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799823DF71370059CD7E /* APIManager.swift */; };
 		04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799A23E0D2B80059CD7E /* RootViewController.swift */; };
 		04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */; };
-		04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Assets.xcassets */; };
+		04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Colors.xcassets */; };
 		04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */; };
 		04FEC63C232C2AD100EA5D25 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */; };
 		04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */; };
+		840C784025077DD8004C372F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840C783F25077DD8004C372F /* Images.xcassets */; };
+		8410656F250784F9000B2214 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84106571250784F9000B2214 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,10 +93,10 @@
 		04F6799823DF71370059CD7E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04F6799A23E0D2B80059CD7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
-		04FEC6102321C84E00EA5D25 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СПбГТИ(ТУ).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FEC6132321C84E00EA5D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		04FEC61A2321C84E00EA5D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04FEC61A2321C84E00EA5D25 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		04FEC61D2321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04FEC61F2321C84E00EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
@@ -105,6 +107,9 @@
 		442B6B532191BCBBCCAEB26E /* Pods_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51098C19B895DADE867078A2 /* Pods_schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5932E732675F5119E3949A8F /* Pods-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.release.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.release.xcconfig"; sourceTree = "<group>"; };
+		840C783F25077DD8004C372F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84106570250784F9000B2214 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8410657225078528000B2214 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,9 +172,8 @@
 		046263AA2362D3FC00D1215A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
-				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
-				04FEC61A2321C84E00EA5D25 /* Assets.xcassets */,
+				04FEC61A2321C84E00EA5D25 /* Colors.xcassets */,
+				840C783F25077DD8004C372F /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -240,7 +244,7 @@
 		04FEC6112321C84E00EA5D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC6102321C84E00EA5D25 /* schedule.app */,
+				04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,12 +252,14 @@
 		04FEC6122321C84E00EA5D25 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				840C783E25077D99004C372F /* Application */,
 				046263C823646E5200D1215A /* Views */,
 				046263A4236064DF00D1215A /* Controllers */,
+				8410656925078426000B2214 /* Modules */,
 				046263AB2362D46300D1215A /* Models */,
 				046263A72362D34900D1215A /* Extensions */,
 				046263AA2362D3FC00D1215A /* Resources */,
-				04FEC61F2321C84E00EA5D25 /* Info.plist */,
+				840C783D25077D78004C372F /* Support Files */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -267,6 +273,47 @@
 				2EDF9EB08AECB506056BD602 /* Pods-schedule.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		840C783D25077D78004C372F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84106571250784F9000B2214 /* Localizable.strings */,
+				04FEC61F2321C84E00EA5D25 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		840C783E25077D99004C372F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
+				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8410656925078426000B2214 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8410656C25078474000B2214 /* Onboarding */,
+				8410656A25078452000B2214 /* Schedule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8410656A25078452000B2214 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		8410656C25078474000B2214 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +337,7 @@
 			);
 			name = schedule;
 			productName = schedule;
-			productReference = 04FEC6102321C84E00EA5D25 /* schedule.app */;
+			productReference = 04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -315,6 +362,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 04FEC6072321C84E00EA5D25;
 			productRefGroup = 04FEC6112321C84E00EA5D25 /* Products */;
@@ -331,8 +379,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840C784025077DD8004C372F /* Images.xcassets in Resources */,
+				8410656F250784F9000B2214 /* Localizable.strings in Resources */,
 				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
-				04FEC61B2321C84E00EA5D25 /* Assets.xcassets in Resources */,
+				04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +477,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		84106571250784F9000B2214 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84106570250784F9000B2214 /* en */,
+				8410657225078528000B2214 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -434,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -496,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -557,14 +618,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
-				INFOPLIST_FILE = schedule/Info.plist;
+				INFOPLIST_FILE = "schedule/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "СПбГТИ(ТУ)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -580,14 +641,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
-				INFOPLIST_FILE = schedule/Info.plist;
+				INFOPLIST_FILE = "schedule/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "СПбГТИ(ТУ)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
