@@ -38,9 +38,11 @@
 		04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Colors.xcassets */; };
 		04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */; };
 		04FEC63C232C2AD100EA5D25 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */; };
-		04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */; };
+		04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* Exercise.swift */; };
 		840C784025077DD8004C372F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840C783F25077DD8004C372F /* Images.xcassets */; };
 		8410656F250784F9000B2214 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84106571250784F9000B2214 /* Localizable.strings */; };
+		841659092514024700A4E6DD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841659082514024700A4E6DD /* Group.swift */; };
+		8416590B2514026400A4E6DD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416590A2514026400A4E6DD /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,16 +102,17 @@
 		04FEC61D2321C84E00EA5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04FEC61F2321C84E00EA5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
+		04FEC64323340B5F00EA5D25 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		16BCDE3727354D8C55945E30 /* Pods-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.debug.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		2EDF9EB08AECB506056BD602 /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.release.xcconfig"; path = "Target Support Files/Pods-schedule/Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
 		3084042CC2DEC64254577E45 /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.debug.xcconfig"; path = "Target Support Files/Pods-schedule/Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
-		442B6B532191BCBBCCAEB26E /* Pods_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51098C19B895DADE867078A2 /* Pods_schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5932E732675F5119E3949A8F /* Pods-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Widget.release.xcconfig"; path = "Target Support Files/Pods-Widget/Pods-Widget.release.xcconfig"; sourceTree = "<group>"; };
 		840C783F25077DD8004C372F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84106570250784F9000B2214 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8410657225078528000B2214 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		841659082514024700A4E6DD /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		8416590A2514026400A4E6DD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,10 +181,9 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		046263AB2362D46300D1215A /* Models */ = {
+		046263AB2362D46300D1215A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				04F6795123D618360059CD7E /* Containers */,
 				04FEC63B232C2AD100EA5D25 /* NetworkConnection.swift */,
 				045EF98423D0F72F00CC869F /* JSONDecoderManager.swift */,
 				04F6799823DF71370059CD7E /* APIManager.swift */,
@@ -190,7 +192,7 @@
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
 				04AD0B5123E9870F00C22739 /* UserDefaultsManager.swift */,
 			);
-			path = Models;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		046263C823646E5200D1215A /* Views */ = {
@@ -207,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				04A1ED6D2368F5EA00FD8C3A /* NotificationCenter.framework */,
-				442B6B532191BCBBCCAEB26E /* Pods_Widget.framework */,
 				51098C19B895DADE867078A2 /* Pods_schedule.framework */,
 			);
 			name = Frameworks;
@@ -221,13 +222,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		04F6795123D618360059CD7E /* Containers */ = {
+		04F6795123D618360059CD7E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC64323340B5F00EA5D25 /* ScheduleResponse.swift */,
+				04FEC64323340B5F00EA5D25 /* Exercise.swift */,
 				045EF97223C59E7E00CC869F /* Enums.swift */,
+				841659082514024700A4E6DD /* Group.swift */,
+				8416590A2514026400A4E6DD /* Schedule.swift */,
 			);
-			path = Containers;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		04FEC6072321C84E00EA5D25 = {
@@ -255,8 +258,8 @@
 				840C783E25077D99004C372F /* Application */,
 				046263C823646E5200D1215A /* Views */,
 				046263A4236064DF00D1215A /* Controllers */,
-				8410656925078426000B2214 /* Modules */,
-				046263AB2362D46300D1215A /* Models */,
+				046263AB2362D46300D1215A /* Services */,
+				04F6795123D618360059CD7E /* Models */,
 				046263A72362D34900D1215A /* Extensions */,
 				046263AA2362D3FC00D1215A /* Resources */,
 				840C783D25077D78004C372F /* Support Files */,
@@ -293,29 +296,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		8410656925078426000B2214 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				8410656C25078474000B2214 /* Onboarding */,
-				8410656A25078452000B2214 /* Schedule */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		8410656A25078452000B2214 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
-		8410656C25078474000B2214 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,7 +327,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
 					04FEC60F2321C84E00EA5D25 = {
@@ -442,7 +422,7 @@
 				04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */,
 				04F6799923DF71370059CD7E /* APIManager.swift in Sources */,
 				0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */,
-				04FEC64423340B5F00EA5D25 /* ScheduleResponse.swift in Sources */,
+				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
 				0460B4E823F82E1C003F4F9C /* SwitchTableViewCell.swift in Sources */,
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
@@ -453,10 +433,12 @@
 				046263D2236819AA00D1215A /* GroupSettingTableViewController.swift in Sources */,
 				04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */,
 				046263A0235DA7DC00D1215A /* WelcomeViewController.swift in Sources */,
+				8416590B2514026400A4E6DD /* Schedule.swift in Sources */,
 				046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */,
 				045EF98523D0F72F00CC869F /* JSONDecoderManager.swift in Sources */,
 				04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
+				841659092514024700A4E6DD /* Group.swift in Sources */,
 				0460B4E423F33133003F4F9C /* ReminderOptionsViewController.swift in Sources */,
 				04AD0B5023E8B3F200C22739 /* GroupSettingTableViewCell.swift in Sources */,
 				046D2D1823ED10E30055F510 /* NotificationSettingTableViewCell.swift in Sources */,
@@ -516,6 +498,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -579,6 +562,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -619,7 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = "schedule/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,7 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = "schedule/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
