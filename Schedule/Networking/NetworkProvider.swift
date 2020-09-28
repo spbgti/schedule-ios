@@ -11,26 +11,22 @@ import Alamofire
 
 class NetworkProvider<Target: Endpoint> {
     
-    // TODO: create encoder variable
-    // ...
+    private let timeoutInterval: Double = 10
     
-    // TODO: return result using escaping closure
-    // TODO: create completion: @escaping (Result<T>) -> Void
-    func request(_ endpoint: Target) {
+    func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type>) -> Void) {
         AF.request("\(endpoint.baseURL)\(endpoint.path)",
                    method: endpoint.method,
                    parameters: endpoint.parameters,
                    headers: endpoint.headers) { urlRequest in
-            urlRequest.timeoutInterval = 10
+            urlRequest.timeoutInterval = self.timeoutInterval
         }
-        .response() { response in
-            DispatchQueue.main.async {
-                debugPrint(response)
-            }
-        }
-        .cURLDescription { description in
-            DispatchQueue.main.async {
-                debugPrint(description)
+        .responseDecodable(of: Type.self) { response in
+            switch response.result {
+            case .success(let dto):
+                completion(.success(dto))
+            case .failure(let error):
+                // TODO: handle error as Error type
+                completion(.failure(error.errorDescription ?? "Network erro"))
             }
         }
     }
