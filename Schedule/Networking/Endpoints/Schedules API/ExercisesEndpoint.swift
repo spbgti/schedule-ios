@@ -12,11 +12,7 @@ enum ExercisesEndpoint {
     case get(groupId: Int, date: String)
 }
 
-extension ExercisesEndpoint: Endpoint {
-    var baseURL: String {
-        return "https://spbgti-tools-schedule-staging.herokuapp.com/api"
-    }
-    
+extension ExercisesEndpoint: ScheduleAPIEndpoint {
     var path: String {
         return "/exercises"
     }

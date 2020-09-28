@@ -41,6 +41,11 @@
 		841659092514024700A4E6DD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841659082514024700A4E6DD /* Group.swift */; };
 		8416590B2514026400A4E6DD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416590A2514026400A4E6DD /* Schedule.swift */; };
 		846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7225223F04000E9833 /* GroupsEndpoint.swift */; };
+		846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */; };
+		846DCA7725228C9E000E9833 /* LocationsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */; };
+		846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7825228D94000E9833 /* RoomsEndpoint.swift */; };
+		846DCA7B25228ED2000E9833 /* SchedulesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7A25228ED2000E9833 /* SchedulesEndpoint.swift */; };
+		846DCA7D25229064000E9833 /* TeachersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7C25229064000E9833 /* TeachersEndpoint.swift */; };
 		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
 		84EE9C68251F94C200318C41 /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */; };
 		84EE9C69251F94C200318C41 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C66251F94C200318C41 /* NetworkConnection.swift */; };
@@ -113,6 +118,11 @@
 		841659082514024700A4E6DD /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		8416590A2514026400A4E6DD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		846DCA7225223F04000E9833 /* GroupsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsEndpoint.swift; sourceTree = "<group>"; };
+		846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPIEndpoint.swift; sourceTree = "<group>"; };
+		846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsEndpoint.swift; sourceTree = "<group>"; };
+		846DCA7825228D94000E9833 /* RoomsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsEndpoint.swift; sourceTree = "<group>"; };
+		846DCA7A25228ED2000E9833 /* SchedulesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesEndpoint.swift; sourceTree = "<group>"; };
+		846DCA7C25229064000E9833 /* TeachersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersEndpoint.swift; sourceTree = "<group>"; };
 		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
 		84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
 		84EE9C66251F94C200318C41 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
@@ -301,6 +311,20 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		846DCA7E2522931A000E9833 /* Schedules API */ = {
+			isa = PBXGroup;
+			children = (
+				846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */,
+				84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */,
+				846DCA7225223F04000E9833 /* GroupsEndpoint.swift */,
+				846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */,
+				846DCA7825228D94000E9833 /* RoomsEndpoint.swift */,
+				846DCA7A25228ED2000E9833 /* SchedulesEndpoint.swift */,
+				846DCA7C25229064000E9833 /* TeachersEndpoint.swift */,
+			);
+			path = "Schedules API";
+			sourceTree = "<group>";
+		};
 		84A9228D251F669000C83A06 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,8 +338,7 @@
 		84A9228E251F66AA00C83A06 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */,
-				846DCA7225223F04000E9833 /* GroupsEndpoint.swift */,
+				846DCA7E2522931A000E9833 /* Schedules API */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -439,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */,
 				84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */,
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
 				84EE9C69251F94C200318C41 /* NetworkConnection.swift in Sources */,
@@ -460,6 +484,7 @@
 				044FEE6823860721005FA81E /* NotificationManager.swift in Sources */,
 				044FEE642383F3B1005FA81E /* NotificationSettingTableViewController.swift in Sources */,
 				046263D2236819AA00D1215A /* GroupSettingTableViewController.swift in Sources */,
+				846DCA7D25229064000E9833 /* TeachersEndpoint.swift in Sources */,
 				04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */,
 				046263A0235DA7DC00D1215A /* WelcomeViewController.swift in Sources */,
 				8416590B2514026400A4E6DD /* Schedule.swift in Sources */,
@@ -468,11 +493,14 @@
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
 				841659092514024700A4E6DD /* Group.swift in Sources */,
 				0460B4E423F33133003F4F9C /* ReminderOptionsViewController.swift in Sources */,
+				846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */,
 				04AD0B5023E8B3F200C22739 /* GroupSettingTableViewCell.swift in Sources */,
 				046D2D1823ED10E30055F510 /* NotificationSettingTableViewCell.swift in Sources */,
 				045EF97323C59E7E00CC869F /* Enums.swift in Sources */,
 				046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */,
 				04F6797423D7843E0059CD7E /* WelcomeView.swift in Sources */,
+				846DCA7725228C9E000E9833 /* LocationsEndpoint.swift in Sources */,
+				846DCA7B25228ED2000E9833 /* SchedulesEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

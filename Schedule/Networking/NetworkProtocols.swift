@@ -16,13 +16,3 @@ protocol Endpoint {
     var headers: HTTPHeaders? { get }
     var parameters: [String : Any]? { get }
 }
-
-extension Endpoint {
-    var method: HTTPMethod {
-        return .get
-    }
-    
-    var headers: HTTPHeaders? {
-        return nil
-    }
-}

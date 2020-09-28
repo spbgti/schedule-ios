@@ -12,11 +12,7 @@ enum GroupsEndpoint {
     case get(number: String)
 }
 
-extension GroupsEndpoint: Endpoint {
-    var baseURL: String {
-        return "https://spbgti-tools-schedule-staging.herokuapp.com/api"
-    }
-    
+extension GroupsEndpoint: ScheduleAPIEndpoint {
     var path: String {
         return "/groups"
     }
