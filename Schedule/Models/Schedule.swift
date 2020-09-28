@@ -14,4 +14,12 @@ struct Schedule: Codable {
     let year: String
     let semester: String
     let exercises: [Exercise]
+    
+    enum CodingKeys: String, CodingKey {
+        case scheduleId = "schedule_id"
+        case groupId = "group_id"
+        case year
+        case semester
+        case exercises
+    }
 }

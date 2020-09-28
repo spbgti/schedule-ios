@@ -11,4 +11,9 @@ import Foundation
 struct Group: Codable {
     let groupId: Int
     let number: String
+    
+    enum CodingKeys: String, CodingKey {
+        case groupId = "group_id"
+        case number
+    }
 }

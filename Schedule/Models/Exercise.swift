@@ -10,6 +10,18 @@ struct Exercise: Codable {
     let pair: String
     let day: String
     let parity: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case exerciseId = "exercise_id"
+        case scheduleId = "schedule_id"
+        case roomId = "room_id"
+        case teachers
+        case name
+        case type
+        case pair
+        case day
+        case parity
+    }
   
     subscript() -> String {
         return day
