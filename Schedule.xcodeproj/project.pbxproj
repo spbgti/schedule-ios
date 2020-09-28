@@ -41,6 +41,11 @@
 		841659092514024700A4E6DD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841659082514024700A4E6DD /* Group.swift */; };
 		8416590B2514026400A4E6DD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416590A2514026400A4E6DD /* Schedule.swift */; };
 		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
+		84EE9C68251F94C200318C41 /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */; };
+		84EE9C69251F94C200318C41 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C66251F94C200318C41 /* NetworkConnection.swift */; };
+		84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */; };
+		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
+		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,6 +112,11 @@
 		841659082514024700A4E6DD /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		8416590A2514026400A4E6DD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
+		84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
+		84EE9C66251F94C200318C41 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +188,9 @@
 		046263AB2362D46300D1215A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */,
+				84EE9C66251F94C200318C41 /* NetworkConnection.swift */,
+				84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */,
 				04F6799823DF71370059CD7E /* APIManager.swift */,
 				045EF98223D0F6D300CC869F /* DataManager.swift */,
 				04D56BD32348E5670097E0DC /* DataProvider.swift */,
@@ -216,8 +229,8 @@
 		04F6795123D618360059CD7E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC64323340B5F00EA5D25 /* Exercise.swift */,
 				045EF97223C59E7E00CC869F /* Enums.swift */,
+				04FEC64323340B5F00EA5D25 /* Exercise.swift */,
 				841659082514024700A4E6DD /* Group.swift */,
 				8416590A2514026400A4E6DD /* Schedule.swift */,
 			);
@@ -290,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				84EE9C63251F84F300318C41 /* NetworkProtocols.swift */,
+				84EE9C6B251F956B00318C41 /* NetworkProvider.swift */,
 				84A9228E251F66AA00C83A06 /* Endpoints */,
 			);
 			path = Networking;
@@ -298,6 +312,7 @@
 		84A9228E251F66AA00C83A06 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -423,12 +438,17 @@
 			files = (
 				84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */,
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
+				84EE9C69251F94C200318C41 /* NetworkConnection.swift in Sources */,
 				04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */,
+				84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */,
+				84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */,
+				84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */,
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
 				04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */,
 				04F6799923DF71370059CD7E /* APIManager.swift in Sources */,
 				0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
+				84EE9C68251F94C200318C41 /* JSONDecoderManager.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
 				0460B4E823F82E1C003F4F9C /* SwitchTableViewCell.swift in Sources */,
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
@@ -605,6 +625,7 @@
 				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = "schedule/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -612,6 +633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
 				PRODUCT_NAME = "СПбГТИ(ТУ)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -628,6 +650,7 @@
 				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BA672Z9B27;
 				INFOPLIST_FILE = "schedule/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -635,6 +658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
 				PRODUCT_NAME = "СПбГТИ(ТУ)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

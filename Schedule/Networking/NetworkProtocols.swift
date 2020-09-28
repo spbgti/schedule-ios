@@ -10,12 +10,11 @@ import Foundation
 import Alamofire
 
 protocol Endpoint {
-    var baseURL: URL { get }
-    var path: URL { get }
+    var baseURL: String { get }
+    var path: String { get }
     var method: HTTPMethod { get }
-    var header: HTTPHeaders? { get }
-    var parameters: Parameters? { get }
-    var queryParameters: URLQueryItem? { get }
+    var headers: HTTPHeaders? { get }
+    var parameters: [String : Any]? { get }
 }
 
 extension Endpoint {
@@ -23,15 +22,7 @@ extension Endpoint {
         return .get
     }
     
-    var header: HTTPHeaders? {
-        return nil
-    }
-    
-    var parameters: Parameters? {
-        return nil
-    }
-    
-    var queryParameters: URLQueryItem? {
+    var headers: HTTPHeaders? {
         return nil
     }
 }
