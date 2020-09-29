@@ -26,7 +26,7 @@ class NetworkProvider<Target: Endpoint> {
                 completion(.success(dto))
             case .failure(let error):
                 // TODO: handle error as Error type
-                completion(.failure(error.errorDescription ?? "Network erro"))
+                completion(.failure(error.errorDescription ?? "Network error"))
             }
         }
     }

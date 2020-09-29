@@ -9,18 +9,27 @@
 import Foundation
 
 enum ExercisesEndpoint {
-    case get(groupId: Int, date: String)
+    case getFor(group: Int, date: String)
+    case getBy(id: Int)
 }
 
 extension ExercisesEndpoint: ScheduleAPIEndpoint {
     var path: String {
-        return "/exercises"
+        switch self {
+        case .getFor:
+            return "/exercises"
+        case .getBy(id: let id):
+            return "/exercises/\(id)"
+        }
+        
     }
     
     var parameters: [String : Any]? {
         switch self {
-        case .get(groupId: let id, date: let date):
+        case .getFor(group: let id, date: let date):
             return ["group_id" : id, "date" : date]
+        case .getBy:
+            return nil
         }
     }
 }
