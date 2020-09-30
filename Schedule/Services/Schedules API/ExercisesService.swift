@@ -14,7 +14,7 @@ class ExercisesService {
     
     func getExercises(groupId: Int, date: Date, completion: @escaping (Result<[Exercise]>) -> Void) {
         let dateString = dateFormatter(date)
-        provider.request(.getFor(group: groupId, date: dateString)) { (result: Result<[Exercise]>) in
+        provider.request(.get(group: groupId, date: dateString)) { (result: Result<[Exercise]>) in
             switch result {
             case .success(let exercise):
                 completion(.success(exercise))

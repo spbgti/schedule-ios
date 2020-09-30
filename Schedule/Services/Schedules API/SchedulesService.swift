@@ -31,6 +31,17 @@ class SchedulesService {
         }
     }
     
+    func getSchedule(id: Int, completion: @escaping (Result<Schedule>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Schedule>) in
+            switch result {
+            case .success(let schedule):
+                completion(.success(schedule))
+            case .failure(let errorString):
+                completion(.failure(errorString))
+            }
+        }
+    }
+    
     private func dateFormatter(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
