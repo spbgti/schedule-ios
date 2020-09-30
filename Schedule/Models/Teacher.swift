@@ -11,8 +11,8 @@ import Foundation
 struct Teacher: Codable {
     let teacherId: Int
     let name: String
-    let rank: String
-    let position: String
+    let rank: String?
+    let position: String?
     
     enum CodingKeys: String, CodingKey {
         case teacherId = "teacher_id"

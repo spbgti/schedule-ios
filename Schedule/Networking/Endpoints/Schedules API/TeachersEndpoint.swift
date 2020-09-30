@@ -10,17 +10,25 @@ import Foundation
 
 enum TeachersEndpoint {
     case get(name: String)
+    case getBy(id: Int)
 }
 
 extension TeachersEndpoint: ScheduleAPIEndpoint {
     var path: String {
-        return "/teachers"
+        switch self {
+        case .get:
+            return "/teachers"
+        case .getBy(id: let id):
+            return "/teachers/\(id)"
+        }
     }
     
     var parameters: [String : Any]? {
         switch self {
         case .get(name: let name):
             return ["name" : name]
+        case .getBy:
+            return nil
         }
     }
     
