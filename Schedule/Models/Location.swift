@@ -11,7 +11,7 @@ import Foundation
 struct Location: Codable {
     let locationId: Int
     let name: String
-    let geoPosition: String
+    let geoPosition: String?
     
     enum CodingKeys: String, CodingKey {
         case locationId = "location_id"
