@@ -11,7 +11,7 @@ import Foundation
 struct Room: Codable {
     let roomId: Int
     let name: String
-    let locationId: String
+    let locationId: Int
     
     enum CodingKeys: String, CodingKey {
         case roomId = "room_id"

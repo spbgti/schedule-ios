@@ -9,18 +9,26 @@
 import Foundation
 
 enum RoomsEndpoint {
-    case get(name: String, location: String)
+    case get(name: String)
+    case getBy(id: Int)
 }
 
 extension RoomsEndpoint: ScheduleAPIEndpoint {
     var path: String {
-        return "/rooms"
+        switch self {
+        case .get:
+            return "/rooms"
+        case .getBy(id: let id):
+            return "/rooms/\(id)"
+        }
     }
     
     var parameters: [String : Any]? {
         switch self {
-        case .get(name: let name, location: let location):
-            return ["name" : name, "location" : location]
+        case .get(name: let name):
+            return ["name" : name]
+        case .getBy:
+            return nil
         }
     }
 }
