@@ -30,7 +30,6 @@
 		04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* DataProvider.swift */; };
 		04F6797423D7843E0059CD7E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6797323D7843E0059CD7E /* WelcomeView.swift */; };
 		04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799523D8E91C0059CD7E /* ScheduleView.swift */; };
-		04F6799923DF71370059CD7E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799823DF71370059CD7E /* APIManager.swift */; };
 		04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799A23E0D2B80059CD7E /* RootViewController.swift */; };
 		04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */; };
 		04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Colors.xcassets */; };
@@ -57,7 +56,6 @@
 		84B025132524BE5100FE29B0 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B025122524BE5100FE29B0 /* TeachersService.swift */; };
 		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
 		84EE9C68251F94C200318C41 /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */; };
-		84EE9C69251F94C200318C41 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C66251F94C200318C41 /* NetworkConnection.swift */; };
 		84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */; };
 		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
 		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
@@ -108,7 +106,6 @@
 		04D56BD32348E5670097E0DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		04F6797323D7843E0059CD7E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		04F6799523D8E91C0059CD7E /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		04F6799823DF71370059CD7E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04F6799A23E0D2B80059CD7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СПбГТИ(ТУ).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +140,6 @@
 		84B025122524BE5100FE29B0 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
 		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
 		84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
-		84EE9C66251F94C200318C41 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
@@ -220,9 +216,7 @@
 			children = (
 				846DCA852522A54D000E9833 /* Schedules API */,
 				84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */,
-				84EE9C66251F94C200318C41 /* NetworkConnection.swift */,
 				84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */,
-				04F6799823DF71370059CD7E /* APIManager.swift */,
 				045EF98223D0F6D300CC869F /* DataManager.swift */,
 				04D56BD32348E5670097E0DC /* DataProvider.swift */,
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
@@ -501,7 +495,6 @@
 				84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */,
 				846DCA8025229BD3000E9833 /* Location.swift in Sources */,
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
-				84EE9C69251F94C200318C41 /* NetworkConnection.swift in Sources */,
 				84B0250D2524A45200FE29B0 /* SchedulesService.swift in Sources */,
 				846DCA8225229C59000E9833 /* Room.swift in Sources */,
 				04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */,
@@ -512,7 +505,6 @@
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
 				04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */,
 				846DCA8425229CC8000E9833 /* Teacher.swift in Sources */,
-				04F6799923DF71370059CD7E /* APIManager.swift in Sources */,
 				0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,
