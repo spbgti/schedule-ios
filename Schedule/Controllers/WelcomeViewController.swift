@@ -9,6 +9,8 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    let groupsService = GroupsService()
   
   // MARK: Life cycle
   
@@ -33,23 +35,21 @@ class WelcomeViewController: UIViewController {
  
   @objc func saveGroupNumber() {
     if let groupNumber = view().groupNumberTextField.text {
-      APIManager.shared.getGroups(groupNumber: groupNumber) { completion in
-        DispatchQueue.main.async {
-          switch completion{
-          case .success(let result):
-            UserDefaultsManager.shared.setObject(result[0].groupId, forKey: "GROUP_ID")
-            UserDefaultsManager.shared.setObject(result[0].number, forKey: "GROUP_NUMBER")
-            UserDefaultsManager.shared.setObject(true, forKey: "IS_LAUNCHED_BEFORE")
-            AppDelegate.shared.rootViewController.switchToScheduleScreen()
-          case .failure(let error):
-            Alert.showMessageAlert(on: self, message: "\(error)", title: "Group not found")
-          }
+        groupsService.getGroups(number: groupNumber) { result in
+            switch result {
+            case .success(let groups):
+                if let group = groups.first {
+                    UserDefaultsManager.shared.setObject(group.groupId, forKey: "GROUP_ID")
+                    UserDefaultsManager.shared.setObject(group.number, forKey: "GROUP_NUMBER")
+                    UserDefaultsManager.shared.setObject(true, forKey: "IS_LAUNCHED_BEFORE")
+                    AppDelegate.shared.rootViewController.switchToScheduleScreen()
+                }
+            case .failure(let error):
+              Alert.showMessageAlert(on: self, message: "\(error)", title: "Group not found")
+            }
         }
-      }
     } else {
-      DispatchQueue.main.async {
         Alert.showMessageAlert(on: self, message: "Error", title: "Text field is empty. Enter your group number")
-      }
     }
   }
 
