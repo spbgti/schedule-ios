@@ -58,6 +58,8 @@
 		84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */; };
 		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
 		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
+		84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF23202525F4B100B5DC88 /* Main.storyboard */; };
+		84FF23262525F54000B5DC88 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF23252525F54000B5DC88 /* MainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -141,6 +143,8 @@
 		84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
+		84FF23202525F4B100B5DC88 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		84FF23252525F54000B5DC88 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,11 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				840C783E25077D99004C372F /* Application */,
-				046263C823646E5200D1215A /* Views */,
-				046263A4236064DF00D1215A /* Controllers */,
 				84A9228D251F669000C83A06 /* Networking */,
 				046263AB2362D46300D1215A /* Services */,
 				04F6795123D618360059CD7E /* Models */,
+				84FF231E2525F44400B5DC88 /* Modules */,
 				046263AA2362D3FC00D1215A /* Resources */,
 				840C783D25077D78004C372F /* Support Files */,
 			);
@@ -377,6 +380,25 @@
 			path = Bootstrap;
 			sourceTree = "<group>";
 		};
+		84FF231E2525F44400B5DC88 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				84FF231F2525F49200B5DC88 /* Main */,
+				046263C823646E5200D1215A /* Views */,
+				046263A4236064DF00D1215A /* Controllers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		84FF231F2525F49200B5DC88 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84FF23202525F4B100B5DC88 /* Main.storyboard */,
+				84FF23252525F54000B5DC88 /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -413,6 +435,7 @@
 				TargetAttributes = {
 					04FEC60F2321C84E00EA5D25 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -441,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840C784025077DD8004C372F /* Images.xcassets in Resources */,
+				84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */,
 				8410656F250784F9000B2214 /* Localizable.strings in Resources */,
 				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
 				04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */,
@@ -518,6 +542,7 @@
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
 				0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */,
 				84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */,
+				84FF23262525F54000B5DC88 /* MainController.swift in Sources */,
 				044FEE6823860721005FA81E /* NotificationManager.swift in Sources */,
 				044FEE642383F3B1005FA81E /* NotificationSettingTableViewController.swift in Sources */,
 				046263D2236819AA00D1215A /* GroupSettingTableViewController.swift in Sources */,
@@ -694,6 +719,7 @@
 			baseConfigurationReference = 3084042CC2DEC64254577E45 /* Pods-schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -709,6 +735,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mac.schedule;
 				PRODUCT_NAME = "СПбГТИ(ТУ)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -719,6 +746,7 @@
 			baseConfigurationReference = 2EDF9EB08AECB506056BD602 /* Pods-schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
