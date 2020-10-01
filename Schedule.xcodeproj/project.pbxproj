@@ -55,7 +55,6 @@
 		84B025112524BA9E00FE29B0 /* RoomsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B025102524BA9E00FE29B0 /* RoomsService.swift */; };
 		84B025132524BE5100FE29B0 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B025122524BE5100FE29B0 /* TeachersService.swift */; };
 		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
-		84EE9C68251F94C200318C41 /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */; };
 		84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */; };
 		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
 		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
@@ -139,7 +138,6 @@
 		84B025102524BA9E00FE29B0 /* RoomsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsService.swift; sourceTree = "<group>"; };
 		84B025122524BE5100FE29B0 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
 		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
-		84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
 		84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				846DCA852522A54D000E9833 /* Schedules API */,
-				84EE9C65251F94C200318C41 /* JSONDecoderManager.swift */,
 				84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */,
 				045EF98223D0F6D300CC869F /* DataManager.swift */,
 				04D56BD32348E5670097E0DC /* DataProvider.swift */,
@@ -508,7 +505,6 @@
 				0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,
-				84EE9C68251F94C200318C41 /* JSONDecoderManager.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
 				0460B4E823F82E1C003F4F9C /* SwitchTableViewCell.swift in Sources */,
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
