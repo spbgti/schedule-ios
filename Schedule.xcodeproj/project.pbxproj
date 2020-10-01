@@ -290,7 +290,6 @@
 				84A9228D251F669000C83A06 /* Networking */,
 				046263AB2362D46300D1215A /* Services */,
 				04F6795123D618360059CD7E /* Models */,
-				046263A72362D34900D1215A /* Extensions */,
 				046263AA2362D3FC00D1215A /* Resources */,
 				840C783D25077D78004C372F /* Support Files */,
 			);
@@ -318,8 +317,8 @@
 		840C783E25077D99004C372F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
-				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
+				84FF231D2525E4A000B5DC88 /* Bootstrap */,
+				046263A72362D34900D1215A /* Extensions */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -367,6 +366,15 @@
 				846DCA7E2522931A000E9833 /* Schedules API */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		84FF231D2525E4A000B5DC88 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
+				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
+			);
+			path = Bootstrap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
