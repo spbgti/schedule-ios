@@ -29,7 +29,6 @@
 		04AD0B5023E8B3F200C22739 /* GroupSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */; };
 		04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* DataProvider.swift */; };
 		04F6797423D7843E0059CD7E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6797323D7843E0059CD7E /* WelcomeView.swift */; };
-		04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799523D8E91C0059CD7E /* ScheduleView.swift */; };
 		04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799A23E0D2B80059CD7E /* RootViewController.swift */; };
 		04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */; };
 		04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Colors.xcassets */; };
@@ -60,6 +59,7 @@
 		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
 		84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF23202525F4B100B5DC88 /* Main.storyboard */; };
 		84FF23262525F54000B5DC88 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF23252525F54000B5DC88 /* MainController.swift */; };
+		84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,7 +106,6 @@
 		04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingTableViewCell.swift; sourceTree = "<group>"; };
 		04D56BD32348E5670097E0DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		04F6797323D7843E0059CD7E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		04F6799523D8E91C0059CD7E /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		04F6799A23E0D2B80059CD7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СПбГТИ(ТУ).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +144,7 @@
 		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
 		84FF23202525F4B100B5DC88 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		84FF23252525F54000B5DC88 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				04F6797323D7843E0059CD7E /* WelcomeView.swift */,
-				04F6799523D8E91C0059CD7E /* ScheduleView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -171,7 +170,6 @@
 		0409BE2F23EAD2AE00BD33B4 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
 				04AD0B4F23E8B3F200C22739 /* GroupSettingTableViewCell.swift */,
 				046D2D1723ED10E30055F510 /* NotificationSettingTableViewCell.swift */,
 				0460B4E523F824B3003F4F9C /* PickerTableViewCell.swift */,
@@ -185,7 +183,6 @@
 			children = (
 				04F6799A23E0D2B80059CD7E /* RootViewController.swift */,
 				0462639F235DA7DC00D1215A /* WelcomeViewController.swift */,
-				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
 				046263A5236184BB00D1215A /* SettingTableViewController.swift */,
 				046263D1236819AA00D1215A /* GroupSettingTableViewController.swift */,
 				044FEE632383F3B1005FA81E /* NotificationSettingTableViewController.swift */,
@@ -384,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				84FF231F2525F49200B5DC88 /* Main */,
+				84FF232A2525FCEB00B5DC88 /* Schedule */,
 				046263C823646E5200D1215A /* Views */,
 				046263A4236064DF00D1215A /* Controllers */,
 			);
@@ -397,6 +395,16 @@
 				84FF23252525F54000B5DC88 /* MainController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		84FF232A2525FCEB00B5DC88 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */,
+				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
+				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +476,7 @@
 				8410656F250784F9000B2214 /* Localizable.strings in Resources */,
 				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
 				04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */,
+				84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +541,6 @@
 				84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */,
 				84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */,
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
-				04F6799623D8E91C0059CD7E /* ScheduleView.swift in Sources */,
 				846DCA8425229CC8000E9833 /* Teacher.swift in Sources */,
 				0460B4E623F824B3003F4F9C /* PickerTableViewCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,

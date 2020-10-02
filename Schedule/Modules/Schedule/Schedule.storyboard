@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V73-fC-7nl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Schedule View Controller-->
+        <scene sceneID="Fxu-4Q-U6D">
+            <objects>
+                <viewController id="V73-fC-7nl" customClass="ScheduleViewController" customModule="СПбГТИ_ТУ_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yxg-rB-aBY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="lS0-6w-xCf">
+                                <rect key="frame" x="0.0" y="110" width="414" height="752"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BJa-Cs-OFH">
+                                <rect key="frame" x="5" y="59" width="404" height="32"/>
+                                <segments>
+                                    <segment title="Today"/>
+                                    <segment title="Tomorrow"/>
+                                    <segment title="Full"/>
+                                </segments>
+                            </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2vV-7g-8Ki">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6mo-5o-6ak"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lS0-6w-xCf" firstAttribute="top" secondItem="BJa-Cs-OFH" secondAttribute="bottom" constant="20" id="1qg-9o-UGC"/>
+                            <constraint firstItem="2vV-7g-8Ki" firstAttribute="centerY" secondItem="yxg-rB-aBY" secondAttribute="centerY" id="4Ov-jR-Dkd"/>
+                            <constraint firstItem="BJa-Cs-OFH" firstAttribute="leading" secondItem="6mo-5o-6ak" secondAttribute="leading" constant="5" id="4nD-Xw-xnd"/>
+                            <constraint firstItem="BJa-Cs-OFH" firstAttribute="top" secondItem="6mo-5o-6ak" secondAttribute="top" constant="15" id="9Dk-pE-rcR"/>
+                            <constraint firstItem="6mo-5o-6ak" firstAttribute="trailing" secondItem="lS0-6w-xCf" secondAttribute="trailing" id="J2n-Bh-cAv"/>
+                            <constraint firstItem="lS0-6w-xCf" firstAttribute="leading" secondItem="6mo-5o-6ak" secondAttribute="leading" id="LLV-ih-U7i"/>
+                            <constraint firstItem="2vV-7g-8Ki" firstAttribute="centerX" secondItem="yxg-rB-aBY" secondAttribute="centerX" id="QaF-Tb-fLy"/>
+                            <constraint firstItem="6mo-5o-6ak" firstAttribute="bottom" secondItem="lS0-6w-xCf" secondAttribute="bottom" id="YFV-C9-SUR"/>
+                            <constraint firstItem="6mo-5o-6ak" firstAttribute="trailing" secondItem="BJa-Cs-OFH" secondAttribute="trailing" constant="5" id="lT1-DN-7IV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="2vV-7g-8Ki" id="Cpb-g8-pgs"/>
+                        <outlet property="segmentedControl" destination="BJa-Cs-OFH" id="DJh-GC-Z3N"/>
+                        <outlet property="tableView" destination="lS0-6w-xCf" id="40i-69-4rf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H10-9m-Cbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262.31884057971018" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

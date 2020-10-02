@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Storyboard Reference-->
+        <!--Schedule-->
         <scene sceneID="gdd-a5-geQ">
             <objects>
-                <viewControllerPlaceholder id="24c-HU-OxF" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Schedule" id="24c-HU-OxF" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mBd-3d-FG8"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4f-5g-KPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
