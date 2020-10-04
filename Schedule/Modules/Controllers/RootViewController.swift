@@ -20,8 +20,8 @@ class RootViewController: UIViewController {
     let launchedBefore = UserDefaultsManager.shared.getObject(forKey: "IS_LAUNCHED_BEFORE") as? Bool
     let welcomeViewController = WelcomeViewController()
     
-    let scheduleStoryboard = UIStoryboard(name: "Schedule", bundle: nil)
-    let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! ScheduleViewController
+    let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
     
     if launchedBefore == nil {
       self.currentViewController = welcomeViewController
