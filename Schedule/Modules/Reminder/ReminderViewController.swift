@@ -76,5 +76,14 @@ extension ReminderViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ReminderViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let reminder = self.reminders?[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "ReminderSettings", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! ReminderSettingsViewController
+        vc.reminder = reminder
+        vc.modalPresentationStyle = .formSheet
+        
+        self.navigationController?.present(vc, animated: true)
+    }
 }
