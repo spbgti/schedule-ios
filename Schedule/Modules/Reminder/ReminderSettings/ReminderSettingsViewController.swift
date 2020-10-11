@@ -16,6 +16,8 @@ class ReminderSettingsViewController: UIViewController {
     
     @IBOutlet private var pickerView: UIPickerView!
     
+    public var callback: ((_: Reminder) -> Void)?
+    
     // TODO: create ReminderViewModel
     var reminder: Reminder!
     
@@ -48,6 +50,11 @@ class ReminderSettingsViewController: UIViewController {
     }
     
     @IBAction private func applySettings() {
+        let jsonDecoder = JSONEncoder()
+        let reminderData = try! jsonDecoder.encode(reminder)
+        
+        UserDefaults.standard.setValue(reminderData, forKey: "\(reminder.name)")
+        callback?(reminder)
         self.dismiss(animated: true, completion: nil)
     }
     

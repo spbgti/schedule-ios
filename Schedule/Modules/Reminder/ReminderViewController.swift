@@ -26,23 +26,16 @@ class ReminderViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "ReminderCVCell", bundle: nil), forCellWithReuseIdentifier: "ReminderCVCell")
     }
     
-    // TODO: delete functions, use only for test
     private func generateReminders() {
-        let eveningReminder = Reminder(name: "Evening reminder",
-                                       icon: UIImage(systemName: "moon.fill")!,
-                                       description: nil,
-                                       hour: "08",
-                                       minute: "30",
-                                       isRepeate: true,
-                                       isActive: true)
-        let morningReminder = Reminder(name: "Morning reminder",
-                                       icon: UIImage(systemName: "sun.max.fill")!,
-                                       description: nil,
-                                       hour: "09",
-                                       minute: "45",
-                                       isRepeate: false,
-                                       isActive: false)
-        reminders = [eveningReminder, morningReminder]
+        if let morningReminder = UserDefaults.standard.object(forKey: "Morning reminder") as? Data {
+            let reminder = try! JSONDecoder().decode(Reminder.self, from: morningReminder)
+            reminders = [reminder]
+        }
+        
+        if let eveningReminder = UserDefaults.standard.object(forKey: "Evening reminder") as? Data {
+            let reminder = try! JSONDecoder().decode(Reminder.self, from: eveningReminder)
+            reminders = [reminder]
+        }
     }
     
 }
@@ -90,6 +83,11 @@ extension ReminderViewController: UICollectionViewDelegate {
         controller.modalPresentationStyle = .custom
         controller.transitioningDelegate = detailsTransitioningDelegate
         controller.reminder = reminder
+        
+        controller.callback = { [weak self] updatedReminder in
+            self?.reminders?[indexPath.row] = updatedReminder
+            self?.collectionView.reloadData()
+        }
         
         present(controller, animated: true, completion: nil)
     }

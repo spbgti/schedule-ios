@@ -8,9 +8,8 @@
 
 import UIKit
 
-struct Reminder {
+struct Reminder: Codable {
     var name: String
-    var icon: UIImage
     var description: String?
     var hour: String
     var minute: String
