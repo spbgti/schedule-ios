@@ -9,10 +9,11 @@
 import UIKit
 
 struct Reminder {
-    let name: String
-    let icon: UIImage
-    let description: String?
-    let time: String
-    let isRepeate: Bool
-    let isActive: Bool
+    var name: String
+    var icon: UIImage
+    var description: String?
+    var hour: String
+    var minute: String
+    var isRepeate: Bool
+    var isActive: Bool
 }

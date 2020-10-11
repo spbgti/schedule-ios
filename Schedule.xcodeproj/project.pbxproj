@@ -55,6 +55,7 @@
 		84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0250E2524A50800FE29B0 /* LocationsService.swift */; };
 		84B025112524BA9E00FE29B0 /* RoomsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B025102524BA9E00FE29B0 /* RoomsService.swift */; };
 		84B025132524BE5100FE29B0 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B025122524BE5100FE29B0 /* TeachersService.swift */; };
+		84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE236225333CFF0017D17A /* ModalViewController.swift */; };
 		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
 		84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */; };
 		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
@@ -142,6 +143,7 @@
 		84B0250E2524A50800FE29B0 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
 		84B025102524BA9E00FE29B0 /* RoomsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsService.swift; sourceTree = "<group>"; };
 		84B025122524BE5100FE29B0 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
+		84BE236225333CFF0017D17A /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
 		84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
@@ -317,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				84FF231D2525E4A000B5DC88 /* Bootstrap */,
-				046263A72362D34900D1215A /* Extensions */,
+				84BE236025333CCA0017D17A /* Common */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -346,8 +348,8 @@
 		84595B21252A990C0039E401 /* ReminderSettings */ = {
 			isa = PBXGroup;
 			children = (
-				0460B4E323F33133003F4F9C /* ReminderSettingsViewController.swift */,
 				84595B22252A994C0039E401 /* ReminderSettings.storyboard */,
+				0460B4E323F33133003F4F9C /* ReminderSettingsViewController.swift */,
 			);
 			path = ReminderSettings;
 			sourceTree = "<group>";
@@ -395,6 +397,23 @@
 				846DCA7E2522931A000E9833 /* Schedules API */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		84BE236025333CCA0017D17A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84BE236125333CE50017D17A /* Views */,
+				046263A72362D34900D1215A /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84BE236125333CE50017D17A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84BE236225333CFF0017D17A /* ModalViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		84FF231D2525E4A000B5DC88 /* Bootstrap */ = {
@@ -578,6 +597,7 @@
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
+				84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */,
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
 				0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */,
 				84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */,

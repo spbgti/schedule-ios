@@ -12,6 +12,7 @@ class ReminderViewController: UIViewController {
     
     @IBOutlet private var collectionView: UICollectionView!
     
+    private var detailsTransitioningDelegate: InteractiveModalTransitioningDelegate!
     private var reminders: [Reminder]?
     
     override func viewDidLoad() {
@@ -30,13 +31,15 @@ class ReminderViewController: UIViewController {
         let eveningReminder = Reminder(name: "Evening reminder",
                                        icon: UIImage(systemName: "moon.fill")!,
                                        description: nil,
-                                       time: "19:30",
+                                       hour: "08",
+                                       minute: "30",
                                        isRepeate: true,
                                        isActive: true)
         let morningReminder = Reminder(name: "Morning reminder",
                                        icon: UIImage(systemName: "sun.max.fill")!,
                                        description: nil,
-                                       time: "07:00",
+                                       hour: "09",
+                                       minute: "45",
                                        isRepeate: false,
                                        isActive: false)
         reminders = [eveningReminder, morningReminder]
@@ -60,30 +63,34 @@ extension ReminderViewController: UICollectionViewDataSource {
 
 extension ReminderViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width - 36
-        let height = UIScreen.main.bounds.height / 3
+        let width: CGFloat = 270.0
+        let height: CGFloat = 160.0
         
         return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 15.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 15.0
     }
 }
 
 extension ReminderViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let reminder = self.reminders?[indexPath.row]
         
         let storyboard = UIStoryboard(name: "ReminderSettings", bundle: nil)
-        let vc = storyboard.instantiateInitialViewController() as! ReminderSettingsViewController
-        vc.reminder = reminder
-        vc.modalPresentationStyle = .formSheet
+        let controller = storyboard.instantiateInitialViewController() as! ReminderSettingsViewController
+                
+        detailsTransitioningDelegate = InteractiveModalTransitioningDelegate(from: self, to: controller)
+        controller.modalPresentationStyle = .custom
+        controller.transitioningDelegate = detailsTransitioningDelegate
+        controller.reminder = reminder
         
-        self.navigationController?.present(vc, animated: true)
+        present(controller, animated: true, completion: nil)
     }
 }

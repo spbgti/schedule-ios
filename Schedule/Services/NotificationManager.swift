@@ -22,7 +22,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
                        title: String,
                        subtitle: String,
                        body: String,
-                       repeats: Bool = false) {
+                       repeats: Bool = true) {
     let content = UNMutableNotificationContent()
     content.title = title
     content.subtitle = subtitle

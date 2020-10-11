@@ -10,40 +10,26 @@ import UIKit
 
 class ReminderCVCell: UICollectionViewCell {
     
-    @IBOutlet private var coverView: UIView!
-    
-    @IBOutlet private var icon: UIImageView!
     @IBOutlet private var title: UILabel!
-    
     @IBOutlet private var time: UILabel!
-    
-    @IBOutlet private var isRepeat: UILabel!
-    @IBOutlet private var isActive: UILabel!
+    @IBOutlet private var isActiveImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        coverView.layer.cornerRadius = 10
-        coverView.clipsToBounds = true
+        self.layer.cornerRadius = 13
+        self.clipsToBounds = true
     }
     
     func set(_ reminder: Reminder) {
         self.title.text = reminder.name
-        self.icon.image = reminder.icon
-        self.time.text = reminder.time
+        self.time.text = "\(reminder.hour):\(reminder.minute)"
         
         switch reminder.isActive {
         case true:
-            self.isActive.text = "ON"
+            self.isActiveImageView.image = UIImage(named: "reminder_on")!
         case false:
-            self.isActive.text = "OFF"
-        }
-        
-        switch reminder.isRepeate {
-        case true:
-            self.isRepeat.text = "Repeat"
-        case false:
-            self.isRepeat.text = "No repeat"
+            self.isActiveImageView.image = UIImage(named: "reminder_off")!
         }
     }
 
