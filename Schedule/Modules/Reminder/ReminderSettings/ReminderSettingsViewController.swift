@@ -18,6 +18,8 @@ class ReminderSettingsViewController: UIViewController {
     
     public var callback: ((_: Reminder) -> Void)?
     
+    private let notificationManager = NotificationManager()
+    
     // TODO: create ReminderViewModel
     var reminder: Reminder!
     
@@ -53,12 +55,17 @@ class ReminderSettingsViewController: UIViewController {
         let jsonDecoder = JSONEncoder()
         let reminderData = try! jsonDecoder.encode(reminder)
         
-        UserDefaults.standard.setValue(reminderData, forKey: "\(reminder.name)")
+        if reminder.isActive {
+            notificationManager.addNotification(reminder)
+        } else {
+            notificationManager.removeNotification(by: reminder.name)
+        }
+        
+        UserDefaults.standard.setValue(reminderData, forKey: reminder.name)
         callback?(reminder)
+        
         self.dismiss(animated: true, completion: nil)
     }
-    
-    // TODO: create date formatter
     
 }
 

@@ -13,16 +13,16 @@ class ReminderViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
     
     private var detailsTransitioningDelegate: InteractiveModalTransitioningDelegate!
-    private var reminders: [Reminder]?
+    private var reminders = [Reminder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         generateReminders()
-        collectionView.reloadData()
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
         self.collectionView.register(UINib(nibName: "ReminderCVCell", bundle: nil), forCellWithReuseIdentifier: "ReminderCVCell")
     }
     
@@ -34,7 +34,7 @@ class ReminderViewController: UIViewController {
         
         if let eveningReminder = UserDefaults.standard.object(forKey: "Evening reminder") as? Data {
             let reminder = try! JSONDecoder().decode(Reminder.self, from: eveningReminder)
-            reminders = [reminder]
+            reminders.append(reminder)
         }
     }
     
@@ -42,13 +42,13 @@ class ReminderViewController: UIViewController {
 
 extension ReminderViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (reminders?.count)!
+        return reminders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let reminder = reminders?[indexPath.item]
+        let reminder = reminders[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReminderCVCell", for: indexPath) as! ReminderCVCell
-        cell.set(reminder!)
+        cell.set(reminder)
         
         return cell
     }
@@ -74,7 +74,7 @@ extension ReminderViewController: UICollectionViewDelegateFlowLayout {
 extension ReminderViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let reminder = self.reminders?[indexPath.row]
+        let reminder = self.reminders[indexPath.row]
         
         let storyboard = UIStoryboard(name: "ReminderSettings", bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! ReminderSettingsViewController
@@ -85,7 +85,7 @@ extension ReminderViewController: UICollectionViewDelegate {
         controller.reminder = reminder
         
         controller.callback = { [weak self] updatedReminder in
-            self?.reminders?[indexPath.row] = updatedReminder
+            self?.reminders[indexPath.row] = updatedReminder
             self?.collectionView.reloadData()
         }
         

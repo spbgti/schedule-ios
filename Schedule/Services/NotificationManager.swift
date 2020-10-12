@@ -17,26 +17,23 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
   
   // MARK: Methods
   
-  func addNotification(identifier: String,
-                       time: Date,
-                       title: String,
-                       subtitle: String,
-                       body: String,
-                       repeats: Bool = true) {
-    let content = UNMutableNotificationContent()
-    content.title = title
-    content.subtitle = subtitle
-    content.body = body
-    content.sound = UNNotificationSound.default
-    
-    let calendar = Calendar(identifier: .gregorian)
-    let components = calendar.dateComponents([.hour, .minute], from: time)
-    
-    let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: repeats)
-    let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-    
-    notificationCenter.add(request, withCompletionHandler: nil)
-  }
+    func addNotification(_ reminder: Reminder) {
+        let content = UNMutableNotificationContent()
+        content.title = reminder.name
+        content.subtitle = ""
+        content.body = reminder.description ?? ""
+        content.sound = UNNotificationSound.default
+        
+        let time = dateFormatter("\(reminder.hour):\(reminder.minute)")
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents([.hour, .minute], from: time)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: reminder.isRepeate)
+        let request = UNNotificationRequest(identifier: reminder.name, content: content, trigger: trigger)
+        
+        notificationCenter.add(request, withCompletionHandler: nil)
+    }
   
   func removeNotification(by identifier: String) {
     notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
@@ -62,5 +59,12 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent willPresentnotification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     completionHandler([.alert, .sound])
   }
+    
+    private func dateFormatter(_ string: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.date(from:string)!
+    }
   
 }

@@ -184,7 +184,6 @@
 		046263A4236064DF00D1215A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04F6799A23E0D2B80059CD7E /* RootViewController.swift */,
 				0462639F235DA7DC00D1215A /* WelcomeViewController.swift */,
 				046263A5236184BB00D1215A /* SettingTableViewController.swift */,
 				046263D1236819AA00D1215A /* GroupSettingTableViewController.swift */,
@@ -228,7 +227,6 @@
 			children = (
 				0409BE2E23EAD2A300BD33B4 /* Screen */,
 				0409BE2F23EAD2AE00BD33B4 /* TableViewCell */,
-				04AD0B4E23E8B34200C22739 /* Helpers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,8 +400,10 @@
 		84BE236025333CCA0017D17A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				04F6799A23E0D2B80059CD7E /* RootViewController.swift */,
 				84BE236125333CE50017D17A /* Views */,
 				046263A72362D34900D1215A /* Extensions */,
+				04AD0B4E23E8B34200C22739 /* Helpers */,
 			);
 			path = Common;
 			sourceTree = "<group>";

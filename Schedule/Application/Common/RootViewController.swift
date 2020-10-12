@@ -17,7 +17,7 @@ class RootViewController: UIViewController {
   // MARK: Initializer
   
   init() {
-    let launchedBefore = UserDefaultsManager.shared.getObject(forKey: "IS_LAUNCHED_BEFORE") as? Bool
+    let launchedBefore = UserDefaultsManager.shared.getObject(forKey: "IS_FIRST_LAUNCH") as? Bool
     let welcomeViewController = WelcomeViewController()
     
     let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -30,6 +30,10 @@ class RootViewController: UIViewController {
     }
     
     super.init(nibName: nil, bundle: nil)
+    
+    if launchedBefore == nil {
+        self.createDefaultReminders()
+    }
   }
   
   required init?(coder: NSCoder) {
@@ -48,9 +52,34 @@ class RootViewController: UIViewController {
   }
   
   // MARK: Methods
+    
+    private func createDefaultReminders() {
+        let morningReminder = Reminder(name: "Morning reminder",
+                                       description: "Hey! Check the schedule now.",
+                                       hour: "--",
+                                       minute: "--",
+                                       isRepeate: true,
+                                       isActive: false)
+        
+        let eveningReminder = Reminder(name: "Evening reminder",
+                                       description: "Hey! Check the schedule now.",
+                                       hour: "--",
+                                       minute: "--",
+                                       isRepeate: true,
+                                       isActive: false)
+        let jsonDecoder = JSONEncoder()
+        
+        var reminderData = try! jsonDecoder.encode(morningReminder)
+        UserDefaults.standard.setValue(reminderData, forKey: "\(morningReminder.name)")
+        
+        reminderData = try! jsonDecoder.encode(eveningReminder)
+        UserDefaults.standard.setValue(reminderData, forKey: "\(eveningReminder.name)")
+    }
   
   func switchToScheduleScreen() {
-    let newViewController = UINavigationController(rootViewController: ScheduleViewController())
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let newViewController = storyboard.instantiateInitialViewController() as! MainController
+        
     addChild(newViewController)
     newViewController.view.frame = view.bounds
     view.addSubview(newViewController.view)
