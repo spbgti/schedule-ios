@@ -67,12 +67,6 @@ class SettingTableViewController: UITableViewController {
         navigationController?.pushViewController(GroupSettingTableViewController(), animated: true)
       default: break
       }
-    case 1:
-      switch indexPath.row {
-      case 0:
-        navigationController?.pushViewController(NotificationSettingTableViewController(), animated: true)
-      default: break
-      }
     default: break
     }
   }

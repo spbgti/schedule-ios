@@ -17,25 +17,15 @@
             </objects>
             <point key="canvasLocation" x="-2070" y="1357"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Reminder-->
         <scene sceneID="omf-ST-rXt">
             <objects>
-                <viewControllerPlaceholder id="uf1-Yr-En5" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Reminder" id="uf1-Yr-En5" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="l3l-fN-WZU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4h-I3-fdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-741" y="1357"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="5u0-rk-zdc">
-            <objects>
-                <viewControllerPlaceholder id="J0g-24-loc" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="OVC-Ql-gF8"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PYX-Ul-mIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="688" y="1357"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="3PR-67-LXI">
@@ -62,7 +52,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HKq-eD-vrB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="list.dash" catalog="system" id="dEw-Ge-GxV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sNq-eq-oGd">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sNq-eq-oGd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -81,8 +71,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K1Q-Mh-pmi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reminder" image="bell" catalog="system" id="pQA-qE-ipd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QLP-97-soS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QLP-97-soS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -100,14 +90,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dXq-KG-1Rc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="6JD-lH-jFC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G97-us-XyQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="G97-us-XyQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J0g-24-loc" kind="relationship" relationship="rootViewController" id="hZz-9W-D8z"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yrl-BO-41x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
