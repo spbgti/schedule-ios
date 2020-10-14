@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ReminderCVCell" id="gTV-IL-0wX" customClass="ReminderCVCell" customModule="СПбГТИ_ТУ_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning reminder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGU-U0-ZQx">
+                        <rect key="frame" x="15" y="15" width="165" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reminder_on" translatesAutoresizingMaskIntoConstraints="NO" id="dPW-OS-B97">
+                        <rect key="frame" x="190" y="15" width="125" height="125"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="125" id="BCV-Gc-3Yu"/>
+                            <constraint firstAttribute="height" constant="125" id="sDE-WE-57Q"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5X-Vw-Wuz">
+                        <rect key="frame" x="15" y="82.5" width="124.5" height="57.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="lGU-U0-ZQx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="0SS-3c-gEe"/>
+                <constraint firstItem="dPW-OS-B97" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="1Re-7f-cRH"/>
+                <constraint firstItem="g5X-Vw-Wuz" firstAttribute="bottom" secondItem="dPW-OS-B97" secondAttribute="bottom" id="6rJ-Yp-sJ3"/>
+                <constraint firstAttribute="trailing" secondItem="dPW-OS-B97" secondAttribute="trailing" constant="15" id="B1a-Bp-SpD"/>
+                <constraint firstItem="lGU-U0-ZQx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="HxL-Km-sk2"/>
+                <constraint firstItem="g5X-Vw-Wuz" firstAttribute="leading" secondItem="lGU-U0-ZQx" secondAttribute="leading" id="XBq-gb-LMa"/>
+                <constraint firstItem="dPW-OS-B97" firstAttribute="leading" secondItem="lGU-U0-ZQx" secondAttribute="trailing" constant="10" id="Y6b-Eb-EZw"/>
+                <constraint firstAttribute="bottom" secondItem="dPW-OS-B97" secondAttribute="bottom" constant="20" id="gD5-N1-D3s"/>
+                <constraint firstItem="lGU-U0-ZQx" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.5" id="z7G-cT-c26"/>
+            </constraints>
+            <size key="customSize" width="367" height="201"/>
+            <connections>
+                <outlet property="isActiveImageView" destination="dPW-OS-B97" id="ge4-E6-uXq"/>
+                <outlet property="time" destination="g5X-Vw-Wuz" id="fyW-yf-nnV"/>
+                <outlet property="title" destination="lGU-U0-ZQx" id="rAO-Uo-Y41"/>
+            </connections>
+            <point key="canvasLocation" x="327.536231884058" y="125.89285714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="reminder_on" width="300" height="328"/>
+    </resources>
+</document>

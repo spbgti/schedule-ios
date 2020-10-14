@@ -41,7 +41,7 @@ class WelcomeViewController: UIViewController {
                 if let group = groups.first {
                     UserDefaultsManager.shared.setObject(group.groupId, forKey: "GROUP_ID")
                     UserDefaultsManager.shared.setObject(group.number, forKey: "GROUP_NUMBER")
-                    UserDefaultsManager.shared.setObject(true, forKey: "IS_LAUNCHED_BEFORE")
+                    UserDefaultsManager.shared.setObject(true, forKey: "IS_FIRST_LAUNCH")
                     AppDelegate.shared.rootViewController.switchToScheduleScreen()
                 }
             case .failure(let error):

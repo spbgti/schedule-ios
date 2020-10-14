@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J6f-Dv-IUX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Schedule-->
+        <scene sceneID="gdd-a5-geQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Schedule" id="24c-HU-OxF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mBd-3d-FG8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4f-5g-KPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2070" y="1357"/>
+        </scene>
+        <!--Reminder-->
+        <scene sceneID="omf-ST-rXt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reminder" id="uf1-Yr-En5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="l3l-fN-WZU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4h-I3-fdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="1357"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="3PR-67-LXI">
+            <objects>
+                <tabBarController id="J6f-Dv-IUX" customClass="MainController" customModule="СПбГТИ_ТУ_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="czy-bX-C4d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HKq-eD-vrB" kind="relationship" relationship="viewControllers" id="rYY-b5-VlP"/>
+                        <segue destination="K1Q-Mh-pmi" kind="relationship" relationship="viewControllers" id="P5K-s5-Nl4"/>
+                        <segue destination="dXq-KG-1Rc" kind="relationship" relationship="viewControllers" id="xlB-7l-Njt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMX-hH-YAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="56"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="iv8-ED-7uZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HKq-eD-vrB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="list.dash" catalog="system" id="dEw-Ge-GxV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sNq-eq-oGd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="24c-HU-OxF" kind="relationship" relationship="rootViewController" id="vKg-8q-1uE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKg-Ar-1N1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2071" y="927"/>
+        </scene>
+        <!--Reminder-->
+        <scene sceneID="RMw-wN-X4j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K1Q-Mh-pmi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reminder" image="bell" catalog="system" id="pQA-qE-ipd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QLP-97-soS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uf1-Yr-En5" kind="relationship" relationship="rootViewController" id="Pen-gR-gfw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVx-IE-TAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="927"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Pgv-Vs-7v5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dXq-KG-1Rc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="6JD-lH-jFC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="G97-us-XyQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fIN-Wd-OBb" kind="relationship" relationship="rootViewController" id="dgC-Tp-PQV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yrl-BO-41x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="927"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="E7Y-Tq-p2d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="fIN-Wd-OBb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dPd-My-lrj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oA7-I5-hoY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="1357"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
