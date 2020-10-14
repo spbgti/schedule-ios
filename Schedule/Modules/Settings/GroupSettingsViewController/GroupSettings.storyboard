@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yAx-hC-jIm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Group Settings View Controller-->
+        <scene sceneID="xNx-XH-R0j">
+            <objects>
+                <viewController id="yAx-hC-jIm" customClass="GroupSettingsViewController" customModule="СПбГТИ_ТУ_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bz8-a3-upG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F07-hK-I2t" customClass="Button" customModule="СПбГТИ_ТУ_" customModuleProvider="target">
+                                <rect key="frame" x="55" y="215" width="304" height="60"/>
+                                <color key="backgroundColor" red="0.60576437962925156" green="1" blue="0.600257642567114" alpha="0.93281243771922828" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="qAH-qZ-EKS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Change ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeGroupNumber" destination="yAx-hC-jIm" eventType="touchDown" id="qdi-iy-OGu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a group number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MV5-bN-yYe">
+                                <rect key="frame" x="55" y="135" width="304" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="BJA-nW-NYk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-n7-Nat">
+                                <rect key="frame" x="152" y="10" width="110.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group number not found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-0g-RyQ">
+                                <rect key="frame" x="55" y="113" width="304" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="M5h-aG-OZE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="F07-hK-I2t" firstAttribute="centerX" secondItem="bz8-a3-upG" secondAttribute="centerX" id="2FI-Vw-qAH"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="F07-hK-I2t" secondAttribute="bottom" constant="25" id="73O-DT-mEg"/>
+                            <constraint firstItem="b8D-0g-RyQ" firstAttribute="centerX" secondItem="bz8-a3-upG" secondAttribute="centerX" id="Hf7-w0-5EC"/>
+                            <constraint firstItem="M5h-aG-OZE" firstAttribute="top" secondItem="bz8-a3-upG" secondAttribute="top" id="HtE-OI-wfH"/>
+                            <constraint firstItem="Ycf-n7-Nat" firstAttribute="centerX" secondItem="bz8-a3-upG" secondAttribute="centerX" id="LtX-2T-gcf"/>
+                            <constraint firstAttribute="trailing" secondItem="M5h-aG-OZE" secondAttribute="trailing" id="Tjv-Va-XXw"/>
+                            <constraint firstItem="F07-hK-I2t" firstAttribute="leading" secondItem="bz8-a3-upG" secondAttribute="leadingMargin" constant="35" id="XAS-KD-Y2N"/>
+                            <constraint firstItem="MV5-bN-yYe" firstAttribute="width" secondItem="F07-hK-I2t" secondAttribute="width" id="aaD-eC-hVr"/>
+                            <constraint firstItem="MV5-bN-yYe" firstAttribute="centerX" secondItem="bz8-a3-upG" secondAttribute="centerX" id="bmg-5a-kJk"/>
+                            <constraint firstItem="M5h-aG-OZE" firstAttribute="leading" secondItem="bz8-a3-upG" secondAttribute="leading" id="fba-f5-RmK"/>
+                            <constraint firstItem="MV5-bN-yYe" firstAttribute="top" secondItem="b8D-0g-RyQ" secondAttribute="bottom" constant="5" id="kte-SV-YjV"/>
+                            <constraint firstAttribute="bottom" secondItem="M5h-aG-OZE" secondAttribute="bottom" id="lvu-aL-9n4"/>
+                            <constraint firstItem="b8D-0g-RyQ" firstAttribute="width" secondItem="MV5-bN-yYe" secondAttribute="width" id="o8a-gJ-xzE"/>
+                            <constraint firstItem="F07-hK-I2t" firstAttribute="top" secondItem="MV5-bN-yYe" secondAttribute="bottom" constant="25" id="q41-ww-w76"/>
+                            <constraint firstItem="Ycf-n7-Nat" firstAttribute="top" secondItem="bz8-a3-upG" secondAttribute="top" constant="10" id="vxO-cN-VR0"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="300"/>
+                    <connections>
+                        <outlet property="button" destination="F07-hK-I2t" id="yb4-KS-p7J"/>
+                        <outlet property="loader" destination="M5h-aG-OZE" id="eLZ-Xh-4ur"/>
+                        <outlet property="textField" destination="MV5-bN-yYe" id="uky-qX-NcS"/>
+                        <outlet property="titleLabel" destination="Ycf-n7-Nat" id="dPs-Xm-3vR"/>
+                        <outlet property="validatingLabel" destination="b8D-0g-RyQ" id="eYw-hl-uMN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6O-9X-ulL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452.17391304347831" y="141.29464285714286"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="F07-hK-I2t">
+            <size key="intrinsicContentSize" width="71" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
