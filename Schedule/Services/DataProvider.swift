@@ -17,7 +17,7 @@ class DataProvider: NSObject {
   
     func uploadDataByDay(by day: String, completionHandler: @escaping(String?) -> Void) {
         let date = formatToDate(day)
-        let groupId = UserDefaultsManager.shared.getObject(forKey: "GROUP_ID") as! Int
+        let groupId = UserDefaults.standard.integer(forKey: "GROUP_ID")
 
         exerciseService.getExercises(groupId: groupId, date: date) { result in
             switch result {

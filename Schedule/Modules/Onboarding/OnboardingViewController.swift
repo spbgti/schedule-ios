@@ -10,30 +10,49 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
+    @IBOutlet private var button: Button!
+    @IBOutlet private var validatingLabel: UILabel!
+    @IBOutlet private var textField: UITextField!
+    @IBOutlet private var loader: UIActivityIndicatorView!
+    
     let groupsService = GroupsService()
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        validatingLabel.isHidden = true
     }
     
     @IBAction private func saveGroupNumber() {
-        if let groupNumber = view().groupNumberTextField.text {
-            groupsService.getGroups(number: groupNumber) { result in
-                switch result {
-                case .success(let groups):
-                    if let group = groups.first {
-                        UserDefaultsManager.shared.setObject(group.groupId, forKey: "GROUP_ID")
-                        UserDefaultsManager.shared.setObject(group.number, forKey: "GROUP_NUMBER")
-                        UserDefaultsManager.shared.setObject(true, forKey: "IS_FIRST_LAUNCH")
-                        AppDelegate.shared.rootViewController.switchToScheduleScreen()
-                    }
-                case .failure(let error):
-                  Alert.showMessageAlert(on: self, message: "\(error)", title: "Group not found")
+        self.validatingLabel.isHidden = true
+        self.loader.startAnimating()
+        
+        guard let groupNumberText = textField.text, groupNumberText != "" else {
+            self.loader.stopAnimating()
+            self.validatingLabel.text = "Text field is empty"
+            self.validatingLabel.isHidden = false
+            return
+        }
+        
+        groupsService.getGroups(number: groupNumberText) { [weak self] result in
+            switch result {
+            case .success(let groups):
+                self?.loader.stopAnimating()
+                
+                if groups.count > 0, let group = groups.first {
+                    UserDefaults.standard.set(group.groupId, forKey: "GROUP_ID")
+                    UserDefaults.standard.set(group.number, forKey: "GROUP_NUMBER")
+                    UserDefaults.standard.set(false, forKey: "IS_FIRST_LAUNCH")
+                    AppDelegate.shared.rootViewController.switchToScheduleScreen()
+                } else {
+                    self?.validatingLabel.text = "Group not found"
+                    self?.validatingLabel.isHidden = false
                 }
+            case .failure( _):
+                self?.loader.stopAnimating()
+                self?.validatingLabel.text = "Group not found"
+                self?.validatingLabel.isHidden = false
             }
-        } else {
-            Alert.showMessageAlert(on: self, message: "Error", title: "Text field is empty. Enter your group number")
         }
     }
 

@@ -10,48 +10,42 @@ import UIKit
 
 class RootViewController: UIViewController {
   
-  // MARK: Properties
+    private var currentViewController: UIViewController
   
-  private var currentViewController: UIViewController
-  
-  // MARK: Initializer
-  
-  init() {
-    let launchedBefore = UserDefaultsManager.shared.getObject(forKey: "IS_FIRST_LAUNCH") as? Bool
-    let welcomeViewController = WelcomeViewController()
-    
-    let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
-    
-    if launchedBefore == nil {
-      self.currentViewController = welcomeViewController
-    } else {
-      self.currentViewController = scheduleViewController
+    init() {
+        let isFirstLaunch = UserDefaults.standard.bool(forKey: "IS_FIRST_LAUNCH")
+
+        let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let onboardingViewController = onboardingStoryboard.instantiateInitialViewController() as! OnboardingViewController
+
+        let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
+
+        if isFirstLaunch {
+            self.currentViewController = onboardingViewController
+        } else {
+            self.currentViewController = scheduleViewController
+        }
+
+        super.init(nibName: nil, bundle: nil)
+
+        if isFirstLaunch {
+            self.createDefaultReminders()
+        }
     }
-    
-    super.init(nibName: nil, bundle: nil)
-    
-    if launchedBefore == nil {
-        self.createDefaultReminders()
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-  }
   
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  // MARK: Life Cycle
-  
-  override func viewDidLoad() {
-     super.viewDidLoad()
-     
-     addChild(currentViewController)
-     currentViewController.view.frame = view.bounds
-     view.addSubview(currentViewController.view)
-     currentViewController.didMove(toParent: self)
-  }
-  
-  // MARK: Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        addChild(currentViewController)
+        currentViewController.view.frame = view.bounds
+        view.addSubview(currentViewController.view)
+        currentViewController.didMove(toParent: self)
+    }
     
     private func createDefaultReminders() {
         let morningReminder = Reminder(name: "Morning reminder",
@@ -76,18 +70,18 @@ class RootViewController: UIViewController {
         UserDefaults.standard.setValue(reminderData, forKey: "\(eveningReminder.name)")
     }
   
-  func switchToScheduleScreen() {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let newViewController = storyboard.instantiateInitialViewController() as! MainController
-        
-    addChild(newViewController)
-    newViewController.view.frame = view.bounds
-    view.addSubview(newViewController.view)
-    newViewController.didMove(toParent: self)
-    currentViewController.willMove(toParent: nil)
-    currentViewController.view.removeFromSuperview()
-    currentViewController.removeFromParent()
-    currentViewController = newViewController
-  }
+    func switchToScheduleScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyboard.instantiateInitialViewController() as! MainController
+            
+        addChild(newViewController)
+        newViewController.view.frame = view.bounds
+        view.addSubview(newViewController.view)
+        newViewController.didMove(toParent: self)
+        currentViewController.willMove(toParent: nil)
+        currentViewController.view.removeFromSuperview()
+        currentViewController.removeFromParent()
+        currentViewController = newViewController
+    }
   
 }
