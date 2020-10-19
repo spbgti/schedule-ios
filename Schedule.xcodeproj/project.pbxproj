@@ -57,7 +57,6 @@
 		84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE236225333CFF0017D17A /* ModalViewController.swift */; };
 		84BE236625343D010017D17A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE236525343D010017D17A /* Settings.storyboard */; };
 		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
-		84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */; };
 		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
 		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
 		84F88B722536021200639BEC /* GroupSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B712536021200639BEC /* GroupSettings.storyboard */; };
@@ -148,7 +147,6 @@
 		84BE236225333CFF0017D17A /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		84BE236525343D010017D17A /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
-		84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
 		84F88B712536021200639BEC /* GroupSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupSettings.storyboard; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				846DCA852522A54D000E9833 /* Schedules API */,
-				84EE9C67251F94C200318C41 /* UserDefaultsManager.swift */,
 				045EF98223D0F6D300CC869F /* DataManager.swift */,
 				04D56BD32348E5670097E0DC /* DataProvider.swift */,
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
@@ -595,7 +592,6 @@
 				846DCA8225229C59000E9833 /* Room.swift in Sources */,
 				04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */,
 				84B025082524A44600FE29B0 /* GroupsService.swift in Sources */,
-				84EE9C6A251F94C200318C41 /* UserDefaultsManager.swift in Sources */,
 				84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */,
 				84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */,
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,

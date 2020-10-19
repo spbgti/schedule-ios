@@ -32,7 +32,7 @@ class DataProvider: NSObject {
   
     func uploadDataByYear(by year: String, completionHandler: @escaping(String?) -> Void) {
         let year = formatToYear(year)
-        let groupNumber = UserDefaultsManager.shared.getObject(forKey: "GROUP_NUMBER") as! String
+        let groupNumber = UserDefaults.standard.string(forKey: "GROUP_NUMBER")!
         
         scheduleService.getSchedules(year: year, semester: .fall, groupNumber: groupNumber) { result in
             switch result {
