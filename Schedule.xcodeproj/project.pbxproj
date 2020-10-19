@@ -38,6 +38,7 @@
 		84595B1D252A6AC80039E401 /* ReminderCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84595B1B252A6AC80039E401 /* ReminderCVCell.xib */; };
 		84595B1F252A8DAE0039E401 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84595B1E252A8DAE0039E401 /* Reminder.swift */; };
 		84595B23252A994C0039E401 /* ReminderSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84595B22252A994C0039E401 /* ReminderSettings.storyboard */; };
+		846CC1B3253E35FB00F15ADA /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */; };
 		846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7225223F04000E9833 /* GroupsEndpoint.swift */; };
 		846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */; };
 		846DCA7725228C9E000E9833 /* LocationsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */; };
@@ -128,6 +129,7 @@
 		84595B1B252A6AC80039E401 /* ReminderCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCVCell.xib; sourceTree = "<group>"; };
 		84595B1E252A8DAE0039E401 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		84595B22252A994C0039E401 /* ReminderSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReminderSettings.storyboard; sourceTree = "<group>"; };
+		846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		846DCA7225223F04000E9833 /* GroupsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsEndpoint.swift; sourceTree = "<group>"; };
 		846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPIEndpoint.swift; sourceTree = "<group>"; };
 		846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsEndpoint.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */,
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
 				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
+				846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				8410656F250784F9000B2214 /* Localizable.strings in Resources */,
 				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
 				04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */,
+				846CC1B3253E35FB00F15ADA /* ScheduleTableViewCell.xib in Resources */,
 				84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */,
 				84595B15252A4C5F0039E401 /* Reminder.storyboard in Resources */,
 				84BE236625343D010017D17A /* Settings.storyboard in Resources */,

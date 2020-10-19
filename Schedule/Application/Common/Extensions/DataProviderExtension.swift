@@ -85,15 +85,15 @@ extension DataProvider: UITableViewDelegate, UITableViewDataSource {
       
       switch cellRow {
       case 0:
-        cell.timeLabel.text = "09:30\n11:00"
+        cell.setTime("09:30 - 11:00")
       case 1:
-        cell.timeLabel.text = "11:30\n13:00"
+        cell.setTime("11:30 - 13:00")
       case 2:
-        cell.timeLabel.text = "14:00\n15:30"
+        cell.setTime("14:00 - 15:30")
       case 3:
-        cell.timeLabel.text = "16:00\n17:30"
+        cell.setTime("16:00 - 17:30")
       case 4:
-        cell.timeLabel.text = "17:45\n19:15"
+        cell.setTime("17:45 - 19:15")
       default:
         break
       }
@@ -101,22 +101,13 @@ extension DataProvider: UITableViewDelegate, UITableViewDataSource {
       for obj in arrayOfExercises {
         let exerciseName = obj.name
         let exercisePair = obj.pair
-        let exerciseParity = obj.parity
         
         if exercisePair == String(indexPath.row + 1) {
-          cell.exerciseLabel.text = exerciseName
-          switch exerciseParity {
-          case "1":
-            cell.parityLabel.text = "нечет."
-          case "2":
-            cell.parityLabel.text = "четн."
-          default:
-            cell.parityLabel.text = ""
-          }
-          break
+            cell.setName(exerciseName)
+            cell.setType(obj.type)
         } else {
-          cell.parityLabel.text = ""
-          cell.exerciseLabel.text = "-"
+            cell.setName("ОКНО")
+            cell.setType("")
         }
       }
     }

@@ -10,7 +10,7 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         
         self.tableView.dataSource = DataProvider.shared
-        self.tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: "scheduleCellIdentifier")
+        self.tableView.register(UINib(nibName: "ScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCellIdentifier")
         self.tableView.rowHeight =  128.0
 
         self.segmentedControl.addTarget(self, action: #selector(changeIndex), for: .valueChanged)
