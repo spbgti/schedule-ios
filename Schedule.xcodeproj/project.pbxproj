@@ -231,12 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				045EF97223C59E7E00CC869F /* Enums.swift */,
-				04FEC64323340B5F00EA5D25 /* Exercise.swift */,
-				841659082514024700A4E6DD /* Group.swift */,
-				8416590A2514026400A4E6DD /* Schedule.swift */,
-				846DCA7F25229BD3000E9833 /* Location.swift */,
-				846DCA8125229C59000E9833 /* Room.swift */,
-				846DCA8325229CC8000E9833 /* Teacher.swift */,
+				84595B1E252A8DAE0039E401 /* Reminder.swift */,
+				846CC1B6253E3D4000F15ADA /* Schedules API */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,7 +304,6 @@
 				044FEE632383F3B1005FA81E /* ReminderViewController.swift */,
 				84595B20252A98F20039E401 /* ReminderCVCell */,
 				84595B21252A990C0039E401 /* ReminderSettings */,
-				84595B1E252A8DAE0039E401 /* Reminder.swift */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
@@ -329,6 +324,19 @@
 				0460B4E323F33133003F4F9C /* ReminderSettingsViewController.swift */,
 			);
 			path = ReminderSettings;
+			sourceTree = "<group>";
+		};
+		846CC1B6253E3D4000F15ADA /* Schedules API */ = {
+			isa = PBXGroup;
+			children = (
+				841659082514024700A4E6DD /* Group.swift */,
+				04FEC64323340B5F00EA5D25 /* Exercise.swift */,
+				8416590A2514026400A4E6DD /* Schedule.swift */,
+				846DCA7F25229BD3000E9833 /* Location.swift */,
+				846DCA8125229C59000E9833 /* Room.swift */,
+				846DCA8325229CC8000E9833 /* Teacher.swift */,
+			);
+			path = "Schedules API";
 			sourceTree = "<group>";
 		};
 		846DCA7E2522931A000E9833 /* Schedules API */ = {
