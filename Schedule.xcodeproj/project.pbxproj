@@ -203,8 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				846DCA852522A54D000E9833 /* Schedules API */,
-				045EF98223D0F6D300CC869F /* DataManager.swift */,
-				04D56BD32348E5670097E0DC /* DataProvider.swift */,
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
 			);
 			path = Services;
@@ -339,6 +337,15 @@
 			path = "Schedules API";
 			sourceTree = "<group>";
 		};
+		846CC1B7253E3DB900F15ADA /* ScheduleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */,
+				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
+			);
+			path = ScheduleTableViewCell;
+			sourceTree = "<group>";
+		};
 		846DCA7E2522931A000E9833 /* Schedules API */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,8 +466,9 @@
 			children = (
 				84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */,
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
-				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
-				846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */,
+				846CC1B7253E3DB900F15ADA /* ScheduleTableViewCell */,
+				04D56BD32348E5670097E0DC /* DataProvider.swift */,
+				045EF98223D0F6D300CC869F /* DataManager.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
