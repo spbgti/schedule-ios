@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dyz-G7-nN9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reminder Settings View Controller-->
+        <scene sceneID="8cn-PA-LWf">
+            <objects>
+                <viewController id="dyz-G7-nN9" customClass="ReminderSettingsViewController" customModule="СПбГТИ_ТУ_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bFy-Pa-HYI">
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="296"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yuA-qf-IYg">
+                                <rect key="frame" x="66" y="231" width="213" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kY6-bE-AlH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="On"/>
+                                    <segment title="Off"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchActivity" destination="dyz-G7-nN9" eventType="valueChanged" id="kYf-H6-7EB"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ly-Bx-VJ6">
+                                <rect key="frame" x="264" y="5" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Pyh-cC-bhP"/>
+                                    <constraint firstAttribute="width" constant="60" id="Wvs-dN-Sia"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Apply"/>
+                                <connections>
+                                    <action selector="applySettings" destination="dyz-G7-nN9" eventType="touchDown" id="BKg-BZ-YQ8"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="7wb-E5-yKM">
+                                <rect key="frame" x="88" y="42" width="170" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="cc9-bw-ekc"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-d4-P64">
+                                <rect key="frame" x="106" y="10" width="133" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="3tg-iF-ENE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yuA-qf-IYg" firstAttribute="top" secondItem="7wb-E5-yKM" secondAttribute="bottom" constant="20" id="5IY-k0-N28"/>
+                            <constraint firstItem="0ly-Bx-VJ6" firstAttribute="leading" secondItem="cnu-d4-P64" secondAttribute="trailing" constant="25" id="KAL-Wa-bbQ"/>
+                            <constraint firstItem="7wb-E5-yKM" firstAttribute="centerX" secondItem="bFy-Pa-HYI" secondAttribute="centerX" id="OZ1-Ii-uu1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0ly-Bx-VJ6" secondAttribute="trailing" constant="5" id="Ohy-mz-uSa"/>
+                            <constraint firstItem="7wb-E5-yKM" firstAttribute="top" secondItem="cnu-d4-P64" secondAttribute="bottom" constant="10" id="QNd-pv-n1v"/>
+                            <constraint firstItem="yuA-qf-IYg" firstAttribute="leading" secondItem="bFy-Pa-HYI" secondAttribute="leadingMargin" constant="50" id="TSG-3i-ceb"/>
+                            <constraint firstItem="cnu-d4-P64" firstAttribute="top" secondItem="bFy-Pa-HYI" secondAttribute="topMargin" constant="10" id="W28-8r-v5l"/>
+                            <constraint firstItem="0ly-Bx-VJ6" firstAttribute="top" secondItem="bFy-Pa-HYI" secondAttribute="topMargin" constant="5" id="c9c-ZF-9IM"/>
+                            <constraint firstItem="cnu-d4-P64" firstAttribute="centerX" secondItem="bFy-Pa-HYI" secondAttribute="centerX" id="iMI-Pk-7Ud"/>
+                            <constraint firstAttribute="bottom" secondItem="yuA-qf-IYg" secondAttribute="bottom" constant="25" id="idH-pS-3Eo"/>
+                            <constraint firstItem="yuA-qf-IYg" firstAttribute="centerX" secondItem="bFy-Pa-HYI" secondAttribute="centerX" id="j8P-qZ-sT8"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="345" height="296"/>
+                    <connections>
+                        <outlet property="applyButton" destination="0ly-Bx-VJ6" id="jMh-ty-De8"/>
+                        <outlet property="pickerView" destination="7wb-E5-yKM" id="2cZ-Wt-tE3"/>
+                        <outlet property="switchView" destination="yuA-qf-IYg" id="Ntc-l4-M3a"/>
+                        <outlet property="titleLabel" destination="cnu-d4-P64" id="TyC-dK-VTN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCE-el-RuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-480.43478260869568" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

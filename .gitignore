@@ -1,2 +1,16 @@
-# CocoaPods
-Pods/
+# Mac OS X temporary files
+.DS_Store
+
+# Build generated
+build/
+DerivedData/
+
+# Settings
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata
+
+# Cocoapods
+/Pods
