@@ -16,8 +16,6 @@
 		046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A5236184BB00D1215A /* SettingTableViewController.swift */; };
 		046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* DataProviderExtension.swift */; };
 		046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263C923646E8600D1215A /* ScheduleTableViewCell.swift */; };
-		046D2D1C23EF3EF20055F510 /* Pods_schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51098C19B895DADE867078A2 /* Pods_schedule.framework */; };
-		046D2D1D23EF3EF20055F510 /* Pods_schedule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51098C19B895DADE867078A2 /* Pods_schedule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474F38623BF3F2600FD1BE4 /* Alert.swift */; };
 		0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6132321C84E00EA5D25 /* AppDelegate.swift */; };
 		0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */; };
@@ -28,7 +26,6 @@
 		04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Colors.xcassets */; };
 		04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */; };
 		04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC64323340B5F00EA5D25 /* Exercise.swift */; };
-		840C784025077DD8004C372F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840C783F25077DD8004C372F /* Images.xcassets */; };
 		8410656F250784F9000B2214 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84106571250784F9000B2214 /* Localizable.strings */; };
 		841659092514024700A4E6DD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841659082514024700A4E6DD /* Group.swift */; };
 		8416590B2514026400A4E6DD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416590A2514026400A4E6DD /* Schedule.swift */; };
@@ -49,6 +46,7 @@
 		846DCA8225229C59000E9833 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA8125229C59000E9833 /* Room.swift */; };
 		846DCA8425229CC8000E9833 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA8325229CC8000E9833 /* Teacher.swift */; };
 		846DCA872522A5F5000E9833 /* ExercisesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA862522A5F5000E9833 /* ExercisesService.swift */; };
+		849FE783253E6085000189D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849FE782253E6085000189D5 /* Images.xcassets */; };
 		84B025082524A44600FE29B0 /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B025072524A44600FE29B0 /* GroupsService.swift */; };
 		84B0250D2524A45200FE29B0 /* SchedulesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0250C2524A45200FE29B0 /* SchedulesService.swift */; };
 		84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0250E2524A50800FE29B0 /* LocationsService.swift */; };
@@ -85,7 +83,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				046D2D1D23EF3EF20055F510 /* Pods_schedule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +105,7 @@
 		04D56BD32348E5670097E0DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		04F6799A23E0D2B80059CD7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
-		04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СПбГТИ(ТУ).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FEC6102321C84E00EA5D25 /* spbgti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spbgti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FEC6132321C84E00EA5D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		04FEC61A2321C84E00EA5D25 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -117,8 +114,6 @@
 		04FEC64323340B5F00EA5D25 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		2EDF9EB08AECB506056BD602 /* Pods-schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.release.xcconfig"; path = "Target Support Files/Pods-schedule/Pods-schedule.release.xcconfig"; sourceTree = "<group>"; };
 		3084042CC2DEC64254577E45 /* Pods-schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schedule.debug.xcconfig"; path = "Target Support Files/Pods-schedule/Pods-schedule.debug.xcconfig"; sourceTree = "<group>"; };
-		51098C19B895DADE867078A2 /* Pods_schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		840C783F25077DD8004C372F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84106570250784F9000B2214 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8410657225078528000B2214 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		841659082514024700A4E6DD /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -140,6 +135,7 @@
 		846DCA8125229C59000E9833 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		846DCA8325229CC8000E9833 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		846DCA862522A5F5000E9833 /* ExercisesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesService.swift; sourceTree = "<group>"; };
+		849FE782253E6085000189D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84B025072524A44600FE29B0 /* GroupsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
 		84B0250C2524A45200FE29B0 /* SchedulesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesService.swift; sourceTree = "<group>"; };
 		84B0250E2524A50800FE29B0 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
@@ -164,7 +160,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046D2D1C23EF3EF20055F510 /* Pods_schedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +188,8 @@
 		046263AA2362D3FC00D1215A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				849FE782253E6085000189D5 /* Images.xcassets */,
 				04FEC61A2321C84E00EA5D25 /* Colors.xcassets */,
-				840C783F25077DD8004C372F /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				04A1ED6D2368F5EA00FD8C3A /* NotificationCenter.framework */,
-				51098C19B895DADE867078A2 /* Pods_schedule.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,7 +243,7 @@
 		04FEC6112321C84E00EA5D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */,
+				04FEC6102321C84E00EA5D25 /* spbgti.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -487,6 +481,7 @@
 				04521CB323784E4500DCB195 /* Embed Watch Content */,
 				85583BD7B81D0298F2DE7A96 /* [CP] Embed Pods Frameworks */,
 				046D2D1E23EF3EF20055F510 /* Embed Frameworks */,
+				849FE781253E5F5A000189D5 /* Increment the build number  */,
 			);
 			buildRules = (
 			);
@@ -494,7 +489,7 @@
 			);
 			name = schedule;
 			productName = schedule;
-			productReference = 04FEC6102321C84E00EA5D25 /* СПбГТИ(ТУ).app */;
+			productReference = 04FEC6102321C84E00EA5D25 /* spbgti.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -538,9 +533,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84595B23252A994C0039E401 /* ReminderSettings.storyboard in Resources */,
-				840C784025077DD8004C372F /* Images.xcassets in Resources */,
 				84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */,
 				844F0353253710E500F3B54C /* Onboarding.storyboard in Resources */,
+				849FE783253E6085000189D5 /* Images.xcassets in Resources */,
 				84F88B722536021200639BEC /* GroupSettings.storyboard in Resources */,
 				84595B1D252A6AC80039E401 /* ReminderCVCell.xib in Resources */,
 				8410656F250784F9000B2214 /* Localizable.strings in Resources */,
@@ -556,6 +551,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		849FE781253E5F5A000189D5 /* Increment the build number  */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment the build number ";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
 		85583BD7B81D0298F2DE7A96 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -800,7 +813,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -813,7 +826,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.schedule.vladislav;
-				PRODUCT_NAME = "СПбГТИ(ТУ)";
+				PRODUCT_NAME = spbgti;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -827,7 +840,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -840,7 +853,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.schedule.vladislav;
-				PRODUCT_NAME = "СПбГТИ(ТУ)";
+				PRODUCT_NAME = spbgti;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

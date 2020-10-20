@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04FEC60F2321C84E00EA5D25"
-               BuildableName = "&#x421;&#x41f;&#x431;&#x413;&#x422;&#x418;(&#x422;&#x423;).app"
+               BuildableName = "spbgti.app"
                BlueprintName = "schedule"
                ReferencedContainer = "container:Schedule.xcodeproj">
             </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04FEC60F2321C84E00EA5D25"
-            BuildableName = "&#x421;&#x41f;&#x431;&#x413;&#x422;&#x418;(&#x422;&#x423;).app"
+            BuildableName = "spbgti.app"
             BlueprintName = "schedule"
             ReferencedContainer = "container:Schedule.xcodeproj">
          </BuildableReference>
@@ -90,7 +90,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04FEC60F2321C84E00EA5D25"
-            BuildableName = "&#x421;&#x41f;&#x431;&#x413;&#x422;&#x418;(&#x422;&#x423;).app"
+            BuildableName = "spbgti.app"
             BlueprintName = "schedule"
             ReferencedContainer = "container:Schedule.xcodeproj">
          </BuildableReference>
