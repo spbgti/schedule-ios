@@ -21,12 +21,13 @@ class RootViewController: UIViewController {
         let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
 
-        if isFirstLaunch {
-            self.currentViewController = onboardingViewController
-        } else {
-            self.currentViewController = scheduleViewController
-        }
-
+//        if isFirstLaunch {
+//            self.currentViewController = onboardingViewController
+//        } else {
+//            self.currentViewController = scheduleViewController
+//        }
+        self.currentViewController = onboardingViewController
+        
         super.init(nibName: nil, bundle: nil)
 
         if isFirstLaunch {

@@ -20,6 +20,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        textField.placeholder = "textfield_placeholder-type_1".localized
         validatingLabel.isHidden = true
     }
     
