@@ -31,7 +31,7 @@ class Button: UIButton {
         self.backgroundColor = .link
         self.layer.cornerRadius = 13.0
         
-        self.setTitle("Continue", for: .normal)
+        self.setTitle("button_title-continue".localized, for: .normal)
     }
     
 }

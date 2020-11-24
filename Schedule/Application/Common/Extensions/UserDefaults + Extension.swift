@@ -9,7 +9,7 @@
 import Foundation
 
 extension UserDefaults {
-    enum Key: String {
+    enum Key {
         /// Key to return application locale with String type
         static let language: String = "APP_LANGUAGE"
         

@@ -6,3 +6,9 @@
   Copyright © 2020 mac. All rights reserved.
 */
 
+/*
+  COMMON STRINGS
+*/
+
+"button_title-continue" = "Продолжить";
+"textfield_placeholder-type_1" = "Введите номер вашей группы";
