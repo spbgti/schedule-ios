@@ -8,53 +8,49 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
     
-    @IBOutlet private var button: Button!
-    @IBOutlet private var validatingLabel: UILabel!
-    @IBOutlet private var textField: UITextField!
+    @IBOutlet private var requestForm: GroupRequestForm!
     @IBOutlet private var loader: UIActivityIndicatorView!
     
-    let groupsService = GroupsService()
+    var viewModel: OnboardingViewModel = OnboardingViewModel()
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestForm.delegate = self
+        hideKeyboardWhenTappedAround()
 
-        textField.placeholder = "textfield_placeholder-type_1".localized
-        validatingLabel.isHidden = true
-    }
-    
-    @IBAction private func saveGroupNumber() {
-        self.validatingLabel.isHidden = true
-        self.loader.startAnimating()
-        
-        guard let groupNumberText = textField.text, groupNumberText != "" else {
-            self.loader.stopAnimating()
-            self.validatingLabel.text = "Text field is empty"
-            self.validatingLabel.isHidden = false
-            return
-        }
-        
-        groupsService.getGroups(number: groupNumberText) { [weak self] result in
-            switch result {
-            case .success(let groups):
-                self?.loader.stopAnimating()
+        viewModel.callback = { [weak self] error in
+            self?.loader.stopAnimating()
+            
+            if let error = error {
                 
-                if groups.count > 0, let group = groups.first {
-                    UserDefaults.standard.set(group.groupId, forKey: "GROUP_ID")
-                    UserDefaults.standard.set(group.number, forKey: "GROUP_NUMBER")
-                    UserDefaults.standard.set(false, forKey: "IS_FIRST_LAUNCH")
-                    AppDelegate.shared.rootViewController.switchToScheduleScreen()
-                } else {
-                    self?.validatingLabel.text = "Group not found"
-                    self?.validatingLabel.isHidden = false
-                }
-            case .failure( _):
-                self?.loader.stopAnimating()
-                self?.validatingLabel.text = "Group not found"
-                self?.validatingLabel.isHidden = false
+            } else {
+                
             }
         }
     }
+    
+    
 
+}
+
+extension OnboardingViewController: RequestFormDelegate {
+    func requestForm(_ textFromSearchBar: String) {
+        self.loader.startAnimating()
+        self.viewModel.fetchGroup(by: textFromSearchBar)
+    }
+}
+
+extension OnboardingViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

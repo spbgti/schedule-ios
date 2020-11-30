@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnd-FB-9f3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnd-FB-9f3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,67 +12,55 @@
         <!--Onboarding View Controller-->
         <scene sceneID="BGu-4G-LbY">
             <objects>
-                <viewController id="gnd-FB-9f3" customClass="OnboardingViewController" customModule="СПбГТИ_ТУ_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gnd-FB-9f3" customClass="OnboardingViewController" customModule="spbgti" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ztd-Kb-F9W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group not found" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-ms-X7n">
-                                <rect key="frame" x="72" y="318.5" width="270" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pQB-EV-oc9">
+                                <rect key="frame" x="129.5" y="76" width="155" height="212.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pQB-EV-oc9" secondAttribute="height" multiplier="170:233" id="LQu-6a-tpm"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="155" id="WTz-WQ-DXF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spbgti Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="Ukr-iX-ANe">
+                                <rect key="frame" x="114" y="313.5" width="186" height="102.5"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="42"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your group number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cPq-Vc-jfb">
-                                <rect key="frame" x="72" y="338" width="270" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="AE3-UC-eNj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grq-yV-eK4" customClass="Button" customModule="СПбГТИ_ТУ_" customModuleProvider="target">
-                                <rect key="frame" x="72" y="418" width="270" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="270" id="89H-LS-UuZ"/>
-                                    <constraint firstAttribute="height" constant="60" id="h7O-8w-Lo5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveGroupNumber" destination="gnd-FB-9f3" eventType="touchDown" id="lye-W2-4Mg"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="IbP-1h-jre">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6go-2x-t15" customClass="GroupRequestForm" customModule="spbgti" customModuleProvider="target">
+                                <rect key="frame" x="30" y="456" width="354" height="376"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-wB-Yta">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="color" systemColor="systemGreenColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zvh-8U-YPk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jwt-ms-X7n" firstAttribute="leading" secondItem="cPq-Vc-jfb" secondAttribute="leading" id="4rF-eu-hS9"/>
-                            <constraint firstItem="Grq-yV-eK4" firstAttribute="top" secondItem="cPq-Vc-jfb" secondAttribute="bottom" constant="25" id="95M-lo-Mth"/>
-                            <constraint firstItem="jwt-ms-X7n" firstAttribute="trailing" secondItem="cPq-Vc-jfb" secondAttribute="trailing" id="Scf-Gz-Jzf"/>
-                            <constraint firstItem="Grq-yV-eK4" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="b0X-1B-ZlQ"/>
-                            <constraint firstItem="IbP-1h-jre" firstAttribute="top" secondItem="ztd-Kb-F9W" secondAttribute="top" id="dHx-SC-DtF"/>
-                            <constraint firstItem="cPq-Vc-jfb" firstAttribute="width" secondItem="Grq-yV-eK4" secondAttribute="width" id="eCx-my-GRL"/>
-                            <constraint firstItem="Grq-yV-eK4" firstAttribute="centerY" secondItem="ztd-Kb-F9W" secondAttribute="centerY" id="ex8-8H-KLq"/>
-                            <constraint firstItem="cPq-Vc-jfb" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="iwe-oQ-3Ae"/>
-                            <constraint firstItem="IbP-1h-jre" firstAttribute="bottom" secondItem="ztd-Kb-F9W" secondAttribute="bottom" id="pwZ-cw-HmD"/>
-                            <constraint firstItem="IbP-1h-jre" firstAttribute="trailing" secondItem="zvh-8U-YPk" secondAttribute="trailing" id="rtp-sI-4a3"/>
-                            <constraint firstItem="cPq-Vc-jfb" firstAttribute="top" secondItem="jwt-ms-X7n" secondAttribute="bottom" constant="5" id="tYm-sI-8mn"/>
-                            <constraint firstItem="IbP-1h-jre" firstAttribute="leading" secondItem="zvh-8U-YPk" secondAttribute="leading" id="yo9-iE-UJf"/>
+                            <constraint firstItem="oaq-wB-Yta" firstAttribute="leading" secondItem="zvh-8U-YPk" secondAttribute="leading" id="6Ws-jp-Lxp"/>
+                            <constraint firstItem="6go-2x-t15" firstAttribute="leading" secondItem="zvh-8U-YPk" secondAttribute="leading" constant="30" id="BfD-q0-wKv"/>
+                            <constraint firstItem="Ukr-iX-ANe" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="NdH-1e-OIh"/>
+                            <constraint firstItem="oaq-wB-Yta" firstAttribute="trailing" secondItem="zvh-8U-YPk" secondAttribute="trailing" id="PMh-FS-UMd"/>
+                            <constraint firstItem="Ukr-iX-ANe" firstAttribute="top" secondItem="pQB-EV-oc9" secondAttribute="bottom" constant="25" id="Vtr-LM-KGO"/>
+                            <constraint firstItem="6go-2x-t15" firstAttribute="top" secondItem="Ukr-iX-ANe" secondAttribute="bottom" constant="50" id="ZOc-xc-Oct"/>
+                            <constraint firstItem="oaq-wB-Yta" firstAttribute="top" secondItem="ztd-Kb-F9W" secondAttribute="top" id="agv-Sl-l5V"/>
+                            <constraint firstItem="Ukr-iX-ANe" firstAttribute="width" secondItem="pQB-EV-oc9" secondAttribute="width" multiplier="1.2" id="cNq-4C-u79"/>
+                            <constraint firstItem="6go-2x-t15" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="d4p-cB-L07"/>
+                            <constraint firstAttribute="bottom" secondItem="oaq-wB-Yta" secondAttribute="bottom" id="g9U-i5-QzV"/>
+                            <constraint firstItem="pQB-EV-oc9" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="lqy-Ah-SsD"/>
+                            <constraint firstItem="zvh-8U-YPk" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6go-2x-t15" secondAttribute="bottom" constant="30" id="ndg-pz-TO4"/>
+                            <constraint firstItem="pQB-EV-oc9" firstAttribute="top" secondItem="zvh-8U-YPk" secondAttribute="top" constant="32" id="ozw-u0-ePs"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="Grq-yV-eK4" id="Igw-Xm-xkX"/>
-                        <outlet property="loader" destination="IbP-1h-jre" id="nee-gN-Uai"/>
-                        <outlet property="textField" destination="cPq-Vc-jfb" id="GcQ-DF-W2G"/>
-                        <outlet property="validatingLabel" destination="jwt-ms-X7n" id="Jmk-2K-fcm"/>
+                        <outlet property="loader" destination="oaq-wB-Yta" id="EUL-Ql-syg"/>
+                        <outlet property="requestForm" destination="6go-2x-t15" id="JJ5-B3-sN6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbL-Wn-9Xl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,17 +68,13 @@
             <point key="canvasLocation" x="44.927536231884062" y="116.51785714285714"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Grq-yV-eK4">
-            <size key="intrinsicContentSize" width="87" height="39"/>
-        </designable>
-    </designables>
     <resources>
+        <image name="Logo" width="170" height="219"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class Button: UIButton {
+final class Button: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,9 +28,9 @@ class Button: UIButton {
     
     private func configure() {
         self.clipsToBounds = true
-        self.backgroundColor = .link
+        self.backgroundColor = UIColor(named: "main_green")
         self.layer.cornerRadius = 13.0
-        
+         
         self.setTitle("button_title-continue".localized, for: .normal)
     }
     
