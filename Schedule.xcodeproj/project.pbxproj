@@ -56,7 +56,7 @@
 		84B59D022534E9E80096E49C /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B59D012534E9E80096E49C /* SettingTVCell.swift */; };
 		84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE236225333CFF0017D17A /* ModalViewController.swift */; };
 		84BE236625343D010017D17A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE236525343D010017D17A /* Settings.storyboard */; };
-		84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* NetworkProtocols.swift */; };
+		84EE9C64251F84F300318C41 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C63251F84F300318C41 /* Endpoint.swift */; };
 		84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6B251F956B00318C41 /* NetworkProvider.swift */; };
 		84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */; };
 		84F88B722536021200639BEC /* GroupSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B712536021200639BEC /* GroupSettings.storyboard */; };
@@ -67,6 +67,7 @@
 		84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */; };
 		8603BEF8257052DC00CF8AC0 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF7257052DC00CF8AC0 /* OnboardingViewModel.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
+		86838120257844E6005AA5EA /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* Errors.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
 		86FC55322569B0A00053254D /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55312569B0A00053254D /* String + Extension.swift */; };
 		86FC55342569B2240053254D /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55332569B2240053254D /* UserDefaults + Extension.swift */; };
@@ -150,7 +151,7 @@
 		84B59D012534E9E80096E49C /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		84BE236225333CFF0017D17A /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		84BE236525343D010017D17A /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		84EE9C63251F84F300318C41 /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
+		84EE9C63251F84F300318C41 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		84EE9C6B251F956B00318C41 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		84EE9C6D2521122800318C41 /* ExercisesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesEndpoint.swift; sourceTree = "<group>"; };
 		84F88B712536021200639BEC /* GroupSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupSettings.storyboard; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 		84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		8603BEF7257052DC00CF8AC0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
+		8683811F257844E6005AA5EA /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		86FC55312569B0A00053254D /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		86FC55332569B2240053254D /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		04F6795123D618360059CD7E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8683811F257844E6005AA5EA /* Errors.swift */,
 				045EF97223C59E7E00CC869F /* Enums.swift */,
 				84595B1E252A8DAE0039E401 /* Reminder.swift */,
 				846CC1B6253E3D4000F15ADA /* Schedules API */,
@@ -387,7 +390,6 @@
 		84A9228D251F669000C83A06 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				84EE9C63251F84F300318C41 /* NetworkProtocols.swift */,
 				84EE9C6B251F956B00318C41 /* NetworkProvider.swift */,
 				84A9228E251F66AA00C83A06 /* Endpoints */,
 			);
@@ -397,6 +399,7 @@
 		84A9228E251F66AA00C83A06 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				84EE9C63251F84F300318C41 /* Endpoint.swift */,
 				846DCA7E2522931A000E9833 /* Schedules API */,
 			);
 			path = Endpoints;
@@ -636,7 +639,7 @@
 			files = (
 				846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */,
 				84F88B76253602D600639BEC /* Button.swift in Sources */,
-				84EE9C64251F84F300318C41 /* NetworkProtocols.swift in Sources */,
+				84EE9C64251F84F300318C41 /* Endpoint.swift in Sources */,
 				846DCA8025229BD3000E9833 /* Location.swift in Sources */,
 				84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */,
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
@@ -650,6 +653,7 @@
 				8603BEF8257052DC00CF8AC0 /* OnboardingViewModel.swift in Sources */,
 				846DCA8425229CC8000E9833 /* Teacher.swift in Sources */,
 				86FC55342569B2240053254D /* UserDefaults + Extension.swift in Sources */,
+				86838120257844E6005AA5EA /* Errors.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				8687C3882575A15B00D75BAC /* TextField.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,

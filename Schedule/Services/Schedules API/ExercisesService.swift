@@ -12,9 +12,9 @@ class ExercisesService {
     
     private let provider = NetworkProvider<ExercisesEndpoint>()
     
-    func getExercises(groupId: Int, date: Date, completion: @escaping (Result<[Exercise]>) -> Void) {
+    func getExercises(groupId: Int, date: Date, completion: @escaping (Result<[Exercise], Errors>) -> Void) {
         let dateString = dateFormatter(date)
-        provider.request(.get(group: groupId, date: dateString)) { (result: Result<[Exercise]>) in
+        provider.request(.get(group: groupId, date: dateString)) { (result: Result<[Exercise], Errors>) in
             switch result {
             case .success(let exercise):
                 completion(.success(exercise))
@@ -24,8 +24,8 @@ class ExercisesService {
         }
     }
     
-    func getExercise(by id: Int, completion: @escaping (Result<Exercise>) -> Void) {
-        provider.request(.getBy(id: id)) { (result: Result<Exercise>) in
+    func getExercise(by id: Int, completion: @escaping (Result<Exercise, Errors>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Exercise, Errors>) in
             switch result {
             case .success(let exercise):
                 completion(.success(exercise))

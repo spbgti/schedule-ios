@@ -12,8 +12,8 @@ class LocationsService {
     
     private let provider = NetworkProvider<LocationEndpoint>()
     
-    func getLocations(name: String, completion: @escaping (Result<[Location]>) -> Void) {
-        provider.request(.get(name: name)) { (result: Result<[Location]>) in
+    func getLocations(name: String, completion: @escaping (Result<[Location], Errors>) -> Void) {
+        provider.request(.get(name: name)) { (result: Result<[Location], Errors>) in
             switch result {
             case .success(let locations):
                 completion(.success(locations))
@@ -23,8 +23,8 @@ class LocationsService {
         }
     }
     
-    func getLocation(id: Int, completion: @escaping (Result<Location>) -> Void) {
-        provider.request(.getBy(id: id)) { (result: Result<Location>) in
+    func getLocation(id: Int, completion: @escaping (Result<Location, Errors>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Location, Errors>) in
             switch result {
             case .success(let locations):
                 completion(.success(locations))

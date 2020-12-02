@@ -18,6 +18,7 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loader.layer.cornerRadius = 13.0
         requestForm.delegate = self
         hideKeyboardWhenTappedAround()
 

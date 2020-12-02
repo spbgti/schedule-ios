@@ -12,7 +12,7 @@ final class OnboardingViewModel {
     
     private var service: GroupsService
     
-    public var callback: ((_ error: String?) -> Void)?
+    public var callback: ((_ error: Errors?) -> Void)?
     
     init() {
         self.service = GroupsService()
@@ -27,6 +27,7 @@ final class OnboardingViewModel {
                     debugPrint(groups[0])
                 }
                 self?.callback?(nil)
+                
             case .failure(let error):
                 self?.callback?(error)
             }

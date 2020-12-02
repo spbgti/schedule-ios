@@ -9,24 +9,43 @@
 import Foundation
 import Alamofire
 
-class NetworkProvider<Target: Endpoint> {
+final class NetworkProvider<Target: Endpoint> {
     
-    private let timeoutInterval: Double = 10
+    private let timeoutInterval: Double
     
-    func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type>) -> Void) {
+    init(timeoutInterval: Double = 8.0) {
+        self.timeoutInterval = timeoutInterval
+    }
+    
+    public func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type, Errors>) -> Void) {
         AF.request("\(endpoint.baseURL)\(endpoint.path)",
                    method: endpoint.method,
                    parameters: endpoint.parameters,
                    headers: endpoint.headers) { urlRequest in
             urlRequest.timeoutInterval = self.timeoutInterval
         }
+        .validate(statusCode: 200 ..< 300)
         .responseDecodable(of: Type.self) { response in
             switch response.result {
-            case .success(let dto):
-                completion(.success(dto))
+            case .success(let data):
+                completion(.success(data))
+                
             case .failure(let error):
-                // TODO: handle error as Error type
-                completion(.failure(error.errorDescription ?? "Network error"))
+                NSLog(error.localizedDescription)
+                
+                if let statusCode = response.response?.statusCode {
+                    switch statusCode {
+                    case 400 ..< 500:
+                        completion(.failure(.localBug))
+                        
+                    case 500 ..< 600:
+                        completion(.failure(.internalServer))
+                        
+                    default:
+                        completion(.failure(.networkConnection))
+                    }
+                }
+                
             }
         }
     }

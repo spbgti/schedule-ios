@@ -15,7 +15,7 @@ class DataProvider: NSObject {
   
     // MARK: Methods
   
-    func uploadDataByDay(by day: String, completionHandler: @escaping(String?) -> Void) {
+    func uploadDataByDay(by day: String, completionHandler: @escaping(Errors?) -> Void) {
         let date = formatToDate(day)
         let groupId = UserDefaults.standard.integer(forKey: "GROUP_ID")
 
@@ -30,7 +30,7 @@ class DataProvider: NSObject {
         }
     }
   
-    func uploadDataByYear(by year: String, completionHandler: @escaping(String?) -> Void) {
+    func uploadDataByYear(by year: String, completionHandler: @escaping(Errors?) -> Void) {
         let year = formatToYear(year)
         let groupNumber = UserDefaults.standard.string(forKey: "GROUP_NUMBER")!
         

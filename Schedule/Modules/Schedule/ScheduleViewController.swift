@@ -18,7 +18,7 @@ class ScheduleViewController: UIViewController {
         self.loading.startAnimating()
         DataProvider.shared.uploadDataByDay(by: "2019-09-21") { completion in
             if let error = completion {
-                Alert.showMessageAlert(on: self, message: error, title: "Error")
+                Alert.showMessageAlert(on: self, message: error.localizedDescription, title: "Error")
             } else {
                 self.tableView.reloadData()
             }
@@ -33,7 +33,7 @@ class ScheduleViewController: UIViewController {
         case 0:
           DataProvider.shared.uploadDataByDay(by: "2019-09-21") { completion in
             if let error = completion {
-              Alert.showMessageAlert(on: self, message: error, title: "Error")
+                Alert.showMessageAlert(on: self, message: error.localizedDescription, title: "Error")
             }
             self.loading.stopAnimating()
             self.tableView.reloadData()
@@ -41,7 +41,7 @@ class ScheduleViewController: UIViewController {
         case 1:
           DataProvider.shared.uploadDataByDay(by: "2019-09-22") { completion in
             if let error = completion {
-              Alert.showMessageAlert(on: self, message: error, title: "Error")
+                Alert.showMessageAlert(on: self, message: error.localizedDescription, title: "Error")
             }
             self.loading.stopAnimating()
             self.tableView.reloadData()
@@ -49,7 +49,7 @@ class ScheduleViewController: UIViewController {
         case 2:
           DataProvider.shared.uploadDataByYear(by: "2019") { completion in
             if let error = completion {
-              Alert.showMessageAlert(on: self, message: error, title: "Error")
+                Alert.showMessageAlert(on: self, message: error.localizedDescription, title: "Error")
             }
             self.loading.stopAnimating()
             self.tableView.reloadData()

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,25 +35,27 @@
                                 <rect key="frame" x="30" y="456" width="354" height="376"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-wB-Yta">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="color" systemColor="systemGreenColor"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-wB-Yta">
+                                <rect key="frame" x="167" y="408" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oaq-wB-Yta" secondAttribute="height" multiplier="1:1" id="BNd-2E-rNA"/>
+                                    <constraint firstAttribute="width" constant="80" id="f3Y-y8-jhx"/>
+                                </constraints>
+                                <color key="color" name="main_green"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zvh-8U-YPk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oaq-wB-Yta" firstAttribute="leading" secondItem="zvh-8U-YPk" secondAttribute="leading" id="6Ws-jp-Lxp"/>
                             <constraint firstItem="6go-2x-t15" firstAttribute="leading" secondItem="zvh-8U-YPk" secondAttribute="leading" constant="30" id="BfD-q0-wKv"/>
+                            <constraint firstItem="oaq-wB-Yta" firstAttribute="centerY" secondItem="ztd-Kb-F9W" secondAttribute="centerY" id="EFu-VC-O35"/>
                             <constraint firstItem="Ukr-iX-ANe" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="NdH-1e-OIh"/>
-                            <constraint firstItem="oaq-wB-Yta" firstAttribute="trailing" secondItem="zvh-8U-YPk" secondAttribute="trailing" id="PMh-FS-UMd"/>
+                            <constraint firstItem="oaq-wB-Yta" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="RfL-b0-bGw"/>
                             <constraint firstItem="Ukr-iX-ANe" firstAttribute="top" secondItem="pQB-EV-oc9" secondAttribute="bottom" constant="25" id="Vtr-LM-KGO"/>
                             <constraint firstItem="6go-2x-t15" firstAttribute="top" secondItem="Ukr-iX-ANe" secondAttribute="bottom" constant="50" id="ZOc-xc-Oct"/>
-                            <constraint firstItem="oaq-wB-Yta" firstAttribute="top" secondItem="ztd-Kb-F9W" secondAttribute="top" id="agv-Sl-l5V"/>
                             <constraint firstItem="Ukr-iX-ANe" firstAttribute="width" secondItem="pQB-EV-oc9" secondAttribute="width" multiplier="1.2" id="cNq-4C-u79"/>
                             <constraint firstItem="6go-2x-t15" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="d4p-cB-L07"/>
-                            <constraint firstAttribute="bottom" secondItem="oaq-wB-Yta" secondAttribute="bottom" id="g9U-i5-QzV"/>
                             <constraint firstItem="pQB-EV-oc9" firstAttribute="centerX" secondItem="ztd-Kb-F9W" secondAttribute="centerX" id="lqy-Ah-SsD"/>
                             <constraint firstItem="zvh-8U-YPk" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6go-2x-t15" secondAttribute="bottom" constant="30" id="ndg-pz-TO4"/>
                             <constraint firstItem="pQB-EV-oc9" firstAttribute="top" secondItem="zvh-8U-YPk" secondAttribute="top" constant="32" id="ozw-u0-ePs"/>
@@ -70,11 +73,11 @@
     </scenes>
     <resources>
         <image name="Logo" width="170" height="219"/>
+        <namedColor name="main_green">
+            <color red="0.50196078431372548" green="0.85098039215686272" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

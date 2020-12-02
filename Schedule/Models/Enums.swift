@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum Result<T> {
-  case success(T)
-  case failure(String)
-}
-
 // MARK: Schedule TableView
 
 enum WeekDaySection: Int, CaseIterable {

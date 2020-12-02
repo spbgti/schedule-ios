@@ -17,11 +17,12 @@ class SchedulesService {
     
     private let provider = NetworkProvider<SchedulesEndpoint>()
     
-    func getSchedules(year: Date, semester: AcademicSemester, groupNumber: String, completion: @escaping (Result<[Schedule]>) -> Void) {
+    func getSchedules(year: Date, semester: AcademicSemester, groupNumber: String, completion: @escaping (Result<[Schedule], Errors>) -> Void) {
         let yearString = dateFormatter(year)
         let semesterString = semester.rawValue
         
-        provider.request(.get(year: yearString, semester: semesterString, groupNumber: groupNumber)) { (result: Result<[Schedule]>) in
+        provider.request(.get(year: yearString, semester:
+                                semesterString, groupNumber: groupNumber)) { (result: Result<[Schedule], Errors>) in
             switch result {
             case .success(let schedules):
                 completion(.success(schedules))
@@ -31,8 +32,8 @@ class SchedulesService {
         }
     }
     
-    func getSchedule(id: Int, completion: @escaping (Result<Schedule>) -> Void) {
-        provider.request(.getBy(id: id)) { (result: Result<Schedule>) in
+    func getSchedule(id: Int, completion: @escaping (Result<Schedule, Errors>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Schedule, Errors>) in
             switch result {
             case .success(let schedule):
                 completion(.success(schedule))
