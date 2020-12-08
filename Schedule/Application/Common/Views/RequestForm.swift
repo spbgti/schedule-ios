@@ -73,7 +73,7 @@ final class GroupRequestForm: UIView {
     
     @objc
     private func submitButtonAction() {
-        guard let textFieldText = self.textField.text, textFieldText != "" else {
+        guard let textFieldText = self.textField.text else {
             return
         }
         

@@ -12,3 +12,12 @@
 
 "button_title-continue" = "Продолжить";
 "textfield_placeholder-type_1" = "Введите номер вашей группы";
+
+/*
+  ERRORS
+*/
+
+"error_message-data_not_found" = "Данные не найдены";
+"error_message-internal_server" = "Ошибка сервера.";
+"error_message-local_bug" = "Что-то пошло не так";
+"error_message-network_connection" = "Проверьте интернет соединение";

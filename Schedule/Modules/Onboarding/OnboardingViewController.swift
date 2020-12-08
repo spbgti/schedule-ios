@@ -21,26 +21,31 @@ final class OnboardingViewController: UIViewController {
         loader.layer.cornerRadius = 13.0
         requestForm.delegate = self
         hideKeyboardWhenTappedAround()
-
+        configureViewModel()
+    }
+    
+    private func configureViewModel() {
         viewModel.callback = { [weak self] error in
             self?.loader.stopAnimating()
             
             if let error = error {
-                
+                Alert.showMessageAlert(on: self!, message: error, title: "Error".localized)
             } else {
                 
             }
         }
     }
-    
-    
 
 }
 
 extension OnboardingViewController: RequestFormDelegate {
     func requestForm(_ textFromSearchBar: String) {
-        self.loader.startAnimating()
-        self.viewModel.fetchGroup(by: textFromSearchBar)
+        if textFromSearchBar != "" {
+            self.loader.startAnimating()
+            self.viewModel.fetchGroup(by: textFromSearchBar)
+        } else {
+            Alert.showMessageAlert(on: self, message: "Enter a group number", title: "Text field is empty".localized)
+        }
     }
 }
 

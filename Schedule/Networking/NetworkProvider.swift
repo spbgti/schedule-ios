@@ -44,6 +44,8 @@ final class NetworkProvider<Target: Endpoint> {
                     default:
                         completion(.failure(.networkConnection))
                     }
+                } else {
+                    completion(.failure(.networkConnection))
                 }
                 
             }
