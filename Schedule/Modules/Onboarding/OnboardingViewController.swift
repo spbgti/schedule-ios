@@ -13,30 +13,39 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet private var requestForm: GroupRequestForm!
     @IBOutlet private var loader: UIActivityIndicatorView!
     
-    var viewModel: OnboardingViewModel = OnboardingViewModel()
+    public var viewModel: OnboardingViewModel = OnboardingViewModel()
+    
+    override func loadView() {
+        super.loadView()
+        
+        loader.layer.cornerRadius = 13.0
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loader.layer.cornerRadius = 13.0
         requestForm.delegate = self
         hideKeyboardWhenTappedAround()
-        configureViewModel()
+        bindViewModel()
     }
-    
-    private func configureViewModel() {
+
+}
+
+// MARK: - ViewModel Binding
+
+extension OnboardingViewController {
+    private func bindViewModel() {
         viewModel.callback = { [weak self] error in
             self?.loader.stopAnimating()
             
             if let error = error {
-                Alert.showMessageAlert(on: self!, message: error, title: "Error".localized)
-            } else {
-                
+                Alert.showError(on: self!, with: error)
             }
         }
     }
-
 }
+
+// MARK: - Methods of RequestFormDelegate
 
 extension OnboardingViewController: RequestFormDelegate {
     func requestForm(_ textFromSearchBar: String) {
@@ -44,10 +53,12 @@ extension OnboardingViewController: RequestFormDelegate {
             self.loader.startAnimating()
             self.viewModel.fetchGroup(by: textFromSearchBar)
         } else {
-            Alert.showMessageAlert(on: self, message: "Enter a group number", title: "Text field is empty".localized)
+            Alert.showError(on: self, with: .dataNotFound)
         }
     }
 }
+
+// MARK: - Helpers Methods Of Using System Keyboard
 
 extension OnboardingViewController {
     func hideKeyboardWhenTappedAround() {

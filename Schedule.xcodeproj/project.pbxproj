@@ -67,6 +67,7 @@
 		84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */; };
 		8603BEF8257052DC00CF8AC0 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF7257052DC00CF8AC0 /* OnboardingViewModel.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
+		862F037C257FD33600C00D68 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F037B257FD33600C00D68 /* OnboardingRouter.swift */; };
 		86838120257844E6005AA5EA /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* Errors.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
 		86FC55322569B0A00053254D /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55312569B0A00053254D /* String + Extension.swift */; };
@@ -162,6 +163,7 @@
 		84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		8603BEF7257052DC00CF8AC0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
+		862F037B257FD33600C00D68 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		86FC55312569B0A00053254D /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				844F0352253710E500F3B54C /* Onboarding.storyboard */,
 				0462639F235DA7DC00D1215A /* OnboardingViewController.swift */,
 				8603BEF7257052DC00CF8AC0 /* OnboardingViewModel.swift */,
+				862F037B257FD33600C00D68 /* OnboardingRouter.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				84FF23262525F54000B5DC88 /* MainController.swift in Sources */,
 				044FEE6823860721005FA81E /* NotificationManager.swift in Sources */,
 				8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */,
+				862F037C257FD33600C00D68 /* OnboardingRouter.swift in Sources */,
 				044FEE642383F3B1005FA81E /* ReminderViewController.swift in Sources */,
 				846DCA7D25229064000E9833 /* TeachersEndpoint.swift in Sources */,
 				04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */,

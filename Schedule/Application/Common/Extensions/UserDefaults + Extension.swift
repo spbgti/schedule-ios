@@ -15,5 +15,8 @@ extension UserDefaults {
         
         /// Key to return Bool value of
         static let isLaunchedBefore: String = "IS_LAUNCHED_BEFORE"
+        
+        /// Key to return group data
+        static let group: String = "GROUP_DATA"
     }
 }

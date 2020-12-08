@@ -11,8 +11,9 @@ import Foundation
 final class OnboardingViewModel {
     
     private var service: GroupsService
+    private var router = OnboardingRouter()
     
-    public var callback: ((_ error: String?) -> Void)?
+    public var callback: ((_ error: Errors?) -> Void)?
     
     init() {
         self.service = GroupsService()
@@ -23,36 +24,38 @@ final class OnboardingViewModel {
             switch result {
             case .success(let groups):
                 if groups.count > 0 {
-//  TODO: Save a group object to local persistent storage
-                    debugPrint(groups[0])
+                    self?.save(group: groups[0])
                     
                     DispatchQueue.main.async {
                         self?.callback?(nil)
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self?.callback?("error_message-data_not_found".localized)
+                        self?.callback?(.dataNotFound)
                     }
                 }
                 
             case .failure(let error):
-                let errorMessage: String
-                
-                switch error {
-                case .dataNotFound:
-                    errorMessage = "error_message-data_not_found".localized
-                case .internalServer:
-                    errorMessage = "error_message-internal_server".localized
-                case .localBug:
-                    errorMessage = "error_message-local_bug".localized
-                case .networkConnection:
-                    errorMessage = "error_message-network_connection".localized
-                }
-                
                 DispatchQueue.main.async {
-                    self?.callback?(errorMessage)
+                    self?.callback?(error)
                 }
             }
+        }
+    }
+    
+    private func save(group: Group) {
+        let key: String = UserDefaults.Key.group
+        let encoder = JSONEncoder()
+        
+        do {
+            let json = try encoder.encode(group)
+            NSLog("Onboarding module: group saved successfuly")
+            
+            UserDefaults.standard.set(json, forKey: key)
+            router.routeToMainViewController()
+        } catch {
+            NSLog("Onboarding module: error to try save a group")
+            self.callback?(.localBug)
         }
     }
     

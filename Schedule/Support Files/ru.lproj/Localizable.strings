@@ -17,7 +17,14 @@
   ERRORS
 */
 
-"error_message-data_not_found" = "Данные не найдены";
-"error_message-internal_server" = "Ошибка сервера.";
-"error_message-local_bug" = "Что-то пошло не так";
+"error_title-data_not_found" = "Данные не найдены";
+"error_message-data_not_found" = "Проверьте, корректно ли вы запрашиваете данные, и попробуйте еще раз";
+
+"error_title-internal_server" = "Ошибка сервера";
+"error_message-internal_server" = "Просим прощения за неполадки с нашей стороны";
+
+"error_title-local_bug" = "Что-то пошло не так";
+"error_message-local_bug" = "Мы уже работаем над ошибкой в приложении";
+
+"error_title-network_connection" = "Ошибка сети";
 "error_message-network_connection" = "Проверьте интернет соединение";
