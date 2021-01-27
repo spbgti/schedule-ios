@@ -9,7 +9,7 @@
 import Foundation
 
 enum GroupsEndpoint {
-    case get(number: String)
+    case get(number: String?)
     case getBy(id: Int)
 }
 
@@ -28,7 +28,7 @@ extension GroupsEndpoint: ScheduleAPIEndpoint {
     var parameters: [String : Any]? {
         switch self {
         case .get(number: let number):
-            return ["number" : number]
+            return number != nil ? ["number" : number!]: nil
         case .getBy:
             return nil
         }

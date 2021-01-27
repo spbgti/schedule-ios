@@ -12,7 +12,7 @@ class GroupsService {
     
     private let provider = NetworkProvider<GroupsEndpoint>()
     
-    func getGroups(number: String, completion: @escaping (Result<[Group], Errors>) -> Void) {
+    func getGroups(number: String? = nil, completion: @escaping (Result<[Group], Errors>) -> Void) {
         provider.request(.get(number: number)) { (result: Result<[Group], Errors>) in
             switch result {
             case .success(let groups):
