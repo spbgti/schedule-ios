@@ -15,8 +15,7 @@ class RootViewController: UIViewController {
     init() {
 //        let isFirstLaunch = UserDefaults.standard.bool(forKey: "IS_FIRST_LAUNCH")
 
-        let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let onboardingViewController = onboardingStoryboard.instantiateInitialViewController() as! OnboardingViewController
+        let onboardingViewController = OnboardingViewController()
 
 //        let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
