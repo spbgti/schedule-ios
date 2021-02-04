@@ -23,7 +23,7 @@ extension OnboardingViewController: UIPickerViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let group = dataSource?[row]
-        textField.text = group?.number
+        textField.text = "Группа: \(group?.number ?? "")"
         inputGroup = group
     }
 }

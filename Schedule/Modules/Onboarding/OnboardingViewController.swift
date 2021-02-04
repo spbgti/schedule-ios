@@ -78,6 +78,31 @@ final class OnboardingViewController: UIViewController {
         return button
     }()
     
+    private lazy var footerLabel: UITextView = {
+        let attributedText = NSMutableAttributedString()
+        
+        let attributedStringOfTitle = NSMutableAttributedString(string: "Не нашли номер своей группы?\n",
+                                                                attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,
+                                                                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .semibold)])
+        let attributedStringOfSubtitle = NSMutableAttributedString(string: "Обратитесь к нам в Telegram",
+                                                                   attributes: [
+                                                                    NSAttributedString.Key.link : "https://google.com",
+                                                                    ])
+        attributedText.append(attributedStringOfTitle)
+        attributedText.append(attributedStringOfSubtitle)
+        
+        let label = UITextView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.delegate = self
+        label.isScrollEnabled = false
+        label.isEditable = false
+        label.attributedText = attributedText
+        label.linkTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.gray,
+                                    NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .regular)]
+        label.textAlignment = .center
+        return label
+    }()
+    
     // MARK: - Private properties
     
     private var service = GroupsService()
@@ -102,6 +127,7 @@ final class OnboardingViewController: UIViewController {
         view.addSubview(button)
         view.addSubview(activityIndicatorView)
         view.addSubview(errorLabel)
+        view.addSubview(footerLabel)
         
         NSLayoutConstraint.activate([
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -123,7 +149,11 @@ final class OnboardingViewController: UIViewController {
             activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            footerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            footerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42),
+            footerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         
         getGroups()
