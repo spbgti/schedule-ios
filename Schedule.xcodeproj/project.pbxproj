@@ -65,9 +65,9 @@
 		84FF23262525F54000B5DC88 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF23252525F54000B5DC88 /* MainController.swift */; };
 		84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
+		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
 		86838120257844E6005AA5EA /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* Errors.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
-		86AD0E7E25BF606C006B022E /* OnboardingLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AD0E7D25BF606C006B022E /* OnboardingLogoView.swift */; };
 		86FC55322569B0A00053254D /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55312569B0A00053254D /* String + Extension.swift */; };
 		86FC55342569B2240053254D /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55332569B2240053254D /* UserDefaults + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -159,9 +159,9 @@
 		84FF23252525F54000B5DC88 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
+		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		86AD0E7D25BF606C006B022E /* OnboardingLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLogoView.swift; sourceTree = "<group>"; };
 		86FC55312569B0A00053254D /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		86FC55332569B2240053254D /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		F4B50087544C11AC201374E8 /* Pods_schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				0462639F235DA7DC00D1215A /* OnboardingViewController.swift */,
-				86AD0E7C25BF603F006B022E /* Subviews */,
+				864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -203,6 +203,7 @@
 		046263AA2362D3FC00D1215A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
 				849FE782253E6085000189D5 /* Images.xcassets */,
 				04FEC61A2321C84E00EA5D25 /* Colors.xcassets */,
 			);
@@ -212,8 +213,8 @@
 		046263AB2362D46300D1215A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				846DCA852522A54D000E9833 /* Schedules API */,
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
+				846DCA852522A54D000E9833 /* Schedules API */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,7 +301,7 @@
 		840C783E25077D99004C372F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				84FF231D2525E4A000B5DC88 /* Bootstrap */,
+				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
 				84BE236025333CCA0017D17A /* Common */,
 			);
 			path = Application;
@@ -444,15 +445,6 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		84FF231D2525E4A000B5DC88 /* Bootstrap */ = {
-			isa = PBXGroup;
-			children = (
-				04FEC6132321C84E00EA5D25 /* AppDelegate.swift */,
-				04FEC61C2321C84E00EA5D25 /* LaunchScreen.storyboard */,
-			);
-			path = Bootstrap;
-			sourceTree = "<group>";
-		};
 		84FF231E2525F44400B5DC88 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,14 +476,6 @@
 				045EF98223D0F6D300CC869F /* DataManager.swift */,
 			);
 			path = Schedule;
-			sourceTree = "<group>";
-		};
-		86AD0E7C25BF603F006B022E /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				86AD0E7D25BF606C006B022E /* OnboardingLogoView.swift */,
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -660,7 +644,6 @@
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				8687C3882575A15B00D75BAC /* TextField.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,
-				86AD0E7E25BF606C006B022E /* OnboardingLogoView.swift in Sources */,
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
 				84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */,
 				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
@@ -687,6 +670,7 @@
 				846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */,
 				045EF97323C59E7E00CC869F /* Enums.swift in Sources */,
 				84B59D022534E9E80096E49C /* SettingTVCell.swift in Sources */,
+				864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */,
 				046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */,
 				846DCA872522A5F5000E9833 /* ExercisesService.swift in Sources */,
 				846DCA7725228C9E000E9833 /* LocationsEndpoint.swift in Sources */,
