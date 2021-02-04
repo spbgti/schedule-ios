@@ -78,12 +78,15 @@ final class OnboardingViewController: UIViewController {
         return button
     }()
     
-    private lazy var footerLabel: UITextView = {
+    private lazy var footerTextView: UITextView = {
         let attributedText = NSMutableAttributedString()
         
+        let lineSpace = NSMutableParagraphStyle()
+        lineSpace.lineSpacing = 14
         let attributedStringOfTitle = NSMutableAttributedString(string: "Не нашли номер своей группы?\n",
                                                                 attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,
-                                                                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .semibold)])
+                                                                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .semibold),
+                                                                NSAttributedString.Key.paragraphStyle : lineSpace])
         let attributedStringOfSubtitle = NSMutableAttributedString(string: "Обратитесь к нам в Telegram",
                                                                    attributes: [
                                                                     NSAttributedString.Key.link : "https://google.com",
@@ -91,16 +94,16 @@ final class OnboardingViewController: UIViewController {
         attributedText.append(attributedStringOfTitle)
         attributedText.append(attributedStringOfSubtitle)
         
-        let label = UITextView()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.delegate = self
-        label.isScrollEnabled = false
-        label.isEditable = false
-        label.attributedText = attributedText
-        label.linkTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.gray,
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.delegate = self
+        textView.isScrollEnabled = false
+        textView.isEditable = false
+        textView.attributedText = attributedText
+        textView.linkTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.gray,
                                     NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .regular)]
-        label.textAlignment = .center
-        return label
+        textView.textAlignment = .center
+        return textView
     }()
     
     // MARK: - Private properties
@@ -127,7 +130,7 @@ final class OnboardingViewController: UIViewController {
         view.addSubview(button)
         view.addSubview(activityIndicatorView)
         view.addSubview(errorLabel)
-        view.addSubview(footerLabel)
+        view.addSubview(footerTextView)
         
         NSLayoutConstraint.activate([
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -151,9 +154,9 @@ final class OnboardingViewController: UIViewController {
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            footerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            footerLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42),
-            footerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            footerTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            footerTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42),
+            footerTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         
         getGroups()
