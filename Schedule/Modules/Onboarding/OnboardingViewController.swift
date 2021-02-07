@@ -153,6 +153,7 @@ final class OnboardingViewController: UIViewController {
             
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 47),
             
             footerTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             footerTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42),
