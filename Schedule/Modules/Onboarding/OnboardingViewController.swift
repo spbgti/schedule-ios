@@ -89,7 +89,7 @@ final class OnboardingViewController: UIViewController {
                                                                 NSAttributedString.Key.paragraphStyle : lineSpace])
         let attributedStringOfSubtitle = NSMutableAttributedString(string: "Обратитесь к нам в Telegram",
                                                                    attributes: [
-                                                                    NSAttributedString.Key.link : "https://google.com",
+                                                                    NSAttributedString.Key.link : "tg://resolve?domain=vladislavglumov",
                                                                     ])
         attributedText.append(attributedStringOfTitle)
         attributedText.append(attributedStringOfSubtitle)
