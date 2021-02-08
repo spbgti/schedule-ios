@@ -37,7 +37,7 @@ final class OnboardingViewController: UIViewController {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor(red: 193 / 255, green: 193 / 255, blue: 193 / 255, alpha: 1).cgColor
         textField.layer.cornerRadius = 13
-        
+        textField.placeholder = "Группа: (выберите группу)"
         return textField
     }()
     
@@ -56,6 +56,7 @@ final class OnboardingViewController: UIViewController {
         label.textColor = UIColor(red: 42 / 255, green: 42 / 255, blue: 42 / 255, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
