@@ -30,7 +30,7 @@ final class OnboardingViewController: UIViewController {
         let textField = TextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isEnabled = false
-        textField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        textField.font = UIFont.SFProDisplay(size: 14, weight: .regular)
         textField.textColor = UIColor(red: 42 / 255, green: 42 / 255, blue: 42 / 255, alpha: 1)
         textField.inputView = pickerView
         textField.inputAccessoryView = toolbar
@@ -71,7 +71,7 @@ final class OnboardingViewController: UIViewController {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = false
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        button.titleLabel?.font = UIFont.SFProDisplay(size: 20, weight: .medium)
         button.setTitleColor(.link, for: .normal)
         button.setTitleColor(UIColor.gray.withAlphaComponent(0.6), for: .disabled)
         button.setTitle("Продолжить...", for: .normal)
@@ -86,9 +86,9 @@ final class OnboardingViewController: UIViewController {
         lineSpace.lineSpacing = 14
         let attributedStringOfTitle = NSMutableAttributedString(string: "Не нашли номер своей группы?\n",
                                                                 attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,
-                                                                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .semibold),
+                                                                             NSAttributedString.Key.font : UIFont.SFProDisplay(size: 16, weight: .medium),
                                                                 NSAttributedString.Key.paragraphStyle : lineSpace])
-        let attributedStringOfSubtitle = NSMutableAttributedString(string: "Обратитесь к нам в Telegram",
+        let attributedStringOfSubtitle = NSMutableAttributedString(string: "Обратитесь к нам за помощью",
                                                                    attributes: [
                                                                     NSAttributedString.Key.link : "tg://resolve?domain=vladislavglumov",
                                                                     ])
@@ -102,7 +102,7 @@ final class OnboardingViewController: UIViewController {
         textView.isEditable = false
         textView.attributedText = attributedText
         textView.linkTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.gray,
-                                    NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .regular)]
+                                       NSAttributedString.Key.font : UIFont.SFProText(size: 14, weight: .regular)]
         textView.textAlignment = .center
         return textView
     }()
