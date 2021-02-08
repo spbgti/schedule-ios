@@ -54,7 +54,7 @@ final class OnboardingViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isHidden = true
         label.textColor = UIColor(red: 42 / 255, green: 42 / 255, blue: 42 / 255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -181,7 +181,7 @@ final class OnboardingViewController: UIViewController {
                 
             case .failure(let error):
                 self?.errorLabel.isHidden = false
-                self?.errorLabel.text = error.localizedDescription
+                self?.errorLabel.text = "Ошибка: \(error.localizedDescription)"
             }
             
             self?.activityIndicatorView.stopAnimating()
@@ -200,7 +200,7 @@ final class OnboardingViewController: UIViewController {
             AppDelegate.shared.rootViewController.switchToScheduleScreen()
         } catch {
             errorLabel.isHidden = false
-            errorLabel.text = error.localizedDescription
+            errorLabel.text = "Ошибка: \(error.localizedDescription)"
         }
     }
     

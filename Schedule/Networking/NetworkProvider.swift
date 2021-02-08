@@ -13,7 +13,7 @@ final class NetworkProvider<Target: Endpoint> {
     
     private let timeoutInterval: Double
     
-    init(timeoutInterval: Double = 8.0) {
+    init(timeoutInterval: Double = 14.0) {
         self.timeoutInterval = timeoutInterval
     }
     

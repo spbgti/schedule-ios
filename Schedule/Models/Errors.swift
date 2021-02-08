@@ -14,3 +14,21 @@ enum Errors: Error {
     case networkConnection
     case dataNotFound
 }
+
+extension Errors {
+    var localizedDescription: String {
+        switch self {
+        case .localBug:
+            return "error_message-local_bug".localized
+            
+        case .internalServer:
+            return "error_message-internal_server".localized
+            
+        case .networkConnection:
+            return "error_message-network_connection".localized
+            
+        case .dataNotFound:
+            return "error_message-data_not_found".localized
+        }
+    }
+}
