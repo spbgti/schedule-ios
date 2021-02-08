@@ -195,8 +195,16 @@ final class OnboardingViewController: UIViewController {
         guard let group = inputGroup else { return }
         
         do {
+            // Try to encode group model
             let groupData: Data = try JSONEncoder().encode(group)
+            
+            // Save encoded group model to UserDefaults
             UserDefaults.standard.set(groupData, forKey: UserDefaults.Key.group)
+            
+            // Save an application state than it isn't first launch
+            UserDefaults.standard.set(true, forKey: "IS_NOT_FIRST_LAUNCH")
+            
+            // Route to main module 'MainController'
             AppDelegate.shared.rootViewController.switchToScheduleScreen()
         } catch {
             errorLabel.isHidden = false

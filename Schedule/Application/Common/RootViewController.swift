@@ -9,32 +9,43 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    
+    // MARK: Child ViewControllers
+    
+    private lazy var onboardingViewController: OnboardingViewController = {
+        let viewController = OnboardingViewController()
+        return viewController
+    }()
+    
+    private lazy var mainViewController: MainController = {
+        let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
+        return scheduleViewController
+    }()
+    
+    // MARK: ViewController to switch between child ViewControllers
   
-    private var currentViewController: UIViewController
+    private var currentViewController: UIViewController!
+    
+    // MARK: Initialization
   
     init() {
-//        let isFirstLaunch = UserDefaults.standard.bool(forKey: "IS_FIRST_LAUNCH")
-
-        let onboardingViewController = OnboardingViewController()
-
-//        let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
-
-//        if isFirstLaunch {
-//            self.currentViewController = onboardingViewController
-//        } else {
-//            self.currentViewController = scheduleViewController
-//        }
-        
-        self.currentViewController = onboardingViewController
-        
         super.init(nibName: nil, bundle: nil)
+        
+        #if !DEBUG
+            let isNotFirstLaunch = UserDefaults.standard.bool(forKey: "IS_NOT_FIRST_LAUNCH")
+            self.currentViewController = !isNotFirstLaunch ? onboardingViewController : mainViewController
+        #elseif DEBUG
+            self.currentViewController = onboardingViewController
+        #endif
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
   
+    // MARK: Lyfecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,19 +54,18 @@ class RootViewController: UIViewController {
         view.addSubview(currentViewController.view)
         currentViewController.didMove(toParent: self)
     }
+    
+    // MARK: Method to change displayed ViewController
   
     func switchToScheduleScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyboard.instantiateInitialViewController() as! MainController
-            
-        addChild(newViewController)
-        newViewController.view.frame = view.bounds
-        view.addSubview(newViewController.view)
-        newViewController.didMove(toParent: self)
+        addChild(mainViewController)
+        mainViewController.view.frame = view.bounds
+        view.addSubview(mainViewController.view)
+        mainViewController.didMove(toParent: self)
         currentViewController.willMove(toParent: nil)
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParent()
-        currentViewController = newViewController
+        currentViewController = mainViewController
     }
   
 }

@@ -14,7 +14,7 @@ extension UserDefaults {
         static let language: String = "APP_LANGUAGE"
         
         /// Key to return Bool value of
-        static let isLaunchedBefore: String = "IS_LAUNCHED_BEFORE"
+        static let isLaunchedBefore: String = "IS_NOT_FIRST_LAUNCH"
         
         /// Key to return group data
         static let group: String = "GROUP_DATA"
