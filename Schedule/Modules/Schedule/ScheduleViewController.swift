@@ -2,61 +2,95 @@ import UIKit
 
 class ScheduleViewController: UIViewController {
     
-    @IBOutlet private var segmentedControl: UISegmentedControl!
-    @IBOutlet private var loading: UIActivityIndicatorView!
-    @IBOutlet private var tableView: UITableView!
+    // MARK: Subviews
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        return tableView
+    }()
+    
+    // MARK: Properties
+    
+    private let scheduleService: SchedulesService
+    
+    private var group: Group?
+    
+    private var baseDate: Date
+    
+    private var dataSource: [Exercise]?
+    
+    // MARK: Initialization
+    
+    init(baseDate: Date) {
+        if let data = UserDefaults.standard.object(forKey: UserDefaults.Key.group) as? Data {
+            do {
+                self.group = try JSONDecoder().decode(Group.self, from: data)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        self.baseDate = baseDate
+        self.scheduleService = SchedulesService()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Lifecycle
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.dataSource = DataProvider.shared
-        self.tableView.register(UINib(nibName: "ScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCellIdentifier")
-        self.tableView.rowHeight =  128.0
-
-        self.segmentedControl.addTarget(self, action: #selector(changeIndex), for: .valueChanged)
+        view.addSubview(tableView)
         
-        self.loading.startAnimating()
-        DataProvider.shared.uploadDataByDay(by: "2019-09-21") { completion in
-            if let error = completion {
-                Alert.showError(on: self, with: error)
-            } else {
-                self.tableView.reloadData()
-            }
-            self.loading.stopAnimating()
-        }
+        NSLayoutConstraint.activate([
+        
+        ])
     }
-
-    @objc private func changeIndex() {
-        loading.startAnimating()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getSchedule()
+    }
+    
+    // MARK: Method to fetch Schedule model
+    
+    private func getSchedule() {
+        guard let group = group else { return }
         
-        switch self.segmentedControl.selectedSegmentIndex {
-        case 0:
-          DataProvider.shared.uploadDataByDay(by: "2019-09-21") { completion in
-            if let error = completion {
-                Alert.showError(on: self, with: error)
+        scheduleService.getSchedules(year: baseDate,
+                                     semester: .fall, // TODO: create func to define a semester
+                                     groupNumber: group.number) { [weak self] result in
+            switch result {
+            case let .success(schedules):
+                guard schedules.count > 0 else {
+                    print("No data")
+                }
+                self?.dataSource = schedules[0].exercises
+                
+            case let .failure(error):
+                print(error.localizedDescription)
             }
-            self.loading.stopAnimating()
-            self.tableView.reloadData()
-          }
-        case 1:
-          DataProvider.shared.uploadDataByDay(by: "2019-09-22") { completion in
-            if let error = completion {
-                Alert.showError(on: self, with: error)
-            }
-            self.loading.stopAnimating()
-            self.tableView.reloadData()
-          }
-        case 2:
-          DataProvider.shared.uploadDataByYear(by: "2019") { completion in
-            if let error = completion {
-                Alert.showError(on: self, with: error)
-            }
-            self.loading.stopAnimating()
-            self.tableView.reloadData()
-          }
-        default:
-          break
         }
     }
   
+}
+
+extension ScheduleViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 }

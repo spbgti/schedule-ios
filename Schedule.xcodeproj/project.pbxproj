@@ -10,17 +10,13 @@
 		044FEE642383F3B1005FA81E /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE632383F3B1005FA81E /* ReminderViewController.swift */; };
 		044FEE6823860721005FA81E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FEE6723860721005FA81E /* NotificationManager.swift */; };
 		045EF97323C59E7E00CC869F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF97223C59E7E00CC869F /* Enums.swift */; };
-		045EF98323D0F6D300CC869F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EF98223D0F6D300CC869F /* DataManager.swift */; };
 		0460B4E423F33133003F4F9C /* ReminderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460B4E323F33133003F4F9C /* ReminderSettingsViewController.swift */; };
 		046263A0235DA7DC00D1215A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462639F235DA7DC00D1215A /* OnboardingViewController.swift */; };
 		046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A5236184BB00D1215A /* SettingTableViewController.swift */; };
-		046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263A82362D37800D1215A /* DataProviderExtension.swift */; };
-		046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046263C923646E8600D1215A /* ScheduleTableViewCell.swift */; };
 		0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474F38623BF3F2600FD1BE4 /* Alert.swift */; };
 		0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6132321C84E00EA5D25 /* AppDelegate.swift */; };
 		0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */; };
 		04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA719623A22FA000BDDE6A /* DateExtension.swift */; };
-		04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D56BD32348E5670097E0DC /* DataProvider.swift */; };
 		04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799A23E0D2B80059CD7E /* RootViewController.swift */; };
 		04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */; };
 		04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FEC61A2321C84E00EA5D25 /* Colors.xcassets */; };
@@ -35,7 +31,6 @@
 		84595B1D252A6AC80039E401 /* ReminderCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84595B1B252A6AC80039E401 /* ReminderCVCell.xib */; };
 		84595B1F252A8DAE0039E401 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84595B1E252A8DAE0039E401 /* Reminder.swift */; };
 		84595B23252A994C0039E401 /* ReminderSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84595B22252A994C0039E401 /* ReminderSettings.storyboard */; };
-		846CC1B3253E35FB00F15ADA /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */; };
 		846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7225223F04000E9833 /* GroupsEndpoint.swift */; };
 		846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */; };
 		846DCA7725228C9E000E9833 /* LocationsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */; };
@@ -63,7 +58,6 @@
 		84F88B76253602D600639BEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B75253602D600639BEC /* Button.swift */; };
 		84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF23202525F4B100B5DC88 /* Main.storyboard */; };
 		84FF23262525F54000B5DC88 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF23252525F54000B5DC88 /* MainController.swift */; };
-		84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
@@ -119,16 +113,12 @@
 		044FEE632383F3B1005FA81E /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		044FEE6723860721005FA81E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		045EF97223C59E7E00CC869F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		045EF98223D0F6D300CC869F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0460B4E323F33133003F4F9C /* ReminderSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSettingsViewController.swift; sourceTree = "<group>"; };
 		0462639F235DA7DC00D1215A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		046263A5236184BB00D1215A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		046263A82362D37800D1215A /* DataProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderExtension.swift; sourceTree = "<group>"; };
-		046263C923646E8600D1215A /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		0474F38623BF3F2600FD1BE4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		04A1ED6D2368F5EA00FD8C3A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		04AA719623A22FA000BDDE6A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		04D56BD32348E5670097E0DC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		04F6799A23E0D2B80059CD7E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		04FEC6102321C84E00EA5D25 /* spbgti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spbgti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +139,6 @@
 		84595B1B252A6AC80039E401 /* ReminderCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCVCell.xib; sourceTree = "<group>"; };
 		84595B1E252A8DAE0039E401 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		84595B22252A994C0039E401 /* ReminderSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReminderSettings.storyboard; sourceTree = "<group>"; };
-		846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		846DCA7225223F04000E9833 /* GroupsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsEndpoint.swift; sourceTree = "<group>"; };
 		846DCA7425228B48000E9833 /* ScheduleAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPIEndpoint.swift; sourceTree = "<group>"; };
 		846DCA7625228C9E000E9833 /* LocationsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsEndpoint.swift; sourceTree = "<group>"; };
@@ -177,7 +166,6 @@
 		84F88B75253602D600639BEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		84FF23202525F4B100B5DC88 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		84FF23252525F54000B5DC88 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
@@ -233,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				04F6799C23E0D2F80059CD7E /* AppDelegateExtension.swift */,
-				046263A82362D37800D1215A /* DataProviderExtension.swift */,
 				04AA719623A22FA000BDDE6A /* DateExtension.swift */,
 				86FC55332569B2240053254D /* UserDefaults + Extension.swift */,
 				86FC55312569B0A00053254D /* String + Extension.swift */,
@@ -392,15 +379,6 @@
 			path = "Schedules API";
 			sourceTree = "<group>";
 		};
-		846CC1B7253E3DB900F15ADA /* ScheduleTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				846CC1B2253E35FB00F15ADA /* ScheduleTableViewCell.xib */,
-				046263C923646E8600D1215A /* ScheduleTableViewCell.swift */,
-			);
-			path = ScheduleTableViewCell;
-			sourceTree = "<group>";
-		};
 		846DCA7E2522931A000E9833 /* Schedules API */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,11 +490,7 @@
 		84FF232A2525FCEB00B5DC88 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				84FF232F2525FD3A00B5DC88 /* Schedule.storyboard */,
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
-				846CC1B7253E3DB900F15ADA /* ScheduleTableViewCell */,
-				04D56BD32348E5670097E0DC /* DataProvider.swift */,
-				045EF98223D0F6D300CC869F /* DataManager.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -651,8 +625,6 @@
 				86E15C6B25D1D110008CA61A /* SF-Pro-Text-Semibold.otf in Resources */,
 				04FEC61E2321C84E00EA5D25 /* LaunchScreen.storyboard in Resources */,
 				04FEC61B2321C84E00EA5D25 /* Colors.xcassets in Resources */,
-				846CC1B3253E35FB00F15ADA /* ScheduleTableViewCell.xib in Resources */,
-				84FF23302525FD3A00B5DC88 /* Schedule.storyboard in Resources */,
 				86E15C7325D1D110008CA61A /* SF-Pro-Display-Semibold.otf in Resources */,
 				84595B15252A4C5F0039E401 /* Reminder.storyboard in Resources */,
 				86E15C6525D1D110008CA61A /* SF-Pro-Text-Light.otf in Resources */,
@@ -735,7 +707,6 @@
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
 				84B0250D2524A45200FE29B0 /* SchedulesService.swift in Sources */,
 				846DCA8225229C59000E9833 /* Room.swift in Sources */,
-				04D56BD42348E5670097E0DC /* DataProvider.swift in Sources */,
 				84B025082524A44600FE29B0 /* GroupsService.swift in Sources */,
 				84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */,
 				86E15C7725D1D25F008CA61A /* UIFont + Custom fonts.swift in Sources */,
@@ -750,7 +721,6 @@
 				04AA719723A22FA000BDDE6A /* DateExtension.swift in Sources */,
 				84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */,
 				8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */,
-				045EF98323D0F6D300CC869F /* DataManager.swift in Sources */,
 				0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */,
 				84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */,
 				84FF23262525F54000B5DC88 /* MainController.swift in Sources */,
@@ -763,7 +733,6 @@
 				8416590B2514026400A4E6DD /* Schedule.swift in Sources */,
 				84B025132524BE5100FE29B0 /* TeachersService.swift in Sources */,
 				84B025112524BA9E00FE29B0 /* RoomsService.swift in Sources */,
-				046263CA23646E8600D1215A /* ScheduleTableViewCell.swift in Sources */,
 				04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */,
 				86FC55322569B0A00053254D /* String + Extension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
@@ -775,7 +744,6 @@
 				045EF97323C59E7E00CC869F /* Enums.swift in Sources */,
 				84B59D022534E9E80096E49C /* SettingTVCell.swift in Sources */,
 				864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */,
-				046263A92362D37800D1215A /* DataProviderExtension.swift in Sources */,
 				846DCA872522A5F5000E9833 /* ExercisesService.swift in Sources */,
 				846DCA7725228C9E000E9833 /* LocationsEndpoint.swift in Sources */,
 				846DCA7B25228ED2000E9833 /* SchedulesEndpoint.swift in Sources */,
