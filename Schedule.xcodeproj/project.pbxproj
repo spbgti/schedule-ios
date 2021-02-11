@@ -56,8 +56,6 @@
 		84F88B722536021200639BEC /* GroupSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F88B712536021200639BEC /* GroupSettings.storyboard */; };
 		84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B732536029900639BEC /* GroupSettingsViewController.swift */; };
 		84F88B76253602D600639BEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B75253602D600639BEC /* Button.swift */; };
-		84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FF23202525F4B100B5DC88 /* Main.storyboard */; };
-		84FF23262525F54000B5DC88 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF23252525F54000B5DC88 /* MainController.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
@@ -164,8 +162,6 @@
 		84F88B712536021200639BEC /* GroupSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupSettings.storyboard; sourceTree = "<group>"; };
 		84F88B732536029900639BEC /* GroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingsViewController.swift; sourceTree = "<group>"; };
 		84F88B75253602D600639BEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		84FF23202525F4B100B5DC88 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		84FF23252525F54000B5DC88 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
@@ -470,21 +466,11 @@
 			isa = PBXGroup;
 			children = (
 				046263A4236064DF00D1215A /* Onboarding */,
-				84FF231F2525F49200B5DC88 /* Main */,
 				84FF232A2525FCEB00B5DC88 /* Schedule */,
 				84595B13252A2B0C0039E401 /* Reminder */,
 				84BE236425343CCE0017D17A /* Settings */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		84FF231F2525F49200B5DC88 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				84FF23202525F4B100B5DC88 /* Main.storyboard */,
-				84FF23252525F54000B5DC88 /* MainController.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		84FF232A2525FCEB00B5DC88 /* Schedule */ = {
@@ -607,7 +593,6 @@
 				84595B23252A994C0039E401 /* ReminderSettings.storyboard in Resources */,
 				86E15C6825D1D110008CA61A /* SF-Pro-Text-Ultralight.otf in Resources */,
 				86E15C6A25D1D110008CA61A /* SF-Pro-Text-Thin.otf in Resources */,
-				84FF23212525F4B100B5DC88 /* Main.storyboard in Resources */,
 				86E15C6C25D1D110008CA61A /* SF-Pro-Text-Medium.otf in Resources */,
 				849FE783253E6085000189D5 /* Images.xcassets in Resources */,
 				86E15C6625D1D110008CA61A /* SF-Pro-Text-Black.otf in Resources */,
@@ -723,7 +708,6 @@
 				8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */,
 				0474F38723BF3F2600FD1BE4 /* Alert.swift in Sources */,
 				84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */,
-				84FF23262525F54000B5DC88 /* MainController.swift in Sources */,
 				044FEE6823860721005FA81E /* NotificationManager.swift in Sources */,
 				8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */,
 				044FEE642383F3B1005FA81E /* ReminderViewController.swift in Sources */,

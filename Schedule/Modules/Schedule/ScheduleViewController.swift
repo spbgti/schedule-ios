@@ -7,7 +7,9 @@ class ScheduleViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = nil
         tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     
@@ -46,10 +48,14 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-        
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -62,18 +68,26 @@ class ScheduleViewController: UIViewController {
     
     private func getSchedule() {
         guard let group = group else { return }
+// FIXME: test data
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        let date = dateFormatter.date(from: "2019")!
         
-        scheduleService.getSchedules(year: baseDate,
-                                     semester: .fall, // TODO: create func to define a semester
+        scheduleService.getSchedules(year: date,
+// TODO: create func to define a semester
+                                     semester: .fall,
                                      groupNumber: group.number) { [weak self] result in
             switch result {
             case let .success(schedules):
                 guard schedules.count > 0 else {
+// TODO: display error on UILabel
                     print("No data")
+                    return
                 }
                 self?.dataSource = schedules[0].exercises
                 
             case let .failure(error):
+// TODO: display error on UILabel
                 print(error.localizedDescription)
             }
         }
@@ -83,14 +97,15 @@ class ScheduleViewController: UIViewController {
 
 extension ScheduleViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
+        0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        return cell
     }
 }

@@ -17,9 +17,8 @@ class RootViewController: UIViewController {
         return viewController
     }()
     
-    private lazy var mainViewController: MainController = {
-        let scheduleStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let scheduleViewController = scheduleStoryboard.instantiateInitialViewController() as! MainController
+    private lazy var scheduleViewController: ScheduleViewController = {
+        let scheduleViewController = ScheduleViewController(baseDate: Date())
         return scheduleViewController
     }()
     
@@ -58,14 +57,14 @@ class RootViewController: UIViewController {
     // MARK: Method to change displayed ViewController
   
     func switchToScheduleScreen() {
-        addChild(mainViewController)
-        mainViewController.view.frame = view.bounds
-        view.addSubview(mainViewController.view)
-        mainViewController.didMove(toParent: self)
+        addChild(scheduleViewController)
+        scheduleViewController.view.frame = view.bounds
+        view.addSubview(scheduleViewController.view)
+        scheduleViewController.didMove(toParent: self)
         currentViewController.willMove(toParent: nil)
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParent()
-        currentViewController = mainViewController
+        currentViewController = scheduleViewController
     }
   
 }
