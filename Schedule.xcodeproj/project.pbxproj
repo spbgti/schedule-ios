@@ -58,6 +58,7 @@
 		84F88B76253602D600639BEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B75253602D600639BEC /* Button.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
+		864FDB1225D5CEEE0073F42A /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
 		86838120257844E6005AA5EA /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* Errors.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
@@ -164,6 +165,7 @@
 		84F88B75253602D600639BEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
+		864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
+				864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				8416590B2514026400A4E6DD /* Schedule.swift in Sources */,
 				84B025132524BE5100FE29B0 /* TeachersService.swift in Sources */,
 				84B025112524BA9E00FE29B0 /* RoomsService.swift in Sources */,
+				864FDB1225D5CEEE0073F42A /* ExerciseTableViewCell.swift in Sources */,
 				04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */,
 				86FC55322569B0A00053254D /* String + Extension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
