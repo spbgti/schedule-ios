@@ -10,6 +10,17 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
     
+    // MARK: DEBUG subviews
+    
+    private lazy var skipButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Skip", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(nil, action: #selector(routeToMainViewController), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Subviews
     
     private lazy var logo: UIImageView = {
@@ -133,6 +144,14 @@ final class OnboardingViewController: UIViewController {
         view.addSubview(errorLabel)
         view.addSubview(footerTextView)
         
+        #if DEBUG
+        view.addSubview(skipButton)
+        skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        skipButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        skipButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        #endif
+        
         NSLayoutConstraint.activate([
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logo.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -52),
@@ -191,6 +210,11 @@ final class OnboardingViewController: UIViewController {
     // MARK: - Objc methods for target-action patterns
     
     @objc
+    private func routeToMainViewController() {
+        AppDelegate.shared.rootViewController.switchToScheduleScreen()
+    }
+    
+    @objc
     private func continueAction() {
         guard let group = inputGroup else { return }
         
@@ -205,7 +229,7 @@ final class OnboardingViewController: UIViewController {
             UserDefaults.standard.set(true, forKey: "IS_NOT_FIRST_LAUNCH")
             
             // Route to main module 'MainController'
-            AppDelegate.shared.rootViewController.switchToScheduleScreen()
+            routeToMainViewController()
         } catch {
             errorLabel.isHidden = false
             errorLabel.text = "Ошибка: \(error.localizedDescription)"

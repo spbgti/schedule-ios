@@ -31,12 +31,10 @@ extension ScheduleViewController: UITableViewDataSource {
         cell.type = exercise.type
         cell.time = ("\(exerciseTime.start) - \(exerciseTime.end)")
         cell.name = exercise.name
-// TODO: set an array of teachers
-        cell.teacher = exercise.teachers.first
+        cell.teacher = exercise.teachers
 // TODO: fetch room by roomId
 // TODO: fetch location from room by locationId
         cell.place = String(exercise.roomId)
-        cell.layoutIfNeeded()
         
         return cell
     }

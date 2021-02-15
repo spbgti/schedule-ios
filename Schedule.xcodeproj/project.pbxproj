@@ -274,6 +274,7 @@
 			children = (
 				8683811F257844E6005AA5EA /* Errors.swift */,
 				84595B1E252A8DAE0039E401 /* Reminder.swift */,
+				86FA492625D9670F00DBC547 /* ExerciseTime.swift */,
 				846CC1B6253E3D4000F15ADA /* Schedules API */,
 			);
 			path = Models;
@@ -484,7 +485,6 @@
 			children = (
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
 				864FDB1325D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift */,
-				86FA492625D9670F00DBC547 /* ExerciseTime.swift */,
 				86FA492525D9652D00DBC547 /* Subviews */,
 			);
 			path = Schedule;

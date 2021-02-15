@@ -10,11 +10,42 @@ import UIKit
 
 class ExerciseTableViewCell: UITableViewCell {
     
+    // MARK: Wrapping subviews
+    
+    private lazy var contentStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [firstLineStackView,
+                                                       nameOfExerciseLabel,
+                                                       teachersStackView,
+                                                       placeOfExerciseLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    private lazy var firstLineStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [typeOfExerciseLabel, timeOfExerciseLabel])
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+    
+    private lazy var teachersStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+    
     // MARK: Subviews
     
     private lazy var typeOfExerciseLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
         label.font = UIFont.SFProText(size: 14, weight: .medium)
         label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
         return label
@@ -22,7 +53,7 @@ class ExerciseTableViewCell: UITableViewCell {
     
     private lazy var timeOfExerciseLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
         label.font = UIFont.SFProText(size: 14, weight: .medium)
         label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
         return label
@@ -30,25 +61,16 @@ class ExerciseTableViewCell: UITableViewCell {
     
     private lazy var nameOfExerciseLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.preferredMaxLayoutWidth = bounds.size.width
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.SFProDisplay(size: 18, weight: .regular)
         label.textColor = .black
-        label.numberOfLines = 0
-        return label
-    }()
-    
-// TODO: create a UIStackView of labels
-    private lazy var teacherOfExerciseLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 14, weight: .regular)
-        label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
         return label
     }()
     
     private lazy var placeOfExerciseLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.SFProText(size: 14, weight: .regular)
         label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
         return label
@@ -71,10 +93,9 @@ class ExerciseTableViewCell: UITableViewCell {
         set { nameOfExerciseLabel.text = newValue }
     }
 
-// TODO: change type to [String?]? or [String?]
-    var teacher: String? {
-        get { teacherOfExerciseLabel.text }
-        set { teacherOfExerciseLabel.text = newValue}
+    var teacher: [String] {
+        get { [] }
+        set { fillTeacherStackView(newValue) }
     }
     
     var place: String? {
@@ -95,27 +116,21 @@ class ExerciseTableViewCell: UITableViewCell {
     
     // MARK: Layout subviews
     
-// FIXME: fix all warning of layout
     override func layoutSubviews() {
         NSLayoutConstraint.activate([
-            typeOfExerciseLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            typeOfExerciseLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            
-            timeOfExerciseLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            timeOfExerciseLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            
-            nameOfExerciseLabel.topAnchor.constraint(equalTo: typeOfExerciseLabel.bottomAnchor, constant: 12),
-            nameOfExerciseLabel.leadingAnchor.constraint(equalTo: typeOfExerciseLabel.leadingAnchor),
-            nameOfExerciseLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            
-            teacherOfExerciseLabel.topAnchor.constraint(equalTo: nameOfExerciseLabel.bottomAnchor, constant: 8),
-            teacherOfExerciseLabel.leadingAnchor.constraint(equalTo: nameOfExerciseLabel.leadingAnchor),
-            
-            placeOfExerciseLabel.topAnchor.constraint(equalTo: teacherOfExerciseLabel.bottomAnchor, constant: 22),
-            placeOfExerciseLabel.leadingAnchor.constraint(equalTo: teacherOfExerciseLabel.leadingAnchor),
-            placeOfExerciseLabel.trailingAnchor.constraint(equalTo: timeOfExerciseLabel.trailingAnchor),
-            placeOfExerciseLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18)
+            contentStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            contentStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            contentStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                          withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                          verticalFittingPriority: UILayoutPriority) -> CGSize {
+        contentView.frame = bounds
+        contentView.layoutIfNeeded()
+        return contentStackView.frame.size
     }
     
     // MARK: Configuration method
@@ -123,12 +138,18 @@ class ExerciseTableViewCell: UITableViewCell {
     private func configure() {
         backgroundColor = nil
         contentView.backgroundColor = nil
-        
-        contentView.addSubview(typeOfExerciseLabel)
-        contentView.addSubview(timeOfExerciseLabel)
-        contentView.addSubview(nameOfExerciseLabel)
-        contentView.addSubview(teacherOfExerciseLabel)
-        contentView.addSubview(placeOfExerciseLabel)
+        contentView.addSubview(contentStackView)
+    }
+    
+    // MARK: Fill a teacher stack view
+    
+    private func fillTeacherStackView(_ array: [String]) {
+        array.forEach { [weak self] string in
+            let label = UILabel()
+            label.font = UIFont.SFProText(size: 14, weight: .regular)
+            label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
+            self?.teachersStackView.addArrangedSubview(label)
+        }
     }
     
 }
