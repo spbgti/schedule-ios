@@ -27,6 +27,19 @@ class ScheduleViewController: UIViewController {
     
     private var baseDate: Date
     
+    var semester: AcademicSemester {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: baseDate)
+        
+        switch month {
+        case (1...8):
+            return .spring
+            
+        default:
+            return .fall
+        }
+    }
+    
     // MARK: Data source variables
     
     // Data source of exercise objects
@@ -51,8 +64,6 @@ class ScheduleViewController: UIViewController {
         self.scheduleService = SchedulesService()
         self.roomService = RoomsService()
         super.init(nibName: nil, bundle: nil)
-        
-        getExerciseTime()
     }
     
     required init?(coder: NSCoder) {
@@ -78,6 +89,7 @@ class ScheduleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getExerciseTime()
+        setTitle()
     }
     
     // MARK: Method to fetch Schedule model
@@ -104,8 +116,7 @@ class ScheduleViewController: UIViewController {
         let date = dateFormatter.date(from: "2019")!
         
         scheduleService.getSchedules(year: date,
-// TODO: create func to define a semester
-                                     semester: .fall,
+                                     semester: semester,
                                      groupNumber: group.number) { [weak self] result in
             switch result {
             case let .success(schedules):
@@ -122,6 +133,18 @@ class ScheduleViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    // MARK: Helper methods
+    
+    private func setTitle() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        
+        let date = dateFormatter.string(from: baseDate)
+        let semester = self.semester == .fall ? "Осень" : "Весна"
+        
+        title = "\(semester), \(date)"
     }
   
 }

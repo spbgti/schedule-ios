@@ -9,8 +9,8 @@
 import Foundation
 
 enum AcademicSemester: String {
-    case fall = "1"
-    case spring = "2"
+    case spring = "1"
+    case fall = "2"
 }
 
 class SchedulesService {

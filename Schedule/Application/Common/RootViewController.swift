@@ -57,14 +57,16 @@ class RootViewController: UIViewController {
     // MARK: Method to change displayed ViewController
   
     func switchToScheduleScreen() {
-        addChild(scheduleViewController)
-        scheduleViewController.view.frame = view.bounds
-        view.addSubview(scheduleViewController.view)
-        scheduleViewController.didMove(toParent: self)
+        let navigationController = UINavigationController(rootViewController: scheduleViewController)
+        
+        addChild(navigationController)
+        navigationController.view.frame = view.bounds
+        view.addSubview(navigationController.view)
+        navigationController.didMove(toParent: self)
         currentViewController.willMove(toParent: nil)
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParent()
-        currentViewController = scheduleViewController
+        currentViewController = navigationController
     }
   
 }
