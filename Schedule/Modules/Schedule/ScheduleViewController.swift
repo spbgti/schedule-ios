@@ -21,6 +21,8 @@ class ScheduleViewController: UIViewController {
     
     private let scheduleService: SchedulesService
     
+    let roomService: RoomsService
+    
     private var group: Group?
     
     private var baseDate: Date
@@ -47,6 +49,7 @@ class ScheduleViewController: UIViewController {
         
         self.baseDate = baseDate
         self.scheduleService = SchedulesService()
+        self.roomService = RoomsService()
         super.init(nibName: nil, bundle: nil)
         
         getExerciseTime()

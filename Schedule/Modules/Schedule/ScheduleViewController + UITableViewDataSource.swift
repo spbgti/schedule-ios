@@ -32,8 +32,19 @@ extension ScheduleViewController: UITableViewDataSource {
         cell.time = ("\(exerciseTime.start) - \(exerciseTime.end)")
         cell.name = exercise.name
         cell.teacher = exercise.teachers
-// TODO: fetch room by roomId
-// TODO: fetch location from room by locationId
+
+        roomService.getRoom(id: exercise.roomId) { result in
+            switch result {
+            case let .success(room):
+                cell.place = room.name
+                
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        // TODO: fetch location from room by locationId
+        
         cell.place = String(exercise.roomId)
         cell.selectionStyle = .none
         
