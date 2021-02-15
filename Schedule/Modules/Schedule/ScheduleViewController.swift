@@ -43,6 +43,8 @@ class ScheduleViewController: UIViewController {
     
     // MARK: Data source variables
     
+    var dataSource: [ScheduleTableViewSection : [Exercise]?]?
+    
     // Data source of exercise objects
     var exercises: [Exercise]?
     
@@ -126,6 +128,7 @@ class ScheduleViewController: UIViewController {
                     print("No data")
                     return
                 }
+                self?.filter(schedules[0].exercises)
                 self?.exercises = schedules[0].exercises
                 self?.tableView.reloadData()
                 
@@ -146,6 +149,17 @@ class ScheduleViewController: UIViewController {
         let semester = self.semester == .fall ? "Осень" : "Весна"
         
         title = "\(semester), \(date)"
+    }
+    
+    private func filter(_ data: [Exercise]) {
+        dataSource = [:]
+        
+        dataSource?[.monday] = data.filter { $0.day == "1" }
+        dataSource?[.tuesday] = data.filter { $0.day == "2" }
+        dataSource?[.wednesday] = data.filter { $0.day == "3" }
+        dataSource?[.thursday] = data.filter { $0.day == "4" }
+        dataSource?[.friday] = data.filter { $0.day == "5" }
+        dataSource?[.saturday] = data.filter { $0.day == "6" }
     }
   
 }
