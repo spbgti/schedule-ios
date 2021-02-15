@@ -13,10 +13,7 @@ class ExerciseTableViewCell: UITableViewCell {
     // MARK: Wrapping subviews
     
     private lazy var contentStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [firstLineStackView,
-                                                       nameOfExerciseLabel,
-                                                       teachersStackView,
-                                                       placeOfExerciseLabel])
+        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -26,7 +23,7 @@ class ExerciseTableViewCell: UITableViewCell {
     }()
     
     private lazy var firstLineStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [typeOfExerciseLabel, timeOfExerciseLabel])
+        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
@@ -38,6 +35,7 @@ class ExerciseTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
+//        stackView.spacing = 6
         return stackView
     }()
     
@@ -122,12 +120,26 @@ class ExerciseTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
-        ])
+        let contentStackViewTopAnchor = contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15)
+        contentStackViewTopAnchor.isActive = true
+        contentStackViewTopAnchor.priority = UILayoutPriority(999)
+        
+        let contentStackViewLeadingAnchor = contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
+        contentStackViewLeadingAnchor.isActive = true
+        
+        let contentStackViewTrailingAnchor = contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        contentStackViewTrailingAnchor.isActive = true
+        
+        let contentStackViewBottomAnchor = contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
+        contentStackViewBottomAnchor.isActive = true
+        contentStackViewBottomAnchor.priority = UILayoutPriority(999)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        teachersStackView.arrangedSubviews.forEach { subview in
+            subview.removeFromSuperview()
+        }
     }
     
     // MARK: Configuration method
@@ -136,18 +148,39 @@ class ExerciseTableViewCell: UITableViewCell {
         backgroundColor = nil
         contentView.backgroundColor = nil
         contentView.addSubview(contentStackView)
+        
+        firstLineStackView.addArrangedSubview(typeOfExerciseLabel)
+        firstLineStackView.addArrangedSubview(timeOfExerciseLabel)
+        
+        contentStackView.addArrangedSubview(firstLineStackView)
+        contentStackView.addArrangedSubview(nameOfExerciseLabel)
+        contentStackView.addArrangedSubview(teachersStackView)
+        contentStackView.addArrangedSubview(placeOfExerciseLabel)
     }
     
     // MARK: Fill a teacher stack view
     
     private func fillTeacherStackView(_ array: [String]) {
+        guard array.count > 0 else {
+            let label = createTeacherLabel(with: "Состав преподавателей уточните на кафедре")
+            teachersStackView.addArrangedSubview(label)
+            return
+        }
+        
         array.forEach { [weak self] string in
-            let label = UILabel()
-            label.setContentHuggingPriority(UILayoutPriority(rawValue: 253), for: .vertical)
-            label.font = UIFont.SFProText(size: 14, weight: .regular)
-            label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
+            let label = createTeacherLabel(with: string)
             self?.teachersStackView.addArrangedSubview(label)
         }
+    }
+    
+    private func createTeacherLabel(with text: String) -> UILabel {
+        let label = UILabel()
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 253), for: .vertical)
+        label.numberOfLines = 0
+        label.font = UIFont.SFProText(size: 14, weight: .regular)
+        label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
+        label.text = text
+        return label
     }
     
 }
