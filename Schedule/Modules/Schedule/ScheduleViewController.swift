@@ -24,7 +24,14 @@ class ScheduleViewController: UIViewController {
     
     private var baseDate: Date
     
-    var dataSource: [Exercise]?
+    // MARK: Data source variables
+    
+    // Data source of exercise objects
+    var exercises: [Exercise]?
+    
+    // Data source of exercise time objects
+    
+    var exerciseTime: [ExerciseTime]?
     
     // MARK: Initialization
     
@@ -40,6 +47,8 @@ class ScheduleViewController: UIViewController {
         self.baseDate = baseDate
         self.scheduleService = SchedulesService()
         super.init(nibName: nil, bundle: nil)
+        
+        getExerciseTime()
     }
     
     required init?(coder: NSCoder) {
@@ -62,12 +71,26 @@ class ScheduleViewController: UIViewController {
         ])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getSchedule()
+        getExerciseTime()
     }
     
     // MARK: Method to fetch Schedule model
+    
+    private func getExerciseTime() {
+        let assets = NSDataAsset(name: "ExerciseTime", bundle: Bundle.main)
+        if let data = assets?.data {
+            do {
+                exerciseTime = try JSONDecoder().decode([ExerciseTime].self, from: data)
+                getSchedule()
+            } catch {
+                print("Can't decode a json data from Data.assets")
+            }
+        } else {
+            print("Can't found a data from the assets with name 'ExerciseTime'")
+        }
+    }
     
     private func getSchedule() {
         guard let group = group else { return }
@@ -87,7 +110,7 @@ class ScheduleViewController: UIViewController {
                     print("No data")
                     return
                 }
-                self?.dataSource = schedules[0].exercises
+                self?.exercises = schedules[0].exercises
                 self?.tableView.reloadData()
                 
             case let .failure(error):

@@ -14,21 +14,22 @@ extension ScheduleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataSource?.count ?? 0
+        exercises?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let exercise = dataSource?[indexPath.item] else {
+        guard let exercise = exercises?[indexPath.item],
+              let exerciseTime = exerciseTime?[Int(exercise.pair)!] else {
             fatalError("")
         }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(ExerciseTableViewCell.self)",
                                                        for: indexPath) as? ExerciseTableViewCell  else {
-            fatalError("")
+            fatalError("Unknown collection view cell with type 'ExerciseTableViewCell'")
         }
         
         cell.type = exercise.type
-        cell.time = exercise.pair
+        cell.time = ("\(exerciseTime.start) - \(exerciseTime.end)")
         cell.name = exercise.name
 // TODO: set an array of teachers
         cell.teacher = exercise.teachers.first
@@ -36,6 +37,7 @@ extension ScheduleViewController: UITableViewDataSource {
 // TODO: fetch location from room by locationId
         cell.place = String(exercise.roomId)
         cell.layoutIfNeeded()
+        
         return cell
     }
 }
