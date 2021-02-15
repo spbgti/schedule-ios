@@ -62,6 +62,7 @@
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
 		86838120257844E6005AA5EA /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* Errors.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
+		86ABFDE525DB1D6A00C65368 /* EmptyExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABFDE425DB1D6A00C65368 /* EmptyExerciseTableViewCell.swift */; };
 		86E15C6425D1D110008CA61A /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */; };
 		86E15C6525D1D110008CA61A /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */; };
 		86E15C6625D1D110008CA61A /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */; };
@@ -171,6 +172,7 @@
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		86ABFDE425DB1D6A00C65368 /* EmptyExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */,
+				86ABFDE425DB1D6A00C65368 /* EmptyExerciseTableViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				84B025112524BA9E00FE29B0 /* RoomsService.swift in Sources */,
 				864FDB1425D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift in Sources */,
 				864FDB1225D5CEEE0073F42A /* ExerciseTableViewCell.swift in Sources */,
+				86ABFDE525DB1D6A00C65368 /* EmptyExerciseTableViewCell.swift in Sources */,
 				04F6799D23E0D2F80059CD7E /* AppDelegateExtension.swift in Sources */,
 				86FC55322569B0A00053254D /* String + Extension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,

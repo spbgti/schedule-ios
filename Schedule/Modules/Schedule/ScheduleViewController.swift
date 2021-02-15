@@ -12,6 +12,7 @@ class ScheduleViewController: UIViewController {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         tableView.dataSource = self
         tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: "\(ExerciseTableViewCell.self)")
+        tableView.register(EmptyExerciseTableViewCell.self, forCellReuseIdentifier: "\(EmptyExerciseTableViewCell.self)")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
         return tableView

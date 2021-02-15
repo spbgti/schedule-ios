@@ -38,7 +38,7 @@ extension ScheduleViewController: UITableViewDataSource {
             switch result {
             case let .success(room):
                 cell.place = room.name
-                
+
             case let .failure(error):
                 print(error.localizedDescription)
             }
