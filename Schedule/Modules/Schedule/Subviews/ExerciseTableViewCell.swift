@@ -45,6 +45,7 @@ class ExerciseTableViewCell: UITableViewCell {
     
     private lazy var typeOfExerciseLabel: UILabel = {
         let label = UILabel()
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 253), for: .vertical)
         label.textAlignment = .left
         label.font = UIFont.SFProText(size: 14, weight: .medium)
         label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
@@ -53,6 +54,7 @@ class ExerciseTableViewCell: UITableViewCell {
     
     private lazy var timeOfExerciseLabel: UILabel = {
         let label = UILabel()
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 253), for: .vertical)
         label.textAlignment = .right
         label.font = UIFont.SFProText(size: 14, weight: .medium)
         label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
@@ -71,6 +73,7 @@ class ExerciseTableViewCell: UITableViewCell {
     
     private lazy var placeOfExerciseLabel: UILabel = {
         let label = UILabel()
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 253), for: .vertical)
         label.font = UIFont.SFProText(size: 14, weight: .regular)
         label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
         return label
@@ -117,20 +120,14 @@ class ExerciseTableViewCell: UITableViewCell {
     // MARK: Layout subviews
     
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            contentStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            contentStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -15),
-            contentStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ])
-    }
-    
-    override func systemLayoutSizeFitting(_ targetSize: CGSize,
-                                          withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
-                                          verticalFittingPriority: UILayoutPriority) -> CGSize {
-        contentView.frame = bounds
-        contentView.layoutIfNeeded()
-        return contentStackView.frame.size
     }
     
     // MARK: Configuration method
@@ -146,6 +143,7 @@ class ExerciseTableViewCell: UITableViewCell {
     private func fillTeacherStackView(_ array: [String]) {
         array.forEach { [weak self] string in
             let label = UILabel()
+            label.setContentHuggingPriority(UILayoutPriority(rawValue: 253), for: .vertical)
             label.font = UIFont.SFProText(size: 14, weight: .regular)
             label.textColor = UIColor(red: 133 / 255, green: 133 / 255, blue: 133 / 255, alpha: 1)
             self?.teachersStackView.addArrangedSubview(label)

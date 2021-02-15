@@ -36,6 +36,8 @@ extension ScheduleViewController: UITableViewDataSource {
 // TODO: fetch location from room by locationId
         cell.place = String(exercise.roomId)
         
+        cell.layoutIfNeeded()
+        
         return cell
     }
 }
