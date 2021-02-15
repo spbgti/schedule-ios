@@ -35,7 +35,7 @@ class ExerciseTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
-//        stackView.spacing = 6
+        stackView.spacing = 6
         return stackView
     }()
     
