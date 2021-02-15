@@ -16,7 +16,8 @@ extension ScheduleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         exercises?.count ?? 0
     }
-    
+  
+// TODO: fetch location from room by locationId
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let exercise = exercises?[indexPath.item],
               let exerciseTime = exerciseTime?[Int(exercise.pair)!] else {
@@ -28,9 +29,9 @@ extension ScheduleViewController: UITableViewDataSource {
             fatalError("Unknown collection view cell with type 'ExerciseTableViewCell'")
         }
         
-        cell.type = exercise.type
+        cell.type = exercise.type.capitalizingFirstLetter()
         cell.time = ("\(exerciseTime.start) - \(exerciseTime.end)")
-        cell.name = exercise.name
+        cell.name = exercise.name.capitalizingFirstLetter()
         cell.teacher = exercise.teachers
 
         roomService.getRoom(id: exercise.roomId) { result in
@@ -43,11 +44,7 @@ extension ScheduleViewController: UITableViewDataSource {
             }
         }
         
-        // TODO: fetch location from room by locationId
-        
-        cell.place = String(exercise.roomId)
         cell.selectionStyle = .none
-        
         cell.layoutIfNeeded()
         
         return cell
