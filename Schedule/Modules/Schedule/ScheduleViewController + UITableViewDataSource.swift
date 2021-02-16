@@ -68,3 +68,15 @@ extension ScheduleViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension ScheduleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "\(ScheduleTableViewSectionHeader.self)") as? ScheduleTableViewSectionHeader else {
+            fatalError("")
+        }
+        
+        headerView.title = ScheduleTableViewSection.allCases[section].rawValue.capitalizingFirstLetter()
+        headerView.layoutIfNeeded()
+        return headerView
+    }
+}

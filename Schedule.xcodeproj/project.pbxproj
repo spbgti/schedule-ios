@@ -56,6 +56,7 @@
 		84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B732536029900639BEC /* GroupSettingsViewController.swift */; };
 		84F88B76253602D600639BEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B75253602D600639BEC /* Button.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
+		862E349425DB4072007CAECB /* ScheduleTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862E349325DB4072007CAECB /* ScheduleTableViewSectionHeader.swift */; };
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
 		864FDB1225D5CEEE0073F42A /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */; };
 		864FDB1425D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FDB1325D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift */; };
@@ -167,6 +168,7 @@
 		84F88B732536029900639BEC /* GroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingsViewController.swift; sourceTree = "<group>"; };
 		84F88B75253602D600639BEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
+		862E349325DB4072007CAECB /* ScheduleTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewSectionHeader.swift; path = Schedule/Modules/Schedule/Subviews/ScheduleTableViewSectionHeader.swift; sourceTree = SOURCE_ROOT; };
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		864FDB1325D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController + UITableViewDataSource.swift"; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			children = (
 				864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */,
 				86ABFDE425DB1D6A00C65368 /* EmptyExerciseTableViewCell.swift */,
+				862E349325DB4072007CAECB /* ScheduleTableViewSectionHeader.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				84EE9C64251F84F300318C41 /* Endpoint.swift in Sources */,
 				846DCA8025229BD3000E9833 /* Location.swift in Sources */,
 				84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */,
+				862E349425DB4072007CAECB /* ScheduleTableViewSectionHeader.swift in Sources */,
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
 				84B0250D2524A45200FE29B0 /* SchedulesService.swift in Sources */,
 				846DCA8225229C59000E9833 /* Room.swift in Sources */,

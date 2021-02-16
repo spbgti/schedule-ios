@@ -11,10 +11,17 @@ class ScheduleViewController: UIViewController {
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         tableView.dataSource = self
-        tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: "\(ExerciseTableViewCell.self)")
-        tableView.register(EmptyExerciseTableViewCell.self, forCellReuseIdentifier: "\(EmptyExerciseTableViewCell.self)")
+        tableView.delegate = self
+        tableView.register(ExerciseTableViewCell.self,
+                           forCellReuseIdentifier: "\(ExerciseTableViewCell.self)")
+        tableView.register(EmptyExerciseTableViewCell.self,
+                           forCellReuseIdentifier: "\(EmptyExerciseTableViewCell.self)")
+        tableView.register(ScheduleTableViewSectionHeader.self,
+                           forHeaderFooterViewReuseIdentifier: "\(ScheduleTableViewSectionHeader.self)")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 40
         return tableView
     }()
     
