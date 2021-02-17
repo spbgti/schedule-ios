@@ -39,7 +39,6 @@ extension ScheduleViewController: UITableViewDataSource {
             return cell
         }
         
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(ExerciseTableViewCell.self)",
                                                        for: indexPath) as? ExerciseTableViewCell  else {
             fatalError("Unknown collection view cell with type 'ExerciseTableViewCell'")
@@ -51,16 +50,7 @@ extension ScheduleViewController: UITableViewDataSource {
         cell.time = ("\(time?.start ?? "00:00") - \(time?.end ?? "00:00")")
         cell.name = exercise.name.capitalizingFirstLetter()
         cell.teacher = exercise.teachers
-
-        roomService.getRoom(id: exercise.roomId) { result in
-            switch result {
-            case let .success(room):
-                cell.place = room.name
-
-            case let .failure(error):
-                print(error.localizedDescription)
-            }
-        }
+        cell.place = exerciseRoom?[indexPath.item]?.name
         
         cell.selectionStyle = .none
         cell.layoutIfNeeded()

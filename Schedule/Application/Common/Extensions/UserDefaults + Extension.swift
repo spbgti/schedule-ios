@@ -1,5 +1,5 @@
 //
-//  UserDefaultsKeys.swift
+//  UserDefaults + Extension.swift
 //  schedule
 //
 //  Created by Vladislav Glumov on 21.11.2020.

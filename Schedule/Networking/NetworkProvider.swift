@@ -17,7 +17,7 @@ final class NetworkProvider<Target: Endpoint> {
         self.timeoutInterval = timeoutInterval
     }
     
-    public func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type, Errors>) -> Void) {
+    public func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type, UError>) -> Void) {
         AF.request("\(endpoint.baseURL)\(endpoint.path)",
                    method: endpoint.method,
                    parameters: endpoint.parameters,

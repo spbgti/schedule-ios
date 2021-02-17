@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum Errors: Error {
+enum UError: Error {
     case localBug
     case internalServer
     case networkConnection
     case dataNotFound
 }
 
-extension Errors {
+extension UError {
     var localizedDescription: String {
         switch self {
         case .localBug:

@@ -1,6 +1,6 @@
 import UIKit
 
-class ScheduleViewController: UIViewController {
+final class ScheduleViewController: UIViewController {
     
     // MARK: Subviews
     
@@ -23,6 +23,15 @@ class ScheduleViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 40
         return tableView
+    }()
+    
+    private lazy var errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.SFProText(size: 16, weight: .regular)
+        return label
     }()
     
     // MARK: Properties
@@ -59,6 +68,10 @@ class ScheduleViewController: UIViewController {
     
     var exerciseTime: [ExerciseTime]?
     
+    // Data source of exercise room
+    
+    var exerciseRoom: [Room?]?
+    
     // MARK: Initialization
     
     init(baseDate: Date) {
@@ -73,6 +86,7 @@ class ScheduleViewController: UIViewController {
         self.baseDate = baseDate
         self.scheduleService = SchedulesService()
         self.roomService = RoomsService()
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -85,21 +99,40 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
+        layoutOfSubviews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        getExerciseTime()
+        setTitle()
+    }
+    
+    // MARK: Configuration
+    
+    private func configure() {
         view.backgroundColor = .white
         view.addSubview(tableView)
-        
+        view.addSubview(errorMessageLabel)
+    }
+    
+    // MARK: Layout of subviews
+    
+    private func layoutOfSubviews() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getExerciseTime()
-        setTitle()
+        
+        NSLayoutConstraint.activate([
+            errorMessageLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            errorMessageLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30)
+        ])
     }
     
     // MARK: Method to fetch Schedule model
@@ -129,19 +162,19 @@ class ScheduleViewController: UIViewController {
                                      semester: semester,
                                      groupNumber: group.number) { [weak self] result in
             switch result {
-            case let .success(schedules):
-                guard schedules.count > 0 else {
-// TODO: display error on UILabel
-                    print("No data")
+            case let .success(schedule):
+                let exercises = schedule[0].exercises
+                guard exercises.count > 0 else {
+                    self?.errorMessageLabel.text = "Расписание не найдено"
                     return
                 }
-                self?.filter(schedules[0].exercises)
-                self?.exercises = schedules[0].exercises
+                
+                self?.filter(exercises)
+                self?.exercises = exercises
                 self?.tableView.reloadData()
                 
             case let .failure(error):
-// TODO: display error on UILabel
-                print(error.localizedDescription)
+                self?.errorMessageLabel.text = error.localizedDescription
             }
         }
     }
