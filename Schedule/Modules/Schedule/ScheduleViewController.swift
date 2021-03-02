@@ -12,16 +12,17 @@ final class ScheduleViewController: UIViewController {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(ExerciseTableViewCell.self,
-                           forCellReuseIdentifier: "\(ExerciseTableViewCell.self)")
-        tableView.register(EmptyExerciseTableViewCell.self,
-                           forCellReuseIdentifier: "\(EmptyExerciseTableViewCell.self)")
-        tableView.register(ScheduleTableViewSectionHeader.self,
-                           forHeaderFooterViewReuseIdentifier: "\(ScheduleTableViewSectionHeader.self)")
+        tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: "\(ExerciseTableViewCell.self)")
+        tableView.register(ScheduleTableViewSectionHeader.self, forHeaderFooterViewReuseIdentifier: "\(ScheduleTableViewSectionHeader.self)")
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
+        
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 40
+        
+        tableView.sectionFooterHeight = 0
+        
         return tableView
     }()
     
@@ -38,9 +39,9 @@ final class ScheduleViewController: UIViewController {
     
     private let scheduleService: SchedulesService
     
-    let roomService: RoomsService
-    
     private var group: Group?
+    
+    private var parity: String = "1"
     
     private var baseDate: Date
     
@@ -59,17 +60,15 @@ final class ScheduleViewController: UIViewController {
     
     // MARK: Data source variables
     
-    var dataSource: [ScheduleTableViewSection : [Exercise]?]?
+    var dataSource: [Weekday : [Exercise?]?]?
     
     // Data source of exercise objects
     var exercises: [Exercise]?
     
     // Data source of exercise time objects
-    
     var exerciseTime: [ExerciseTime]?
     
     // Data source of exercise room
-    
     var exerciseRoom: [Room?]?
     
     // MARK: Initialization
@@ -85,7 +84,6 @@ final class ScheduleViewController: UIViewController {
         
         self.baseDate = baseDate
         self.scheduleService = SchedulesService()
-        self.roomService = RoomsService()
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -194,12 +192,13 @@ final class ScheduleViewController: UIViewController {
     private func filter(_ data: [Exercise]) {
         dataSource = [:]
         
-        dataSource?[.monday] = data.filter { $0.day == "1" }
-        dataSource?[.tuesday] = data.filter { $0.day == "2" }
-        dataSource?[.wednesday] = data.filter { $0.day == "3" }
-        dataSource?[.thursday] = data.filter { $0.day == "4" }
-        dataSource?[.friday] = data.filter { $0.day == "5" }
-        dataSource?[.saturday] = data.filter { $0.day == "6" }
+        for (index, item) in Weekday.allCases.enumerated() {
+            dataSource?[item] = data
+                .filter({ [weak self] in
+                    $0.day == "\(index + 1)" &&
+                        $0.parity == self?.parity || $0.parity == nil
+                })
+        }
     }
   
 }

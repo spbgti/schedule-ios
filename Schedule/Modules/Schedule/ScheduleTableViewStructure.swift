@@ -10,21 +10,22 @@ import Foundation
 
 // MARK: ScheduleTableViewSection
 
-enum ScheduleTableViewSection: String {
+enum Weekday: String {
     case monday = "Понедельник"
     case tuesday = "Вторник"
     case wednesday = "Среда"
     case thursday = "Четверг"
     case friday = "Пятница"
     case saturday = "Суботта"
+    case sunday = "Воскресенье"
 }
 
-extension ScheduleTableViewSection: CaseIterable {}
+extension Weekday: CaseIterable {}
 
 // MARK: ScheduleTableViewItem
 
-enum ScheduleTableViewItem {
+enum ExerciseNumber {
     case first, second, third, fourth, fivth
 }
 
-extension ScheduleTableViewItem: CaseIterable {}
+extension ExerciseNumber: CaseIterable {}

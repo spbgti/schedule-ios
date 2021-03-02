@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleTableViewSectionHeader: UITableViewHeaderFooterView {
+final class ScheduleTableViewSectionHeader: UITableViewHeaderFooterView {
     
     // MARK: Subviews
     
