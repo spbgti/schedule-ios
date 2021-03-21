@@ -54,14 +54,17 @@
 		84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B732536029900639BEC /* GroupSettingsViewController.swift */; };
 		84F88B76253602D600639BEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B75253602D600639BEC /* Button.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
-		862E349425DB4072007CAECB /* ScheduleTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862E349325DB4072007CAECB /* ScheduleTableViewSectionHeader.swift */; };
+		860B102A25FFED0600B3C899 /* ExerciseTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B102925FFED0600B3C899 /* ExerciseTVCellViewModel.swift */; };
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
-		864FDB1225D5CEEE0073F42A /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */; };
-		864FDB1425D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FDB1325D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift */; };
+		8661477D2600AC830066335C /* DayOffTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661477C2600AC830066335C /* DayOffTVCell.swift */; };
+		8669BF2F260754DC007D8095 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */; };
+		8669BF31260759A4007D8095 /* AcademicSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF30260759A4007D8095 /* AcademicSemester.swift */; };
+		8669BF3426075C19007D8095 /* ScheduleParity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3326075C19007D8095 /* ScheduleParity.swift */; };
+		8669BF3626076114007D8095 /* ScheduleWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3526076114007D8095 /* ScheduleWeek.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
 		86838120257844E6005AA5EA /* UError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* UError.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
-		86ABFDE725DB256900C65368 /* ScheduleTableViewStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABFDE625DB256900C65368 /* ScheduleTableViewStructure.swift */; };
+		869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */; };
 		86E15C6425D1D110008CA61A /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */; };
 		86E15C6525D1D110008CA61A /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */; };
 		86E15C6625D1D110008CA61A /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */; };
@@ -81,6 +84,7 @@
 		86E15C7425D1D110008CA61A /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C6225D1D110008CA61A /* SF-Pro-Display-Ultralight.otf */; };
 		86E15C7525D1D110008CA61A /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C6325D1D110008CA61A /* SF-Pro-Display-Black.otf */; };
 		86E15C7725D1D25F008CA61A /* UIFont + Custom fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E15C7625D1D25F008CA61A /* UIFont + Custom fonts.swift */; };
+		86F5F0832602883E0067B7BE /* ScheduleTVSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F5F0822602883E0067B7BE /* ScheduleTVSectionHeader.swift */; };
 		86FA492725D9670F00DBC547 /* ExerciseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA492625D9670F00DBC547 /* ExerciseTime.swift */; };
 		86FA492C25DA8BB300DBC547 /* Data.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FA492B25DA8BB300DBC547 /* Data.xcassets */; };
 		86FC55322569B0A00053254D /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55312569B0A00053254D /* String + Extension.swift */; };
@@ -163,14 +167,17 @@
 		84F88B732536029900639BEC /* GroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingsViewController.swift; sourceTree = "<group>"; };
 		84F88B75253602D600639BEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
-		862E349325DB4072007CAECB /* ScheduleTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewSectionHeader.swift; path = Schedule/Modules/Schedule/Subviews/ScheduleTableViewSectionHeader.swift; sourceTree = SOURCE_ROOT; };
+		860B102925FFED0600B3C899 /* ExerciseTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCellViewModel.swift; sourceTree = "<group>"; };
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
-		864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
-		864FDB1325D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController + UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		8661477C2600AC830066335C /* DayOffTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffTVCell.swift; sourceTree = "<group>"; };
+		8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		8669BF30260759A4007D8095 /* AcademicSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicSemester.swift; sourceTree = "<group>"; };
+		8669BF3326075C19007D8095 /* ScheduleParity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParity.swift; sourceTree = "<group>"; };
+		8669BF3526076114007D8095 /* ScheduleWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWeek.swift; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* UError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UError.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		86ABFDE625DB256900C65368 /* ScheduleTableViewStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewStructure.swift; sourceTree = "<group>"; };
+		869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
 		86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -190,6 +197,7 @@
 		86E15C6225D1D110008CA61A /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		86E15C6325D1D110008CA61A /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
 		86E15C7625D1D25F008CA61A /* UIFont + Custom fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Custom fonts.swift"; sourceTree = "<group>"; };
+		86F5F0822602883E0067B7BE /* ScheduleTVSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTVSectionHeader.swift; sourceTree = "<group>"; };
 		86FA492625D9670F00DBC547 /* ExerciseTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTime.swift; sourceTree = "<group>"; };
 		86FA492B25DA8BB300DBC547 /* Data.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Data.xcassets; sourceTree = "<group>"; };
 		86FC55312569B0A00053254D /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 				84595B1E252A8DAE0039E401 /* Reminder.swift */,
 				86FA492625D9670F00DBC547 /* ExerciseTime.swift */,
 				846CC1B6253E3D4000F15ADA /* Schedules API */,
+				8669BF30260759A4007D8095 /* AcademicSemester.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,6 +312,7 @@
 			);
 			path = Schedule;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		236121AA76FD281BAEC8207F /* Pods */ = {
 			isa = PBXGroup;
@@ -474,20 +484,39 @@
 			isa = PBXGroup;
 			children = (
 				04FEC6152321C84E00EA5D25 /* ScheduleViewController.swift */,
-				864FDB1325D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift */,
-				86ABFDE625DB256900C65368 /* ScheduleTableViewStructure.swift */,
-				86FA492525D9652D00DBC547 /* Subviews */,
+				8669BF2D260754A9007D8095 /* View Models */,
+				8669BF3226075C04007D8095 /* Models */,
+				8669BF2C26075486007D8095 /* Views */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
 		};
-		86ABFDE825DB3B4900C65368 /* TableView */ = {
+		8669BF2C26075486007D8095 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				864FDB1125D5CEEE0073F42A /* ExerciseTableViewCell.swift */,
-				862E349325DB4072007CAECB /* ScheduleTableViewSectionHeader.swift */,
+				86F5F0822602883E0067B7BE /* ScheduleTVSectionHeader.swift */,
+				869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */,
+				8661477C2600AC830066335C /* DayOffTVCell.swift */,
 			);
-			path = TableView;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8669BF2D260754A9007D8095 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */,
+				860B102925FFED0600B3C899 /* ExerciseTVCellViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		8669BF3226075C04007D8095 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8669BF3326075C19007D8095 /* ScheduleParity.swift */,
+				8669BF3526076114007D8095 /* ScheduleWeek.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		86E15C4F25D1D0E2008CA61A /* Fonts */ = {
@@ -529,14 +558,6 @@
 				86E15C6325D1D110008CA61A /* SF-Pro-Display-Black.otf */,
 			);
 			path = "SF-Pro-Display";
-			sourceTree = "<group>";
-		};
-		86FA492525D9652D00DBC547 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				86ABFDE825DB3B4900C65368 /* TableView */,
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,26 +726,30 @@
 				846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */,
 				84F88B76253602D600639BEC /* Button.swift in Sources */,
 				84EE9C64251F84F300318C41 /* Endpoint.swift in Sources */,
+				86F5F0832602883E0067B7BE /* ScheduleTVSectionHeader.swift in Sources */,
 				846DCA8025229BD3000E9833 /* Location.swift in Sources */,
 				84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */,
-				862E349425DB4072007CAECB /* ScheduleTableViewSectionHeader.swift in Sources */,
 				0495E1902390EB1A00C847A2 /* AppDelegate.swift in Sources */,
 				84B0250D2524A45200FE29B0 /* SchedulesService.swift in Sources */,
 				846DCA8225229C59000E9833 /* Room.swift in Sources */,
 				84B025082524A44600FE29B0 /* GroupsService.swift in Sources */,
 				84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */,
+				8669BF31260759A4007D8095 /* AcademicSemester.swift in Sources */,
 				86E15C7725D1D25F008CA61A /* UIFont + Custom fonts.swift in Sources */,
+				8669BF3426075C19007D8095 /* ScheduleParity.swift in Sources */,
+				8669BF3626076114007D8095 /* ScheduleWeek.swift in Sources */,
 				84EE9C6E2521122800318C41 /* ExercisesEndpoint.swift in Sources */,
+				8669BF2F260754DC007D8095 /* ScheduleViewModel.swift in Sources */,
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
 				846DCA8425229CC8000E9833 /* Teacher.swift in Sources */,
 				86FC55342569B2240053254D /* UserDefaults + Extension.swift in Sources */,
 				86838120257844E6005AA5EA /* UError.swift in Sources */,
+				8661477D2600AC830066335C /* DayOffTVCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				8687C3882575A15B00D75BAC /* TextField.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,
 				84BE236325333CFF0017D17A /* ModalViewController.swift in Sources */,
 				8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */,
-				86ABFDE725DB256900C65368 /* ScheduleTableViewStructure.swift in Sources */,
 				86FA492725D9670F00DBC547 /* ExerciseTime.swift in Sources */,
 				84B0250F2524A50800FE29B0 /* LocationsService.swift in Sources */,
 				044FEE6823860721005FA81E /* NotificationManager.swift in Sources */,
@@ -736,8 +761,6 @@
 				8416590B2514026400A4E6DD /* Schedule.swift in Sources */,
 				84B025132524BE5100FE29B0 /* TeachersService.swift in Sources */,
 				84B025112524BA9E00FE29B0 /* RoomsService.swift in Sources */,
-				864FDB1425D5E4F60073F42A /* ScheduleViewController + UITableViewDataSource.swift in Sources */,
-				864FDB1225D5CEEE0073F42A /* ExerciseTableViewCell.swift in Sources */,
 				04F6799D23E0D2F80059CD7E /* AppDelegate + Extension.swift in Sources */,
 				86FC55322569B0A00053254D /* String + Extension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
@@ -745,6 +768,8 @@
 				841659092514024700A4E6DD /* Group.swift in Sources */,
 				0460B4E423F33133003F4F9C /* ReminderSettingsViewController.swift in Sources */,
 				84595B1F252A8DAE0039E401 /* Reminder.swift in Sources */,
+				869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */,
+				860B102A25FFED0600B3C899 /* ExerciseTVCellViewModel.swift in Sources */,
 				846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */,
 				84B59D022534E9E80096E49C /* SettingTVCell.swift in Sources */,
 				864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */,

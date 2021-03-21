@@ -8,12 +8,7 @@
 
 import Foundation
 
-enum AcademicSemester: String {
-    case spring = "1"
-    case fall = "2"
-}
-
-class SchedulesService {
+final class SchedulesService {
     
     private let provider = NetworkProvider<SchedulesEndpoint>()
     
@@ -21,11 +16,13 @@ class SchedulesService {
         let yearString = dateFormatter(year)
         let semesterString = semester.rawValue
         
-        provider.request(.get(year: yearString, semester:
-                                semesterString, groupNumber: groupNumber)) { (result: Result<[Schedule], UError>) in
+        provider.request(.get(year: yearString,
+                              semester: semesterString,
+                              groupNumber: groupNumber)) { (result: Result<[Schedule], UError>) in
             switch result {
             case .success(let schedules):
                 completion(.success(schedules))
+                
             case .failure(let errorString):
                 completion(.failure(errorString))
             }
@@ -37,6 +34,7 @@ class SchedulesService {
             switch result {
             case .success(let schedule):
                 completion(.success(schedule))
+                
             case .failure(let errorString):
                 completion(.failure(errorString))
             }

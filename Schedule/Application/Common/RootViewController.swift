@@ -18,7 +18,7 @@ class RootViewController: UIViewController {
     }()
     
     private lazy var scheduleViewController: ScheduleViewController = {
-        let scheduleViewController = ScheduleViewController(baseDate: Date())
+        let scheduleViewController = ScheduleViewController()
         return scheduleViewController
     }()
     

@@ -1,26 +1,27 @@
 //
-//  ScheduleTableViewSectionHeader.swift
+//  DayOffTVCell.swift
 //  schedule
 //
-//  Created by Vladislav Glumov on 16.02.2021.
+//  Created by Vladislav Glumov on 16.03.2021.
 //  Copyright © 2021 mac. All rights reserved.
 //
 
 import UIKit
 
-final class ScheduleTableViewSectionHeader: UITableViewHeaderFooterView {
+final class DayOffTVCell: UITableViewCell {
     
     // MARK: Subviews
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProDisplay(size: 16, weight: .semibold)
-        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont.SFProText(size: 20, weight: .semibold)
+        label.textColor = UIColor(red: 66 / 255, green: 66 / 255, blue: 66 / 255, alpha: 1)
         return label
     }()
     
-    // MARK: Interface
+    // MARK: Subtitle
     
     var title: String? {
         get { titleLabel.text }
@@ -29,8 +30,8 @@ final class ScheduleTableViewSectionHeader: UITableViewHeaderFooterView {
     
     // MARK: Initialization
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
     }
     
@@ -38,19 +39,19 @@ final class ScheduleTableViewSectionHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Layout of subviews
+    // MARK: Layout subviews
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 82)
         ])
     }
     
-    // MARK: Configuration method
+    // MARK: Configuration
     
     private func configure() {
         contentView.addSubview(titleLabel)

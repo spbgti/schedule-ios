@@ -22,8 +22,4 @@ struct Exercise: Codable {
         case day
         case parity
     }
-  
-    subscript() -> String {
-        return day
-    }
 }
