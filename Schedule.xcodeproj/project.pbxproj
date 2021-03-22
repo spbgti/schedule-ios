@@ -63,6 +63,7 @@
 		8669BF3626076114007D8095 /* ScheduleWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3526076114007D8095 /* ScheduleWeek.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
 		8681DDC92608720C00879D63 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681DDC82608720C00879D63 /* GroupRepository.swift */; };
+		8681DDCB26087DCE00879D63 /* SchedulePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681DDCA26087DCE00879D63 /* SchedulePair.swift */; };
 		86838120257844E6005AA5EA /* UError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* UError.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
 		869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */; };
@@ -177,6 +178,7 @@
 		8669BF3526076114007D8095 /* ScheduleWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWeek.swift; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
 		8681DDC82608720C00879D63 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
+		8681DDCA26087DCE00879D63 /* SchedulePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePair.swift; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* UError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UError.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 				8669BF30260759A4007D8095 /* AcademicSemester.swift */,
 				8669BF3326075C19007D8095 /* ScheduleParity.swift */,
 				8669BF3526076114007D8095 /* ScheduleWeek.swift */,
+				8681DDCA26087DCE00879D63 /* SchedulePair.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				841659092514024700A4E6DD /* Group.swift in Sources */,
 				0460B4E423F33133003F4F9C /* ReminderSettingsViewController.swift in Sources */,
 				84595B1F252A8DAE0039E401 /* Reminder.swift in Sources */,
+				8681DDCB26087DCE00879D63 /* SchedulePair.swift in Sources */,
 				869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */,
 				860B102A25FFED0600B3C899 /* ExerciseTVCellViewModel.swift in Sources */,
 				846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */,

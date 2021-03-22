@@ -119,8 +119,8 @@ final class ScheduleViewModel: NSObject {
 // FIXME: create pair model instead of sequence (1...5)
     
     private func sortByParity(_ exercises: [Exercise]) -> [Exercise?] {
-        (1...5).map { index in
-            let dayExercises = exercises.filter { $0.pair == String(index) }
+        SchedulePair.allCases.map { pair in
+            let dayExercises = exercises.filter { $0.pair == pair.rawValue }
             
             if dayExercises.count > 1 {
                 let parityDays = dayExercises.filter { [weak self] in $0.parity == self?.parity.rawValue }
