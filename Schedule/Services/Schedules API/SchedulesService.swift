@@ -12,7 +12,7 @@ final class SchedulesService {
     
     private let provider = NetworkProvider<SchedulesEndpoint>()
     
-    func getSchedules(year: Date, semester: AcademicSemester, groupNumber: String, completion: @escaping (Result<[Schedule], UError>) -> Void) {
+    func getSchedules(year: Date, semester: ScheduleSemester, groupNumber: String, completion: @escaping (Result<[Schedule], UError>) -> Void) {
         let yearString = dateFormatter(year)
         let semesterString = semester.rawValue
         

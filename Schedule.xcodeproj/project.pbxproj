@@ -58,7 +58,7 @@
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
 		8661477D2600AC830066335C /* DayOffTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661477C2600AC830066335C /* DayOffTVCell.swift */; };
 		8669BF2F260754DC007D8095 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */; };
-		8669BF31260759A4007D8095 /* AcademicSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF30260759A4007D8095 /* AcademicSemester.swift */; };
+		8669BF31260759A4007D8095 /* ScheduleSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF30260759A4007D8095 /* ScheduleSemester.swift */; };
 		8669BF3426075C19007D8095 /* ScheduleParity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3326075C19007D8095 /* ScheduleParity.swift */; };
 		8669BF3626076114007D8095 /* ScheduleWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3526076114007D8095 /* ScheduleWeek.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
@@ -173,7 +173,7 @@
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		8661477C2600AC830066335C /* DayOffTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffTVCell.swift; sourceTree = "<group>"; };
 		8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
-		8669BF30260759A4007D8095 /* AcademicSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicSemester.swift; sourceTree = "<group>"; };
+		8669BF30260759A4007D8095 /* ScheduleSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSemester.swift; sourceTree = "<group>"; };
 		8669BF3326075C19007D8095 /* ScheduleParity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParity.swift; sourceTree = "<group>"; };
 		8669BF3526076114007D8095 /* ScheduleWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWeek.swift; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
@@ -517,7 +517,7 @@
 		8669BF3226075C04007D8095 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8669BF30260759A4007D8095 /* AcademicSemester.swift */,
+				8669BF30260759A4007D8095 /* ScheduleSemester.swift */,
 				8669BF3326075C19007D8095 /* ScheduleParity.swift */,
 				8669BF3526076114007D8095 /* ScheduleWeek.swift */,
 				8681DDCA26087DCE00879D63 /* SchedulePair.swift */,
@@ -740,7 +740,7 @@
 				846DCA8225229C59000E9833 /* Room.swift in Sources */,
 				84B025082524A44600FE29B0 /* GroupsService.swift in Sources */,
 				84EE9C6C251F956B00318C41 /* NetworkProvider.swift in Sources */,
-				8669BF31260759A4007D8095 /* AcademicSemester.swift in Sources */,
+				8669BF31260759A4007D8095 /* ScheduleSemester.swift in Sources */,
 				86E15C7725D1D25F008CA61A /* UIFont + Custom fonts.swift in Sources */,
 				8669BF3426075C19007D8095 /* ScheduleParity.swift in Sources */,
 				8669BF3626076114007D8095 /* ScheduleWeek.swift in Sources */,

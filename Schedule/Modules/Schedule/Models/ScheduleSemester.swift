@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum AcademicSemester: String {
+enum ScheduleSemester: String {
     case spring = "1"
     case fall = "2"
 }
 
-extension AcademicSemester {
-    func semester(_ date: Date) -> Self? {
+extension ScheduleSemester {
+    static func semester(_ date: Date) -> Self? {
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         
@@ -27,6 +27,16 @@ extension AcademicSemester {
             
         default:
             return nil
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .fall:
+            return "Осень"
+            
+        case .spring:
+            return "Весна"
         }
     }
 }

@@ -34,6 +34,7 @@ final class ScheduleViewController: UIViewController {
         label.font = UIFont.SFProDisplay(size: 16, weight: .semibold)
         label.textColor = .black
         label.textAlignment = .center
+        label.text = viewModel.tableHeaderView
         return label
     }()
     

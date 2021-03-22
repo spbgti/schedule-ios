@@ -22,8 +22,12 @@ final class ScheduleViewModel: NSObject {
     
     private var baseDate: Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy"
-        return dateFormatter.date(from: "2019")!
+        dateFormatter.dateFormat = "yyyy-mm"
+        return dateFormatter.date(from: "2019-03")!
+    }
+    
+    private var scheduleSemester: ScheduleSemester? {
+        ScheduleSemester.semester(baseDate)
     }
     
     private var group: Group?
@@ -31,6 +35,19 @@ final class ScheduleViewModel: NSObject {
     private var error: String? {
         didSet {
             callback?(error)
+        }
+    }
+    
+    // MARK: View
+    
+    var tableHeaderView: String {
+        if let semester = scheduleSemester?.name {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy"
+            let year = dateFormatter.string(from: baseDate)
+           return "\(year), \(semester)"
+        } else {
+            return "Chill out"
         }
     }
     
@@ -76,8 +93,12 @@ final class ScheduleViewModel: NSObject {
             return
         }
         
-// FIXME: define a semester by base date
-        schedulesService.getSchedules(year: baseDate, semester: .spring, groupNumber: groupNumber) { [weak self] result in
+        guard let semester = scheduleSemester else {
+            error = "Chill out"
+            return
+        }
+        
+        schedulesService.getSchedules(year: baseDate, semester: semester, groupNumber: groupNumber) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let schedules):
@@ -97,8 +118,10 @@ final class ScheduleViewModel: NSObject {
     
     func switchParity(_ parity: ScheduleParity) {
         self.parity = parity
-// FIXME: Unwrap optional type
-        sortByWeekday(exercises!)
+        
+        if let exercises = exercises {
+            sortByWeekday(exercises)
+        }
     }
     
     // MARK: Sorting methods
@@ -111,9 +134,7 @@ final class ScheduleViewModel: NSObject {
         
         callback?(nil)
     }
-    
-// FIXME: create pair model instead of sequence (1...5)
-    
+
     private func sortByParity(_ exercises: [Exercise]) -> [Exercise?] {
         SchedulePair.allCases.map { pair in
             let dayExercises = exercises.filter { $0.pair == pair.rawValue }
