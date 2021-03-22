@@ -21,7 +21,7 @@ final class ScheduleViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 375
         
-        tableView.sectionHeaderHeight = 28
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.sectionFooterHeight = 0
         
         return tableView
@@ -34,15 +34,20 @@ final class ScheduleViewController: UIViewController {
         label.font = UIFont.SFProDisplay(size: 16, weight: .semibold)
         label.textColor = .black
         label.textAlignment = .center
-        label.text = "Осень, 2021"
         return label
     }()
+    
+// FIXME: handle touching without Exercise data (do not enable and reduce opacity)
     
     private lazy var parityControl: UISegmentedControl = {
         let control = UISegmentedControl(items: ScheduleParity.allCases.map { $0.name })
         control.addTarget(self, action: #selector(switchParity(_:)), for: .valueChanged)
         return control
     }()
+    
+// TODO: create an error view
+    
+// TODO: create an activity indicator
     
     
     // MARK: Dependency properties
@@ -74,7 +79,7 @@ final class ScheduleViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getSchedule()
+        viewModel.getGroup()
     }
     
     // MARK: Layout subviews
@@ -126,7 +131,6 @@ extension ScheduleViewController: UITableViewDelegate {
         }
         
         headerView.title = "\(ScheduleWeek.allCases[section].name)"
-        headerView.layoutIfNeeded()
         
         return headerView
     }

@@ -220,7 +220,7 @@ final class OnboardingViewController: UIViewController {
         
         do {
             // Try to encode group model
-            let groupData: Data = try JSONEncoder().encode(group)
+            let groupData = try JSONEncoder().encode(group)
             
             // Save encoded group model to UserDefaults
             UserDefaults.standard.set(groupData, forKey: UserDefaults.Key.group)

@@ -28,7 +28,7 @@ final class ExerciseTVCell: UITableViewCell {
     private lazy var typeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 18, weight: .light)
+        label.font = UIFont.SFProText(size: 14, weight: .light)
         label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
         return label
     }()
@@ -36,7 +36,7 @@ final class ExerciseTVCell: UITableViewCell {
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 18, weight: .light)
+        label.font = UIFont.SFProText(size: 14, weight: .light)
         label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
         return label
     }()
@@ -44,7 +44,7 @@ final class ExerciseTVCell: UITableViewCell {
     private lazy var exerciseName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 20, weight: .semibold)
+        label.font = UIFont.SFProText(size: 18, weight: .semibold)
         label.textColor = UIColor(red: 66 / 255, green: 66 / 255, blue: 66 / 255, alpha: 1)
         label.numberOfLines = 0
         return label
@@ -53,7 +53,7 @@ final class ExerciseTVCell: UITableViewCell {
     private lazy var teacherLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 18, weight: .light)
+        label.font = UIFont.SFProText(size: 14, weight: .light)
         label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
         return label
     }()
@@ -61,7 +61,7 @@ final class ExerciseTVCell: UITableViewCell {
     private lazy var roomLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 18, weight: .light)
+        label.font = UIFont.SFProText(size: 14, weight: .light)
         label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
         return label
     }()

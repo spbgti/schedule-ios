@@ -14,9 +14,12 @@ final class ScheduleViewModel: NSObject {
     
     private var schedulesService: SchedulesService
     
+    private var groupService: GroupRepository
+    
     
     // MARK: View state
     
+// FIXME: create a parity model
     private var parity = "1"
     
     private var baseDate: Date {
@@ -24,6 +27,8 @@ final class ScheduleViewModel: NSObject {
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.date(from: "2019")!
     }
+    
+    private var group: Group?
     
     private var error: String?
     
@@ -40,21 +45,45 @@ final class ScheduleViewModel: NSObject {
     
     // MARK: Data binding
     
+// FIXME: create callback with error parameter
+    
     var callback: (() -> Void)?
     
     
     // MARK: Initializator
     
     override init() {
-        self.schedulesService = SchedulesService()
+        schedulesService = SchedulesService()
+        groupService = GroupRepository()
     }
     
     
-    // MARK: Methods
+    // MARK: Methods interface
+    
+    func getGroup() {
+        groupService.getGroup { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let group):
+                    self?.group = group
+                    self?.getSchedule()
+                    
+                case .failure(let error):
+                    self?.error = error.localizedDescription
+                }
+            }
+        }
+    }
     
     func getSchedule() {
-        schedulesService.getSchedules(year: baseDate, semester: .spring, groupNumber: "446") { [weak self] result in
-            DispatchQueue.main.async { [weak self] in
+        guard let groupNumber = group?.number else {
+            error = "Номер группы не определен"
+            return
+        }
+        
+// FIXME: define a semester by base date
+        schedulesService.getSchedules(year: baseDate, semester: .spring, groupNumber: groupNumber) { [weak self] result in
+            DispatchQueue.main.async {
                 switch result {
                 case .success(let schedules):
                     if let schedule = schedules.first {
@@ -64,8 +93,7 @@ final class ScheduleViewModel: NSObject {
                         self?.error = "Расписание не найдено"
                     }
                     
-                case .failure(let error):
-                    print(error.localizedDescription)
+                case .failure(_):
                     self?.error = "Расписание не найдено"
                 }
             }
@@ -74,6 +102,7 @@ final class ScheduleViewModel: NSObject {
     
     func switchParity(_ index: Int) {
         parity = String(index + 1)
+// FIXME: Unwrap optional type
         sortByWeekday(exercises!)
     }
     
@@ -87,6 +116,8 @@ final class ScheduleViewModel: NSObject {
         
         callback?()
     }
+    
+// FIXME: create pair model instead of sequence (1...5)
     
     private func sortByParity(_ exercises: [Exercise]) -> [Exercise?] {
         (1...5).map { index in
@@ -119,7 +150,8 @@ extension ScheduleViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionKey = ScheduleWeek.allCases[section]
-        return dataSource[sectionKey]?.count ?? 1
+        let numberOfExercise = dataSource[sectionKey]!.count
+        return numberOfExercise > 0 ? numberOfExercise : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

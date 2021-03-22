@@ -62,6 +62,7 @@
 		8669BF3426075C19007D8095 /* ScheduleParity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3326075C19007D8095 /* ScheduleParity.swift */; };
 		8669BF3626076114007D8095 /* ScheduleWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3526076114007D8095 /* ScheduleWeek.swift */; };
 		8672481125CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */; };
+		8681DDC92608720C00879D63 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681DDC82608720C00879D63 /* GroupRepository.swift */; };
 		86838120257844E6005AA5EA /* UError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683811F257844E6005AA5EA /* UError.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
 		869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */; };
@@ -175,6 +176,7 @@
 		8669BF3326075C19007D8095 /* ScheduleParity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParity.swift; sourceTree = "<group>"; };
 		8669BF3526076114007D8095 /* ScheduleWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWeek.swift; sourceTree = "<group>"; };
 		8672481025CCAB770067FFE8 /* OnboardingViewController + UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UITextViewDelegate.swift"; sourceTree = "<group>"; };
+		8681DDC82608720C00879D63 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
 		8683811F257844E6005AA5EA /* UError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UError.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
+				8681DDC82608720C00879D63 /* GroupRepository.swift */,
 				846DCA852522A54D000E9833 /* Schedules API */,
 			);
 			path = Services;
@@ -275,7 +278,6 @@
 				84595B1E252A8DAE0039E401 /* Reminder.swift */,
 				86FA492625D9670F00DBC547 /* ExerciseTime.swift */,
 				846CC1B6253E3D4000F15ADA /* Schedules API */,
-				8669BF30260759A4007D8095 /* AcademicSemester.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -513,6 +515,7 @@
 		8669BF3226075C04007D8095 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8669BF30260759A4007D8095 /* AcademicSemester.swift */,
 				8669BF3326075C19007D8095 /* ScheduleParity.swift */,
 				8669BF3526076114007D8095 /* ScheduleWeek.swift */,
 			);
@@ -756,6 +759,7 @@
 				8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */,
 				044FEE642383F3B1005FA81E /* ReminderViewController.swift in Sources */,
 				846DCA7D25229064000E9833 /* TeachersEndpoint.swift in Sources */,
+				8681DDC92608720C00879D63 /* GroupRepository.swift in Sources */,
 				04F6799B23E0D2B80059CD7E /* RootViewController.swift in Sources */,
 				046263A0235DA7DC00D1215A /* OnboardingViewController.swift in Sources */,
 				8416590B2514026400A4E6DD /* Schedule.swift in Sources */,
