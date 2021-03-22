@@ -16,7 +16,6 @@ final class ScheduleViewModel: NSObject {
     
     private var groupService: GroupRepository
     
-    
     // MARK: View state
     
     private var parity: ScheduleParity = .odd
@@ -29,25 +28,23 @@ final class ScheduleViewModel: NSObject {
     
     private var group: Group?
     
-    private var error: String?
-    
+    private var error: String? {
+        didSet {
+            callback?(error)
+        }
+    }
     
     // MARK: Sources
     
     private var exercises: [Exercise]?
     
-    
     // MARK: Data source
     
     private var dataSource: [ScheduleWeek : [Exercise?]] = [:]
     
-    
     // MARK: Data binding
     
-// FIXME: create callback with error parameter
-    
-    var callback: (() -> Void)?
-    
+    var callback: ((_ error: String?) -> Void)?
     
     // MARK: Initializator
     
@@ -55,7 +52,6 @@ final class ScheduleViewModel: NSObject {
         schedulesService = SchedulesService()
         groupService = GroupRepository()
     }
-    
     
     // MARK: Methods interface
     
@@ -113,7 +109,7 @@ final class ScheduleViewModel: NSObject {
             self?.dataSource[key] =  self?.sortByParity(exercise)
         }
         
-        callback?()
+        callback?(nil)
     }
     
 // FIXME: create pair model instead of sequence (1...5)
