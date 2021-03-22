@@ -19,8 +19,7 @@ final class ScheduleViewModel: NSObject {
     
     // MARK: View state
     
-// FIXME: create a parity model
-    private var parity = "1"
+    private var parity: ScheduleParity = .odd
     
     private var baseDate: Date {
         let dateFormatter = DateFormatter()
@@ -100,8 +99,8 @@ final class ScheduleViewModel: NSObject {
         }
     }
     
-    func switchParity(_ index: Int) {
-        parity = String(index + 1)
+    func switchParity(_ parity: ScheduleParity) {
+        self.parity = parity
 // FIXME: Unwrap optional type
         sortByWeekday(exercises!)
     }
@@ -124,7 +123,7 @@ final class ScheduleViewModel: NSObject {
             let dayExercises = exercises.filter { $0.pair == String(index) }
             
             if dayExercises.count > 1 {
-                let parityDays = dayExercises.filter { [weak self] in $0.parity == self?.parity }
+                let parityDays = dayExercises.filter { [weak self] in $0.parity == self?.parity.rawValue }
                 
                 if let parityDay =  parityDays.first {
                     return parityDay

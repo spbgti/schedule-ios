@@ -117,7 +117,7 @@ final class ScheduleViewController: UIViewController {
     
     @objc
     private func switchParity(_ sender: UISegmentedControl) {
-        viewModel.switchParity(sender.selectedSegmentIndex)
+        viewModel.switchParity(ScheduleParity.allCases[sender.selectedSegmentIndex])
     }
   
 }

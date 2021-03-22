@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum ScheduleParity: CaseIterable {
-    case odd
-    case even
+enum ScheduleParity: String, CaseIterable {
+    case odd = "1"
+    case even = "2"
 }
 
 extension ScheduleParity {
