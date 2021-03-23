@@ -31,12 +31,8 @@ class RootViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        #if !DEBUG
-            let isNotFirstLaunch = UserDefaults.standard.bool(forKey: "IS_NOT_FIRST_LAUNCH")
-            self.currentViewController = !isNotFirstLaunch ? onboardingViewController : mainViewController
-        #elseif DEBUG
-            self.currentViewController = onboardingViewController
-        #endif
+        let isNotFirstLaunch = UserDefaults.standard.bool(forKey: "IS_NOT_FIRST_LAUNCH")
+        self.currentViewController = !isNotFirstLaunch ? onboardingViewController : UINavigationController(rootViewController: scheduleViewController)
     }
 
     required init?(coder: NSCoder) {

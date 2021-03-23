@@ -10,17 +10,6 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
     
-    // MARK: DEBUG subviews
-    
-    private lazy var skipButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Skip", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.addTarget(nil, action: #selector(routeToMainViewController), for: .touchUpInside)
-        return button
-    }()
-    
     // MARK: - Subviews
     
     private lazy var logo: UIImageView = {
@@ -52,11 +41,9 @@ final class OnboardingViewController: UIViewController {
         return textField
     }()
     
-    private lazy var activityIndicatorView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .large)
+    private lazy var activityIndicatorView: ActivityIndicator = {
+        let view = ActivityIndicator()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.hidesWhenStopped = true
-        view.color = .gray
         return view
     }()
     
@@ -143,14 +130,6 @@ final class OnboardingViewController: UIViewController {
         view.addSubview(activityIndicatorView)
         view.addSubview(errorLabel)
         view.addSubview(footerTextView)
-        
-        #if DEBUG
-        view.addSubview(skipButton)
-        skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        skipButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        skipButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        #endif
         
         NSLayoutConstraint.activate([
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),

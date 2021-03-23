@@ -24,6 +24,8 @@ final class ScheduleViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.sectionFooterHeight = 0
         
+        tableView.tableFooterView = UIView()
+        
         return tableView
     }()
     
@@ -58,7 +60,11 @@ final class ScheduleViewController: UIViewController {
         return label
     }()
     
-// TODO: create an activity indicator
+    private lazy var activityIndicator: ActivityIndicator = {
+        let activityIndicator = ActivityIndicator()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
     
     
     // MARK: Dependency properties
@@ -79,6 +85,8 @@ final class ScheduleViewController: UIViewController {
                 self?.errorView.isHidden = true
                 self?.tableView.reloadData()
             }
+            
+            self?.activityIndicator.stopAnimating()
         }
     }
     
@@ -96,6 +104,7 @@ final class ScheduleViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activityIndicator.startAnimating()
         viewModel.getGroup()
     }
     
@@ -121,6 +130,11 @@ final class ScheduleViewController: UIViewController {
             errorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             errorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25)
         ])
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     // MARK: Configuration
@@ -137,6 +151,7 @@ final class ScheduleViewController: UIViewController {
         view.addSubview(tableHeaderView)
         view.addSubview(tableView)
         view.addSubview(errorView)
+        view.addSubview(activityIndicator)
     }
     
     // MARK: Target-action methods
