@@ -36,7 +36,7 @@ final class ActivityIndicator: UIView {
         addSubview(activityIndicator)
         addSubview(titleLabel)
         
-        titleLabel.isHidden = true
+        isHidden = true
     }
     
     required init?(coder: NSCoder) {
@@ -65,12 +65,12 @@ final class ActivityIndicator: UIView {
     
     func startAnimating() {
         activityIndicator.startAnimating()
-        titleLabel.isHidden = false
+        isHidden = false
     }
     
     func stopAnimating() {
         activityIndicator.stopAnimating()
-        titleLabel.isHidden = true
+        isHidden = true
     }
 
 }
