@@ -48,15 +48,9 @@ final class ScheduleViewController: UIViewController {
         return control
     }()
     
-// TODO: create an error view
-    
-    private lazy var errorView: UILabel = {
-        let label = UILabel()
+    private lazy var errorLabel: ErrorLabel = {
+        let label = ErrorLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProDisplay(size: 16, weight: .regular)
-        label.textColor = .black
-        label.textAlignment = .center
-        label.numberOfLines = 2
         return label
     }()
     
@@ -79,10 +73,11 @@ final class ScheduleViewController: UIViewController {
         
         viewModel.callback = { [weak self] error in
             if let error = error {
-                self?.errorView.isHidden = false
-                self?.errorView.text = error
+                self?.errorLabel.isHidden = false
+                self?.errorLabel.title = "Ошибка"
+                self?.errorLabel.text = error
             } else {
-                self?.errorView.isHidden = true
+                self?.errorLabel.isHidden = true
                 self?.tableView.reloadData()
             }
             
@@ -126,9 +121,9 @@ final class ScheduleViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            errorView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            errorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            errorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25)
+            errorLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            errorLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            errorLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25)
         ])
         
         NSLayoutConstraint.activate([
@@ -146,11 +141,11 @@ final class ScheduleViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.titleView = parityControl
         
-        errorView.isHidden = true
+        errorLabel.isHidden = true
         
         view.addSubview(tableHeaderView)
         view.addSubview(tableView)
-        view.addSubview(errorView)
+        view.addSubview(errorLabel)
         view.addSubview(activityIndicator)
     }
     
