@@ -179,7 +179,6 @@ final class ExerciseTVCell: UITableViewCell {
             exerciseName.text = "Нет пары"
         } else {
             typeLabel.text = viewModel?.type
-            timeLabel.text = viewModel?.pair
             exerciseName.text = viewModel?.name.capitalizingFirstLetter()
         }
     }

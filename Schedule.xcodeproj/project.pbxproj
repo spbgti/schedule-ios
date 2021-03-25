@@ -71,6 +71,7 @@
 		86C10AA9260D0D1C00E35370 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */; };
 		86C10AAB260D0D6A00E35370 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAA260D0D6A00E35370 /* AppError.swift */; };
 		86C10AAD260D129500E35370 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAC260D129500E35370 /* NetworkReachability.swift */; };
+		86C10AAF260D1B5100E35370 /* ExerciseTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAE260D1B5100E35370 /* ExerciseTimeService.swift */; };
 		86E15C6425D1D110008CA61A /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */; };
 		86E15C6525D1D110008CA61A /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */; };
 		86E15C6625D1D110008CA61A /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */; };
@@ -190,6 +191,7 @@
 		86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		86C10AAA260D0D6A00E35370 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		86C10AAC260D129500E35370 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		86C10AAE260D1B5100E35370 /* ExerciseTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimeService.swift; sourceTree = "<group>"; };
 		86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				044FEE6723860721005FA81E /* NotificationManager.swift */,
 				8681DDC82608720C00879D63 /* GroupRepository.swift */,
+				86C10AAE260D1B5100E35370 /* ExerciseTimeService.swift */,
 				846DCA852522A54D000E9833 /* Schedules API */,
 			);
 			path = Services;
@@ -793,6 +796,7 @@
 				04F6799D23E0D2F80059CD7E /* AppDelegate + Extension.swift in Sources */,
 				86FC55322569B0A00053254D /* String + Extension.swift in Sources */,
 				046263A6236184BB00D1215A /* SettingTableViewController.swift in Sources */,
+				86C10AAF260D1B5100E35370 /* ExerciseTimeService.swift in Sources */,
 				84595B1C252A6AC80039E401 /* ReminderCVCell.swift in Sources */,
 				841659092514024700A4E6DD /* Group.swift in Sources */,
 				0460B4E423F33133003F4F9C /* ReminderSettingsViewController.swift in Sources */,

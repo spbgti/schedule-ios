@@ -17,6 +17,10 @@ final class ScheduleViewModel: NSObject {
     
     private let groupService: GroupRepository
     
+    private let exersiceTimeService: ExerciseTimeService
+    
+    // MARK: Network reachability
+    
     private let networkReachability: NetworkReachability
     
     // MARK: View state
@@ -59,6 +63,8 @@ final class ScheduleViewModel: NSObject {
     
     private var exercises: [Exercise]?
     
+    private var exerciseTime: [ExerciseTime]?
+    
     // MARK: Data source
     
     private var dataSource: [ScheduleWeek : [Exercise?]] = [:]
@@ -74,6 +80,7 @@ final class ScheduleViewModel: NSObject {
     override init() {
         schedulesService = SchedulesService()
         groupService = GroupRepository()
+        exersiceTimeService = ExerciseTimeService()
         networkReachability = NetworkReachability(with: "Schedule_Module")
         
         super.init()
@@ -122,6 +129,7 @@ final class ScheduleViewModel: NSObject {
                 case .success(let schedules):
                     if let schedule = schedules.first {
                         self?.exercises = schedule.exercises
+                        self?.getTime()
                         self?.sortByWeekday(schedule.exercises)
                     } else {
                         self?.error = .noScheduleData
@@ -130,6 +138,18 @@ final class ScheduleViewModel: NSObject {
                 case .failure(let error):
                     self?.error = error
                 }
+            }
+        }
+    }
+    
+    private func getTime() {
+        exersiceTimeService.get { [weak self] result in
+            switch result {
+            case .success(let time):
+                self?.exerciseTime = time
+                
+            case .failure(let error):
+                print(error)
             }
         }
     }
@@ -214,10 +234,27 @@ extension ScheduleViewModel: UITableViewDataSource {
             }
             
             let model = dataSource[indexPath.item]
+            let timeModel = exerciseTime?[indexPath.item]
+            var teachersString: String?
             
-            cell.selectionStyle = .none
+            if let teachers = model?.teachers {
+                teachersString = ""
+                teachers.forEach {
+                    teachersString! += "\($0)\n"
+                }
+            }
+            
+            if let time = timeModel {
+                cell.time = "\(time.start) - \(time.end)"
+            } else {
+                cell.time = "Время не известно"
+            }
+            
+            cell.teacher = teachersString
             cell.pair = String(indexPath.item + 1)
             cell.set(model)
+            
+            cell.selectionStyle = .none
             cell.layoutIfNeeded()
             
             return cell
