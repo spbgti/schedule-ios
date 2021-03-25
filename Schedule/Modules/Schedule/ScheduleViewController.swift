@@ -71,17 +71,24 @@ final class ScheduleViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        viewModel.callback = { [weak self] error in
+        viewModel.errorCallback = { [weak self] error in
             if let error = error {
                 self?.errorLabel.isHidden = false
                 self?.errorLabel.title = error.title
                 self?.errorLabel.text = error.description
             } else {
                 self?.errorLabel.isHidden = true
+            }
+        }
+        
+        viewModel.loaderCallback = { [weak self] isLoading in
+            if isLoading {
+                self?.errorLabel.isHidden = true
+                self?.activityIndicator.startAnimating()
+            } else {
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
             }
-            
-            self?.activityIndicator.stopAnimating()
         }
     }
     
@@ -93,14 +100,11 @@ final class ScheduleViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configure()
         layoutSubviews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        activityIndicator.startAnimating()
-        viewModel.getGroup()
+        
+        viewModel.viewDidLoad()
     }
     
     // MARK: Layout subviews

@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 final class ScheduleViewModel: NSObject {
     
     // MARK: Services
     
-    private var schedulesService: SchedulesService
+    private let schedulesService: SchedulesService
     
-    private var groupService: GroupRepository
+    private let groupService: GroupRepository
+    
+    private let networkReachability: NetworkReachability
     
     // MARK: View state
     
@@ -34,7 +37,8 @@ final class ScheduleViewModel: NSObject {
     
     private var error: AppError! {
         didSet {
-            callback?(ErrorViewModel(error))
+            loaderCallback?(false)
+            errorCallback?(ErrorViewModel(error))
         }
     }
     
@@ -61,18 +65,32 @@ final class ScheduleViewModel: NSObject {
     
     // MARK: Data binding
     
-    var callback: ((_ error: ErrorViewModel?) -> Void)?
+    var errorCallback: ((_ error: ErrorViewModel?) -> Void)?
+    
+    var loaderCallback: ((_ isLoading: Bool) -> Void)?
     
     // MARK: Initializator
     
     override init() {
         schedulesService = SchedulesService()
         groupService = GroupRepository()
+        networkReachability = NetworkReachability(with: "Schedule_Module")
+        
+        super.init()
+        networkReachability.delegate = self
     }
     
-    // MARK: Methods interface
+    // MARK: Deinitializator
     
-    func getGroup() {
+    deinit {
+        networkReachability.stopListenNetworkReachability()
+    }
+    
+    // MARK: Service methods
+    
+    private func getGroup() {
+        loaderCallback?(true)
+        
         groupService.getGroup { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -87,7 +105,7 @@ final class ScheduleViewModel: NSObject {
         }
     }
     
-    func getSchedule() {
+    private func getSchedule() {
         guard let groupNumber = group?.number else {
             error = .noGroupData
             return
@@ -116,6 +134,12 @@ final class ScheduleViewModel: NSObject {
         }
     }
     
+    // MARK: Interface methods
+    
+    func viewDidLoad() {
+        networkReachability.listenNetworkReachability()
+    }
+    
     func switchParity(_ parity: ScheduleParity) {
         self.parity = parity
         
@@ -132,7 +156,7 @@ final class ScheduleViewModel: NSObject {
             self?.dataSource[key] =  self?.sortByParity(exercise)
         }
         
-        callback?(nil)
+        loaderCallback?(false)
     }
 
     private func sortByParity(_ exercises: [Exercise]) -> [Exercise?] {
@@ -154,6 +178,16 @@ final class ScheduleViewModel: NSObject {
         }
     }
     
+}
+
+// MARK: NetworkReachabilityDelegate implementation
+
+extension ScheduleViewModel: NetworkReachabilityDelegate {
+    func networkReachability(_ status: NetworkReachabilityManager.NetworkReachabilityStatus) {
+        if dataSource.count == 0 {
+            getGroup()
+        }
+    }
 }
 
 

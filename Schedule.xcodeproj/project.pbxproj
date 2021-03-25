@@ -70,6 +70,7 @@
 		869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */; };
 		86C10AA9260D0D1C00E35370 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */; };
 		86C10AAB260D0D6A00E35370 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAA260D0D6A00E35370 /* AppError.swift */; };
+		86C10AAD260D129500E35370 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAC260D129500E35370 /* NetworkReachability.swift */; };
 		86E15C6425D1D110008CA61A /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */; };
 		86E15C6525D1D110008CA61A /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */; };
 		86E15C6625D1D110008CA61A /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */; };
@@ -188,6 +189,7 @@
 		869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
 		86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		86C10AAA260D0D6A00E35370 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		86C10AAC260D129500E35370 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		86E15C5125D1D110008CA61A /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		86E15C5225D1D110008CA61A /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		86E15C5325D1D110008CA61A /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				84EE9C6B251F956B00318C41 /* NetworkProvider.swift */,
+				86C10AAC260D129500E35370 /* NetworkReachability.swift */,
 				84A9228E251F66AA00C83A06 /* Endpoints */,
 			);
 			path = Networking;
@@ -796,6 +799,7 @@
 				84595B1F252A8DAE0039E401 /* Reminder.swift in Sources */,
 				8681DDCB26087DCE00879D63 /* SchedulePair.swift in Sources */,
 				869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */,
+				86C10AAD260D129500E35370 /* NetworkReachability.swift in Sources */,
 				860B102A25FFED0600B3C899 /* ExerciseTVCellViewModel.swift in Sources */,
 				846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */,
 				84B59D022534E9E80096E49C /* SettingTVCell.swift in Sources */,
