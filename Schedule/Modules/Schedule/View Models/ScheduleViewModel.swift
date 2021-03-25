@@ -19,6 +19,8 @@ final class ScheduleViewModel: NSObject {
     
     private let exersiceTimeService: ExerciseTimeService
     
+    private let roomService: RoomsService
+    
     // MARK: Network reachability
     
     private let networkReachability: NetworkReachability
@@ -53,7 +55,7 @@ final class ScheduleViewModel: NSObject {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy"
             let year = dateFormatter.string(from: baseDate)
-           return "\(year), \(semester)"
+           return "\(semester) - \(year)"
         } else {
             return nil
         }
@@ -81,6 +83,7 @@ final class ScheduleViewModel: NSObject {
         schedulesService = SchedulesService()
         groupService = GroupRepository()
         exersiceTimeService = ExerciseTimeService()
+        roomService = RoomsService()
         networkReachability = NetworkReachability(with: "Schedule_Module")
         
         super.init()
@@ -124,7 +127,7 @@ final class ScheduleViewModel: NSObject {
         }
         
         schedulesService.getSchedules(year: baseDate, semester: semester, groupNumber: groupNumber) { [weak self] result in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let schedules):
                     if let schedule = schedules.first {
@@ -144,14 +147,41 @@ final class ScheduleViewModel: NSObject {
     
     private func getTime() {
         exersiceTimeService.get { [weak self] result in
-            switch result {
-            case .success(let time):
-                self?.exerciseTime = time
-                
-            case .failure(let error):
-                print(error)
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case .success(let time):
+                    self?.exerciseTime = time
+                    
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
+    }
+    
+    var cache: [Int : Room] = [:]
+    
+    private func getRoom(_ id: Int) -> String {
+        if let room = cache[id] {
+            return "Аудитория: \(room.name)"
+        }
+        
+        var roomName = "Аудитория: "
+        
+        roomService.getRoom(id: id) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let room):
+                    self?.cache[id] = room
+                    roomName += room.name
+                    
+                case .failure(_):
+                    roomName += "неизвестно"
+                }
+            }
+        }
+        
+        return roomName
     }
     
     // MARK: Interface methods
@@ -248,6 +278,10 @@ extension ScheduleViewModel: UITableViewDataSource {
                 cell.time = "\(time.start) - \(time.end)"
             } else {
                 cell.time = "Время не известно"
+            }
+            
+            if let model = model {
+                cell.room = getRoom(model.roomId)
             }
             
             cell.teacher = teachersString

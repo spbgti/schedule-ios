@@ -33,10 +33,10 @@ extension ScheduleSemester {
     var name: String {
         switch self {
         case .fall:
-            return "Осень"
+            return "Осенний семестр"
             
         case .spring:
-            return "Весна"
+            return "Весенний семестр"
         }
     }
 }

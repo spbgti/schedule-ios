@@ -158,6 +158,7 @@ final class ExerciseTVCell: UITableViewCell {
         typeLabel.text = nil
         timeLabel.text = nil
         exerciseName.text = nil
+        room = nil
     }
     
     // MARK: Configuration

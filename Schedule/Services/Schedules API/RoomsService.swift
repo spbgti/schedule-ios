@@ -17,6 +17,7 @@ class RoomsService {
             switch result {
             case .success(let rooms):
                 completion(.success(rooms))
+                
             case .failure(let errorString):
                 completion(.failure(errorString))
             }
@@ -28,6 +29,7 @@ class RoomsService {
             switch result {
             case .success(let room):
                 completion(.success(room))
+                
             case .failure(let errorString):
                 completion(.failure(errorString))
             }
