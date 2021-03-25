@@ -12,9 +12,9 @@ final class GroupRepository {
     
     private var storageKey = UserDefaults.Key.group
     
-    func getGroup(completion: @escaping (Result<Group, UError>) -> Void) {
+    func getGroup(completion: @escaping (Result<Group, AppError>) -> Void) {
         guard let data = UserDefaults.standard.data(forKey: storageKey) else {
-            completion(.failure(.localBug))
+            completion(.failure(.noGroupData))
             return
         }
         
@@ -22,7 +22,7 @@ final class GroupRepository {
             let group = try JSONDecoder().decode(Group.self, from: data)
             completion(.success(group))
         } catch {
-            completion(.failure(.localBug))
+            completion(.failure(.noGroupData))
         }
     }
     

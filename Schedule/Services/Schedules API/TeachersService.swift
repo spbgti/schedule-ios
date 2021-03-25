@@ -12,8 +12,8 @@ class TeachersService {
     
     private let provider = NetworkProvider<TeachersEndpoint>()
     
-    func getTeachers(name: String, completion: @escaping (Result<[Teacher], UError>) -> Void) {
-        provider.request(.get(name: name)) { (result: Result<[Teacher], UError>) in
+    func getTeachers(name: String, completion: @escaping (Result<[Teacher], AppError>) -> Void) {
+        provider.request(.get(name: name)) { (result: Result<[Teacher], AppError>) in
             switch result {
             case .success(let teachers):
                 completion(.success(teachers))
@@ -23,8 +23,8 @@ class TeachersService {
         }
     }
     
-    func getTeacher(id: Int, completion: @escaping (Result<Teacher, UError>) -> Void) {
-        provider.request(.getBy(id: id)) { (result: Result<Teacher, UError>) in
+    func getTeacher(id: Int, completion: @escaping (Result<Teacher, AppError>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Teacher, AppError>) in
             switch result {
             case .success(let teacher):
                 completion(.success(teacher))

@@ -12,8 +12,8 @@ class RoomsService {
     
     private let provider = NetworkProvider<RoomsEndpoint>()
     
-    func getRooms(name: String, completion: @escaping (Result<[Room], UError>) -> Void) {
-        provider.request(.get(name: name)) { (result: Result<[Room], UError>) in
+    func getRooms(name: String, completion: @escaping (Result<[Room], AppError>) -> Void) {
+        provider.request(.get(name: name)) { (result: Result<[Room], AppError>) in
             switch result {
             case .success(let rooms):
                 completion(.success(rooms))
@@ -23,8 +23,8 @@ class RoomsService {
         }
     }
     
-    func getRoom(id: Int, completion: @escaping (Result<Room, UError>) -> Void) {
-        provider.request(.getBy(id: id)) { (result: Result<Room, UError>) in
+    func getRoom(id: Int, completion: @escaping (Result<Room, AppError>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Room, AppError>) in
             switch result {
             case .success(let room):
                 completion(.success(room))

@@ -12,8 +12,8 @@ class GroupsService {
     
     private let provider = NetworkProvider<GroupsEndpoint>()
     
-    func getGroups(number: String? = nil, completion: @escaping (Result<[Group], UError>) -> Void) {
-        provider.request(.get(number: number)) { (result: Result<[Group], UError>) in
+    func getGroups(number: String? = nil, completion: @escaping (Result<[Group], AppError>) -> Void) {
+        provider.request(.get(number: number)) { (result: Result<[Group], AppError>) in
             switch result {
             case .success(let groups):
                 completion(.success(groups))
@@ -23,8 +23,8 @@ class GroupsService {
         }
     }
     
-    func getGroup(id: Int, completion: @escaping (Result<Group, UError>) -> Void) {
-        provider.request(.getBy(id: id)) { (result: Result<Group, UError>) in
+    func getGroup(id: Int, completion: @escaping (Result<Group, AppError>) -> Void) {
+        provider.request(.getBy(id: id)) { (result: Result<Group, AppError>) in
             switch result {
             case .success(let group):
                 completion(.success(group))

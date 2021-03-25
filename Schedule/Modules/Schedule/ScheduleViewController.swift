@@ -74,8 +74,8 @@ final class ScheduleViewController: UIViewController {
         viewModel.callback = { [weak self] error in
             if let error = error {
                 self?.errorLabel.isHidden = false
-                self?.errorLabel.title = "Ошибка"
-                self?.errorLabel.text = error
+                self?.errorLabel.title = error.title
+                self?.errorLabel.text = error.description
             } else {
                 self?.errorLabel.isHidden = true
                 self?.tableView.reloadData()

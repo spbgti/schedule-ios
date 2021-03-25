@@ -32,22 +32,22 @@ final class ScheduleViewModel: NSObject {
     
     private var group: Group?
     
-    private var error: String? {
+    private var error: AppError! {
         didSet {
-            callback?(error)
+            callback?(ErrorViewModel(error))
         }
     }
     
     // MARK: View
     
-    var tableHeaderView: String {
+    var tableHeaderView: String? {
         if let semester = scheduleSemester?.name {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy"
             let year = dateFormatter.string(from: baseDate)
            return "\(year), \(semester)"
         } else {
-            return "Chill out"
+            return nil
         }
     }
     
@@ -61,7 +61,7 @@ final class ScheduleViewModel: NSObject {
     
     // MARK: Data binding
     
-    var callback: ((_ error: String?) -> Void)?
+    var callback: ((_ error: ErrorViewModel?) -> Void)?
     
     // MARK: Initializator
     
@@ -81,7 +81,7 @@ final class ScheduleViewModel: NSObject {
                     self?.getSchedule()
                     
                 case .failure(let error):
-                    self?.error = error.localizedDescription
+                    self?.error = error
                 }
             }
         }
@@ -89,12 +89,12 @@ final class ScheduleViewModel: NSObject {
     
     func getSchedule() {
         guard let groupNumber = group?.number else {
-            error = "Номер группы не определен"
+            error = .noGroupData
             return
         }
         
         guard let semester = scheduleSemester else {
-            error = "Chill out"
+            error = .isHoliday
             return
         }
         
@@ -106,11 +106,11 @@ final class ScheduleViewModel: NSObject {
                         self?.exercises = schedule.exercises
                         self?.sortByWeekday(schedule.exercises)
                     } else {
-                        self?.error = "Расписание не найдено"
+                        self?.error = .noScheduleData
                     }
                     
-                case .failure(_):
-                    self?.error = "Расписание не найдено"
+                case .failure(let error):
+                    self?.error = error
                 }
             }
         }

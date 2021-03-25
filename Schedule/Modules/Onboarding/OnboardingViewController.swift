@@ -47,14 +47,9 @@ final class OnboardingViewController: UIViewController {
         return view
     }()
     
-    private lazy var errorLabel: UILabel = {
-        let label = UILabel()
+    private lazy var errorLabel: ErrorLabel = {
+        let label = ErrorLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.isHidden = true
-        label.textColor = UIColor(red: 42 / 255, green: 42 / 255, blue: 42 / 255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textAlignment = .center
-        label.numberOfLines = 0
         return label
     }()
     
@@ -179,14 +174,15 @@ final class OnboardingViewController: UIViewController {
                 
             case .failure(let error):
                 self?.errorLabel.isHidden = false
-                self?.errorLabel.text = "Ошибка: \(error.localizedDescription)"
+                self?.errorLabel.title = "Ошибка"
+                self?.errorLabel.text = error.localizedDescription
             }
             
             self?.activityIndicatorView.stopAnimating()
         }
     }
     
-    // MARK: - Objc methods for target-action patterns
+    // MARK: Objc methods for target-action patterns
     
     @objc
     private func routeToMainViewController() {
@@ -211,7 +207,8 @@ final class OnboardingViewController: UIViewController {
             routeToMainViewController()
         } catch {
             errorLabel.isHidden = false
-            errorLabel.text = "Ошибка: \(error.localizedDescription)"
+            errorLabel.title = "Ошибка"
+            errorLabel.text = error.localizedDescription
         }
     }
     

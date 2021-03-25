@@ -17,7 +17,7 @@ final class NetworkProvider<Target: Endpoint> {
         self.timeoutInterval = timeoutInterval
     }
     
-    public func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type, UError>) -> Void) {
+    public func request<Type: Decodable>(_ endpoint: Target, completion: @escaping (Result<Type, AppError>) -> Void) {
         AF.request("\(endpoint.baseURL)\(endpoint.path)",
                    method: endpoint.method,
                    parameters: endpoint.parameters,
@@ -30,22 +30,11 @@ final class NetworkProvider<Target: Endpoint> {
             case .success(let data):
                 completion(.success(data))
                 
-            case .failure(let error):
-                NSLog(error.localizedDescription)
-                
-                if let statusCode = response.response?.statusCode {
-                    switch statusCode {
-                    case 400 ..< 500:
-                        completion(.failure(.localBug))
-                        
-                    case 500 ..< 600:
-                        completion(.failure(.internalServer))
-                        
-                    default:
-                        completion(.failure(.networkConnection))
-                    }
+            case .failure(_):
+                if response.response?.statusCode != nil {
+                    completion(.failure(.serverError))
                 } else {
-                    completion(.failure(.networkConnection))
+                    completion(.failure(.noInternetConnection))
                 }
                 
             }
