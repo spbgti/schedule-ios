@@ -281,15 +281,12 @@ extension ScheduleViewModel: UITableViewDataSource {
             }
             
             if let model = model {
-                cell.room = getRoom(model.roomId)
+                cell.setRoom(model.roomId)
             }
             
             cell.teacher = teachersString
             cell.pair = String(indexPath.item + 1)
             cell.set(model)
-            
-            cell.selectionStyle = .none
-            cell.layoutIfNeeded()
             
             return cell
         } else {
@@ -297,9 +294,7 @@ extension ScheduleViewModel: UITableViewDataSource {
                 fatalError()
             }
             
-            cell.selectionStyle = .none
             cell.title = "Нет пар"
-            cell.layoutIfNeeded()
             
             return cell
         }

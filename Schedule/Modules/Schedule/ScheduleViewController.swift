@@ -11,7 +11,7 @@ final class ScheduleViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.alwaysBounceVertical = false
         
-        tableView.register(ExerciseTVCell.self, forCellReuseIdentifier: "ExerciseTVCell")
+        tableView.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: "ExerciseTVCell")
         tableView.register(DayOffTVCell.self, forCellReuseIdentifier: "DayOffTVCell")
         tableView.register(ScheduleTVSectionHeader.self, forHeaderFooterViewReuseIdentifier: "ScheduleTVSectionHeader")
         
@@ -19,9 +19,10 @@ final class ScheduleViewController: UIViewController {
         tableView.delegate = self
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 375
+        tableView.estimatedRowHeight = 220
         
         tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 28
         tableView.sectionFooterHeight = 0
         
         tableView.tableFooterView = UIView()

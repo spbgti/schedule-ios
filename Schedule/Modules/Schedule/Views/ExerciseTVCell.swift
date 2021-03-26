@@ -10,61 +10,19 @@ import UIKit
 
 final class ExerciseTVCell: UITableViewCell {
     
-    // MARK: Subviews
+    // MARK: Interface builder outlet subviews
     
-    private lazy var pairLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 14, weight: .light)
-        label.textColor = UIColor(red: 123 / 255, green: 128 / 255, blue: 134 / 255, alpha: 1)
-        label.textAlignment = .center
-        label.clipsToBounds = true
-        label.layer.cornerRadius = 13
-        label.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        label.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
-        return label
-    }()
+    @IBOutlet private var pairLabel: UILabel!
     
-    private lazy var typeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 14, weight: .light)
-        label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
-        return label
-    }()
+    @IBOutlet private var typeLabel: UILabel!
     
-    private lazy var timeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 14, weight: .light)
-        label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
-        return label
-    }()
+    @IBOutlet private var timeLabel: UILabel!
     
-    private lazy var exerciseName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 18, weight: .semibold)
-        label.textColor = UIColor(red: 66 / 255, green: 66 / 255, blue: 66 / 255, alpha: 1)
-        label.numberOfLines = 0
-        return label
-    }()
+    @IBOutlet private var exerciseName: UILabel!
     
-    private lazy var teacherLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 14, weight: .light)
-        label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
-        return label
-    }()
+    @IBOutlet private var teacherLabel: UILabel!
     
-    private lazy var roomLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.SFProText(size: 14, weight: .light)
-        label.textColor = UIColor(red: 127 / 255, green: 130 / 255, blue: 135 / 255, alpha: 1)
-        return label
-    }()
+    @IBOutlet private var roomLabel: UILabel!
     
     // MARK: Property interface
     
@@ -100,53 +58,11 @@ final class ExerciseTVCell: UITableViewCell {
     
     // MARK: Initialization
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: Layout subviews
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        NSLayoutConstraint.activate([
-            pairLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 27),
-            pairLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            pairLabel.widthAnchor.constraint(equalToConstant: 23),
-            pairLabel.heightAnchor.constraint(equalToConstant: 26)
-        ])
-        
-        NSLayoutConstraint.activate([
-            typeLabel.centerYAnchor.constraint(equalTo: pairLabel.centerYAnchor),
-            typeLabel.leadingAnchor.constraint(equalTo: pairLabel.trailingAnchor, constant: 9)
-        ])
-
-        NSLayoutConstraint.activate([
-            timeLabel.centerYAnchor.constraint(equalTo: pairLabel.centerYAnchor),
-            timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -9)
-        ])
-        
-        NSLayoutConstraint.activate([
-            exerciseName.topAnchor.constraint(equalTo: pairLabel.bottomAnchor, constant: 18),
-            exerciseName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            exerciseName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 9)
-        ])
-        
-        NSLayoutConstraint.activate([
-            teacherLabel.topAnchor.constraint(equalTo: exerciseName.bottomAnchor, constant: 4),
-            teacherLabel.leadingAnchor.constraint(equalTo: exerciseName.leadingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            roomLabel.topAnchor.constraint(equalTo: teacherLabel.bottomAnchor, constant: 16),
-            roomLabel.leadingAnchor.constraint(equalTo: teacherLabel.leadingAnchor),
-            roomLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -22)
-        ])
+    override func awakeFromNib() {
+        super.awakeFromNib()
+       
+        pairLabel.layer.cornerRadius = 13
+        pairLabel.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
     
     // MARK: Prepare for reuse
@@ -154,22 +70,7 @@ final class ExerciseTVCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         exerciseName.textAlignment = .left
-        pairLabel.text = nil
-        typeLabel.text = nil
-        timeLabel.text = nil
-        exerciseName.text = nil
-        room = nil
-    }
-    
-    // MARK: Configuration
-    
-    private func configure() {
-        contentView.addSubview(pairLabel)
-        contentView.addSubview(typeLabel)
-        contentView.addSubview(timeLabel)
-        contentView.addSubview(exerciseName)
-        contentView.addSubview(teacherLabel)
-        contentView.addSubview(roomLabel)
+        room = "Аудитория:"
     }
     
     // MARK: Interface method
@@ -178,9 +79,34 @@ final class ExerciseTVCell: UITableViewCell {
         if viewModel == nil {
             exerciseName.textAlignment = .center
             exerciseName.text = "Нет пары"
+            typeLabel.text = nil
+            room = nil
         } else {
             typeLabel.text = viewModel?.type
             exerciseName.text = viewModel?.name.capitalizingFirstLetter()
+        }
+    }
+    
+    var roomService = RoomsService()
+    
+    var cache: [Int : Room] = [:]
+    
+    func setRoom(_ id: Int) {
+        if let room = cache[id] {
+            self.room = "Аудитория: \(room.name)"
+        }
+        
+        roomService.getRoom(id: id) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let room):
+                    self?.cache[id] = room
+                    self?.room = "Аудитория: \(room.name)"
+                    
+                case .failure(_):
+                    self?.room = "Аудитория: undefind"
+                }
+            }
         }
     }
     

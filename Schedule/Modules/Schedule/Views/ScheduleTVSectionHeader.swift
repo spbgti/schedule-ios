@@ -15,7 +15,7 @@ final class ScheduleTVSectionHeader: UITableViewHeaderFooterView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+//        label.setContentHuggingPriority(.init(751), for: .vertical)
         label.font = UIFont.SFProText(size: 14, weight: .regular)
         label.textColor = UIColor(red: 132 / 255, green: 132 / 255, blue: 132 / 255, alpha: 1)
         label.textAlignment = .center
@@ -48,8 +48,8 @@ final class ScheduleTVSectionHeader: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4)
         ])
     }
     

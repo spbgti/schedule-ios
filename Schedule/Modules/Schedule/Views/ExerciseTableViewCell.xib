@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Light.otf">
+            <string>SFProText-Light</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Mv7-xg-lYv" customClass="ExerciseTVCell" customModule="spbgti" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mv7-xg-lYv" id="yxn-rn-4dp">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhP-2f-bZk">
+                        <rect key="frame" x="0.0" y="15" width="23" height="26"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="ekQ-vt-yG3"/>
+                            <constraint firstAttribute="width" constant="23" id="fuV-cu-Jx1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
+                        <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Lecture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5x-S1-BDt">
+                        <rect key="frame" x="32" y="19.5" width="49.5" height="17"/>
+                        <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
+                        <color key="textColor" red="0.55294117647058827" green="0.55292731520000005" blue="0.55294191839999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="12:00 - 13:45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOk-9i-Nv1">
+                        <rect key="frame" x="223" y="19.5" width="87" height="17"/>
+                        <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
+                        <color key="textColor" red="0.54510563609999996" green="0.54508435730000004" blue="0.54509878160000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theory of automatic managment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azu-FA-huR">
+                        <rect key="frame" x="10" y="61" width="300" height="26"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                        <color key="textColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Ivanov A.E." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyD-BS-fQe">
+                        <rect key="frame" x="10" y="99" width="300" height="17"/>
+                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                        <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Room: 147" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xp9-Co-VR4">
+                        <rect key="frame" x="10" y="133" width="300" height="17"/>
+                        <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
+                        <color key="textColor" red="0.54510563609999996" green="0.54508435730000004" blue="0.54509878160000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xp9-Co-VR4" firstAttribute="top" secondItem="MyD-BS-fQe" secondAttribute="bottom" constant="17" id="0al-6d-Dvl"/>
+                    <constraint firstItem="G5x-S1-BDt" firstAttribute="centerY" secondItem="yhP-2f-bZk" secondAttribute="centerY" id="Bmi-RF-VvU"/>
+                    <constraint firstAttribute="bottom" secondItem="xp9-Co-VR4" secondAttribute="bottom" constant="15" id="DeZ-cd-Mli"/>
+                    <constraint firstItem="azu-FA-huR" firstAttribute="top" secondItem="yhP-2f-bZk" secondAttribute="bottom" constant="20" id="ECy-z9-wyo"/>
+                    <constraint firstItem="kOk-9i-Nv1" firstAttribute="centerY" secondItem="yhP-2f-bZk" secondAttribute="centerY" id="FIg-lU-AkB"/>
+                    <constraint firstItem="G5x-S1-BDt" firstAttribute="leading" secondItem="yhP-2f-bZk" secondAttribute="trailing" constant="9" id="Lcj-G9-vTy"/>
+                    <constraint firstItem="MyD-BS-fQe" firstAttribute="trailing" secondItem="azu-FA-huR" secondAttribute="trailing" id="Mgy-Zb-qvd"/>
+                    <constraint firstItem="kOk-9i-Nv1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G5x-S1-BDt" secondAttribute="trailing" constant="20" id="RfI-Bu-AsI"/>
+                    <constraint firstItem="azu-FA-huR" firstAttribute="trailing" secondItem="kOk-9i-Nv1" secondAttribute="trailing" id="VdE-eE-Lun"/>
+                    <constraint firstAttribute="trailing" secondItem="kOk-9i-Nv1" secondAttribute="trailing" constant="10" id="Vek-2W-lDB"/>
+                    <constraint firstItem="azu-FA-huR" firstAttribute="leading" secondItem="yxn-rn-4dp" secondAttribute="leading" constant="10" id="a4V-ad-WnB"/>
+                    <constraint firstItem="MyD-BS-fQe" firstAttribute="top" secondItem="azu-FA-huR" secondAttribute="bottom" constant="12" id="bTg-WT-BSb"/>
+                    <constraint firstItem="xp9-Co-VR4" firstAttribute="leading" secondItem="MyD-BS-fQe" secondAttribute="leading" id="d7n-SW-nRI"/>
+                    <constraint firstItem="MyD-BS-fQe" firstAttribute="leading" secondItem="azu-FA-huR" secondAttribute="leading" id="gjp-R7-6C7"/>
+                    <constraint firstItem="yhP-2f-bZk" firstAttribute="top" secondItem="yxn-rn-4dp" secondAttribute="top" constant="15" id="i4d-8R-OQw"/>
+                    <constraint firstItem="xp9-Co-VR4" firstAttribute="trailing" secondItem="MyD-BS-fQe" secondAttribute="trailing" id="khK-0W-pyc"/>
+                    <constraint firstItem="yhP-2f-bZk" firstAttribute="leading" secondItem="yxn-rn-4dp" secondAttribute="leading" id="pIJ-QB-9e9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="exerciseName" destination="azu-FA-huR" id="kRz-oY-pa3"/>
+                <outlet property="pairLabel" destination="yhP-2f-bZk" id="THW-29-5BH"/>
+                <outlet property="roomLabel" destination="xp9-Co-VR4" id="bb0-93-jZE"/>
+                <outlet property="teacherLabel" destination="MyD-BS-fQe" id="DLo-0S-qMA"/>
+                <outlet property="timeLabel" destination="kOk-9i-Nv1" id="agP-MN-RXU"/>
+                <outlet property="typeLabel" destination="G5x-S1-BDt" id="Ai6-ZU-frY"/>
+            </connections>
+            <point key="canvasLocation" x="-456.52173913043481" y="-191.18303571428569"/>
+        </tableViewCell>
+    </objects>
+</document>
