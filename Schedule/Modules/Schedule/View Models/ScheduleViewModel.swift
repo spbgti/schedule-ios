@@ -41,10 +41,15 @@ final class ScheduleViewModel: NSObject {
     
     private var group: Group?
     
-    private var error: AppError! {
+    private var error: AppError? {
         didSet {
+            if let error = error {
+                errorCallback?(ErrorViewModel(error))
+            } else {
+                errorCallback?(nil)
+            }
+            
             loaderCallback?(false)
-            errorCallback?(ErrorViewModel(error))
         }
     }
     
@@ -52,10 +57,7 @@ final class ScheduleViewModel: NSObject {
     
     var tableHeaderView: String? {
         if let semester = scheduleSemester?.name {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy"
-            let year = dateFormatter.string(from: baseDate)
-           return "\(semester) - \(year)"
+           return "\(semester)"
         } else {
             return nil
         }
@@ -76,6 +78,8 @@ final class ScheduleViewModel: NSObject {
     var errorCallback: ((_ error: ErrorViewModel?) -> Void)?
     
     var loaderCallback: ((_ isLoading: Bool) -> Void)?
+    
+    var dataCallback: (() -> Void)?
     
     // MARK: Initializator
     
@@ -99,6 +103,7 @@ final class ScheduleViewModel: NSObject {
     // MARK: Service methods
     
     private func getGroup() {
+        error = nil
         loaderCallback?(true)
         
         groupService.getGroup { [weak self] result in
@@ -207,6 +212,7 @@ final class ScheduleViewModel: NSObject {
         }
         
         loaderCallback?(false)
+        dataCallback?()
     }
 
     private func sortByParity(_ exercises: [Exercise]) -> [Exercise?] {

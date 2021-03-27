@@ -15,11 +15,24 @@ final class ScheduleTVSectionHeader: UITableViewHeaderFooterView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.setContentHuggingPriority(.init(751), for: .vertical)
-        label.font = UIFont.SFProText(size: 14, weight: .regular)
-        label.textColor = UIColor(red: 132 / 255, green: 132 / 255, blue: 132 / 255, alpha: 1)
+        label.font = UIFont.SFProText(size: 14, weight: .medium)
+        label.textColor = UIColor(red: 80 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1)
         label.textAlignment = .center
         return label
+    }()
+    
+    private lazy var topSeparatorView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 215 / 255, green: 215 / 255, blue: 215 / 255, alpha: 1)
+        return view
+    }()
+    
+    private lazy var bottomSeparatorView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 215 / 255, green: 215 / 255, blue: 215 / 255, alpha: 1)
+        return view
     }()
     
     // MARK: Property interface
@@ -48,16 +61,33 @@ final class ScheduleTVSectionHeader: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6)
+        ])
+        
+        NSLayoutConstraint.activate([
+            topSeparatorView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            topSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            topSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            topSeparatorView.heightAnchor.constraint(equalToConstant: 0.5)
+        ])
+        
+        NSLayoutConstraint.activate([
+            bottomSeparatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            bottomSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            bottomSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            bottomSeparatorView.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     
     // MARK: Configuration
     
     private func configure() {
-        contentView.backgroundColor = UIColor(red: 246 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
+        contentView.backgroundColor = .white
+        
         contentView.addSubview(titleLabel)
+        contentView.addSubview(topSeparatorView)
+        contentView.addSubview(bottomSeparatorView)
     }
     
 }

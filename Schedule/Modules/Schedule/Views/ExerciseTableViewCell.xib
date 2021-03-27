@@ -7,8 +7,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Regular.otf">
-            <string>SFProDisplay-Regular</string>
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
         </array>
         <array key="SF-Pro-Text-Light.otf">
             <string>SFProText-Light</string>
@@ -52,7 +52,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theory of automatic managment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azu-FA-huR">
                         <rect key="frame" x="10" y="61" width="300" height="26"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="17"/>
                         <color key="textColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -97,7 +97,7 @@
                 <outlet property="timeLabel" destination="kOk-9i-Nv1" id="agP-MN-RXU"/>
                 <outlet property="typeLabel" destination="G5x-S1-BDt" id="Ai6-ZU-frY"/>
             </connections>
-            <point key="canvasLocation" x="-456.52173913043481" y="-191.18303571428569"/>
+            <point key="canvasLocation" x="-648" y="8"/>
         </tableViewCell>
     </objects>
 </document>

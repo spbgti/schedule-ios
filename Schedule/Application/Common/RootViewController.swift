@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+final class RootViewController: UIViewController {
     
     // MARK: Child ViewControllers
     
@@ -18,8 +18,9 @@ class RootViewController: UIViewController {
     }()
     
     private lazy var scheduleViewController: ScheduleViewController = {
-        let scheduleViewController = ScheduleViewController()
-        return scheduleViewController
+        let viewModel = ScheduleViewModel()
+        let viewController = ScheduleViewController(viewModel: viewModel)
+        return viewController
     }()
     
     // MARK: ViewController to switch between child ViewControllers

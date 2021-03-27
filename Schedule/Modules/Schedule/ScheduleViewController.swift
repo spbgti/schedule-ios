@@ -22,7 +22,8 @@ final class ScheduleViewController: UIViewController {
         tableView.estimatedRowHeight = 220
         
         tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.estimatedSectionHeaderHeight = 28
+        tableView.estimatedSectionHeaderHeight = 32
+        
         tableView.sectionFooterHeight = 0
         
         tableView.tableFooterView = UIView()
@@ -30,28 +31,20 @@ final class ScheduleViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var tableHeaderView: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor(red: 246 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
-        label.font = UIFont.SFProDisplay(size: 16, weight: .semibold)
-        label.textColor = .black
-        label.textAlignment = .center
-        label.text = viewModel.tableHeaderView
-        return label
-    }()
-    
 // FIXME: handle touching without Exercise data (do not enable and reduce opacity)
     
     private lazy var parityControl: UISegmentedControl = {
         let control = UISegmentedControl(items: ScheduleParity.allCases.map { $0.name })
+        control.translatesAutoresizingMaskIntoConstraints = false
         control.addTarget(self, action: #selector(switchParity(_:)), for: .valueChanged)
+        control.selectedSegmentIndex = 0
         return control
     }()
     
     private lazy var errorLabel: ErrorLabel = {
         let label = ErrorLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
         return label
     }()
     
@@ -61,15 +54,15 @@ final class ScheduleViewController: UIViewController {
         return activityIndicator
     }()
     
-    
     // MARK: Dependency properties
     
-    private var viewModel = ScheduleViewModel()
-    
+    private let viewModel: ScheduleViewModel
     
     // MARK: Initializators
     
-    init() {
+    init(viewModel: ScheduleViewModel) {
+        self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
         
         viewModel.errorCallback = { [weak self] error in
@@ -84,12 +77,16 @@ final class ScheduleViewController: UIViewController {
         
         viewModel.loaderCallback = { [weak self] isLoading in
             if isLoading {
-                self?.errorLabel.isHidden = true
+                self?.parityControl.isEnabled = false
                 self?.activityIndicator.startAnimating()
             } else {
                 self?.activityIndicator.stopAnimating()
-                self?.tableView.reloadData()
             }
+        }
+        
+        viewModel.dataCallback = { [weak self] in
+            self?.parityControl.isEnabled = true
+            self?.tableView.reloadData()
         }
     }
     
@@ -112,17 +109,17 @@ final class ScheduleViewController: UIViewController {
     
     private func layoutSubviews() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: tableHeaderView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 44),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            tableHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableHeaderView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            tableHeaderView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableHeaderView.heightAnchor.constraint(equalToConstant: 28)
+            parityControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            parityControl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            parityControl.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            parityControl.heightAnchor.constraint(equalToConstant: 28)
         ])
         
         NSLayoutConstraint.activate([
@@ -140,21 +137,19 @@ final class ScheduleViewController: UIViewController {
     // MARK: Configuration
     
     private func configure() {
-        parityControl.selectedSegmentIndex = 0
+        view.backgroundColor = .white
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 246 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
         navigationController?.navigationBar.isTranslucent = false
-        navigationItem.titleView = parityControl
+        navigationItem.title = viewModel.tableHeaderView
         
-        errorLabel.isHidden = true
-        
-        view.addSubview(tableHeaderView)
+        view.addSubview(parityControl)
         view.addSubview(tableView)
         view.addSubview(errorLabel)
         view.addSubview(activityIndicator)
     }
     
-    // MARK: Target-action methods
+    // MARK: Action methods
     
     @objc
     private func switchParity(_ sender: UISegmentedControl) {
