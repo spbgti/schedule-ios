@@ -54,12 +54,12 @@
 		84F88B742536029900639BEC /* GroupSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B732536029900639BEC /* GroupSettingsViewController.swift */; };
 		84F88B76253602D600639BEC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88B75253602D600639BEC /* Button.swift */; };
 		8603BEFA257058FA00CF8AC0 /* RequestForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603BEF9257058FA00CF8AC0 /* RequestForm.swift */; };
-		860B102A25FFED0600B3C899 /* ExerciseTVCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B102925FFED0600B3C899 /* ExerciseTVCellViewModel.swift */; };
+		860B102A25FFED0600B3C899 /* ExerciseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B102925FFED0600B3C899 /* ExerciseCellViewModel.swift */; };
 		864B29F525CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */; };
 		86548E60260A3913002617FC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86548E5F260A3913002617FC /* ActivityIndicator.swift */; };
 		86548E62260A4220002617FC /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86548E61260A4220002617FC /* ErrorLabel.swift */; };
-		8661477D2600AC830066335C /* DayOffTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661477C2600AC830066335C /* DayOffTVCell.swift */; };
-		86666EE1260DC9BB0048E3C0 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86666EE0260DC9BB0048E3C0 /* ExerciseTableViewCell.xib */; };
+		8661477D2600AC830066335C /* DayOffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661477C2600AC830066335C /* DayOffCell.swift */; };
+		86666EE1260DC9BB0048E3C0 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86666EE0260DC9BB0048E3C0 /* ExerciseCell.xib */; };
 		8669BF2F260754DC007D8095 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */; };
 		8669BF31260759A4007D8095 /* ScheduleSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF30260759A4007D8095 /* ScheduleSemester.swift */; };
 		8669BF3426075C19007D8095 /* ScheduleParity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669BF3326075C19007D8095 /* ScheduleParity.swift */; };
@@ -68,7 +68,7 @@
 		8681DDC92608720C00879D63 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681DDC82608720C00879D63 /* GroupRepository.swift */; };
 		8681DDCB26087DCE00879D63 /* SchedulePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8681DDCA26087DCE00879D63 /* SchedulePair.swift */; };
 		8687C3882575A15B00D75BAC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687C3872575A15B00D75BAC /* TextField.swift */; };
-		869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */; };
+		869A7E2825FD3B3900F77D52 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A7E2725FD3B3900F77D52 /* ExerciseCell.swift */; };
 		86C10AA9260D0D1C00E35370 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */; };
 		86C10AAB260D0D6A00E35370 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAA260D0D6A00E35370 /* AppError.swift */; };
 		86C10AAD260D129500E35370 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10AAC260D129500E35370 /* NetworkReachability.swift */; };
@@ -92,7 +92,7 @@
 		86E15C7425D1D110008CA61A /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C6225D1D110008CA61A /* SF-Pro-Display-Ultralight.otf */; };
 		86E15C7525D1D110008CA61A /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86E15C6325D1D110008CA61A /* SF-Pro-Display-Black.otf */; };
 		86E15C7725D1D25F008CA61A /* UIFont + Custom fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E15C7625D1D25F008CA61A /* UIFont + Custom fonts.swift */; };
-		86F5F0832602883E0067B7BE /* ScheduleTVSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F5F0822602883E0067B7BE /* ScheduleTVSectionHeader.swift */; };
+		86F5F0832602883E0067B7BE /* ScheduleSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F5F0822602883E0067B7BE /* ScheduleSectionHeader.swift */; };
 		86FA492725D9670F00DBC547 /* ExerciseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA492625D9670F00DBC547 /* ExerciseTime.swift */; };
 		86FA492C25DA8BB300DBC547 /* Data.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FA492B25DA8BB300DBC547 /* Data.xcassets */; };
 		86FC55322569B0A00053254D /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC55312569B0A00053254D /* String + Extension.swift */; };
@@ -175,12 +175,12 @@
 		84F88B732536029900639BEC /* GroupSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSettingsViewController.swift; sourceTree = "<group>"; };
 		84F88B75253602D600639BEC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		8603BEF9257058FA00CF8AC0 /* RequestForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForm.swift; sourceTree = "<group>"; };
-		860B102925FFED0600B3C899 /* ExerciseTVCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCellViewModel.swift; sourceTree = "<group>"; };
+		860B102925FFED0600B3C899 /* ExerciseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCellViewModel.swift; sourceTree = "<group>"; };
 		864B29F425CC93890028D9FB /* OnboardingViewController + UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController + UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		86548E5F260A3913002617FC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		86548E61260A4220002617FC /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
-		8661477C2600AC830066335C /* DayOffTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffTVCell.swift; sourceTree = "<group>"; };
-		86666EE0260DC9BB0048E3C0 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
+		8661477C2600AC830066335C /* DayOffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffCell.swift; sourceTree = "<group>"; };
+		86666EE0260DC9BB0048E3C0 /* ExerciseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
 		8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		8669BF30260759A4007D8095 /* ScheduleSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSemester.swift; sourceTree = "<group>"; };
 		8669BF3326075C19007D8095 /* ScheduleParity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParity.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		8681DDC82608720C00879D63 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
 		8681DDCA26087DCE00879D63 /* SchedulePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePair.swift; sourceTree = "<group>"; };
 		8687C3872575A15B00D75BAC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
+		869A7E2725FD3B3900F77D52 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		86C10AAA260D0D6A00E35370 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		86C10AAC260D129500E35370 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		86E15C6225D1D110008CA61A /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		86E15C6325D1D110008CA61A /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
 		86E15C7625D1D25F008CA61A /* UIFont + Custom fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Custom fonts.swift"; sourceTree = "<group>"; };
-		86F5F0822602883E0067B7BE /* ScheduleTVSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTVSectionHeader.swift; sourceTree = "<group>"; };
+		86F5F0822602883E0067B7BE /* ScheduleSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSectionHeader.swift; sourceTree = "<group>"; };
 		86FA492625D9670F00DBC547 /* ExerciseTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTime.swift; sourceTree = "<group>"; };
 		86FA492B25DA8BB300DBC547 /* Data.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Data.xcassets; sourceTree = "<group>"; };
 		86FC55312569B0A00053254D /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
@@ -514,10 +514,9 @@
 		8669BF2C26075486007D8095 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				86F5F0822602883E0067B7BE /* ScheduleTVSectionHeader.swift */,
-				869A7E2725FD3B3900F77D52 /* ExerciseTVCell.swift */,
-				8661477C2600AC830066335C /* DayOffTVCell.swift */,
-				86666EE0260DC9BB0048E3C0 /* ExerciseTableViewCell.xib */,
+				86F5F0822602883E0067B7BE /* ScheduleSectionHeader.swift */,
+				8661477C2600AC830066335C /* DayOffCell.swift */,
+				86C1DF45260F2F2000EB63C3 /* ExerciseCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,7 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				8669BF2E260754DC007D8095 /* ScheduleViewModel.swift */,
-				860B102925FFED0600B3C899 /* ExerciseTVCellViewModel.swift */,
+				860B102925FFED0600B3C899 /* ExerciseCellViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -549,6 +548,15 @@
 				86C10AA8260D0D1C00E35370 /* ErrorViewModel.swift */,
 			);
 			path = "Error models";
+			sourceTree = "<group>";
+		};
+		86C1DF45260F2F2000EB63C3 /* ExerciseCell */ = {
+			isa = PBXGroup;
+			children = (
+				86666EE0260DC9BB0048E3C0 /* ExerciseCell.xib */,
+				869A7E2725FD3B3900F77D52 /* ExerciseCell.swift */,
+			);
+			path = ExerciseCell;
 			sourceTree = "<group>";
 		};
 		86E15C4F25D1D0E2008CA61A /* Fonts */ = {
@@ -665,7 +673,7 @@
 				86E15C6A25D1D110008CA61A /* SF-Pro-Text-Thin.otf in Resources */,
 				86E15C6C25D1D110008CA61A /* SF-Pro-Text-Medium.otf in Resources */,
 				849FE783253E6085000189D5 /* Images.xcassets in Resources */,
-				86666EE1260DC9BB0048E3C0 /* ExerciseTableViewCell.xib in Resources */,
+				86666EE1260DC9BB0048E3C0 /* ExerciseCell.xib in Resources */,
 				86E15C6625D1D110008CA61A /* SF-Pro-Text-Black.otf in Resources */,
 				84F88B722536021200639BEC /* GroupSettings.storyboard in Resources */,
 				86E15C6F25D1D110008CA61A /* SF-Pro-Display-Regular.otf in Resources */,
@@ -759,7 +767,7 @@
 				846DCA7525228B48000E9833 /* ScheduleAPIEndpoint.swift in Sources */,
 				84F88B76253602D600639BEC /* Button.swift in Sources */,
 				84EE9C64251F84F300318C41 /* Endpoint.swift in Sources */,
-				86F5F0832602883E0067B7BE /* ScheduleTVSectionHeader.swift in Sources */,
+				86F5F0832602883E0067B7BE /* ScheduleSectionHeader.swift in Sources */,
 				86C10AAB260D0D6A00E35370 /* AppError.swift in Sources */,
 				86548E60260A3913002617FC /* ActivityIndicator.swift in Sources */,
 				846DCA8025229BD3000E9833 /* Location.swift in Sources */,
@@ -778,7 +786,7 @@
 				0495E1922390EB2700C847A2 /* ScheduleViewController.swift in Sources */,
 				846DCA8425229CC8000E9833 /* Teacher.swift in Sources */,
 				86FC55342569B2240053254D /* UserDefaults + Extension.swift in Sources */,
-				8661477D2600AC830066335C /* DayOffTVCell.swift in Sources */,
+				8661477D2600AC830066335C /* DayOffCell.swift in Sources */,
 				04FEC64423340B5F00EA5D25 /* Exercise.swift in Sources */,
 				8687C3882575A15B00D75BAC /* TextField.swift in Sources */,
 				846DCA7325223F04000E9833 /* GroupsEndpoint.swift in Sources */,
@@ -806,9 +814,9 @@
 				0460B4E423F33133003F4F9C /* ReminderSettingsViewController.swift in Sources */,
 				84595B1F252A8DAE0039E401 /* Reminder.swift in Sources */,
 				8681DDCB26087DCE00879D63 /* SchedulePair.swift in Sources */,
-				869A7E2825FD3B3900F77D52 /* ExerciseTVCell.swift in Sources */,
+				869A7E2825FD3B3900F77D52 /* ExerciseCell.swift in Sources */,
 				86C10AAD260D129500E35370 /* NetworkReachability.swift in Sources */,
-				860B102A25FFED0600B3C899 /* ExerciseTVCellViewModel.swift in Sources */,
+				860B102A25FFED0600B3C899 /* ExerciseCellViewModel.swift in Sources */,
 				846DCA7925228D94000E9833 /* RoomsEndpoint.swift in Sources */,
 				84B59D022534E9E80096E49C /* SettingTVCell.swift in Sources */,
 				86548E62260A4220002617FC /* ErrorLabel.swift in Sources */,

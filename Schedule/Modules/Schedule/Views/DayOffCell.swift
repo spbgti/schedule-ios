@@ -1,5 +1,5 @@
 //
-//  DayOffTVCell.swift
+//  DayOffCell.swift
 //  schedule
 //
 //  Created by Vladislav Glumov on 16.03.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DayOffTVCell: UITableViewCell {
+final class DayOffCell: UITableViewCell {
     
     // MARK: Subviews
     

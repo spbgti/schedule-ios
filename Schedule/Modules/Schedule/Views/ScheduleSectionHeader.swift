@@ -1,5 +1,5 @@
 //
-//  ScheduleTVSectionHeader.swift
+//  ScheduleSectionHeader.swift
 //  schedule
 //
 //  Created by Vladislav Glumov on 17.03.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ScheduleTVSectionHeader: UITableViewHeaderFooterView {
+final class ScheduleSectionHeader: UITableViewHeaderFooterView {
     
     // MARK: Subviews
     

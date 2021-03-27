@@ -7,13 +7,18 @@ final class ScheduleViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.showsVerticalScrollIndicator = false
-        tableView.alwaysBounceVertical = false
         
-        tableView.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: "ExerciseTVCell")
-        tableView.register(DayOffTVCell.self, forCellReuseIdentifier: "DayOffTVCell")
-        tableView.register(ScheduleTVSectionHeader.self, forHeaderFooterViewReuseIdentifier: "ScheduleTVSectionHeader")
+        tableView.register(UINib(nibName: "ExerciseCell", bundle: nil),
+                           forCellReuseIdentifier: "ExerciseCell")
+        
+        tableView.register(DayOffCell.self,
+                           forCellReuseIdentifier: "DayOffCell")
+        
+        tableView.register(ScheduleSectionHeader.self,
+                           forHeaderFooterViewReuseIdentifier: "ScheduleSectionHeader")
         
         tableView.dataSource = viewModel
         tableView.delegate = self
@@ -162,11 +167,11 @@ final class ScheduleViewController: UIViewController {
 
 extension ScheduleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ScheduleTVSectionHeader") as? ScheduleTVSectionHeader else {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ScheduleSectionHeader") as? ScheduleSectionHeader else {
             fatalError()
         }
         
-        headerView.title = "\(ScheduleWeek.allCases[section].name)"
+        headerView.title = ScheduleWeek.allCases[section].name
         
         return headerView
     }

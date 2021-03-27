@@ -1,5 +1,5 @@
 //
-//  ExerciseTVCell.swift
+//  ExerciseCell.swift
 //  schedule
 //
 //  Created by Vladislav Glumov on 13.03.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ExerciseTVCell: UITableViewCell {
+final class ExerciseCell: UITableViewCell {
     
     // MARK: Interface builder outlet subviews
     

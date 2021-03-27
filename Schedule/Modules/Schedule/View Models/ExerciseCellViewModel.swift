@@ -1,5 +1,5 @@
 //
-//  ExerciseTVCellViewModel.swift
+//  ExerciseCellViewModel.swift
 //  schedule
 //
 //  Created by Vladislav Glumov on 15.03.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ExerciseTVCellViewModel {
+struct ExerciseCellViewModel {
     let isEmpty: Bool
     
     let pair: String?

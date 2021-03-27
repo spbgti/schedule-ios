@@ -265,8 +265,8 @@ extension ScheduleViewModel: UITableViewDataSource {
         let dataSource = self.dataSource[sectionKey]!
         
         if dataSource.count > 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTVCell", for: indexPath) as? ExerciseTVCell else {
-                fatalError()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath) as? ExerciseCell else {
+                fatalError("Unkonw 'ExerciseCell' type")
             }
             
             let model = dataSource[indexPath.item]
@@ -296,8 +296,9 @@ extension ScheduleViewModel: UITableViewDataSource {
             
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DayOffTVCell", for: indexPath) as? DayOffTVCell else {
-                fatalError()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DayOffCell",
+                                                           for: indexPath) as? DayOffCell else {
+                fatalError("Unkonw 'DayOffCell' type")
             }
             
             cell.title = "Нет пар"
