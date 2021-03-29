@@ -13,17 +13,23 @@ final class ScheduleViewModel: NSObject {
     
     // MARK: Services
     
+    private let groupService: GroupRepository
+    
     private let schedulesService: SchedulesService
     
-    private let groupService: GroupRepository
+    private let roomService: RoomsService
     
     private let exersiceTimeService: ExerciseTimeService
     
-    private let roomService: RoomsService
+    private let locationService: LocationsService
     
     // MARK: Network reachability
     
     private let networkReachability: NetworkReachability
+    
+    // MARK: Group dispatch queue
+    
+    private let dispatchGroup = DispatchGroup()
     
     // MARK: View state
     
@@ -38,8 +44,6 @@ final class ScheduleViewModel: NSObject {
     private var scheduleSemester: ScheduleSemester? {
         ScheduleSemester.semester(baseDate)
     }
-    
-    private var group: Group?
     
     private var error: AppError? {
         didSet {
@@ -65,9 +69,15 @@ final class ScheduleViewModel: NSObject {
     
     // MARK: Sources
     
+    private var group: Group?
+    
     private var exercises: [Exercise]?
     
     private var exerciseTime: [ExerciseTime]?
+    
+    private var rooms: [Room]?
+    
+    private var locations: [Location]?
     
     // MARK: Data source
     
@@ -88,6 +98,7 @@ final class ScheduleViewModel: NSObject {
         groupService = GroupRepository()
         exersiceTimeService = ExerciseTimeService()
         roomService = RoomsService()
+        locationService = LocationsService()
         networkReachability = NetworkReachability(with: "Schedule_Module")
         
         super.init()
@@ -138,7 +149,13 @@ final class ScheduleViewModel: NSObject {
                     if let schedule = schedules.first {
                         self?.exercises = schedule.exercises
                         self?.getTime()
-                        self?.sortByWeekday(schedule.exercises)
+                        self?.getRooms()
+                        self?.getLocations()
+                        
+                        self?.dispatchGroup.notify(queue: .main) {
+                            self?.sortByWeekday(schedule.exercises)
+                        }
+                        
                     } else {
                         self?.error = .noScheduleData
                     }
@@ -151,6 +168,8 @@ final class ScheduleViewModel: NSObject {
     }
     
     private func getTime() {
+        dispatchGroup.enter()
+        
         exersiceTimeService.get { [weak self] result in
             DispatchQueue.main.async { [weak self] in
                 switch result {
@@ -160,33 +179,46 @@ final class ScheduleViewModel: NSObject {
                 case .failure(let error):
                     print(error)
                 }
+                
+                self?.dispatchGroup.leave()
             }
         }
     }
     
-    var cache: [Int : Room] = [:]
-    
-    private func getRoom(_ id: Int) -> String {
-        if let room = cache[id] {
-            return "Аудитория: \(room.name)"
-        }
+    private func getRooms() {
+        dispatchGroup.enter()
         
-        var roomName = "Аудитория: "
-        
-        roomService.getRoom(id: id) { [weak self] result in
+        roomService.getRooms(name: nil) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let room):
-                    self?.cache[id] = room
-                    roomName += room.name
+                case .success(let rooms):
+                    self?.rooms = rooms
                     
-                case .failure(_):
-                    roomName += "неизвестно"
+                case .failure(let error):
+                    print(error)
                 }
+                
+                self?.dispatchGroup.leave()
             }
         }
+    }
+    
+    private func getLocations() {
+        dispatchGroup.enter()
         
-        return roomName
+        locationService.getLocations(name: nil) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let locations):
+                    self?.locations = locations
+                    
+                case .failure(let error):
+                    print(error)
+                }
+                
+                self?.dispatchGroup.leave()
+            }
+        }
     }
     
     // MARK: Interface methods
@@ -208,7 +240,7 @@ final class ScheduleViewModel: NSObject {
     private func sortByWeekday(_ exercises: [Exercise]) {
         ScheduleWeek.allCases.forEach { [weak self] key in
             let exercise = exercises.filter { $0.day == String(key.rawValue) }
-            self?.dataSource[key] =  self?.sortByParity(exercise)
+            self?.dataSource[key] = self?.sortByParity(exercise)
         }
         
         loaderCallback?(false)
@@ -222,7 +254,7 @@ final class ScheduleViewModel: NSObject {
             if dayExercises.count > 1 {
                 let parityDays = dayExercises.filter { [weak self] in $0.parity == self?.parity.rawValue }
                 
-                if let parityDay =  parityDays.first {
+                if let parityDay = parityDays.first {
                     return parityDay
                 } else {
                     let parityDay = dayExercises.filter { $0.parity == nil }
@@ -263,36 +295,25 @@ extension ScheduleViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionKey = ScheduleWeek.allCases[indexPath.section]
         let dataSource = self.dataSource[sectionKey]!
+        let exercise = dataSource[indexPath.item]
         
         if dataSource.count > 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath) as? ExerciseCell else {
                 fatalError("Unkonw 'ExerciseCell' type")
             }
             
-            let model = dataSource[indexPath.item]
-            let timeModel = exerciseTime?[indexPath.item]
-            var teachersString: String?
-            
-            if let teachers = model?.teachers {
-                teachersString = ""
-                teachers.forEach {
-                    teachersString! += "\($0)\n"
-                }
-            }
-            
-            if let time = timeModel {
-                cell.time = "\(time.start) - \(time.end)"
+            if let exercise = exercise {
+                let time = exerciseTime![indexPath.item]
+                let room = rooms!.first(where: { $0.roomId == exercise.roomId })!
+                let location = locations!.first(where: { $0.locationId == room.locationId })
+                let cellModel = ExerciseCellModel(exercise: exercise, time: time, room: room, location: location)
+                
+                cell.set(cellModel)
             } else {
-                cell.time = "Время не известно"
+                cell.pair = String(indexPath.item + 1)
+                cell.time = "\(exerciseTime![indexPath.item].start) - \(exerciseTime![indexPath.item].end)"
+                cell.set(nil)
             }
-            
-            if let model = model {
-                cell.setRoom(model.roomId)
-            }
-            
-            cell.teacher = teachersString
-            cell.pair = String(indexPath.item + 1)
-            cell.set(model)
             
             return cell
         } else {

@@ -9,7 +9,7 @@
 import Foundation
 
 enum RoomsEndpoint {
-    case get(name: String)
+    case get(name: String?)
     case getBy(id: Int)
 }
 
@@ -26,7 +26,12 @@ extension RoomsEndpoint: ScheduleAPIEndpoint {
     var parameters: [String : Any]? {
         switch self {
         case .get(name: let name):
-            return ["name" : name]
+            if let name = name {
+                return ["name" : name]
+            } else {
+                return nil
+            }
+            
         case .getBy:
             return nil
         }

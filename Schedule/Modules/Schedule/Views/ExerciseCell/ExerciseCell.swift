@@ -63,6 +63,13 @@ final class ExerciseCell: UITableViewCell {
        
         pairLabel.layer.cornerRadius = 13
         pairLabel.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        
+        pairLabel.text = nil
+        typeLabel.text = nil
+        timeLabel.text = nil
+        exerciseName.text = nil
+        teacherLabel.text = nil
+        roomLabel.text = nil
     }
     
     // MARK: Prepare for reuse
@@ -70,43 +77,28 @@ final class ExerciseCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         exerciseName.textAlignment = .left
-        room = "Аудитория:"
+        
+        pairLabel.text = nil
+        typeLabel.text = nil
+        timeLabel.text = nil
+        exerciseName.text = nil
+        teacherLabel.text = nil
+        roomLabel.text = nil
     }
     
     // MARK: Interface method
     
-    func set(_ viewModel: Exercise?) {
+    func set(_ viewModel: ExerciseCellModel?) {
         if viewModel == nil {
             exerciseName.textAlignment = .center
             exerciseName.text = "Нет пары"
-            typeLabel.text = nil
-            room = nil
         } else {
+            pairLabel.text = viewModel?.pair
             typeLabel.text = viewModel?.type
-            exerciseName.text = viewModel?.name.capitalizingFirstLetter()
-        }
-    }
-    
-    var roomService = RoomsService()
-    
-    var cache: [Int : Room] = [:]
-    
-    func setRoom(_ id: Int) {
-        if let room = cache[id] {
-            self.room = "Аудитория: \(room.name)"
-        }
-        
-        roomService.getRoom(id: id) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let room):
-                    self?.cache[id] = room
-                    self?.room = "Аудитория: \(room.name)"
-                    
-                case .failure(_):
-                    self?.room = "Аудитория: undefind"
-                }
-            }
+            timeLabel.text = viewModel?.time
+            exerciseName.text = viewModel?.name
+            teacherLabel.text = viewModel?.teachers
+            roomLabel.text = viewModel?.location
         }
     }
     

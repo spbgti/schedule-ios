@@ -12,7 +12,7 @@ class RoomsService {
     
     private let provider = NetworkProvider<RoomsEndpoint>()
     
-    func getRooms(name: String, completion: @escaping (Result<[Room], AppError>) -> Void) {
+    func getRooms(name: String?, completion: @escaping (Result<[Room], AppError>) -> Void) {
         provider.request(.get(name: name)) { (result: Result<[Room], AppError>) in
             switch result {
             case .success(let rooms):

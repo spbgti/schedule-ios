@@ -12,7 +12,7 @@ class LocationsService {
     
     private let provider = NetworkProvider<LocationEndpoint>()
     
-    func getLocations(name: String, completion: @escaping (Result<[Location], AppError>) -> Void) {
+    func getLocations(name: String?, completion: @escaping (Result<[Location], AppError>) -> Void) {
         provider.request(.get(name: name)) { (result: Result<[Location], AppError>) in
             switch result {
             case .success(let locations):
